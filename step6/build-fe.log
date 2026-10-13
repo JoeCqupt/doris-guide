@@ -1,0 +1,1537 @@
+Target system: Darwin; Target arch: arm64
+Python 3.14.3
+find: /usr/bin/../sbin/authserver: Permission denied
+find: /usr/bin/../sbin/authserver: Permission denied
+Check JAVA_HOME version
+Apache Maven 3.9.15 (98b2cdbfdb5f1ac8781f537ea9acccaed7922349)
+Maven home: /opt/homebrew/Cellar/maven/3.9.15/libexec
+Java version: 17.0.17, vendor: Oracle Corporation, runtime: /Users/jiangyuan/dev/jdk-17.0.17.jdk/Contents/Home
+Default locale: zh_CN_#Hans, platform encoding: UTF-8
+OS name: "mac os x", version: "15.6.1", arch: "aarch64", family: "mac"
+cmake version 4.2.1
+
+CMake suite maintained and supported by Kitware (kitware.com/cmake).
+Get params:
+    BUILD_FE                            -- 1
+    BUILD_BE                            -- 0
+    BUILD_CLOUD                         -- 0
+    BUILD_META_TOOL                     -- OFF
+    BUILD_FILE_CACHE_MICROBENCH_TOOL    -- OFF
+    BUILD_INDEX_TOOL                    -- OFF
+    BUILD_BENCHMARK                     -- OFF
+    BUILD_TASK_EXECUTOR_SIMULATOR       -- OFF
+    BUILD_BE_JAVA_EXTENSIONS            -- 1
+    BUILD_BE_CDC_CLIENT                 -- 0
+    BUILD_HIVE_UDF                      -- 1
+    BUILD_JUICEFS                       -- OFF
+    BUILD_JINDOFS                       -- OFF
+    PARALLEL                            -- 3
+    CLEAN                               -- 0
+    GLIBC_COMPATIBILITY                 -- OFF
+    USE_AVX2                            -- ON
+    USE_LIBCPP                          -- ON
+    STRIP_DEBUG_INFO                    -- OFF
+    DORIS_DEV_DEBUG_INFO                -- 
+    USE_JEMALLOC                        -- OFF
+    USE_BTHREAD_SCANNER                 -- OFF
+    ENABLE_INJECTION_POINT              -- OFF
+    DENABLE_CLANG_COVERAGE              -- OFF
+    DISPLAY_BUILD_TIME                  -- OFF
+    ENABLE_PCH                          -- ON
+    ENABLE_UNITY_BUILD                  -- ON
+    EXTRA_FE_MODULES                    -- 
+    EXTRA_BE_MODULES                    -- 
+    EXTRA_CLOUD_MODULES                 -- 
+
+Feature List: -TDE,-TLS,-VARIANT_NESTED_GROUP,-HDFS_STORAGE_VAULT,+UI,+AZURE_BLOB,+AZURE_STORAGE_VAULT,+HIVE_UDF,+BE_JAVA_EXTENSIONS
+Target system: Darwin; Target arch: arm64
+Python 3.14.3
+find: /usr/bin/../sbin/authserver: Permission denied
+find: /usr/bin/../sbin/authserver: Permission denied
+Check JAVA_HOME version
+Apache Maven 3.9.15 (98b2cdbfdb5f1ac8781f537ea9acccaed7922349)
+Maven home: /opt/homebrew/Cellar/maven/3.9.15/libexec
+Java version: 17.0.17, vendor: Oracle Corporation, runtime: /Users/jiangyuan/dev/jdk-17.0.17.jdk/Contents/Home
+Default locale: zh_CN_#Hans, platform encoding: UTF-8
+OS name: "mac os x", version: "15.6.1", arch: "aarch64", family: "mac"
+cmake version 4.2.1
+
+CMake suite maintained and supported by Kitware (kitware.com/cmake).
+Build generated code
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C script
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C proto
+bash /Users/jiangyuan/open/doris/gensrc/script/gen_build_version.sh
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C thrift
+make[1]: Nothing to be done for `all'.
+/Users/jiangyuan/open/doris/thirdparty/installed/bin/thrift -I /Users/jiangyuan/open/doris/gensrc/thrift -I /Users/jiangyuan/open/doris/gensrc/thrift/../build//thrift/ --gen cpp:moveable_types,no_skeleton -out /Users/jiangyuan/open/doris/gensrc/thrift/../build//gen_cpp --allow-64bit-consts -strict /Users/jiangyuan/open/doris/gensrc/thrift/MasterService.thrift
+Done
+10.9.8
+Build Frontend UI
+npm warn deprecated eslint@9.39.2: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+
+added 379 packages in 6s
+
+75 packages are looking for funding
+  run `npm fund` for details
+
+> @apache-doris/ui@0.1.0 build
+> tsc -b && vite build
+
+vite v8.2.1 building client environment for production...
+transforming...
+✓ 1844 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                                   2.19 kB │ gzip:   1.09 kB
+dist/assets/profileParser.worker-B04BSS88.js     14.92 kB
+dist/assets/QueryProfilesPage-DLioOiRN.css       15.41 kB │ gzip:   2.56 kB
+dist/assets/index-YEstbvHi.css                   27.46 kB │ gzip:   6.19 kB
+dist/assets/rolldown-runtime-Dd_uD5pT.js          1.10 kB │ gzip:   0.62 kB
+dist/assets/QueryProfilesPage-Ce45CyZ1.js       198.47 kB │ gzip:  64.14 kB
+dist/assets/PlaygroundPage-B41APz2D.js          721.07 kB │ gzip: 224.24 kB
+dist/assets/index-DSqCpSPh.js                 1,076.53 kB │ gzip: 342.97 kB
+dist/assets/elk.bundled-CHA7LmpY.js           1,432.42 kB │ gzip: 441.77 kB
+
+✓ built in 648ms
+[plugin builtin:vite-reporter] 
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+ui dist: /Users/jiangyuan/open/doris/ui/dist
+Build Frontend Modules: fe-extension-spi,fe-extension-loader,fe-core,fe-filesystem/fe-filesystem-api,fe-filesystem/fe-filesystem-spi,fe-filesystem/fe-filesystem-s3-base,fe-filesystem/fe-filesystem-s3,fe-filesystem/fe-filesystem-gcs,fe-filesystem/fe-filesystem-minio,fe-filesystem/fe-filesystem-ozone,fe-filesystem/fe-filesystem-oss,fe-filesystem/fe-filesystem-cos,fe-filesystem/fe-filesystem-obs,fe-filesystem/fe-filesystem-azure,fe-filesystem/fe-filesystem-hdfs-base,fe-filesystem/fe-filesystem-hdfs,fe-filesystem/fe-filesystem-oss-hdfs,fe-filesystem/fe-filesystem-jfs,fe-filesystem/fe-filesystem-local,fe-filesystem/fe-filesystem-broker,fe-filesystem/fe-filesystem-http,fe-connector/fe-connector-spi,fe-connector/fe-connector-es,fe-connector/fe-connector-jdbc,fe-connector/fe-connector-maxcompute,fe-connector/fe-connector-trino,fe-connector/fe-connector-hms,fe-connector/fe-connector-hive,fe-connector/fe-connector-paimon,fe-connector/fe-connector-hudi,fe-connector/fe-connector-iceberg,fe-connector/fe-connector-adbc,fe-authorization/fe-authorization-plugins/fe-authorization-plugin-ranger-doris,fe-authorization/fe-authorization-plugins/fe-authorization-plugin-ranger-hive,hive-udf,be-java-extensions/iceberg-metadata-scanner,be-java-extensions/hadoop-hudi-scanner,be-java-extensions/java-udf,be-java-extensions/jdbc-scanner,be-java-extensions/paimon-scanner,be-java-extensions/trino-connector-scanner,be-java-extensions/max-compute-connector,be-java-extensions/java-writer,be-java-extensions/hadoop-deps,be-java-extensions/jni-spi,be-java-extensions/jni-bootstrap,be-java-extensions/plugin-toolkit,be-java-extensions/hive-udf-shade,be-java-extensions/hive-apache-shade
+[INFO] Scanning for projects...
+[INFO] Loading cache configuration from /Users/jiangyuan/open/doris/fe/.mvn/maven-build-cache-config.xml
+[INFO] Using XX hash algorithm for cache
+[INFO] ------------------------------------------------------------------------
+[INFO] Detecting the operating system and CPU architecture
+[INFO] ------------------------------------------------------------------------
+[INFO] os.detected.name: osx
+[INFO] os.detected.arch: aarch_64
+[INFO] os.detected.bitness: 64
+[INFO] os.detected.version: 15.6
+[INFO] os.detected.version.major: 15
+[INFO] os.detected.version.minor: 6
+[INFO] os.detected.classifier: osx-aarch_64
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Doris FE Project Parent POM                                        [pom]
+[INFO] Doris FE Foundation                                                [jar]
+[INFO] Doris FE Kerberos                                                  [jar]
+[INFO] Doris FE Common Utils                                              [jar]
+[INFO] Doris FE Trino Connector Common                                    [jar]
+[INFO] Doris FE Generated Thrift RPC                                      [jar]
+[INFO] Doris FE Catalog Type                                              [jar]
+[INFO] Doris FE Catalog API                                               [jar]
+[INFO] Doris FE Filesystem (Aggregator)                                   [pom]
+[INFO] Doris FE Filesystem API                                            [jar]
+[INFO] Doris FE Extension SPI                                             [jar]
+[INFO] Doris FE Filesystem SPI                                            [jar]
+[INFO] Doris FE Filesystem - S3 base (shared library)                     [jar]
+[INFO] Doris FE Filesystem - S3                                           [jar]
+[INFO] Doris FE Filesystem - GCS                                          [jar]
+[INFO] Doris FE Filesystem - MinIO                                        [jar]
+[INFO] Doris FE Filesystem - Ozone                                        [jar]
+[INFO] Doris FE Filesystem - OSS                                          [jar]
+[INFO] Doris FE Filesystem - Local (Testing Only)                         [jar]
+[INFO] Doris FE Filesystem - Azure                                        [jar]
+[INFO] Doris FE Filesystem - HDFS base (shared library)                   [jar]
+[INFO] Doris FE Filesystem - HDFS / ViewFS                                [jar]
+[INFO] Doris FE Filesystem - OSS-HDFS (JindoFS)                           [jar]
+[INFO] Doris FE Filesystem - JFS (JuiceFS)                                [jar]
+[INFO] Doris FE Filesystem - Broker                                       [jar]
+[INFO] Doris FE Filesystem - HTTP                                         [jar]
+[INFO] Doris FE Filesystem - OBS                                          [jar]
+[INFO] Doris FE Filesystem - COS                                          [jar]
+[INFO] Doris FE Connector (Aggregator)                                    [pom]
+[INFO] Doris FE Connector SPI                                             [jar]
+[INFO] Doris FE Connector Cache Framework                                 [jar]
+[INFO] Doris FE Connector Metastore API                                   [jar]
+[INFO] Doris FE Connector Metastore SPI                                   [jar]
+[INFO] Doris FE Connector Metastore Paimon                                [jar]
+[INFO] Doris FE Connector Metastore Iceberg                               [jar]
+[INFO] Doris FE Connector Metastore HMS                                   [jar]
+[INFO] Doris FE Connector - Elasticsearch                                 [jar]
+[INFO] Doris FE Connector - Trino Connector                               [jar]
+[INFO] Doris FE Connector - MaxCompute                                    [jar]
+[INFO] Doris FE Connector - JDBC                                          [jar]
+[INFO] Doris FE Connector - ADBC                                          [jar]
+[INFO] Doris FE Connector - HMS Hive Shade                                [jar]
+[INFO] Doris FE Connector - HMS Shared Library                            [jar]
+[INFO] Doris FE Connector - Hive                                          [jar]
+[INFO] Doris FE Connector - Paimon Hive Shade                             [jar]
+[INFO] Doris FE Connector - Paimon                                        [jar]
+[INFO] Doris FE Connector - Hudi                                          [jar]
+[INFO] Doris FE Connector - Iceberg                                       [jar]
+[INFO] Doris FE Extension Loader                                          [jar]
+[INFO] Doris FE SQL Parser                                                [jar]
+[INFO] be-java-extensions                                                 [pom]
+[INFO] Doris BE libhdfs Runtime                                           [jar]
+[INFO] Doris FE GRPC                                                      [jar]
+[INFO] Doris FE Authentication                                            [pom]
+[INFO] Doris FE Authentication API                                        [jar]
+[INFO] Doris FE Authentication SPI                                        [jar]
+[INFO] Doris FE Authentication Role Mapping                               [jar]
+[INFO] Doris FE Authentication Plugins                                    [pom]
+[INFO] Doris FE - Authentication Plugin - Password                        [jar]
+[INFO] Doris FE Authentication Handler                                    [jar]
+[INFO] Doris FE Authorization                                             [pom]
+[INFO] Doris FE Authorization API                                         [jar]
+[INFO] Doris FE Authorization SPI                                         [jar]
+[INFO] Doris FE Authorization Plugins                                     [pom]
+[INFO] Doris FE Authorization Plugin - Ranger Common                      [jar]
+[INFO] Doris FE Authorization Plugin - Ranger Doris                       [jar]
+[INFO] Doris FE Authorization Plugin - Ranger Hive                        [jar]
+[INFO] Doris FE Core                                                      [jar]
+[INFO] hive-udf                                                           [jar]
+[INFO] Doris BE JNI Plugin SPI                                            [jar]
+[INFO] Doris BE JNI Plugin Bootstrap                                      [jar]
+[INFO] Doris BE Plugin Toolkit                                            [jar]
+[INFO] Doris BE iceberg Plugin                                            [jar]
+[INFO] Doris BE Java Extensions - Hive Apache Shade                       [jar]
+[INFO] Doris BE hudi Plugin                                               [jar]
+[INFO] Doris BE Java Extensions - Hive UDF Contract Shade                 [jar]
+[INFO] Doris BE java-udf Plugin                                           [jar]
+[INFO] Doris BE jdbc Plugin                                               [jar]
+[INFO] Doris BE paimon Plugin                                             [jar]
+[INFO] Doris BE max-compute Plugin                                        [jar]
+[INFO] Doris BE trino-connector Plugin                                    [jar]
+[INFO] Doris BE java-writer Plugin                                        [jar]
+[INFO] 
+[INFO] Using the MultiThreadedBuilder implementation with a thread count of 11
+[INFO] 
+[INFO] ------------------------< org.apache.doris:fe >-------------------------
+[INFO] Building Doris FE Project Parent POM 1.2-SNAPSHOT                 [1/82]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[WARNING] *****************************************************************
+[WARNING] * Your build is requesting parallel execution, but this         *
+[WARNING] * project contains the following plugin(s) that have goals not  *
+[WARNING] * marked as thread-safe to support parallel execution.          *
+[WARNING] * While this /may/ work fine, please look for plugin updates    *
+[WARNING] * and/or request plugins be made thread-safe.                   *
+[WARNING] * If reporting an issue, report it against the plugin in        *
+[WARNING] * question, not against Apache Maven.                           *
+[WARNING] *****************************************************************
+[WARNING] The following plugins are not marked as thread-safe in Doris FE Project Parent POM:
+[WARNING]   org.commonjava.maven.plugins:directory-maven-plugin:0.1
+[WARNING] 
+[WARNING] Enable debug to see precisely which goals are not marked as thread-safe.
+[WARNING] *****************************************************************
+[INFO] Cache is INITIALIZED on project level for org.apache.doris:fe
+[INFO] Going to calculate checksum for project [groupId=org.apache.doris, artifactId=fe, version=1.2-SNAPSHOT]
+[INFO] Project inputs calculated in 10 ms. XX checksum [2153dd52bbc2d3e0] calculated in 4 ms.
+[INFO] Attempting to restore project org.apache.doris:fe from build cache
+[INFO] Local build was not found by checksum 2153dd52bbc2d3e0 for org.apache.doris:fe
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven-version) @ fe ---
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-api/3.6.2/enforcer-api-3.6.2.jar
+Progress (1): 0.9/15 kBProgress (1): 2.3/15 kBProgress (1): 3.6/15 kBProgress (1): 5.0/15 kBProgress (1): 6.4/15 kBProgress (1): 7.7/15 kBProgress (1): 9.1/15 kBProgress (1): 10/15 kB Progress (1): 12/15 kBProgress (1): 13/15 kBProgress (1): 15/15 kBProgress (1): 15 kB                      Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-api/3.6.2/enforcer-api-3.6.2.jar (15 kB at 17 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-rules/3.6.2/enforcer-rules-3.6.2.jar
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-util/1.9.23/maven-resolver-util-1.9.23.jar
+Progress (1): 0.9/196 kBProgress (1): 2.3/196 kBProgress (1): 3.6/196 kBProgress (1): 5.0/196 kBProgress (1): 6.4/196 kBProgress (1): 7.7/196 kBProgress (1): 9.1/196 kBProgress (1): 10/196 kB Progress (1): 12/196 kBProgress (1): 13/196 kBProgress (1): 15/196 kBProgress (1): 16/196 kBProgress (1): 17/196 kBProgress (1): 19/196 kBProgress (1): 20/196 kBProgress (1): 21/196 kBProgress (1): 23/196 kBProgress (1): 24/196 kBProgress (1): 26/196 kBProgress (1): 27/196 kBProgress (1): 28/196 kBProgress (1): 30/196 kBProgress (1): 31/196 kBProgress (1): 32/196 kBProgress (1): 34/196 kBProgress (1): 35/196 kBProgress (1): 36/196 kBProgress (1): 38/196 kBProgress (1): 39/196 kBProgress (1): 43/196 kBProgress (1): 48/196 kBProgress (1): 52/196 kBProgress (1): 56/196 kBProgress (1): 60/196 kBProgress (1): 65/196 kBProgress (1): 69/196 kBProgress (1): 73/196 kBProgress (1): 77/196 kBProgress (1): 82/196 kBProgress (1): 86/196 kBProgress (1): 90/196 kBProgress (1): 94/196 kBProgress (1): 98/196 kBProgress (1): 103/196 kBProgress (1): 107/196 kBProgress (1): 111/196 kBProgress (1): 115/196 kBProgress (1): 120/196 kBProgress (1): 122/196 kBProgress (1): 127/196 kBProgress (1): 131/196 kBProgress (1): 135/196 kBProgress (1): 139/196 kBProgress (1): 144/196 kBProgress (1): 148/196 kBProgress (1): 152/196 kBProgress (1): 156/196 kBProgress (1): 160/196 kBProgress (1): 165/196 kBProgress (1): 169/196 kBProgress (1): 173/196 kBProgress (1): 177/196 kBProgress (1): 182/196 kBProgress (2): 182/196 kB | 0.9/152 kBProgress (2): 182/196 kB | 2.3/152 kBProgress (2): 182/196 kB | 3.6/152 kBProgress (2): 182/196 kB | 5.0/152 kBProgress (2): 182/196 kB | 6.4/152 kBProgress (2): 182/196 kB | 7.3/152 kBProgress (2): 182/196 kB | 8.6/152 kBProgress (2): 182/196 kB | 10/152 kB Progress (2): 182/196 kB | 11/152 kBProgress (2): 182/196 kB | 13/152 kBProgress (2): 182/196 kB | 14/152 kBProgress (2): 182/196 kB | 15/152 kBProgress (2): 182/196 kB | 17/152 kBProgress (2): 182/196 kB | 18/152 kBProgress (2): 182/196 kB | 20/152 kBProgress (2): 182/196 kB | 21/152 kBProgress (2): 182/196 kB | 22/152 kBProgress (2): 182/196 kB | 24/152 kBProgress (2): 182/196 kB | 25/152 kBProgress (2): 182/196 kB | 26/152 kBProgress (2): 182/196 kB | 28/152 kBProgress (2): 182/196 kB | 29/152 kBProgress (2): 182/196 kB | 31/152 kBProgress (2): 182/196 kB | 32/152 kBProgress (2): 182/196 kB | 33/152 kBProgress (2): 182/196 kB | 35/152 kBProgress (2): 182/196 kB | 36/152 kBProgress (2): 182/196 kB | 37/152 kBProgress (2): 182/196 kB | 39/152 kBProgress (2): 182/196 kB | 40/152 kBProgress (2): 182/196 kB | 41/152 kBProgress (2): 182/196 kB | 43/152 kBProgress (2): 182/196 kB | 44/152 kBProgress (2): 182/196 kB | 46/152 kBProgress (2): 182/196 kB | 47/152 kBProgress (2): 182/196 kB | 48/152 kBProgress (2): 182/196 kB | 50/152 kBProgress (2): 182/196 kB | 51/152 kBProgress (2): 182/196 kB | 52/152 kBProgress (2): 182/196 kB | 54/152 kBProgress (2): 186/196 kB | 54/152 kBProgress (2): 186/196 kB | 55/152 kBProgress (2): 190/196 kB | 55/152 kBProgress (2): 194/196 kB | 55/152 kBProgress (2): 196 kB | 55/152 kB                                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-util/1.9.23/maven-resolver-util-1.9.23.jar (196 kB at 328 kB/s)
+Progress (1): 59/152 kBProgress (1): 64/152 kBProgress (1): 68/152 kBProgress (1): 72/152 kBProgress (1): 76/152 kBProgress (1): 81/152 kBProgress (1): 85/152 kBProgress (1): 89/152 kBProgress (1): 93/152 kBProgress (1): 97/152 kBProgress (1): 102/152 kBProgress (1): 106/152 kBProgress (1): 110/152 kBProgress (1): 114/152 kBProgress (1): 119/152 kBProgress (1): 123/152 kBProgress (1): 127/152 kBProgress (1): 131/152 kBProgress (1): 136/152 kBProgress (1): 138/152 kBProgress (1): 143/152 kBProgress (1): 147/152 kBProgress (1): 151/152 kBProgress (1): 152 kB                        Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-rules/3.6.2/enforcer-rules-3.6.2.jar (152 kB at 182 kB/s)
+[INFO] Rule 0: org.apache.maven.enforcer.rules.version.RequireMavenVersion passed
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-java-version) @ fe ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.version.RequireJavaVersion passed
+[INFO] 
+[INFO] --- checkstyle:3.1.2:check (validate) @ fe ---
+[INFO] 开始检查……
+检查完成。
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- directory:0.1:directory-of (directories) @ fe ---
+[INFO] Directory of org.apache.doris:fe set to: /Users/jiangyuan/open/doris/fe
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ fe ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- site:3.12.1:attach-descriptor (attach-descriptor) @ fe ---
+[INFO] No site descriptor found: nothing to attach.
+[INFO] Saved Build to local file: /Users/jiangyuan/.m2/build-cache/v1.1/org.apache.doris/fe/2153dd52bbc2d3e0/local/buildinfo.xml
+[INFO] 
+[INFO] -------------------< org.apache.doris:fe-foundation >-------------------
+[INFO] Building Doris FE Foundation 1.2-SNAPSHOT                         [2/82]
+[INFO] 
+[INFO] ---------------------< org.apache.doris:fe-thrift >---------------------
+[INFO] Building Doris FE Generated Thrift RPC 1.2-SNAPSHOT               [3/82]
+[INFO] 
+[INFO] -------------< org.apache.doris:fe-trino-connector-common >-------------
+[INFO] Building Doris FE Trino Connector Common 1.2-SNAPSHOT             [4/82]
+[INFO]   from fe-trino-connector-common/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] -------------------< org.apache.doris:fe-filesystem >-------------------
+[INFO] Building Doris FE Filesystem (Aggregator) 1.2-SNAPSHOT            [5/82]
+[INFO]   from fe-filesystem/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO]   from fe-thrift/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] -----------------< org.apache.doris:fe-extension-spi >------------------
+[INFO] Building Doris FE Extension SPI 1.2-SNAPSHOT                      [6/82]
+[INFO]   from fe-extension-spi/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]   from fe-foundation/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] -------------------< org.apache.doris:fe-connector >--------------------
+[INFO] Building Doris FE Connector (Aggregator) 1.2-SNAPSHOT             [7/82]
+[INFO]   from fe-connector/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] -------------------< org.apache.doris:fe-sql-parser >-------------------
+[INFO] Building Doris FE SQL Parser 1.2-SNAPSHOT                         [8/82]
+[INFO]   from fe-sql-parser/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] ----------------< org.apache.doris:be-java-extensions >-----------------
+[INFO] Building be-java-extensions 1.2-SNAPSHOT                          [9/82]
+[INFO]   from be-java-extensions/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] ----------------------< org.apache.doris:fe-grpc >----------------------
+[INFO] Building Doris FE GRPC 1.2-SNAPSHOT                              [10/82]
+[WARNING] *****************************************************************
+[INFO]   from fe-grpc/pom.xml
+[WARNING] * Your build is requesting parallel execution, but this         *
+[WARNING] * project contains the following plugin(s) that have goals not  *
+[WARNING] * marked as thread-safe to support parallel execution.          *
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] -----------------< org.apache.doris:fe-authorization >------------------
+[INFO] Building Doris FE Authorization 1.2-SNAPSHOT                     [11/82]
+[WARNING] * While this /may/ work fine, please look for plugin updates    *
+[INFO] 
+[INFO]   from fe-authorization/pom.xml
+[INFO] -----------------< org.apache.doris:fe-authentication >-----------------
+[WARNING] * and/or request plugins be made thread-safe.                   *
+[INFO] Building Doris FE Authentication 1.2-SNAPSHOT                    [12/82]
+[INFO] --------------------------------[ pom ]---------------------------------
+[WARNING] * If reporting an issue, report it against the plugin in        *
+[WARNING] * question, not against Apache Maven.                           *
+[WARNING] *****************************************************************
+[WARNING] The following plugins are not marked as thread-safe in Doris FE Filesystem (Aggregator):
+[INFO]   from fe-authentication/pom.xml
+[WARNING]   org.commonjava.maven.plugins:directory-maven-plugin:0.1
+[WARNING] 
+[INFO] --------------------------------[ pom ]---------------------------------
+[WARNING] Enable debug to see precisely which goals are not marked as thread-safe.
+[WARNING] *****************************************************************
+[INFO] Cache is INITIALIZED on project level for org.apache.doris:fe-filesystem
+[INFO] Going to calculate checksum for project [groupId=org.apache.doris, artifactId=fe-filesystem, version=1.2-SNAPSHOT]
+[WARNING] *****************************************************************
+[WARNING] * Your build is requesting parallel execution, but this         *
+[WARNING] * project contains the following plugin(s) that have goals not  *
+[WARNING] * marked as thread-safe to support parallel execution.          *
+[WARNING] * While this /may/ work fine, please look for plugin updates    *
+[WARNING] * and/or request plugins be made thread-safe.                   *
+[WARNING] * If reporting an issue, report it against the plugin in        *
+[WARNING] * question, not against Apache Maven.                           *
+[WARNING] *****************************************************************
+[WARNING] The following plugins are not marked as thread-safe in Doris FE Authentication:
+[WARNING]   org.commonjava.maven.plugins:directory-maven-plugin:0.1
+[WARNING] 
+[WARNING] Enable debug to see precisely which goals are not marked as thread-safe.
+[WARNING] *****************************************************************
+[INFO] Cache is INITIALIZED on project level for org.apache.doris:fe-authentication
+[INFO] Going to calculate checksum for project [groupId=org.apache.doris, artifactId=fe-authentication, version=1.2-SNAPSHOT]
+[WARNING] *****************************************************************
+[WARNING] * Your build is requesting parallel execution, but this         *
+[WARNING] * project contains the following plugin(s) that have goals not  *
+[WARNING] * marked as thread-safe to support parallel execution.          *
+[WARNING] * While this /may/ work fine, please look for plugin updates    *
+[WARNING] * and/or request plugins be made thread-safe.                   *
+[WARNING] * If reporting an issue, report it against the plugin in        *
+[WARNING] * question, not against Apache Maven.                           *
+[WARNING] *****************************************************************
+[WARNING] The following plugins are not marked as thread-safe in Doris FE Authorization:
+[WARNING]   org.commonjava.maven.plugins:directory-maven-plugin:0.1
+[WARNING] 
+[WARNING] Enable debug to see precisely which goals are not marked as thread-safe.
+[WARNING] *****************************************************************
+[INFO] Cache is INITIALIZED on project level for org.apache.doris:fe-authorization
+[INFO] Going to calculate checksum for project [groupId=org.apache.doris, artifactId=fe-authorization, version=1.2-SNAPSHOT]
+[INFO] Project inputs calculated in 2 ms. XX checksum [917bf584e9a36138] calculated in 0 ms.
+[INFO] Attempting to restore project org.apache.doris:fe-filesystem from build cache
+[INFO] Project inputs calculated in 3 ms. XX checksum [92e94cae9085e7f4] calculated in 0 ms.
+[INFO] Attempting to restore project org.apache.doris:fe-authentication from build cache
+[INFO] Project inputs calculated in 3 ms. XX checksum [ab17918b8f7ade77] calculated in 0 ms.
+[INFO] Attempting to restore project org.apache.doris:fe-authorization from build cache
+[INFO] Local build was not found by checksum ab17918b8f7ade77 for org.apache.doris:fe-authorization
+[INFO] Local build was not found by checksum 917bf584e9a36138 for org.apache.doris:fe-filesystem
+[INFO] Local build was not found by checksum 92e94cae9085e7f4 for org.apache.doris:fe-authentication
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven-version) @ fe-authorization ---
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-java-version) @ fe-authorization ---
+[INFO] 
+[INFO] --- checkstyle:3.1.2:check (validate) @ fe-authorization ---
+[INFO] 
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven-version) @ fe-authentication ---
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven-version) @ fe-filesystem ---
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-java-version) @ fe-authentication ---
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-java-version) @ fe-filesystem ---
+[INFO] 
+[INFO] --- checkstyle:3.1.2:check (validate) @ fe-filesystem ---
+[INFO] 
+[INFO] --- checkstyle:3.1.2:check (validate) @ fe-authentication ---
+[WARNING] *****************************************************************
+[WARNING] * Your build is requesting parallel execution, but this         *
+[WARNING] * project contains the following plugin(s) that have goals not  *
+[WARNING] * marked as thread-safe to support parallel execution.          *
+[WARNING] * While this /may/ work fine, please look for plugin updates    *
+[WARNING] * and/or request plugins be made thread-safe.                   *
+[WARNING] * If reporting an issue, report it against the plugin in        *
+[WARNING] * question, not against Apache Maven.                           *
+[WARNING] *****************************************************************
+[WARNING] The following plugins are not marked as thread-safe in Doris FE Connector (Aggregator):
+[WARNING]   org.commonjava.maven.plugins:directory-maven-plugin:0.1
+[WARNING] 
+[WARNING] Enable debug to see precisely which goals are not marked as thread-safe.
+[WARNING] *****************************************************************
+[INFO] Cache is INITIALIZED on project level for org.apache.doris:fe-connector
+[INFO] Going to calculate checksum for project [groupId=org.apache.doris, artifactId=fe-connector, version=1.2-SNAPSHOT]
+[INFO] Project inputs calculated in 1 ms. XX checksum [69036505f290f180] calculated in 0 ms.
+[INFO] Attempting to restore project org.apache.doris:fe-connector from build cache
+[INFO] Local build was not found by checksum 69036505f290f180 for org.apache.doris:fe-connector
+[WARNING] *****************************************************************
+[WARNING] * Your build is requesting parallel execution, but this         *
+[WARNING] * project contains the following plugin(s) that have goals not  *
+[WARNING] * marked as thread-safe to support parallel execution.          *
+[WARNING] * While this /may/ work fine, please look for plugin updates    *
+[WARNING] * and/or request plugins be made thread-safe.                   *
+[WARNING] * If reporting an issue, report it against the plugin in        *
+[WARNING] * question, not against Apache Maven.                           *
+[WARNING] *****************************************************************
+[WARNING] The following plugins are not marked as thread-safe in be-java-extensions:
+[WARNING]   org.commonjava.maven.plugins:directory-maven-plugin:0.1
+[WARNING] 
+[WARNING] Enable debug to see precisely which goals are not marked as thread-safe.
+[WARNING] *****************************************************************
+[INFO] Cache is INITIALIZED on project level for org.apache.doris:be-java-extensions
+[INFO] Going to calculate checksum for project [groupId=org.apache.doris, artifactId=be-java-extensions, version=1.2-SNAPSHOT]
+[INFO] Project inputs calculated in 2 ms. XX checksum [25be24de97ae0fa6] calculated in 0 ms.
+[INFO] Attempting to restore project org.apache.doris:be-java-extensions from build cache
+[INFO] Local build was not found by checksum 25be24de97ae0fa6 for org.apache.doris:be-java-extensions
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven-version) @ be-java-extensions ---
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven-version) @ fe-connector ---
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-java-version) @ be-java-extensions ---
+[INFO] 
+[INFO] --- checkstyle:3.1.2:check (validate) @ be-java-extensions ---
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-java-version) @ fe-connector ---
+[INFO] 
+[INFO] --- checkstyle:3.1.2:check (validate) @ fe-connector ---
+[WARNING] *****************************************************************
+[WARNING] * Your build is requesting parallel execution, but this         *
+[WARNING] * project contains the following plugin(s) that have goals not  *
+[WARNING] * marked as thread-safe to support parallel execution.          *
+[WARNING] * While this /may/ work fine, please look for plugin updates    *
+[WARNING] * and/or request plugins be made thread-safe.                   *
+[WARNING] * If reporting an issue, report it against the plugin in        *
+[WARNING] * question, not against Apache Maven.                           *
+[WARNING] *****************************************************************
+[WARNING] The following plugins are not marked as thread-safe in Doris FE SQL Parser:
+[WARNING]   org.commonjava.maven.plugins:directory-maven-plugin:0.1
+[WARNING] 
+[WARNING] Enable debug to see precisely which goals are not marked as thread-safe.
+[WARNING] *****************************************************************
+[INFO] Cache is INITIALIZED on project level for org.apache.doris:fe-sql-parser
+[INFO] Going to calculate checksum for project [groupId=org.apache.doris, artifactId=fe-sql-parser, version=1.2-SNAPSHOT]
+[WARNING] *****************************************************************
+[WARNING] * Your build is requesting parallel execution, but this         *
+[WARNING] * project contains the following plugin(s) that have goals not  *
+[WARNING] * marked as thread-safe to support parallel execution.          *
+[WARNING] * While this /may/ work fine, please look for plugin updates    *
+[WARNING] * and/or request plugins be made thread-safe.                   *
+[WARNING] * If reporting an issue, report it against the plugin in        *
+[WARNING] * question, not against Apache Maven.                           *
+[WARNING] *****************************************************************
+[WARNING] The following plugins are not marked as thread-safe in Doris FE Extension SPI:
+[WARNING]   org.commonjava.maven.plugins:directory-maven-plugin:0.1
+[WARNING] 
+[WARNING] Enable debug to see precisely which goals are not marked as thread-safe.
+[WARNING] *****************************************************************
+[INFO] Cache is INITIALIZED on project level for org.apache.doris:fe-extension-spi
+[INFO] Going to calculate checksum for project [groupId=org.apache.doris, artifactId=fe-extension-spi, version=1.2-SNAPSHOT]
+[WARNING] *****************************************************************
+[WARNING] * Your build is requesting parallel execution, but this         *
+[WARNING] * project contains the following plugin(s) that have goals not  *
+[WARNING] * marked as thread-safe to support parallel execution.          *
+[WARNING] * While this /may/ work fine, please look for plugin updates    *
+[WARNING] * and/or request plugins be made thread-safe.                   *
+[WARNING] * If reporting an issue, report it against the plugin in        *
+[WARNING] * question, not against Apache Maven.                           *
+[WARNING] *****************************************************************
+[WARNING] The following plugins are not marked as thread-safe in Doris FE GRPC:
+[WARNING]   org.commonjava.maven.plugins:directory-maven-plugin:0.1
+[WARNING]   com.github.os72:protoc-jar-maven-plugin:3.11.4
+[WARNING] 
+[WARNING] Enable debug to see precisely which goals are not marked as thread-safe.
+[WARNING] *****************************************************************
+[INFO] Cache is INITIALIZED on project level for org.apache.doris:fe-grpc
+[INFO] Going to calculate checksum for project [groupId=org.apache.doris, artifactId=fe-grpc, version=1.2-SNAPSHOT]
+[WARNING] *****************************************************************
+[WARNING] * Your build is requesting parallel execution, but this         *
+[WARNING] * project contains the following plugin(s) that have goals not  *
+[WARNING] * marked as thread-safe to support parallel execution.          *
+[WARNING] * While this /may/ work fine, please look for plugin updates    *
+[WARNING] * and/or request plugins be made thread-safe.                   *
+[WARNING] * If reporting an issue, report it against the plugin in        *
+[WARNING] * question, not against Apache Maven.                           *
+[WARNING] *****************************************************************
+[WARNING] The following plugins are not marked as thread-safe in Doris FE Trino Connector Common:
+[WARNING]   org.commonjava.maven.plugins:directory-maven-plugin:0.1
+[WARNING] 
+[WARNING] Enable debug to see precisely which goals are not marked as thread-safe.
+[WARNING] *****************************************************************
+[INFO] Cache is INITIALIZED on project level for org.apache.doris:fe-trino-connector-common
+[INFO] Going to calculate checksum for project [groupId=org.apache.doris, artifactId=fe-trino-connector-common, version=1.2-SNAPSHOT]
+[WARNING] *****************************************************************
+[WARNING] * Your build is requesting parallel execution, but this         *
+[WARNING] * project contains the following plugin(s) that have goals not  *
+[WARNING] * marked as thread-safe to support parallel execution.          *
+[WARNING] * While this /may/ work fine, please look for plugin updates    *
+[WARNING] * and/or request plugins be made thread-safe.                   *
+[WARNING] * If reporting an issue, report it against the plugin in        *
+[WARNING] * question, not against Apache Maven.                           *
+[WARNING] *****************************************************************
+[WARNING] The following plugins are not marked as thread-safe in Doris FE Generated Thrift RPC:
+[WARNING]   org.apache.thrift:thrift-maven-plugin:0.10.0
+[WARNING]   org.commonjava.maven.plugins:directory-maven-plugin:0.1
+[WARNING] 
+[WARNING] Enable debug to see precisely which goals are not marked as thread-safe.
+[WARNING] *****************************************************************
+[INFO] Cache is INITIALIZED on project level for org.apache.doris:fe-thrift
+[INFO] Going to calculate checksum for project [groupId=org.apache.doris, artifactId=fe-thrift, version=1.2-SNAPSHOT]
+[WARNING] *****************************************************************
+[WARNING] * Your build is requesting parallel execution, but this         *
+[WARNING] * project contains the following plugin(s) that have goals not  *
+[WARNING] * marked as thread-safe to support parallel execution.          *
+[WARNING] * While this /may/ work fine, please look for plugin updates    *
+[WARNING] * and/or request plugins be made thread-safe.                   *
+[WARNING] * If reporting an issue, report it against the plugin in        *
+[WARNING] * question, not against Apache Maven.                           *
+[WARNING] *****************************************************************
+[WARNING] The following plugins are not marked as thread-safe in Doris FE Foundation:
+[WARNING]   org.commonjava.maven.plugins:directory-maven-plugin:0.1
+[WARNING] 
+[WARNING] Enable debug to see precisely which goals are not marked as thread-safe.
+[WARNING] *****************************************************************
+[INFO] Cache is INITIALIZED on project level for org.apache.doris:fe-foundation
+[INFO] Going to calculate checksum for project [groupId=org.apache.doris, artifactId=fe-foundation, version=1.2-SNAPSHOT]
+[INFO] Scanning plugins configurations to find input files. Probing is enabled, values will be checked for presence in file system
+[INFO] 开始检查……
+检查完成。
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- directory:0.1:directory-of (directories) @ fe-authorization ---
+[INFO] Directory of org.apache.doris:fe set to: /Users/jiangyuan/open/doris/fe
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ fe-authorization ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Found 44 input files. Project dir processing: 53, plugins: 34 millis
+[INFO] Scanning plugins configurations to find input files. Probing is enabled, values will be checked for presence in file system
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] Scanning plugins configurations to find input files. Probing is enabled, values will be checked for presence in file system
+[INFO] Found 45 input files. Project dir processing: 100, plugins: 1 millis
+[INFO] Found 47 input files. Project dir processing: 98, plugins: 4 millis
+[INFO] Scanning plugins configurations to find input files. Probing is enabled, values will be checked for presence in file system
+[INFO] Found 45 input files. Project dir processing: 103, plugins: 4 millis
+[INFO] 开始检查……
+检查完成。
+[INFO] You have 0 Checkstyle violations.
+[INFO] 开始检查……
+检查完成。
+[INFO] 
+[INFO] --- directory:0.1:directory-of (directories) @ fe-authentication ---
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- directory:0.1:directory-of (directories) @ fe-filesystem ---
+[INFO] Directory of org.apache.doris:fe set to: /Users/jiangyuan/open/doris/fe
+[INFO] Directory of org.apache.doris:fe set to: /Users/jiangyuan/open/doris/fe
+[INFO] 
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ fe-filesystem ---
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ fe-authentication ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 开始检查……
+检查完成。
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- exec:3.1.0:exec (check-fe-connector-imports) @ fe-connector ---
+[INFO] 开始检查……
+检查完成。
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- directory:0.1:directory-of (directories) @ be-java-extensions ---
+[INFO] Directory of org.apache.doris:fe set to: /Users/jiangyuan/open/doris/fe
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ be-java-extensions ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- site:3.12.1:attach-descriptor (attach-descriptor) @ fe-authorization ---
+[INFO] No site descriptor found: nothing to attach.
+[INFO] Saved Build to local file: /Users/jiangyuan/.m2/build-cache/v1.1/org.apache.doris/fe-authorization/ab17918b8f7ade77/local/buildinfo.xml
+[INFO] 
+[INFO] --- site:3.12.1:attach-descriptor (attach-descriptor) @ fe-filesystem ---
+[INFO] No site descriptor found: nothing to attach.
+[INFO] 
+[INFO] ---------------< org.apache.doris:fe-authorization-api >----------------
+[INFO] Building Doris FE Authorization API 1.2-SNAPSHOT                 [13/82]
+[INFO]   from fe-authorization/fe-authorization-api/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] *****************************************************************
+[WARNING] * Your build is requesting parallel execution, but this         *
+[WARNING] * project contains the following plugin(s) that have goals not  *
+[WARNING] * marked as thread-safe to support parallel execution.          *
+[WARNING] * While this /may/ work fine, please look for plugin updates    *
+[WARNING] * and/or request plugins be made thread-safe.                   *
+[WARNING] * If reporting an issue, report it against the plugin in        *
+[WARNING] * question, not against Apache Maven.                           *
+[WARNING] *****************************************************************
+[WARNING] The following plugins are not marked as thread-safe in Doris FE Authorization API:
+[WARNING]   org.commonjava.maven.plugins:directory-maven-plugin:0.1
+[WARNING] 
+[WARNING] Enable debug to see precisely which goals are not marked as thread-safe.
+[WARNING] *****************************************************************
+[INFO] Cache is INITIALIZED on project level for org.apache.doris:fe-authorization-api
+[INFO] Going to calculate checksum for project [groupId=org.apache.doris, artifactId=fe-authorization-api, version=1.2-SNAPSHOT]
+[INFO] Project inputs calculated in 104 ms. XX checksum [522e8d496c251fbf] calculated in 176 ms.
+[INFO] Attempting to restore project org.apache.doris:fe-trino-connector-common from build cache
+[INFO] Saved Build to local file: /Users/jiangyuan/.m2/build-cache/v1.1/org.apache.doris/fe-filesystem/917bf584e9a36138/local/buildinfo.xml
+[INFO] 
+[INFO] -------------< org.apache.doris:fe-authorization-plugins >--------------
+[INFO] Building Doris FE Authorization Plugins 1.2-SNAPSHOT             [14/82]
+[INFO]   from fe-authorization/fe-authorization-plugins/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[WARNING] *****************************************************************
+[WARNING] * Your build is requesting parallel execution, but this         *
+[WARNING] * project contains the following plugin(s) that have goals not  *
+[WARNING] * marked as thread-safe to support parallel execution.          *
+[WARNING] * While this /may/ work fine, please look for plugin updates    *
+[WARNING] * and/or request plugins be made thread-safe.                   *
+[WARNING] * If reporting an issue, report it against the plugin in        *
+[WARNING] * question, not against Apache Maven.                           *
+[WARNING] *****************************************************************
+[WARNING] The following plugins are not marked as thread-safe in Doris FE Authorization Plugins:
+[WARNING]   org.commonjava.maven.plugins:directory-maven-plugin:0.1
+[WARNING] 
+[WARNING] Enable debug to see precisely which goals are not marked as thread-safe.
+[WARNING] *****************************************************************
+[INFO] Cache is INITIALIZED on project level for org.apache.doris:fe-authorization-plugins
+[INFO] Going to calculate checksum for project [groupId=org.apache.doris, artifactId=fe-authorization-plugins, version=1.2-SNAPSHOT]
+[INFO] Local build was not found by checksum 522e8d496c251fbf for org.apache.doris:fe-trino-connector-common
+[INFO] Project inputs calculated in 1 ms. XX checksum [25404b1af6f2c038] calculated in 0 ms.
+[INFO] Attempting to restore project org.apache.doris:fe-authorization-plugins from build cache
+[INFO] Local build was not found by checksum 25404b1af6f2c038 for org.apache.doris:fe-authorization-plugins
+[INFO] Project inputs calculated in 108 ms. XX checksum [70d7812601dd1db6] calculated in 180 ms.
+[INFO] Attempting to restore project org.apache.doris:fe-extension-spi from build cache
+[INFO] Local build was not found by checksum 70d7812601dd1db6 for org.apache.doris:fe-extension-spi
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven-version) @ fe-authorization-plugins ---
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-java-version) @ fe-authorization-plugins ---
+[INFO] 
+[INFO] --- checkstyle:3.1.2:check (validate) @ fe-authorization-plugins ---
+[INFO] 
+[INFO] --- site:3.12.1:attach-descriptor (attach-descriptor) @ fe-authentication ---
+[INFO] 
+[INFO] --- clean:3.2.0:clean (wipe-plugin-lib) @ be-java-extensions ---
+[INFO] No site descriptor found: nothing to attach.
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven-version) @ fe-extension-spi ---
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-java-version) @ fe-extension-spi ---
+[INFO] 
+[INFO] --- checkstyle:3.1.2:check (validate) @ fe-extension-spi ---
+[INFO] Saved Build to local file: /Users/jiangyuan/.m2/build-cache/v1.1/org.apache.doris/fe-authentication/92e94cae9085e7f4/local/buildinfo.xml
+[INFO] 
+[INFO] ---------------< org.apache.doris:fe-authentication-api >---------------
+[INFO] Building Doris FE Authentication API 1.2-SNAPSHOT                [15/82]
+[INFO]   from fe-authentication/fe-authentication-api/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] *****************************************************************
+[WARNING] * Your build is requesting parallel execution, but this         *
+[WARNING] * project contains the following plugin(s) that have goals not  *
+[WARNING] * marked as thread-safe to support parallel execution.          *
+[WARNING] * While this /may/ work fine, please look for plugin updates    *
+[WARNING] * and/or request plugins be made thread-safe.                   *
+[WARNING] * If reporting an issue, report it against the plugin in        *
+[WARNING] * question, not against Apache Maven.                           *
+[WARNING] *****************************************************************
+[WARNING] The following plugins are not marked as thread-safe in Doris FE Authentication API:
+[WARNING]   org.commonjava.maven.plugins:directory-maven-plugin:0.1
+[WARNING] 
+[WARNING] Enable debug to see precisely which goals are not marked as thread-safe.
+[WARNING] *****************************************************************
+[INFO] Cache is INITIALIZED on project level for org.apache.doris:fe-authentication-api
+[INFO] Going to calculate checksum for project [groupId=org.apache.doris, artifactId=fe-authentication-api, version=1.2-SNAPSHOT]
+[INFO] Scanning plugins configurations to find input files. Probing is enabled, values will be checked for presence in file system
+[INFO] Found 18 input files. Project dir processing: 67, plugins: 2 millis
+[INFO] 
+[INFO] --- site:3.12.1:attach-descriptor (attach-descriptor) @ be-java-extensions ---
+[INFO] No site descriptor found: nothing to attach.
+[INFO] Project inputs calculated in 109 ms. XX checksum [cf580ddbe7563619] calculated in 254 ms.
+[INFO] Attempting to restore project org.apache.doris:fe-thrift from build cache
+[INFO] Local build was not found by checksum cf580ddbe7563619 for org.apache.doris:fe-thrift
+[INFO] Saved Build to local file: /Users/jiangyuan/.m2/build-cache/v1.1/org.apache.doris/be-java-extensions/25be24de97ae0fa6/local/buildinfo.xml
+[INFO] 
+[INFO] -------------< org.apache.doris:fe-authentication-plugins >-------------
+[INFO] Building Doris FE Authentication Plugins 1.2-SNAPSHOT            [16/82]
+[INFO]   from fe-authentication/fe-authentication-plugins/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[WARNING] *****************************************************************
+[WARNING] * Your build is requesting parallel execution, but this         *
+[WARNING] * project contains the following plugin(s) that have goals not  *
+[WARNING] * marked as thread-safe to support parallel execution.          *
+[WARNING] * While this /may/ work fine, please look for plugin updates    *
+[WARNING] * and/or request plugins be made thread-safe.                   *
+[WARNING] * If reporting an issue, report it against the plugin in        *
+[WARNING] * question, not against Apache Maven.                           *
+[WARNING] *****************************************************************
+[WARNING] The following plugins are not marked as thread-safe in Doris FE Authentication Plugins:
+[WARNING]   org.commonjava.maven.plugins:directory-maven-plugin:0.1
+[WARNING] 
+[WARNING] Enable debug to see precisely which goals are not marked as thread-safe.
+[WARNING] *****************************************************************
+[INFO] Cache is INITIALIZED on project level for org.apache.doris:fe-authentication-plugins
+[INFO] Going to calculate checksum for project [groupId=org.apache.doris, artifactId=fe-authentication-plugins, version=1.2-SNAPSHOT]
+[INFO] Project inputs calculated in 1 ms. XX checksum [bc6058dfe762fce5] calculated in 0 ms.
+[INFO] Attempting to restore project org.apache.doris:fe-authentication-plugins from build cache
+[INFO] Local build was not found by checksum bc6058dfe762fce5 for org.apache.doris:fe-authentication-plugins
+[INFO] Project inputs calculated in 89 ms. XX checksum [106c9dae3ce160b6] calculated in 311 ms.
+[INFO] Attempting to restore project org.apache.doris:fe-grpc from build cache
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven-version) @ fe-authentication-plugins ---
+[INFO] Local build was not found by checksum 106c9dae3ce160b6 for org.apache.doris:fe-grpc
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-java-version) @ fe-authentication-plugins ---
+[INFO] 
+[INFO] --- checkstyle:3.1.2:check (validate) @ fe-authentication-plugins ---
+[INFO] 开始检查……
+检查完成。
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- directory:0.1:directory-of (directories) @ fe-authorization-plugins ---
+[INFO] Directory of org.apache.doris:fe set to: /Users/jiangyuan/open/doris/fe
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ fe-authorization-plugins ---
+[INFO] Project inputs calculated in 73 ms. XX checksum [02a1a130b329c879] calculated in 103 ms.
+[INFO] Attempting to restore project org.apache.doris:fe-authorization-api from build cache
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Local build was not found by checksum 02a1a130b329c879 for org.apache.doris:fe-authorization-api
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] Scanning plugins configurations to find input files. Probing is enabled, values will be checked for presence in file system
+[INFO] Found 14 input files. Project dir processing: 135, plugins: 1 millis
+[INFO] 开始检查……
+检查完成。
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- directory:0.1:directory-of (directories) @ fe-authentication-plugins ---
+[INFO] Directory of org.apache.doris:fe set to: /Users/jiangyuan/open/doris/fe
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ fe-authentication-plugins ---
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven-version) @ fe-authorization-api ---
+[INFO] Project inputs calculated in 137 ms. XX checksum [fc1abb75ec5ecb3b] calculated in 183 ms.
+[INFO] Attempting to restore project org.apache.doris:fe-authentication-api from build cache
+[INFO] Local build was not found by checksum fc1abb75ec5ecb3b for org.apache.doris:fe-authentication-api
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven-version) @ fe-thrift ---
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-java-version) @ fe-thrift ---
+[INFO] 
+[INFO] --- checkstyle:3.1.2:check (validate) @ fe-thrift ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Scanning plugins configurations to find input files. Probing is enabled, values will be checked for presence in file system
+[INFO] 
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] --- enforcer:3.6.2:enforce (enforce-java-version) @ fe-authorization-api ---
+[INFO] 
+[INFO] --- checkstyle:3.1.2:check (validate) @ fe-authorization-api ---
+[INFO] Scanning plugins configurations to find input files. Probing is enabled, values will be checked for presence in file system
+[INFO] Found 81 input files. Project dir processing: 685, plugins: 4 millis
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven-version) @ fe-authentication-api ---
+[INFO] Found 64 input files. Project dir processing: 681, plugins: 21 millis
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-java-version) @ fe-authentication-api ---
+[INFO] 
+[INFO] --- checkstyle:3.1.2:check (validate) @ fe-authentication-api ---
+[INFO] 
+[INFO] --- site:3.12.1:attach-descriptor (attach-descriptor) @ fe-authorization-plugins ---
+[INFO] No site descriptor found: nothing to attach.
+[INFO] Saved Build to local file: /Users/jiangyuan/.m2/build-cache/v1.1/org.apache.doris/fe-authorization-plugins/25404b1af6f2c038/local/buildinfo.xml
+[INFO] 
+[INFO] --------------------< org.apache.doris:hadoop-deps >--------------------
+[INFO] Building Doris BE libhdfs Runtime 1.2-SNAPSHOT                   [17/82]
+[INFO]   from be-java-extensions/hadoop-deps/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 开始检查……
+检查完成。
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- directory:0.1:directory-of (directories) @ fe-thrift ---
+[INFO] Directory of org.apache.doris:fe set to: /Users/jiangyuan/open/doris/fe
+[INFO] 
+[INFO] --- antrun:3.1.0:run (check-thrift-compiler-version) @ fe-thrift ---
+[INFO] 开始检查……
+检查完成。
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- directory:0.1:directory-of (directories) @ fe-extension-spi ---
+[INFO] Directory of org.apache.doris:fe set to: /Users/jiangyuan/open/doris/fe
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ fe-extension-spi ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[WARNING] *****************************************************************
+[WARNING] * Your build is requesting parallel execution, but this         *
+[WARNING] * project contains the following plugin(s) that have goals not  *
+[WARNING] * marked as thread-safe to support parallel execution.          *
+[WARNING] * While this /may/ work fine, please look for plugin updates    *
+[WARNING] * and/or request plugins be made thread-safe.                   *
+[WARNING] * If reporting an issue, report it against the plugin in        *
+[WARNING] * question, not against Apache Maven.                           *
+[WARNING] *****************************************************************
+[WARNING] The following plugins are not marked as thread-safe in Doris BE libhdfs Runtime:
+[WARNING]   org.commonjava.maven.plugins:directory-maven-plugin:0.1
+[WARNING] 
+[WARNING] Enable debug to see precisely which goals are not marked as thread-safe.
+[WARNING] *****************************************************************
+[INFO] Cache is INITIALIZED on project level for org.apache.doris:hadoop-deps
+[INFO] Going to calculate checksum for project [groupId=org.apache.doris, artifactId=hadoop-deps, version=1.2-SNAPSHOT]
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven-version) @ fe-grpc ---
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-java-version) @ fe-grpc ---
+[INFO] 
+[INFO] --- checkstyle:3.1.2:check (validate) @ fe-grpc ---
+[INFO] 
+[INFO] --- site:3.12.1:attach-descriptor (attach-descriptor) @ fe-authentication-plugins ---
+[INFO] No site descriptor found: nothing to attach.
+[INFO] Saved Build to local file: /Users/jiangyuan/.m2/build-cache/v1.1/org.apache.doris/fe-authentication-plugins/bc6058dfe762fce5/local/buildinfo.xml
+[INFO] 
+[INFO] ----------------------< org.apache.doris:jni-spi >----------------------
+[INFO] Building Doris BE JNI Plugin SPI 1.2-SNAPSHOT                    [18/82]
+[INFO]   from be-java-extensions/jni-spi/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] *****************************************************************
+[WARNING] * Your build is requesting parallel execution, but this         *
+[WARNING] * project contains the following plugin(s) that have goals not  *
+[WARNING] * marked as thread-safe to support parallel execution.          *
+[WARNING] * While this /may/ work fine, please look for plugin updates    *
+[WARNING] * and/or request plugins be made thread-safe.                   *
+[WARNING] * If reporting an issue, report it against the plugin in        *
+[WARNING] * question, not against Apache Maven.                           *
+[WARNING] *****************************************************************
+[WARNING] The following plugins are not marked as thread-safe in Doris BE JNI Plugin SPI:
+[WARNING]   org.commonjava.maven.plugins:directory-maven-plugin:0.1
+[WARNING] 
+[WARNING] Enable debug to see precisely which goals are not marked as thread-safe.
+[WARNING] *****************************************************************
+[INFO] Cache is INITIALIZED on project level for org.apache.doris:jni-spi
+[INFO] Going to calculate checksum for project [groupId=org.apache.doris, artifactId=jni-spi, version=1.2-SNAPSHOT]
+[INFO] Scanning plugins configurations to find input files. Probing is enabled, values will be checked for presence in file system
+[INFO] Found 2 input files. Project dir processing: 175, plugins: 1 millis
+[INFO] 开始检查……
+检查完成。
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- directory:0.1:directory-of (directories) @ fe-grpc ---
+[INFO] Project inputs calculated in 179 ms. XX checksum [aa122c3887719f86] calculated in 11 ms.
+[INFO] Attempting to restore project org.apache.doris:hadoop-deps from build cache
+[INFO] Directory of org.apache.doris:fe set to: /Users/jiangyuan/open/doris/fe
+[INFO] 
+[INFO] --- protoc-jar:3.11.4:run (default) @ fe-grpc ---
+[INFO] Local build was not found by checksum aa122c3887719f86 for org.apache.doris:hadoop-deps
+[INFO] Project inputs calculated in 707 ms. XX checksum [c0f9168e252f4ea6] calculated in 469 ms.
+[INFO] Attempting to restore project org.apache.doris:fe-sql-parser from build cache
+[INFO] Local build was not found by checksum c0f9168e252f4ea6 for org.apache.doris:fe-sql-parser
+[INFO] Project inputs calculated in 691 ms. XX checksum [6ed0550f50e39fc1] calculated in 490 ms.
+[INFO] Attempting to restore project org.apache.doris:fe-foundation from build cache
+[INFO] Local build was not found by checksum 6ed0550f50e39fc1 for org.apache.doris:fe-foundation
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven-version) @ fe-sql-parser ---
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ fe-extension-spi ---
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-java-version) @ fe-sql-parser ---
+[INFO] 
+[INFO] --- checkstyle:3.1.2:check (validate) @ fe-sql-parser ---
+[INFO] Scanning plugins configurations to find input files. Probing is enabled, values will be checked for presence in file system
+[INFO] Found 25 input files. Project dir processing: 250, plugins: 0 millis
+[INFO] Executing tasks
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven-version) @ fe-foundation ---
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-java-version) @ fe-foundation ---
+[INFO] 
+[INFO] --- checkstyle:3.1.2:check (validate) @ fe-foundation ---
+[INFO] Project inputs calculated in 253 ms. XX checksum [8b9ce6623d8817c8] calculated in 176 ms.
+[INFO] Attempting to restore project org.apache.doris:jni-spi from build cache
+[INFO] Local build was not found by checksum 8b9ce6623d8817c8 for org.apache.doris:jni-spi
+[INFO] skip non existing resourceDirectory /Users/jiangyuan/open/doris/fe/fe-extension-spi/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven-version) @ jni-spi ---
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-java-version) @ jni-spi ---
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-jni-spi-has-no-dependencies) @ jni-spi ---
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ fe-extension-spi ---
+[INFO] Skipping code generation, proto files appear unchanged since last compilation
+[INFO] Input directories:
+[INFO]     /Users/jiangyuan/open/doris/fe/fe-grpc/../../gensrc/proto
+[INFO] Adding generated sources (java): /Users/jiangyuan/open/doris/fe/fe-grpc/target/generated-sources
+[INFO] Adding generated sources (grpc-java): /Users/jiangyuan/open/doris/fe/fe-grpc/target/generated-sources
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ fe-grpc ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.dependency.BannedDependencies passed
+[INFO] 
+[INFO] --- checkstyle:3.1.2:check (validate) @ jni-spi ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Skipping Doris BE Plugin Toolkit
+[INFO] This project has been banned from the build due to previous failures.
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Skipping Doris BE Java Extensions - Hive Apache Shade
+[INFO] This project has been banned from the build due to previous failures.
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Skipping Doris BE Java Extensions - Hive UDF Contract Shade
+[INFO] This project has been banned from the build due to previous failures.
+[INFO] ------------------------------------------------------------------------
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 5 source files to /Users/jiangyuan/open/doris/fe/fe-extension-spi/target/classes
+[INFO] 开始检查……
+检查完成。
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- directory:0.1:directory-of (directories) @ fe-authentication-api ---
+[INFO] Directory of org.apache.doris:fe set to: /Users/jiangyuan/open/doris/fe
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ fe-authentication-api ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 开始检查……
+检查完成。
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- directory:0.1:directory-of (directories) @ fe-sql-parser ---
+[INFO] Directory of org.apache.doris:fe set to: /Users/jiangyuan/open/doris/fe
+[INFO] 
+[INFO] --- antlr4:4.13.1:antlr4 (antlr) @ fe-sql-parser ---
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ fe-authentication-api ---
+[INFO] skip non existing resourceDirectory /Users/jiangyuan/open/doris/fe/fe-authentication/fe-authentication-api/src/main/resources
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ fe-extension-spi ---
+[INFO] skip non existing resourceDirectory /Users/jiangyuan/open/doris/fe/fe-extension-spi/src/test/resources
+[INFO] Copying 3 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ fe-authentication-api ---
+[INFO] 
+[INFO] --- compiler:3.10.1:testCompile (default-testCompile) @ fe-extension-spi ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ fe-extension-spi ---
+[INFO] Changes detected - recompiling the module!
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ fe-grpc ---
+[INFO] skip non existing resourceDirectory /Users/jiangyuan/open/doris/fe/fe-grpc/src/main/resources
+[INFO] Copying 3 resources
+[INFO] Compiling 9 source files to /Users/jiangyuan/open/doris/fe/fe-authentication/fe-authentication-api/target/classes
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ fe-grpc ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ fe-grpc ---
+[INFO] skip non existing resourceDirectory /Users/jiangyuan/open/doris/fe/fe-grpc/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.10.1:testCompile (default-testCompile) @ fe-grpc ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ fe-grpc ---
+[INFO] 开始检查……
+检查完成。
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- directory:0.1:directory-of (directories) @ fe-authorization-api ---
+[INFO] Directory of org.apache.doris:fe set to: /Users/jiangyuan/open/doris/fe
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ fe-authorization-api ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ fe-extension-spi ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ fe-grpc ---
+[INFO] ANTLR 4: Processing source directory /Users/jiangyuan/open/doris/fe/fe-sql-parser/src/main/antlr4
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ fe-authorization-api ---
+[INFO] skip non existing resourceDirectory /Users/jiangyuan/open/doris/fe/fe-authorization/fe-authorization-api/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ fe-authorization-api ---
+[INFO] Changes detected - recompiling the module!
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ fe-authentication-api ---
+[INFO] skip non existing resourceDirectory /Users/jiangyuan/open/doris/fe/fe-authentication/fe-authentication-api/src/test/resources
+[INFO] Compiling 12 source files to /Users/jiangyuan/open/doris/fe/fe-authorization/fe-authorization-api/target/classes
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.10.1:testCompile (default-testCompile) @ fe-authentication-api ---
+[INFO] Processing grammar: org/apache/doris/nereids/DorisLexer.g4
+[INFO] Building jar: /Users/jiangyuan/open/doris/fe/fe-grpc/target/doris-fe-grpc.jar
+[INFO] Building jar: /Users/jiangyuan/open/doris/fe/fe-extension-spi/target/fe-extension-spi-1.2-SNAPSHOT.jar
+[INFO] Changes detected - recompiling the module!
+[INFO] 
+[INFO] --- site:3.12.1:attach-descriptor (attach-descriptor) @ fe-grpc ---
+[INFO] 
+[INFO] --- site:3.12.1:attach-descriptor (attach-descriptor) @ fe-extension-spi ---
+[INFO] Skipping because packaging 'jar' is not pom.
+[INFO] Skipping because packaging 'jar' is not pom.
+[INFO] Compiling 5 source files to /Users/jiangyuan/open/doris/fe/fe-authentication/fe-authentication-api/target/test-classes
+[INFO] Saved Build to local file: /Users/jiangyuan/.m2/build-cache/v1.1/org.apache.doris/fe-grpc/106c9dae3ce160b6/local/buildinfo.xml
+[INFO] Saved Build to local file: /Users/jiangyuan/.m2/build-cache/v1.1/org.apache.doris/fe-extension-spi/70d7812601dd1db6/local/buildinfo.xml
+[INFO] 开始检查……
+检查完成。
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- directory:0.1:directory-of (directories) @ fe-foundation ---
+[INFO] Directory of org.apache.doris:fe set to: /Users/jiangyuan/open/doris/fe
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ fe-foundation ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] Processing grammar: org/apache/doris/nereids/DorisParser.g4
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven-version) @ hadoop-deps ---
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-java-version) @ hadoop-deps ---
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-hadoop-version-for-patched-filesystem) @ hadoop-deps ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.property.RequireProperty passed
+[INFO] 
+[INFO] --- checkstyle:3.1.2:check (validate) @ hadoop-deps ---
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ fe-foundation ---
+[INFO] skip non existing resourceDirectory /Users/jiangyuan/open/doris/fe/fe-foundation/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ fe-foundation ---
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ fe-authorization-api ---
+[INFO] skip non existing resourceDirectory /Users/jiangyuan/open/doris/fe/fe-authorization/fe-authorization-api/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.10.1:testCompile (default-testCompile) @ fe-authorization-api ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 6 source files to /Users/jiangyuan/open/doris/fe/fe-authorization/fe-authorization-api/target/test-classes
+[INFO] 开始检查……
+检查完成。
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- directory:0.1:directory-of (directories) @ hadoop-deps ---
+[INFO] Directory of org.apache.doris:fe set to: /Users/jiangyuan/open/doris/fe
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ hadoop-deps ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] Changes detected - recompiling the module!
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.18.2-GA during dependency collection step for project (use -X to see details)
+[INFO] Compiling 24 source files to /Users/jiangyuan/open/doris/fe/fe-foundation/target/classes
+[INFO] 开始检查……
+检查完成。
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- directory:0.1:directory-of (directories) @ jni-spi ---
+[INFO] Directory of org.apache.doris:fe set to: /Users/jiangyuan/open/doris/fe
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ jni-spi ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ fe-authentication-api ---
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ fe-authentication-api ---
+[INFO] Building jar: /Users/jiangyuan/open/doris/fe/fe-authentication/fe-authentication-api/target/fe-authentication-api-1.2-SNAPSHOT.jar
+[INFO] 
+[INFO] --- site:3.12.1:attach-descriptor (attach-descriptor) @ fe-authentication-api ---
+[INFO] Skipping because packaging 'jar' is not pom.
+[INFO] Saved Build to local file: /Users/jiangyuan/.m2/build-cache/v1.1/org.apache.doris/fe-authentication-api/fc1abb75ec5ecb3b/local/buildinfo.xml
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ jni-spi ---
+[INFO] skip non existing resourceDirectory /Users/jiangyuan/open/doris/fe/be-java-extensions/jni-spi/src/main/resources
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] The encoding used to copy filtered properties files have not been set. This means that the same encoding will be used to copy filtered properties files as when copying other filtered resources. This might not be what you want! Run your build with --debug to see which files might be affected. Read more at https://maven.apache.org/plugins/maven-resources-plugin/examples/filtering-properties-files.html
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ jni-spi ---
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ fe-sql-parser ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ fe-authorization-api ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ fe-authorization-api ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Building jar: /Users/jiangyuan/open/doris/fe/fe-authorization/fe-authorization-api/target/fe-authorization-api-1.2-SNAPSHOT.jar
+[INFO] Compiling 19 source files to /Users/jiangyuan/open/doris/fe/be-java-extensions/jni-spi/target/classes
+[INFO] 
+[INFO] --- site:3.12.1:attach-descriptor (attach-descriptor) @ fe-authorization-api ---
+[INFO] Skipping because packaging 'jar' is not pom.
+[INFO] Saved Build to local file: /Users/jiangyuan/.m2/build-cache/v1.1/org.apache.doris/fe-authorization-api/02a1a130b329c879/local/buildinfo.xml
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ fe-sql-parser ---
+[INFO] skip non existing resourceDirectory /Users/jiangyuan/open/doris/fe/fe-sql-parser/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ fe-sql-parser ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 17 source files to /Users/jiangyuan/open/doris/fe/fe-sql-parser/target/classes
+[INFO] /Users/jiangyuan/open/doris/fe/fe-foundation/src/main/java/org/apache/doris/foundation/util/ConcurrentLong2LongHashMap.java: /Users/jiangyuan/open/doris/fe/fe-foundation/src/main/java/org/apache/doris/foundation/util/ConcurrentLong2LongHashMap.java使用或覆盖了已过时的 API。
+[INFO] /Users/jiangyuan/open/doris/fe/fe-foundation/src/main/java/org/apache/doris/foundation/util/ConcurrentLong2LongHashMap.java: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+[INFO] /Users/jiangyuan/open/doris/fe/fe-foundation/src/main/java/org/apache/doris/foundation/util/SerializationUtils.java: /Users/jiangyuan/open/doris/fe/fe-foundation/src/main/java/org/apache/doris/foundation/util/SerializationUtils.java使用了未经检查或不安全的操作。
+[INFO] /Users/jiangyuan/open/doris/fe/fe-foundation/src/main/java/org/apache/doris/foundation/util/SerializationUtils.java: 有关详细信息, 请使用 -Xlint:unchecked 重新编译。
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ fe-foundation ---
+[INFO] skip non existing resourceDirectory /Users/jiangyuan/open/doris/fe/fe-foundation/src/test/resources
+[INFO] Copying 3 resources
+[WARNING] /Users/jiangyuan/open/doris/fe/be-java-extensions/jni-spi/src/main/java/org/apache/doris/jni/spi/utils/OffHeap.java:[21,16] sun.misc.Unsafe是内部专用 API, 可能会在未来发行版中删除
+[WARNING] /Users/jiangyuan/open/doris/fe/be-java-extensions/jni-spi/src/main/java/org/apache/doris/jni/spi/utils/OffHeap.java:[37,25] sun.misc.Unsafe是内部专用 API, 可能会在未来发行版中删除
+[WARNING] /Users/jiangyuan/open/doris/fe/be-java-extensions/jni-spi/src/main/java/org/apache/doris/jni/spi/utils/OffHeap.java:[54,19] sun.misc.Unsafe是内部专用 API, 可能会在未来发行版中删除
+[WARNING] /Users/jiangyuan/open/doris/fe/be-java-extensions/jni-spi/src/main/java/org/apache/doris/jni/spi/utils/OffHeap.java:[57,35] sun.misc.Unsafe是内部专用 API, 可能会在未来发行版中删除
+[INFO] /Users/jiangyuan/open/doris/fe/be-java-extensions/jni-spi/src/main/java/org/apache/doris/jni/spi/utils/OffHeap.java: /Users/jiangyuan/open/doris/fe/be-java-extensions/jni-spi/src/main/java/org/apache/doris/jni/spi/utils/OffHeap.java 使用或覆盖了标记为待删除的已过时 API。
+[INFO] /Users/jiangyuan/open/doris/fe/be-java-extensions/jni-spi/src/main/java/org/apache/doris/jni/spi/utils/OffHeap.java: 有关详细信息, 请使用 -Xlint:removal 重新编译。
+[INFO] /Users/jiangyuan/open/doris/fe/be-java-extensions/jni-spi/src/main/java/org/apache/doris/jni/spi/vec/VectorColumn.java: /Users/jiangyuan/open/doris/fe/be-java-extensions/jni-spi/src/main/java/org/apache/doris/jni/spi/vec/VectorColumn.java使用了未经检查或不安全的操作。
+[INFO] /Users/jiangyuan/open/doris/fe/be-java-extensions/jni-spi/src/main/java/org/apache/doris/jni/spi/vec/VectorColumn.java: 有关详细信息, 请使用 -Xlint:unchecked 重新编译。
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ jni-spi ---
+[INFO] 
+[INFO] --- compiler:3.10.1:testCompile (default-testCompile) @ fe-foundation ---
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.10.1:testCompile (default-testCompile) @ jni-spi ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 15 source files to /Users/jiangyuan/open/doris/fe/fe-foundation/target/test-classes
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 5 source files to /Users/jiangyuan/open/doris/fe/be-java-extensions/jni-spi/target/test-classes
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven-version) @ fe-trino-connector-common ---
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-java-version) @ fe-trino-connector-common ---
+[INFO] 
+[INFO] --- checkstyle:3.1.2:check (validate) @ fe-trino-connector-common ---
+[INFO] 开始检查……
+检查完成。
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- directory:0.1:directory-of (directories) @ fe-trino-connector-common ---
+[INFO] Directory of org.apache.doris:fe set to: /Users/jiangyuan/open/doris/fe
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ fe-trino-connector-common ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ jni-spi ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- clean:3.2.0:clean (wipe-plugin-lib) @ jni-spi ---
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ jni-spi ---
+[INFO] Building jar: /Users/jiangyuan/open/doris/fe/be-java-extensions/jni-spi/target/doris-jni-spi.jar
+[INFO] 
+[INFO] --- site:3.12.1:attach-descriptor (attach-descriptor) @ jni-spi ---
+[INFO] Skipping because packaging 'jar' is not pom.
+[INFO] Saved Build to local file: /Users/jiangyuan/.m2/build-cache/v1.1/org.apache.doris/jni-spi/8b9ce6623d8817c8/local/buildinfo.xml
+[INFO] 
+[INFO] --- jar:3.3.0:test-jar (prepare-test-jar) @ fe-foundation ---
+[INFO] Building jar: /Users/jiangyuan/open/doris/fe/fe-foundation/target/doris-fe-foundation-tests.jar
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ fe-foundation ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ fe-foundation ---
+[INFO] Building jar: /Users/jiangyuan/open/doris/fe/fe-foundation/target/doris-fe-foundation.jar
+[INFO] 
+[INFO] --- site:3.12.1:attach-descriptor (attach-descriptor) @ fe-foundation ---
+[INFO] Skipping because packaging 'jar' is not pom.
+[INFO] Saved Build to local file: /Users/jiangyuan/.m2/build-cache/v1.1/org.apache.doris/fe-foundation/6ed0550f50e39fc1/local/buildinfo.xml
+check-fe-connector-imports: skipping vendored same-module import: org.apache.doris.datasource.hive.HiveVersionUtil
+check-fe-connector-imports: skipping vendored same-module import: org.apache.doris.datasource.hive.HiveVersionUtil.HiveVersion
+[INFO] 
+[INFO] --- directory:0.1:directory-of (directories) @ fe-connector ---
+[INFO] Directory of org.apache.doris:fe set to: /Users/jiangyuan/open/doris/fe
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ fe-connector ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ fe-sql-parser ---
+[INFO] skip non existing resourceDirectory /Users/jiangyuan/open/doris/fe/fe-sql-parser/src/test/resources
+[INFO] Copying 3 resources
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- compiler:3.10.1:testCompile (default-testCompile) @ fe-sql-parser ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 9 source files to /Users/jiangyuan/open/doris/fe/fe-sql-parser/target/test-classes
+[INFO] 
+[INFO] --- site:3.12.1:attach-descriptor (attach-descriptor) @ fe-connector ---
+[INFO] No site descriptor found: nothing to attach.
+[INFO] Saved Build to local file: /Users/jiangyuan/.m2/build-cache/v1.1/org.apache.doris/fe-connector/69036505f290f180/local/buildinfo.xml
+[INFO] 
+[INFO] --- jar:3.3.0:test-jar (prepare-test-jar) @ fe-sql-parser ---
+[INFO] Building jar: /Users/jiangyuan/open/doris/fe/fe-sql-parser/target/doris-fe-sql-parser-tests.jar
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ fe-sql-parser ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ fe-sql-parser ---
+[INFO] Building jar: /Users/jiangyuan/open/doris/fe/fe-sql-parser/target/doris-fe-sql-parser.jar
+[INFO] 
+[INFO] --- site:3.12.1:attach-descriptor (attach-descriptor) @ fe-sql-parser ---
+[INFO] Skipping because packaging 'jar' is not pom.
+[INFO] Saved Build to local file: /Users/jiangyuan/.m2/build-cache/v1.1/org.apache.doris/fe-sql-parser/c0f9168e252f4ea6/local/buildinfo.xml
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ fe-trino-connector-common ---
+[INFO] skip non existing resourceDirectory /Users/jiangyuan/open/doris/fe/fe-trino-connector-common/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ fe-trino-connector-common ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 3 source files to /Users/jiangyuan/open/doris/fe/fe-trino-connector-common/target/classes
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ hadoop-deps ---
+[INFO] skip non existing resourceDirectory /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ hadoop-deps ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/classes
+[INFO] /Users/jiangyuan/open/doris/fe/fe-trino-connector-common/src/main/java/org/apache/doris/trinoconnector/TrinoConnectorPluginManager.java: /Users/jiangyuan/open/doris/fe/fe-trino-connector-common/src/main/java/org/apache/doris/trinoconnector/TrinoConnectorPluginManager.java使用了未经检查或不安全的操作。
+[INFO] /Users/jiangyuan/open/doris/fe/fe-trino-connector-common/src/main/java/org/apache/doris/trinoconnector/TrinoConnectorPluginManager.java: 有关详细信息, 请使用 -Xlint:unchecked 重新编译。
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ fe-trino-connector-common ---
+[INFO] skip non existing resourceDirectory /Users/jiangyuan/open/doris/fe/fe-trino-connector-common/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.10.1:testCompile (default-testCompile) @ fe-trino-connector-common ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ fe-trino-connector-common ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ fe-trino-connector-common ---
+[INFO] Building jar: /Users/jiangyuan/open/doris/fe/fe-trino-connector-common/target/doris-fe-trino-connector-common.jar
+[INFO] 
+[INFO] --- site:3.12.1:attach-descriptor (attach-descriptor) @ fe-trino-connector-common ---
+[INFO] Skipping because packaging 'jar' is not pom.
+[INFO] Saved Build to local file: /Users/jiangyuan/.m2/build-cache/v1.1/org.apache.doris/fe-trino-connector-common/522e8d496c251fbf/local/buildinfo.xml
+[INFO] /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/src/main/java/org/apache/hadoop/fs/FileSystem.java: /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/src/main/java/org/apache/hadoop/fs/FileSystem.java使用了未经检查或不安全的操作。
+[INFO] /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/src/main/java/org/apache/hadoop/fs/FileSystem.java: 有关详细信息, 请使用 -Xlint:unchecked 重新编译。
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ hadoop-deps ---
+[INFO] skip non existing resourceDirectory /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.10.1:testCompile (default-testCompile) @ hadoop-deps ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/test-classes
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ hadoop-deps ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- clean:3.2.0:clean (wipe-plugin-lib) @ hadoop-deps ---
+[INFO] Deleting /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib (includes = [], excludes = [])
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ hadoop-deps ---
+[WARNING]  Parameter 'finalName' is read-only, must not be used in configuration
+[INFO] Building jar: /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/hadoop-deps.jar
+[INFO] 
+[INFO] --- site:3.12.1:attach-descriptor (attach-descriptor) @ hadoop-deps ---
+[INFO] Skipping because packaging 'jar' is not pom.
+[INFO] 
+[INFO] --- dependency:3.6.0:copy-dependencies (copy-dependencies) @ hadoop-deps ---
+[INFO] Copying woodstox-core-6.5.1.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/woodstox-core-6.5.1.jar
+[INFO] Copying stax2-api-4.2.1.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/stax2-api-4.2.1.jar
+[INFO] Copying commons-collections4-4.5.0.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/commons-collections4-4.5.0.jar
+[INFO] Copying commons-configuration2-2.15.1.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/commons-configuration2-2.15.1.jar
+[INFO] Copying commons-lang3-3.19.0.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/commons-lang3-3.19.0.jar
+[INFO] Copying commons-text-1.15.0.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/commons-text-1.15.0.jar
+[INFO] Copying commons-logging-1.3.6.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/commons-logging-1.3.6.jar
+[INFO] Copying commons-io-2.18.0.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/commons-io-2.18.0.jar
+[INFO] Copying hadoop-hdfs-3.4.2.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/hadoop-hdfs-3.4.2.jar
+[INFO] Copying hadoop-shaded-guava-1.2.0.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/hadoop-shaded-guava-1.2.0.jar
+[INFO] Copying jetty-server-12.0.38.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/jetty-server-12.0.38.jar
+[INFO] Copying jetty-http-12.0.38.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/jetty-http-12.0.38.jar
+[INFO] Copying jetty-io-12.0.38.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/jetty-io-12.0.38.jar
+[INFO] Copying jetty-util-12.0.38.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/jetty-util-12.0.38.jar
+[INFO] Copying jetty-util-ajax-12.0.38.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/jetty-util-ajax-12.0.38.jar
+[INFO] Copying jersey-core-1.19.4.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/jersey-core-1.19.4.jar
+[INFO] Copying jersey-server-1.19.4.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/jersey-server-1.19.4.jar
+[INFO] Copying commons-cli-1.4.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/commons-cli-1.4.jar
+[INFO] Copying commons-codec-1.13.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/commons-codec-1.13.jar
+[INFO] Copying commons-daemon-1.0.13.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/commons-daemon-1.0.13.jar
+[INFO] Copying reload4j-1.2.22.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/reload4j-1.2.22.jar
+[INFO] Copying javax.servlet-api-3.1.0.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/javax.servlet-api-3.1.0.jar
+[INFO] Copying netty-all-4.2.15.Final.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/netty-all-4.2.15.Final.jar
+[INFO] Copying netty-buffer-4.2.15.Final.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/netty-buffer-4.2.15.Final.jar
+[INFO] Copying netty-codec-base-4.2.15.Final.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/netty-codec-base-4.2.15.Final.jar
+[INFO] Copying netty-codec-4.2.15.Final.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/netty-codec-4.2.15.Final.jar
+[INFO] Copying netty-codec-dns-4.2.15.Final.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/netty-codec-dns-4.2.15.Final.jar
+[INFO] Copying netty-codec-haproxy-4.2.15.Final.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/netty-codec-haproxy-4.2.15.Final.jar
+[INFO] Copying netty-codec-compression-4.2.15.Final.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/netty-codec-compression-4.2.15.Final.jar
+[INFO] Copying netty-codec-http-4.2.15.Final.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/netty-codec-http-4.2.15.Final.jar
+[INFO] Copying netty-codec-http2-4.2.15.Final.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/netty-codec-http2-4.2.15.Final.jar
+[INFO] Copying netty-codec-http3-4.2.15.Final.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/netty-codec-http3-4.2.15.Final.jar
+[INFO] Copying jctools-core-4.0.6.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/jctools-core-4.0.6.jar
+[INFO] Copying netty-transport-native-unix-common-4.2.15.Final.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/netty-transport-native-unix-common-4.2.15.Final.jar
+[INFO] Copying netty-codec-memcache-4.2.15.Final.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/netty-codec-memcache-4.2.15.Final.jar
+[INFO] Copying netty-codec-mqtt-4.2.15.Final.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/netty-codec-mqtt-4.2.15.Final.jar
+[INFO] Copying netty-codec-redis-4.2.15.Final.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/netty-codec-redis-4.2.15.Final.jar
+[INFO] Copying netty-codec-smtp-4.2.15.Final.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/netty-codec-smtp-4.2.15.Final.jar
+[INFO] Copying netty-codec-socks-4.2.15.Final.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/netty-codec-socks-4.2.15.Final.jar
+[INFO] Copying netty-codec-stomp-4.2.15.Final.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/netty-codec-stomp-4.2.15.Final.jar
+[INFO] Copying netty-codec-xml-4.2.15.Final.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/netty-codec-xml-4.2.15.Final.jar
+[INFO] Copying netty-codec-protobuf-4.2.15.Final.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/netty-codec-protobuf-4.2.15.Final.jar
+[INFO] Copying netty-codec-marshalling-4.2.15.Final.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/netty-codec-marshalling-4.2.15.Final.jar
+[INFO] Copying netty-common-4.2.15.Final.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/netty-common-4.2.15.Final.jar
+[INFO] Copying netty-handler-proxy-4.2.15.Final.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/netty-handler-proxy-4.2.15.Final.jar
+[INFO] Copying netty-handler-ssl-ocsp-4.2.15.Final.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/netty-handler-ssl-ocsp-4.2.15.Final.jar
+[INFO] Copying netty-resolver-4.2.15.Final.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/netty-resolver-4.2.15.Final.jar
+[INFO] Copying netty-resolver-dns-4.2.15.Final.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/netty-resolver-dns-4.2.15.Final.jar
+[INFO] Copying netty-transport-4.2.15.Final.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/netty-transport-4.2.15.Final.jar
+[INFO] Copying netty-transport-rxtx-4.2.15.Final.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/netty-transport-rxtx-4.2.15.Final.jar
+[INFO] Copying netty-transport-sctp-4.2.15.Final.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/netty-transport-sctp-4.2.15.Final.jar
+[INFO] Copying netty-transport-udt-4.2.15.Final.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/netty-transport-udt-4.2.15.Final.jar
+[INFO] Copying netty-transport-classes-epoll-4.2.15.Final.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/netty-transport-classes-epoll-4.2.15.Final.jar
+[INFO] Copying netty-transport-classes-kqueue-4.2.15.Final.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/netty-transport-classes-kqueue-4.2.15.Final.jar
+[INFO] Copying netty-resolver-dns-classes-macos-4.2.15.Final.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/netty-resolver-dns-classes-macos-4.2.15.Final.jar
+[INFO] Copying netty-transport-classes-io_uring-4.2.15.Final.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/netty-transport-classes-io_uring-4.2.15.Final.jar
+[INFO] Copying netty-codec-classes-quic-4.2.15.Final.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/netty-codec-classes-quic-4.2.15.Final.jar
+[INFO] Copying netty-transport-native-epoll-4.2.15.Final-linux-x86_64.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/netty-transport-native-epoll-4.2.15.Final-linux-x86_64.jar
+[INFO] Copying netty-transport-native-epoll-4.2.15.Final-linux-aarch_64.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/netty-transport-native-epoll-4.2.15.Final-linux-aarch_64.jar
+[INFO] Copying netty-transport-native-epoll-4.2.15.Final-linux-riscv64.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/netty-transport-native-epoll-4.2.15.Final-linux-riscv64.jar
+[INFO] Copying netty-transport-native-io_uring-4.2.15.Final-linux-x86_64.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/netty-transport-native-io_uring-4.2.15.Final-linux-x86_64.jar
+[INFO] Copying netty-transport-native-io_uring-4.2.15.Final-linux-aarch_64.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/netty-transport-native-io_uring-4.2.15.Final-linux-aarch_64.jar
+[INFO] Copying netty-transport-native-io_uring-4.2.15.Final-linux-riscv64.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/netty-transport-native-io_uring-4.2.15.Final-linux-riscv64.jar
+[INFO] Copying netty-transport-native-kqueue-4.2.15.Final-osx-x86_64.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/netty-transport-native-kqueue-4.2.15.Final-osx-x86_64.jar
+[INFO] Copying netty-transport-native-kqueue-4.2.15.Final-osx-aarch_64.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/netty-transport-native-kqueue-4.2.15.Final-osx-aarch_64.jar
+[INFO] Copying netty-resolver-dns-native-macos-4.2.15.Final-osx-x86_64.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/netty-resolver-dns-native-macos-4.2.15.Final-osx-x86_64.jar
+[INFO] Copying netty-resolver-dns-native-macos-4.2.15.Final-osx-aarch_64.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/netty-resolver-dns-native-macos-4.2.15.Final-osx-aarch_64.jar
+[INFO] Copying leveldbjni-all-1.8.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/leveldbjni-all-1.8.jar
+[INFO] Copying jackson-core-2.21.5.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/jackson-core-2.21.5.jar
+[INFO] Copying hadoop-annotations-3.4.2.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/hadoop-annotations-3.4.2.jar
+[INFO] Copying hadoop-common-3.4.2.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/hadoop-common-3.4.2.jar
+[INFO] Copying guava-33.2.1-jre.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/guava-33.2.1-jre.jar
+[INFO] Copying failureaccess-1.0.2.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/failureaccess-1.0.2.jar
+[INFO] Copying listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+[INFO] Copying checker-qual-3.42.0.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/checker-qual-3.42.0.jar
+[INFO] Copying j2objc-annotations-3.0.0.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/j2objc-annotations-3.0.0.jar
+[INFO] Copying commons-math3-3.6.1.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/commons-math3-3.6.1.jar
+[INFO] Copying httpclient-4.5.13.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/httpclient-4.5.13.jar
+[INFO] Copying httpcore-4.4.15.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/httpcore-4.4.15.jar
+[INFO] Copying commons-net-3.13.0.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/commons-net-3.13.0.jar
+[INFO] Copying jakarta.activation-api-2.1.4.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/jakarta.activation-api-2.1.4.jar
+[INFO] Copying jersey-servlet-1.19.4.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/jersey-servlet-1.19.4.jar
+[INFO] Copying jersey-json-1.22.0.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/jersey-json-1.22.0.jar
+[INFO] Copying jaxb-impl-4.0.9.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/jaxb-impl-4.0.9.jar
+[INFO] Copying jaxb-core-4.0.9.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/jaxb-core-4.0.9.jar
+[INFO] Copying jakarta.xml.bind-api-4.0.5.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/jakarta.xml.bind-api-4.0.5.jar
+[INFO] Copying angus-activation-2.0.3.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/angus-activation-2.0.3.jar
+[INFO] Copying jettison-1.5.4.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/jettison-1.5.4.jar
+[INFO] Copying avro-1.12.1.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/avro-1.12.1.jar
+[INFO] Copying re2j-1.8.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/re2j-1.8.jar
+[INFO] Copying gson-2.10.1.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/gson-2.10.1.jar
+[INFO] Copying jsch-0.1.55.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/jsch-0.1.55.jar
+[INFO] Copying curator-client-5.2.0.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/curator-client-5.2.0.jar
+[INFO] Copying curator-recipes-5.2.0.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/curator-recipes-5.2.0.jar
+[INFO] Copying jsr305-3.0.2.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/jsr305-3.0.2.jar
+[INFO] Copying netty-handler-4.2.15.Final.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/netty-handler-4.2.15.Final.jar
+[INFO] Copying netty-transport-native-epoll-4.2.15.Final.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/netty-transport-native-epoll-4.2.15.Final.jar
+[INFO] Copying metrics-core-4.0.2.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/metrics-core-4.0.2.jar
+[INFO] Copying commons-compress-1.27.1.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/commons-compress-1.27.1.jar
+[INFO] Copying bcprov-jdk18on-1.84.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/bcprov-jdk18on-1.84.jar
+[INFO] Copying kerb-core-2.0.3.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/kerb-core-2.0.3.jar
+[INFO] Copying kerby-pkix-2.0.3.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/kerby-pkix-2.0.3.jar
+[INFO] Copying kerby-asn1-2.0.3.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/kerby-asn1-2.0.3.jar
+[INFO] Copying kerby-util-2.0.3.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/kerby-util-2.0.3.jar
+[INFO] Copying jackson-databind-2.21.5.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/jackson-databind-2.21.5.jar
+[INFO] Copying jackson-annotations-2.21.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/jackson-annotations-2.21.jar
+[INFO] Copying dnsjava-3.6.1.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/dnsjava-3.6.1.jar
+[INFO] Copying snappy-java-1.1.10.5.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/snappy-java-1.1.10.5.jar
+[INFO] Copying hadoop-azure-3.4.2.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/hadoop-azure-3.4.2.jar
+[INFO] Copying azure-storage-7.0.1.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/azure-storage-7.0.1.jar
+[INFO] Copying azure-keyvault-core-1.2.6.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/azure-keyvault-core-1.2.6.jar
+[INFO] Copying wildfly-openssl-2.2.5.Final.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/wildfly-openssl-2.2.5.Final.jar
+[INFO] Copying hadoop-auth-3.4.2.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/hadoop-auth-3.4.2.jar
+[INFO] Copying nimbus-jose-jwt-10.0.2.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/nimbus-jose-jwt-10.0.2.jar
+[INFO] Copying curator-framework-5.2.0.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/curator-framework-5.2.0.jar
+[INFO] Copying kerb-util-2.0.3.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/kerb-util-2.0.3.jar
+[INFO] Copying kerby-config-2.0.3.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/kerby-config-2.0.3.jar
+[INFO] Copying kerb-crypto-2.0.3.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/kerb-crypto-2.0.3.jar
+[INFO] Copying hadoop-mapreduce-client-core-3.4.2.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/hadoop-mapreduce-client-core-3.4.2.jar
+[INFO] Copying hadoop-yarn-client-3.4.2.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/hadoop-yarn-client-3.4.2.jar
+[INFO] Copying websocket-client-9.4.58.v20250814.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/websocket-client-9.4.58.v20250814.jar
+[INFO] Copying jetty-client-12.0.38.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/jetty-client-12.0.38.jar
+[INFO] Copying jetty-alpn-client-12.0.38.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/jetty-alpn-client-12.0.38.jar
+[INFO] Copying websocket-common-9.4.58.v20250814.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/websocket-common-9.4.58.v20250814.jar
+[INFO] Copying websocket-api-9.4.58.v20250814.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/websocket-api-9.4.58.v20250814.jar
+[INFO] Copying hadoop-yarn-api-3.4.2.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/hadoop-yarn-api-3.4.2.jar
+[INFO] Copying jline-3.30.6.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/jline-3.30.6.jar
+[INFO] Copying hadoop-yarn-common-3.4.2.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/hadoop-yarn-common-3.4.2.jar
+[INFO] Copying jaxb-api-2.2.11.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/jaxb-api-2.2.11.jar
+[INFO] Copying jersey-client-1.19.4.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/jersey-client-1.19.4.jar
+[INFO] Copying guice-4.2.3.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/guice-4.2.3.jar
+[INFO] Copying javax.inject-1.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/javax.inject-1.jar
+[INFO] Copying aopalliance-1.0.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/aopalliance-1.0.jar
+[INFO] Copying jersey-guice-1.19.4.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/jersey-guice-1.19.4.jar
+[INFO] Copying jackson-module-jaxb-annotations-2.21.5.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/jackson-module-jaxb-annotations-2.21.5.jar
+[INFO] Copying jackson-jaxrs-json-provider-2.21.5.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/jackson-jaxrs-json-provider-2.21.5.jar
+[INFO] Copying jackson-jaxrs-base-2.21.5.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/jackson-jaxrs-base-2.21.5.jar
+[INFO] Copying hadoop-hdfs-client-3.4.2.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/hadoop-hdfs-client-3.4.2.jar
+[INFO] Copying slf4j-reload4j-2.0.18.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/slf4j-reload4j-2.0.18.jar
+[INFO] Copying guice-servlet-4.2.3.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/guice-servlet-4.2.3.jar
+[INFO] Copying hadoop-shaded-protobuf_3_25-1.5.0.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/hadoop-shaded-protobuf_3_25-1.5.0.jar
+[INFO] Copying hadoop-client-3.4.2.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/hadoop-client-3.4.2.jar
+[INFO] Copying hadoop-huaweicloud-3.1.1-hw-46.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/hadoop-huaweicloud-3.1.1-hw-46.jar
+[INFO] Copying esdk-obs-java-optimised-3.21.8.2.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/esdk-obs-java-optimised-3.21.8.2.jar
+[INFO] Copying slf4j-api-2.0.17.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/slf4j-api-2.0.17.jar
+[INFO] Copying log4j-slf4j2-impl-2.25.4.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/log4j-slf4j2-impl-2.25.4.jar
+[INFO] Copying log4j-api-2.25.4.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/log4j-api-2.25.4.jar
+[INFO] Copying log4j-core-2.25.4.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/log4j-core-2.25.4.jar
+[INFO] Copying log4j-1.2-api-2.25.4.jar to /Users/jiangyuan/open/doris/fe/be-java-extensions/hadoop-deps/target/lib/log4j-1.2-api-2.25.4.jar
+[INFO] Saved Build to local file: /Users/jiangyuan/.m2/build-cache/v1.1/org.apache.doris/hadoop-deps/aa122c3887719f86/local/buildinfo.xml
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Doris FE Project Parent POM 1.2-SNAPSHOT:
+[INFO] 
+[INFO] Doris FE Project Parent POM ........................ SUCCESS [  5.592 s]
+[INFO] Doris FE Foundation ................................ SUCCESS [  9.069 s]
+[INFO] Doris FE Kerberos .................................. SKIPPED
+[INFO] Doris FE Common Utils .............................. SKIPPED
+[INFO] Doris FE Trino Connector Common .................... SUCCESS [ 15.841 s]
+[INFO] Doris FE Generated Thrift RPC ...................... FAILURE [  2.413 s]
+[INFO] Doris FE Catalog Type .............................. SKIPPED
+[INFO] Doris FE Catalog API ............................... SKIPPED
+[INFO] Doris FE Filesystem (Aggregator) ................... SUCCESS [  0.363 s]
+[INFO] Doris FE Filesystem API ............................ SKIPPED
+[INFO] Doris FE Extension SPI ............................. SUCCESS [  5.019 s]
+[INFO] Doris FE Filesystem SPI ............................ SKIPPED
+[INFO] Doris FE Filesystem - S3 base (shared library) ..... SKIPPED
+[INFO] Doris FE Filesystem - S3 ........................... SKIPPED
+[INFO] Doris FE Filesystem - GCS .......................... SKIPPED
+[INFO] Doris FE Filesystem - MinIO ........................ SKIPPED
+[INFO] Doris FE Filesystem - Ozone ........................ SKIPPED
+[INFO] Doris FE Filesystem - OSS .......................... SKIPPED
+[INFO] Doris FE Filesystem - Local (Testing Only) ......... SKIPPED
+[INFO] Doris FE Filesystem - Azure ........................ SKIPPED
+[INFO] Doris FE Filesystem - HDFS base (shared library) ... SKIPPED
+[INFO] Doris FE Filesystem - HDFS / ViewFS ................ SKIPPED
+[INFO] Doris FE Filesystem - OSS-HDFS (JindoFS) ........... SKIPPED
+[INFO] Doris FE Filesystem - JFS (JuiceFS) ................ SKIPPED
+[INFO] Doris FE Filesystem - Broker ....................... SKIPPED
+[INFO] Doris FE Filesystem - HTTP ......................... SKIPPED
+[INFO] Doris FE Filesystem - OBS .......................... SKIPPED
+[INFO] Doris FE Filesystem - COS .......................... SKIPPED
+[INFO] Doris FE Connector (Aggregator) .................... SUCCESS [ 14.602 s]
+[INFO] Doris FE Connector SPI ............................. SKIPPED
+[INFO] Doris FE Connector Cache Framework ................. SKIPPED
+[INFO] Doris FE Connector Metastore API ................... SKIPPED
+[INFO] Doris FE Connector Metastore SPI ................... SKIPPED
+[INFO] Doris FE Connector Metastore Paimon ................ SKIPPED
+[INFO] Doris FE Connector Metastore Iceberg ............... SKIPPED
+[INFO] Doris FE Connector Metastore HMS ................... SKIPPED
+[INFO] Doris FE Connector - Elasticsearch ................. SKIPPED
+[INFO] Doris FE Connector - Trino Connector ............... SKIPPED
+[INFO] Doris FE Connector - MaxCompute .................... SKIPPED
+[INFO] Doris FE Connector - JDBC .......................... SKIPPED
+[INFO] Doris FE Connector - ADBC .......................... SKIPPED
+[INFO] Doris FE Connector - HMS Hive Shade ................ SKIPPED
+[INFO] Doris FE Connector - HMS Shared Library ............ SKIPPED
+[INFO] Doris FE Connector - Hive .......................... SKIPPED
+[INFO] Doris FE Connector - Paimon Hive Shade ............. SKIPPED
+[INFO] Doris FE Connector - Paimon ........................ SKIPPED
+[INFO] Doris FE Connector - Hudi .......................... SKIPPED
+[INFO] Doris FE Connector - Iceberg ....................... SKIPPED
+[INFO] Doris FE Extension Loader .......................... SKIPPED
+[INFO] Doris FE SQL Parser ................................ SUCCESS [ 15.327 s]
+[INFO] be-java-extensions ................................. SUCCESS [  0.465 s]
+[INFO] Doris BE libhdfs Runtime ........................... SUCCESS [ 15.786 s]
+[INFO] Doris FE GRPC ...................................... SUCCESS [  4.945 s]
+[INFO] Doris FE Authentication ............................ SUCCESS [  0.425 s]
+[INFO] Doris FE Authentication API ........................ SUCCESS [  5.639 s]
+[INFO] Doris FE Authentication SPI ........................ SKIPPED
+[INFO] Doris FE Authentication Role Mapping ............... SKIPPED
+[INFO] Doris FE Authentication Plugins .................... SUCCESS [  0.654 s]
+[INFO] Doris FE - Authentication Plugin - Password ........ SKIPPED
+[INFO] Doris FE Authentication Handler .................... SKIPPED
+[INFO] Doris FE Authorization ............................. SUCCESS [  0.353 s]
+[INFO] Doris FE Authorization API ......................... SUCCESS [  6.276 s]
+[INFO] Doris FE Authorization SPI ......................... SKIPPED
+[INFO] Doris FE Authorization Plugins ..................... SUCCESS [  0.615 s]
+[INFO] Doris FE Authorization Plugin - Ranger Common ...... SKIPPED
+[INFO] Doris FE Authorization Plugin - Ranger Doris ....... SKIPPED
+[INFO] Doris FE Authorization Plugin - Ranger Hive ........ SKIPPED
+[INFO] Doris FE Core ...................................... SKIPPED
+[INFO] hive-udf ........................................... SKIPPED
+[INFO] Doris BE JNI Plugin SPI ............................ SUCCESS [  7.342 s]
+[INFO] Doris BE JNI Plugin Bootstrap ...................... SKIPPED
+[INFO] Doris BE Plugin Toolkit ............................ SKIPPED
+[INFO] Doris BE iceberg Plugin ............................ SKIPPED
+[INFO] Doris BE Java Extensions - Hive Apache Shade ....... SKIPPED
+[INFO] Doris BE hudi Plugin ............................... SKIPPED
+[INFO] Doris BE Java Extensions - Hive UDF Contract Shade . SKIPPED
+[INFO] Doris BE java-udf Plugin ........................... SKIPPED
+[INFO] Doris BE jdbc Plugin ............................... SKIPPED
+[INFO] Doris BE paimon Plugin ............................. SKIPPED
+[INFO] Doris BE max-compute Plugin ........................ SKIPPED
+[INFO] Doris BE trino-connector Plugin .................... SKIPPED
+[INFO] Doris BE java-writer Plugin ........................ SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  23.159 s (Wall Clock)
+[INFO] Finished at: 2026-09-23T17:24:52+08:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-antrun-plugin:3.1.0:run (check-thrift-compiler-version) on project fe-thrift: An Ant BuildException has occured: thrift compiler '/Users/jiangyuan/open/doris/thirdparty/installed/bin/thrift' reports 'Thrift version 0.16.0' but libthrift is 0.24.0. Rebuild thirdparty, or point doris.thrift.executable / DORIS_THIRDPARTY at a thrift 0.24.0 binary.
+[ERROR] around Ant part ...<fail message="thrift compiler '/Users/jiangyuan/open/doris/thirdparty/installed/bin/thrift' reports '${thrift.compiler.version}' but libthrift is 0.24.0. Rebuild thirdparty, or point doris.thrift.executable / DORIS_THIRDPARTY at a thrift 0.24.0 binary.">... @ 7:260 in /Users/jiangyuan/open/doris/fe/fe-thrift/target/antrun/build-main.xml
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :fe-thrift

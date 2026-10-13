@@ -1,0 +1,1539 @@
+Target system: Darwin; Target arch: arm64
+Python 3.14.3
+cmake version 4.2.1
+
+CMake suite maintained and supported by Kitware (kitware.com/cmake).
+Get params:
+    PARALLEL            -- 2
+    CLEAN               -- 
+    PACKAGES            -- arrow
+    CONTINUE            -- 
+
+use vectorscan instead of hyperscan on aarch64
+use vectorscan instead of hyperscan on aarch64
+Download and build specified libs only: ARROW XSIMD BROTLI
+===== Downloading thirdparty archives...
+Downloading apache-arrow-24.0.0.tar.gz from https://github.com/apache/arrow/archive/refs/tags/apache-arrow-24.0.0.tar.gz to /Users/jiangyuan/open/doris/thirdparty/src
+Success to download apache-arrow-24.0.0.tar.gz
+Downloading 14.0.0.tar.gz from https://github.com/xtensor-stack/xsimd/archive/refs/tags/14.0.0.tar.gz to /Users/jiangyuan/open/doris/thirdparty/src
+Success to download 14.0.0.tar.gz
+Downloading brotli-1.0.9.tar.gz from https://github.com/google/brotli/archive/v1.0.9.tar.gz to /Users/jiangyuan/open/doris/thirdparty/src
+Success to download brotli-1.0.9.tar.gz
+===== Downloading thirdparty archives...done
+===== Checking all thirdpart archives...
+===== Checking all thirdpart archives...done
+===== Unpacking all thirdparty archives...
+/Users/jiangyuan/open/doris/thirdparty/src/apache-arrow-24.0.0.tar.gz
+/Users/jiangyuan/open/doris/thirdparty/src/arrow-apache-arrow-24.0.0
+/Users/jiangyuan/open/doris/thirdparty/src/14.0.0.tar.gz
+/Users/jiangyuan/open/doris/thirdparty/src/xsimd-14.0.0
+/Users/jiangyuan/open/doris/thirdparty/src/brotli-1.0.9.tar.gz
+/Users/jiangyuan/open/doris/thirdparty/src/brotli-1.0.9
+===== Unpacking all thirdparty archives...done
+===== Cloning git repositories...
+===== Cloning git repositories...done
+===== Patching thirdparty archives...
+patching file 'cpp/src/parquet/arrow/schema.cc'
+patching file 'cpp/src/parquet/properties.h'
+patching file 'cpp/src/parquet/CMakeLists.txt'
+patching file 'cpp/src/parquet/column_reader.cc'
+/Users/jiangyuan/open/doris/thirdparty
+Finished patching arrow-apache-arrow-24.0.0
+MacOS. Skipping BITSHUFFLE patching.
+~/open/doris/thirdparty/installed ~/open/doris/thirdparty
+~/open/doris/thirdparty
+PKG_CONFIG_PATH: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/pkgconfig
+CMAKE_PREFIX_PATH: /Users/jiangyuan/open/doris/thirdparty/installed
+cmake version 4.2.1
+
+CMake suite maintained and supported by Kitware (kitware.com/cmake).
+cmake is found
+byacc - 2.0 20260126
+byacc is found
+flex 2.6.4 Apple(flex-35)
+flex is found
+automake (GNU automake) 1.19
+Features: subsecond-mtime
+
+Copyright (C) 2026 Free Software Foundation, Inc.
+License GPLv2+: GNU GPL version 2 or later
+  <https://gnu.org/licenses/gpl-2.0.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by Tom Tromey <tromey@redhat.com>
+       and Alexandre Duret-Lutz <adl@gnu.org>.
+automake is found
+glibtoolize (GNU libtool) 2.5.4
+Copyright (C) 2026 Free Software Foundation, Inc.
+License GPLv2+: GNU GPL version 2 or later <https://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by Gary V. Vaughan <gary@gnu.org>, 2003
+libtool is found
+Do not strip thirdparty libraries
+===== begin build arrow-apache-arrow-24.0.0
+Not searching for unused variables given on the command line.
+-- Building using CMake version: 4.2.1
+-- The C compiler identification is Clang 20.1.8
+-- The CXX compiler identification is Clang 20.1.8
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /opt/homebrew/opt/llvm@20/bin/clang - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /opt/homebrew/opt/llvm@20/bin/clang++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Arrow version: 24.0.0 (full: '24.0.0')
+-- Arrow SO version: 2400 (full: 2400.0.0)
+-- Found Python3: /opt/homebrew/opt/python@3/bin/python3.14 (found version "3.14.3") found components: Interpreter
+-- System processor: arm64
+-- Performing Test CXX_SUPPORTS_SVE
+-- Performing Test CXX_SUPPORTS_SVE - Success
+-- Arrow build warning level: PRODUCTION
+-- Build Type: Release
+-- Performing Test CXX_LINKER_SUPPORTS_VERSION_SCRIPT
+-- Performing Test CXX_LINKER_SUPPORTS_VERSION_SCRIPT - Failed
+-- Using AUTO approach to find dependencies
+-- ARROW_ABSL_BUILD_VERSION: 20211102.0
+-- ARROW_ABSL_BUILD_SHA256_CHECKSUM: dcf71b9cba8dc0ca9940c4b316a0c796be8fab42b070bb6b7cab62b48f0e66c4
+-- ARROW_AWS_C_AUTH_BUILD_VERSION: v0.10.1
+-- ARROW_AWS_C_AUTH_BUILD_SHA256_CHECKSUM: 85d737f0f735256f1931e85e4cadbe228d88698f7b59a9b390b49ef5d0778a43
+-- ARROW_AWS_C_CAL_BUILD_VERSION: v0.9.13
+-- ARROW_AWS_C_CAL_BUILD_SHA256_CHECKSUM: 80b7c6087b0af461b4483e4c9483aea2e0dac5d9fb2289b057159ea6032409e1
+-- ARROW_AWS_C_COMMON_BUILD_VERSION: v0.12.6
+-- ARROW_AWS_C_COMMON_BUILD_SHA256_CHECKSUM: 138822ecdcaff1d702f37d4751f245847d088592724921cc6bf61c232b198d6b
+-- ARROW_AWS_C_COMPRESSION_BUILD_VERSION: v0.3.2
+-- ARROW_AWS_C_COMPRESSION_BUILD_SHA256_CHECKSUM: f93f5a5d8b3fee3a6d97b14ba279efacd4d4016ef9cc7dc4be7d43519ecfbe93
+-- ARROW_AWS_C_EVENT_STREAM_BUILD_VERSION: v0.7.0
+-- ARROW_AWS_C_EVENT_STREAM_BUILD_SHA256_CHECKSUM: 88835b4c78462547917f622fd9dda45c991b7e356d9c07e2f0537d4d97fbd4fb
+-- ARROW_AWS_C_HTTP_BUILD_VERSION: v0.10.13
+-- ARROW_AWS_C_HTTP_BUILD_SHA256_CHECKSUM: d8352e7a1fb1996694a4dc31219ce03452882abf8d0858c104727f975e11b9c7
+-- ARROW_AWS_C_IO_BUILD_VERSION: v0.26.3
+-- ARROW_AWS_C_IO_BUILD_SHA256_CHECKSUM: 521fd0848fca661130bbb7278a414d7a38bdcb9bc8ffa89f6660d84e5838a303
+-- ARROW_AWS_C_MQTT_BUILD_VERSION: v0.15.2
+-- ARROW_AWS_C_MQTT_BUILD_SHA256_CHECKSUM: 66f3f5edff4ad1f765a86d3342b6017d0f29f950c1c24f8c1edacdc895202edc
+-- ARROW_AWS_C_S3_BUILD_VERSION: v0.12.0
+-- ARROW_AWS_C_S3_BUILD_SHA256_CHECKSUM: 1a8a8ceda0585d52028a1f3daa5861f924e7d8d2f6a17bec05813dc0b74d6eed
+-- ARROW_AWS_C_SDKUTILS_BUILD_VERSION: v0.2.4
+-- ARROW_AWS_C_SDKUTILS_BUILD_SHA256_CHECKSUM: 493cbed4fa57e0d4622fcff044e11305eb4fc12445f32c8861025597939175fc
+-- ARROW_AWS_CHECKSUMS_BUILD_VERSION: v0.2.10
+-- ARROW_AWS_CHECKSUMS_BUILD_SHA256_CHECKSUM: cb6509f75e42ee25c372a6d379e8582ce5179e5335183842e808f7d8abb0c314
+-- ARROW_AWS_CRT_CPP_BUILD_VERSION: v0.38.0
+-- ARROW_AWS_CRT_CPP_BUILD_SHA256_CHECKSUM: f57b82f0a9e6890e4d47aa1c48b9324b5beb5b58000715c4c6ef9f147be13891
+-- ARROW_AWS_LC_BUILD_VERSION: v1.71.0
+-- ARROW_AWS_LC_BUILD_SHA256_CHECKSUM: 31b1eed775294825f084c0d4e09df53e1cf036fb98a202a8c2c342543828a985
+-- ARROW_AWSSDK_BUILD_VERSION: 1.11.778
+-- ARROW_AWSSDK_BUILD_SHA256_CHECKSUM: 06371849792f1a8633c3e0592a17b4700f39c748ad374f4e9a6592739ecc4d9c
+-- ARROW_AZURE_SDK_BUILD_VERSION: azure-identity_1.9.0
+-- ARROW_AZURE_SDK_BUILD_SHA256_CHECKSUM: 97065bfc971ac8df450853ce805f820f52b59457bd7556510186a1569502e4a1
+-- ARROW_BOOST_BUILD_VERSION: 1.88.0
+-- ARROW_BOOST_BUILD_SHA256_CHECKSUM: dcea50f40ba1ecfc448fdf886c0165cf3e525fef2c9e3e080b9804e8117b9694
+-- ARROW_BROTLI_BUILD_VERSION: v1.0.9
+-- ARROW_BROTLI_BUILD_SHA256_CHECKSUM: f9e8d81d0405ba66d181529af42a3354f838c939095ff99930da6aa9cdf6fe46
+-- ARROW_BZIP2_BUILD_VERSION: 1.0.8
+-- ARROW_BZIP2_BUILD_SHA256_CHECKSUM: ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269
+-- ARROW_CARES_BUILD_VERSION: 1.17.2
+-- ARROW_CARES_BUILD_SHA256_CHECKSUM: 4803c844ce20ce510ef0eb83f8ea41fa24ecaae9d280c468c582d2bb25b3913d
+-- ARROW_CRC32C_BUILD_VERSION: 1.1.2
+-- ARROW_CRC32C_BUILD_SHA256_CHECKSUM: ac07840513072b7fcebda6e821068aa04889018f24e10e46181068fb214d7e56
+-- ARROW_GBENCHMARK_BUILD_VERSION: v1.8.3
+-- ARROW_GBENCHMARK_BUILD_SHA256_CHECKSUM: 6bc180a57d23d4d9515519f92b0c83d61b05b5bab188961f36ac7b06b0d9e9ce
+-- ARROW_GFLAGS_BUILD_VERSION: v2.2.2
+-- ARROW_GFLAGS_BUILD_SHA256_CHECKSUM: 34af2f15cf7367513b352bdcd2493ab14ce43692d2dcd9dfc499492966c64dcf
+-- ARROW_GLOG_BUILD_VERSION: v0.5.0
+-- ARROW_GLOG_BUILD_SHA256_CHECKSUM: eede71f28371bf39aa69b45de23b329d37214016e2055269b3b5e7cfd40b59f5
+-- ARROW_GOOGLE_CLOUD_CPP_BUILD_VERSION: v2.22.0
+-- ARROW_GOOGLE_CLOUD_CPP_BUILD_SHA256_CHECKSUM: 0c68782e57959c82e0c81def805c01460a042c1aae0c2feee905acaa2a2dc9bf
+-- ARROW_GRPC_BUILD_VERSION: v1.46.3
+-- ARROW_GRPC_BUILD_SHA256_CHECKSUM: d6cbf22cb5007af71b61c6be316a79397469c58c82a942552a62e708bce60964
+-- ARROW_GTEST_BUILD_VERSION: 1.17.0
+-- ARROW_GTEST_BUILD_SHA256_CHECKSUM: 65fab701d9829d38cb77c14acdc431d2108bfdbf8979e40eb8ae567edf10b27c
+-- ARROW_JEMALLOC_BUILD_VERSION: 5.3.0
+-- ARROW_JEMALLOC_BUILD_SHA256_CHECKSUM: 2db82d1e7119df3e71b7640219b6dfe84789bc0537983c3b7ac4f7189aecfeaa
+-- ARROW_LZ4_BUILD_VERSION: v1.10.0
+-- ARROW_LZ4_BUILD_SHA256_CHECKSUM: 537512904744b35e232912055ccf8ec66d768639ff3abe5788d90d792ec5f48b
+-- ARROW_MIMALLOC_BUILD_VERSION: v3.2.7
+-- ARROW_MIMALLOC_BUILD_SHA256_CHECKSUM: 33621bea902711639b8f83128e64685ffc8224a65443625530747603a2d8726d
+-- ARROW_NLOHMANN_JSON_BUILD_VERSION: v3.12.0
+-- ARROW_NLOHMANN_JSON_BUILD_SHA256_CHECKSUM: 4b92eb0c06d10683f7447ce9406cb97cd4b453be18d7279320f7b2f025c10187
+-- ARROW_OPENTELEMETRY_BUILD_VERSION: v1.21.0
+-- ARROW_OPENTELEMETRY_BUILD_SHA256_CHECKSUM: 98e5546f577a11b52a57faed1f4cc60d8c1daa44760eba393f43eab5a8ec46a2
+-- ARROW_OPENTELEMETRY_PROTO_BUILD_VERSION: v1.7.0
+-- ARROW_OPENTELEMETRY_PROTO_BUILD_SHA256_CHECKSUM: 11330d850f5e24d34c4246bc8cb21fcd311e7565d219195713455a576bb11bed
+-- ARROW_ORC_BUILD_VERSION: 2.2.1
+-- ARROW_ORC_BUILD_SHA256_CHECKSUM: 52fc762332442e8b05d7182f8c035f9e04d945b9a52be22ab69f28b3f37d4500
+-- ARROW_PROTOBUF_BUILD_VERSION: v21.3
+-- ARROW_PROTOBUF_BUILD_SHA256_CHECKSUM: 2f723218f6cb709ae4cdc4fb5ed56a5951fc5d466f0128ce4c946b8c78c8c49f
+-- ARROW_RAPIDJSON_BUILD_VERSION: 232389d4f1012dddec4ef84861face2d2ba85709
+-- ARROW_RAPIDJSON_BUILD_SHA256_CHECKSUM: b9290a9a6d444c8e049bd589ab804e0ccf2b05dc5984a19ed5ae75d090064806
+-- ARROW_RE2_BUILD_VERSION: 2023-03-01
+-- ARROW_RE2_BUILD_SHA256_CHECKSUM: 7a9a4824958586980926a300b4717202485c4b4115ac031822e29aa4ef207e48
+-- ARROW_SNAPPY_BUILD_VERSION: 1.2.2
+-- ARROW_SNAPPY_BUILD_SHA256_CHECKSUM: 90f74bc1fbf78a6c56b3c4a082a05103b3a56bb17bca1a27e052ea11723292dc
+-- ARROW_SUBSTRAIT_BUILD_VERSION: v0.44.0
+-- ARROW_SUBSTRAIT_BUILD_SHA256_CHECKSUM: f989a862f694e7dbb695925ddb7c4ce06aa6c51aca945105c075139aed7e55a2
+-- ARROW_S2N_TLS_BUILD_VERSION: v1.7.0
+-- ARROW_S2N_TLS_BUILD_SHA256_CHECKSUM: a6e8228e238239bb3c17b1eda3ed702bcbb2eaebc792eac4d754cc5619b0ea06
+-- ARROW_THRIFT_BUILD_VERSION: 0.22.0
+-- ARROW_THRIFT_BUILD_SHA256_CHECKSUM: 794a0e455787960d9f27ab92c38e34da27e8deeda7a5db0e59dc64a00df8a1e5
+-- ARROW_UTF8PROC_BUILD_VERSION: v2.10.0
+-- ARROW_UTF8PROC_BUILD_SHA256_CHECKSUM: 6f4f1b639daa6dca9f80bc5db1233e9cbaa31a67790887106160b33ef743f136
+-- ARROW_WIL_BUILD_VERSION: v1.0.250325.1
+-- ARROW_WIL_BUILD_SHA256_CHECKSUM: c9e667d5f86ded43d17b5669d243e95ca7b437e3a167c170805ffd4aa8a9a786
+-- ARROW_XSIMD_BUILD_VERSION: 14.0.0
+-- ARROW_XSIMD_BUILD_SHA256_CHECKSUM: 17de0236954955c10c09d6938d4c5f3a3b92d31be5dadd1d5d09fc1b15490dce
+-- ARROW_ZLIB_BUILD_VERSION: 1.3.1
+-- ARROW_ZLIB_BUILD_SHA256_CHECKSUM: 9a93b2b7dfdac77ceba5a558a580e74667dd6fede4585b91eefb60f03b72df23
+-- ARROW_ZSTD_BUILD_VERSION: 1.5.7
+-- ARROW_ZSTD_BUILD_SHA256_CHECKSUM: eb33e51f49a15e023950cd7825ca74a4a2b43db8354825ac24fc1b7ee09e6fa3
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- Looking for _M_ARM64
+-- Looking for _M_ARM64 - not found
+-- Looking for __SIZEOF_INT128__
+-- Looking for __SIZEOF_INT128__ - found
+-- Boost include dir: /Users/jiangyuan/open/doris/thirdparty/installed/include
+-- Providing CMake module for FindSnappyAlt as part of Arrow CMake package
+-- pkg-config package for snappy that is used by arrow for static link isn't found
+-- Building brotli from source
+Error: The following formulae are not installed:
+openssl@4
+-- Found OpenSSL: /opt/homebrew/opt/openssl@3/lib/libcrypto.dylib (found suitable version "3.6.2", minimum required is "1.0.2")
+-- Providing CMake module for FindOpenSSLAlt as part of Arrow CMake package
+-- Found OpenSSL Crypto Library: /opt/homebrew/opt/openssl@3/lib/libcrypto.dylib
+-- Building with OpenSSL (Version: 3.6.2) support
+-- Providing CMake module for FindglogAlt as part of Arrow CMake package
+-- pkg-config package for libglog that is used by arrow for static link isn't found
+CMake Warning at cmake_modules/FindThriftAlt.cmake:42 (find_package):
+  By not providing "FindThrift.cmake" in CMAKE_MODULE_PATH this project has
+  asked CMake to find a package configuration file provided by "Thrift", but
+  CMake did not find one.
+
+  Could not find a package configuration file provided by "Thrift" (requested
+  version 0.11.0) with any of the following names:
+
+    ThriftConfig.cmake
+    thrift-config.cmake
+
+  Add the installation prefix of "Thrift" to CMAKE_PREFIX_PATH or set
+  "Thrift_DIR" to a directory containing one of the above files.  If "Thrift"
+  provides a separate development package or SDK, be sure it has been
+  installed.
+Call Stack (most recent call first):
+  cmake_modules/ThirdpartyToolchain.cmake:310 (find_package)
+  cmake_modules/ThirdpartyToolchain.cmake:1875 (resolve_dependency)
+  CMakeLists.txt:529 (include)
+
+
+-- Found ThriftAlt: /Users/jiangyuan/open/doris/thirdparty/installed/lib/libthrift.a (found suitable version "0.24.0", minimum required is "0.11.0")
+-- Providing CMake module for FindThriftAlt as part of Parquet CMake package
+-- pkg-config package for thrift that is used by parquet for static link isn't found
+-- Found ZLIB: /Users/jiangyuan/open/doris/thirdparty/installed/lib/libz.a (found version "1.3.1")
+-- Providing CMake module for FindProtobufAlt as part of Arrow CMake package
+-- pkg-config package for protobuf that is used by arrow for static link isn't found
+-- Found protoc: /Users/jiangyuan/open/doris/thirdparty/installed/bin/protoc-3.21.11.0
+CMake Deprecation Warning at /Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/RapidJSON/RapidJSONConfig.cmake:3 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  cmake_modules/FindRapidJSONAlt.cmake:29 (find_package)
+  cmake_modules/ThirdpartyToolchain.cmake:310 (find_package)
+  cmake_modules/ThirdpartyToolchain.cmake:2625 (resolve_dependency)
+  CMakeLists.txt:529 (include)
+
+
+-- RapidJSON found. Headers: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/RapidJSON/../../../include
+-- Building xsimd from source
+-- pkg-config package for zlib that is used by arrow for static link isn't found
+CMake Warning (dev) at cmake_modules/Findlz4Alt.cmake:29 (find_package):
+  Policy CMP0144 is not set: find_package uses upper-case <PACKAGENAME>_ROOT
+  variables.  Run "cmake --help-policy CMP0144" for policy details.  Use the
+  cmake_policy command to set the policy and suppress this warning.
+
+  CMake variable LZ4_ROOT is set to:
+
+    /Users/jiangyuan/open/doris/thirdparty/installed;/Users/jiangyuan/open/doris/thirdparty/installed/include/lz4
+
+  For compatibility, find_package is ignoring the variable, but code in a
+  .cmake module might still use it.
+Call Stack (most recent call first):
+  cmake_modules/ThirdpartyToolchain.cmake:310 (find_package)
+  cmake_modules/ThirdpartyToolchain.cmake:2785 (resolve_dependency)
+  CMakeLists.txt:529 (include)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning at cmake_modules/Findlz4Alt.cmake:29 (find_package):
+  By not providing "Findlz4.cmake" in CMAKE_MODULE_PATH this project has
+  asked CMake to find a package configuration file provided by "lz4", but
+  CMake did not find one.
+
+  Could not find a package configuration file provided by "lz4" with any of
+  the following names:
+
+    lz4Config.cmake
+    lz4-config.cmake
+
+  Add the installation prefix of "lz4" to CMAKE_PREFIX_PATH or set "lz4_DIR"
+  to a directory containing one of the above files.  If "lz4" provides a
+  separate development package or SDK, be sure it has been installed.
+Call Stack (most recent call first):
+  cmake_modules/ThirdpartyToolchain.cmake:310 (find_package)
+  cmake_modules/ThirdpartyToolchain.cmake:2785 (resolve_dependency)
+  CMakeLists.txt:529 (include)
+
+
+-- Found lz4Alt: /Users/jiangyuan/open/doris/thirdparty/installed/lib/liblz4.a
+-- Providing CMake module for Findlz4Alt as part of Arrow CMake package
+-- pkg-config package for liblz4 that is used by arrow for static link isn't found
+-- Providing CMake module for FindzstdAlt as part of Arrow CMake package
+-- pkg-config package for libzstd that is used by arrow for static link isn't found
+-- Found Zstandard: zstd::libzstd_static
+-- Providing CMake module for Findre2Alt as part of Arrow CMake package
+-- pkg-config package for re2 that is used by arrow for static link isn't found
+-- Found abslAlt: 1 (found version "20250512")
+-- Providing CMake module for FindabslAlt as part of ArrowFlight CMake package
+-- Found Protobuf: /Users/jiangyuan/open/doris/thirdparty/installed/lib/libprotobuf.a (found version "3.21.11")
+-- Found c-ares: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/c-ares/c-ares-config.cmake (found version "1.19.1")
+-- Providing CMake module for FindgRPCAlt as part of ArrowFlight CMake package
+-- pkg-config package for grpc++ that is used by arrow-flight for static link isn't found
+-- Found hdfs.h at: /Users/jiangyuan/open/doris/thirdparty/src/arrow-apache-arrow-24.0.0/cpp/thirdparty/hadoop/include/hdfs.h
+CMake Warning at cmake_modules/FindorcAlt.cmake:29 (find_package):
+  By not providing "Findorc.cmake" in CMAKE_MODULE_PATH this project has
+  asked CMake to find a package configuration file provided by "orc", but
+  CMake did not find one.
+
+  Could not find a package configuration file provided by "orc" with any of
+  the following names:
+
+    orcConfig.cmake
+    orc-config.cmake
+
+  Add the installation prefix of "orc" to CMAKE_PREFIX_PATH or set "orc_DIR"
+  to a directory containing one of the above files.  If "orc" provides a
+  separate development package or SDK, be sure it has been installed.
+Call Stack (most recent call first):
+  cmake_modules/ThirdpartyToolchain.cmake:291 (find_package)
+  cmake_modules/ThirdpartyToolchain.cmake:3703 (resolve_dependency)
+  CMakeLists.txt:529 (include)
+
+
+-- Found orcAlt: /Users/jiangyuan/open/doris/thirdparty/installed/lib/liborc.a (found version "1.9.0")
+-- Providing CMake module for FindorcAlt as part of Arrow CMake package
+-- Found ORC static library: /Users/jiangyuan/open/doris/thirdparty/installed/lib/liborc.a
+-- Found ORC headers: /Users/jiangyuan/open/doris/thirdparty/installed/include
+-- All bundled static libraries: Brotli::brotlicommon;Brotli::brotlienc;Brotli::brotlidec
+-- CMAKE_C_FLAGS:  -Qunused-arguments  -Wall -Wno-unknown-warning-option -Wno-pass-failed -march=armv8-a 
+-- CMAKE_CXX_FLAGS:  -fno-aligned-new  -Qunused-arguments -fcolor-diagnostics  -Wall -Wno-unknown-warning-option -Wno-pass-failed -march=armv8-a 
+-- CMAKE_C_FLAGS_RELEASE: -O3 -DNDEBUG -O2 
+-- CMAKE_CXX_FLAGS_RELEASE: -O3 -DNDEBUG -O2 
+-- Creating bundled static library target arrow_bundled_dependencies at /Users/jiangyuan/open/doris/thirdparty/src/arrow-apache-arrow-24.0.0/cpp/release/release/libarrow_bundled_dependencies.a
+-- Looking for backtrace
+-- Looking for backtrace - found
+-- backtrace facility detected in default set of libraries
+-- Found Backtrace: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include
+-- ---------------------------------------------------------------------
+-- Arrow version:                                 24.0.0
+-- 
+-- Build configuration summary:
+--   Generator: Unix Makefiles
+--   Build type: Release
+--   Source directory: /Users/jiangyuan/open/doris/thirdparty/src/arrow-apache-arrow-24.0.0/cpp
+--   Install prefix: /Users/jiangyuan/open/doris/thirdparty/installed
+-- 
+-- Compile and link options:
+-- 
+--   ARROW_CXXFLAGS="" [default=""]
+--       Compiler flags to append when compiling Arrow
+--   ARROW_BUILD_STATIC=ON [default=ON]
+--       Build static libraries
+--   ARROW_BUILD_SHARED=OFF [default=ON]
+--       Build shared libraries
+--   ARROW_PACKAGE_KIND="" [default=""]
+--       Arbitrary string that identifies the kind of package
+--       (for informational purposes)
+--   ARROW_GIT_ID=b306a0b1b4bf9f5c0d33c8fc4da1252d11c4b3aa [default=""]
+--       The Arrow git commit id (if any)
+--   ARROW_GIT_DESCRIPTION=v0.8.2-32077-gb306a0b1b4b [default=""]
+--       The Arrow git commit description (if any)
+--   ARROW_POSITION_INDEPENDENT_CODE=ON [default=ON]
+--       Whether to create position-independent target
+--   ARROW_USE_CCACHE=ON [default=ON]
+--       Use ccache when compiling (if available)
+--   ARROW_USE_SCCACHE=ON [default=ON]
+--       Use sccache when compiling (if available),
+--       takes precedence over ccache if a storage backend is configured
+--   ARROW_USE_LLD=OFF [default=OFF]
+--       Use the LLVM lld for linking (if available)
+--   ARROW_USE_MOLD=OFF [default=OFF]
+--       Use mold for linking on Linux (if available)
+--   ARROW_SIMD_LEVEL=NEON [default=DEFAULT|NONE|SSE4_2|AVX2|AVX512|NEON|SVE|SVE128|SVE256|SVE512]
+--       Compile-time SIMD optimization level
+--   ARROW_RUNTIME_SIMD_LEVEL=MAX [default=MAX|NONE|SSE4_2|AVX2|AVX512]
+--       Max runtime SIMD optimization level
+--   ARROW_ALTIVEC=ON [default=ON]
+--       Build with Altivec if compiler has support
+--   ARROW_RPATH_ORIGIN=OFF [default=OFF]
+--       Build Arrow libraries with RATH set to $ORIGIN
+--   ARROW_INSTALL_NAME_RPATH=ON [default=ON]
+--       Build Arrow libraries with install_name set to @rpath
+--   ARROW_GGDB_DEBUG=ON [default=ON]
+--       Pass -ggdb flag to debug builds
+--   ARROW_WITH_MUSL=OFF [default=OFF]
+--       Whether the system libc is musl or not
+--   ARROW_ENABLE_THREADING=ON [default=ON]
+--       Enable threading in Arrow core
+-- 
+-- Tests and benchmarks options:
+-- 
+--   ARROW_BUILD_EXAMPLES=OFF [default=OFF]
+--       Build the Arrow examples
+--   ARROW_BUILD_TESTS=OFF [default=OFF]
+--       Build the Arrow googletest unit tests
+--   ARROW_ENABLE_TIMING_TESTS=ON [default=ON]
+--       Enable timing-sensitive tests
+--   ARROW_BUILD_INTEGRATION=OFF [default=OFF]
+--       Build the Arrow integration test executables
+--   ARROW_BUILD_BENCHMARKS=OFF [default=OFF]
+--       Build the Arrow micro benchmarks
+--   ARROW_BUILD_BENCHMARKS_REFERENCE=OFF [default=OFF]
+--       Build the Arrow micro reference benchmarks
+--   ARROW_BUILD_DETAILED_BENCHMARKS=OFF [default=OFF]
+--       Build benchmarks that do a longer exploration of performance
+--   ARROW_TEST_LINKAGE=static [default=static|shared]
+--       Linkage of Arrow libraries with unit tests executables.
+--   ARROW_BUILD_FUZZING_UTILITIES=OFF [default=OFF]
+--       Build command line utilities for fuzzing
+--   ARROW_FUZZING=OFF [default=OFF]
+--       Build Arrow fuzz targets
+--   ARROW_LARGE_MEMORY_TESTS=OFF [default=OFF]
+--       Enable unit tests which use large memory
+-- 
+-- Coverage options:
+-- 
+--   ARROW_GENERATE_COVERAGE=OFF [default=OFF]
+--       Build with C++ code coverage enabled
+-- 
+-- Checks options:
+-- 
+--   ARROW_TEST_MEMCHECK=OFF [default=OFF]
+--       Run the test suite using valgrind --tool=memcheck
+--   ARROW_USE_ASAN=OFF [default=OFF]
+--       Enable Address Sanitizer checks
+--   ARROW_USE_TSAN=OFF [default=OFF]
+--       Enable Thread Sanitizer checks
+--   ARROW_USE_UBSAN=OFF [default=OFF]
+--       Enable Undefined Behavior sanitizer checks
+-- 
+-- Project component options:
+-- 
+--   ARROW_ACERO=ON [default=OFF]
+--       Build the Arrow Acero Engine Module
+--   ARROW_AZURE=OFF [default=OFF]
+--       Build Arrow with Azure support (requires the Azure SDK for C++)
+--   ARROW_BUILD_UTILITIES=OFF [default=OFF]
+--       Build Arrow command line utilities
+--   ARROW_COMPUTE=ON [default=OFF]
+--       Build all Arrow Compute kernels
+--   ARROW_CSV=OFF [default=OFF]
+--       Build the Arrow CSV Parser Module
+--   ARROW_CUDA=OFF [default=OFF]
+--       Build the Arrow CUDA extensions (requires CUDA toolkit)
+--   ARROW_DATASET=ON [default=OFF]
+--       Build the Arrow Dataset Modules
+--   ARROW_FILESYSTEM=ON [default=OFF]
+--       Build the Arrow Filesystem Layer
+--   ARROW_FLIGHT=ON [default=OFF]
+--       Build the Arrow Flight RPC System (requires GRPC, Protocol Buffers)
+--   ARROW_FLIGHT_SQL=ON [default=OFF]
+--       Build the Arrow Flight SQL extension
+--   ARROW_FLIGHT_SQL_ODBC=OFF [default=OFF]
+--       Build the Arrow Flight SQL ODBC extension
+--   ARROW_GANDIVA=OFF [default=OFF]
+--       Build the Gandiva libraries
+--   ARROW_GCS=OFF [default=C++ Client Libraries)]
+--       Build Arrow with GCS support (requires the Google Cloud Platform 
+--   ARROW_HDFS=OFF [default=OFF]
+--       Build the Arrow HDFS bridge
+--   ARROW_IPC=ON [default=ON]
+--       Build the Arrow IPC extensions
+--   ARROW_JEMALLOC=OFF [default=OFF]
+--       Build the Arrow jemalloc-based allocator
+--   ARROW_JSON=ON [default=OFF]
+--       Build Arrow with JSON support (requires RapidJSON)
+--   ARROW_MIMALLOC=OFF [default=ON]
+--       Build the Arrow mimalloc-based allocator
+--   ARROW_PARQUET=ON [default=OFF]
+--       Build the Parquet libraries
+--   ARROW_ORC=ON [default=OFF]
+--       Build the Arrow ORC adapter
+--   ARROW_PYTHON=OFF [default=OFF]
+--       Build some components needed by PyArrow.
+--       (This is a deprecated option. Use CMake presets instead.)
+--   ARROW_S3=OFF [default=OFF]
+--       Build Arrow with S3 support (requires the AWS SDK for C++)
+--   ARROW_S3_MODULE=OFF [default=OFF]
+--       Build the Arrow S3 filesystem as a dynamic module
+--   ARROW_SUBSTRAIT=OFF [default=OFF]
+--       Build the Arrow Substrait Consumer Module
+--   ARROW_TENSORFLOW=OFF [default=OFF]
+--       Build Arrow with TensorFlow support enabled
+--   ARROW_TESTING=OFF [default=OFF]
+--       Build the Arrow testing libraries
+-- 
+-- Thirdparty toolchain options:
+-- 
+--   ARROW_DEPENDENCY_SOURCE=AUTO [default=AUTO|BUNDLED|SYSTEM|CONDA|VCPKG|BREW]
+--       Method to use for acquiring arrow's build dependencies
+--   ARROW_VERBOSE_THIRDPARTY_BUILD=OFF [default=OFF]
+--       Show output from ExternalProjects rather than just logging to files
+--   ARROW_DEPENDENCY_USE_SHARED=ON [default=ON]
+--       Link to shared libraries
+--   ARROW_BOOST_USE_SHARED=OFF [default=ON]
+--       Rely on Boost shared libraries where relevant
+--   ARROW_BROTLI_USE_SHARED=ON [default=ON]
+--       Rely on Brotli shared libraries where relevant
+--   ARROW_BZ2_USE_SHARED=ON [default=ON]
+--       Rely on Bz2 shared libraries where relevant
+--   ARROW_GFLAGS_USE_SHARED=OFF [default=ON]
+--       Rely on GFlags shared libraries where relevant
+--   ARROW_GRPC_USE_SHARED=ON [default=ON]
+--       Rely on gRPC shared libraries where relevant
+--   ARROW_JEMALLOC_USE_SHARED=ON [default=ON]
+--       Rely on jemalloc shared libraries where relevant
+--   ARROW_LLVM_USE_SHARED=ON [default=ON]
+--       Rely on LLVM shared libraries where relevant
+--   ARROW_LZ4_USE_SHARED=OFF [default=ON]
+--       Rely on lz4 shared libraries where relevant
+--   ARROW_OPENSSL_USE_SHARED=ON [default=ON]
+--       Rely on OpenSSL shared libraries where relevant
+--   ARROW_PROTOBUF_USE_SHARED=ON [default=ON]
+--       Rely on Protocol Buffers shared libraries where relevant
+--   ARROW_SNAPPY_USE_SHARED=ON [default=ON]
+--       Rely on snappy shared libraries where relevant
+--   ARROW_THRIFT_USE_SHARED=OFF [default=ON]
+--       Rely on thrift shared libraries where relevant
+--   ARROW_UTF8PROC_USE_SHARED=ON [default=ON]
+--       Rely on utf8proc shared libraries where relevant
+--   ARROW_ZSTD_USE_SHARED=OFF [default=ON]
+--       Rely on zstd shared libraries where relevant
+--   ARROW_USE_GLOG=ON [default=OFF]
+--       Build libraries with glog support for pluggable logging
+--   ARROW_WITH_BACKTRACE=ON [default=ON]
+--       Build with backtrace support
+--   ARROW_WITH_OPENTELEMETRY=OFF [default=OFF]
+--       Build libraries with OpenTelemetry support for distributed tracing
+--   ARROW_WITH_BROTLI=ON [default=OFF]
+--       Build with Brotli compression
+--   ARROW_WITH_BZ2=OFF [default=OFF]
+--       Build with BZ2 compression
+--   ARROW_WITH_LZ4=ON [default=OFF]
+--       Build with lz4 compression
+--   ARROW_WITH_SNAPPY=ON [default=OFF]
+--       Build with Snappy compression
+--   ARROW_WITH_ZLIB=ON [default=OFF]
+--       Build with zlib compression
+--   ARROW_WITH_ZSTD=ON [default=OFF]
+--       Build with zstd compression
+--   ARROW_WITH_UTF8PROC=OFF [default=ON]
+--       Build with support for Unicode properties using the utf8proc library
+--       (only used if ARROW_COMPUTE is ON or ARROW_GANDIVA is ON)
+--   ARROW_WITH_RE2=ON [default=ON]
+--       Build with support for regular expressions using the re2 library
+--       (only used if ARROW_COMPUTE or ARROW_GANDIVA is ON)
+-- 
+-- Parquet options:
+-- 
+--   PARQUET_BUILD_EXECUTABLES=OFF [default=OFF]
+--       Build the Parquet executable CLI tools. Requires static libraries to be built.
+--   PARQUET_BUILD_EXAMPLES=OFF [default=OFF]
+--       Build the Parquet examples. Requires static libraries to be built.
+--   PARQUET_REQUIRE_ENCRYPTION=OFF [default=OFF]
+--       Build support for encryption. Fail if OpenSSL is not found
+-- 
+-- Gandiva options:
+-- 
+--   ARROW_GANDIVA_STATIC_LIBSTDCPP=OFF [default=OFF]
+--       Include -static-libstdc++ -static-libgcc when linking with
+--       Gandiva static libraries
+--   ARROW_GANDIVA_PC_CXX_FLAGS="" [default=""]
+--       Compiler flags to append when pre-compiling Gandiva operations
+-- 
+-- Cross compiling options:
+-- 
+--   ARROW_GRPC_CPP_PLUGIN="" [default=""]
+--       grpc_cpp_plugin path to be used
+-- 
+-- Advanced developer options:
+-- 
+--   ARROW_EXTRA_ERROR_CONTEXT=OFF [default=OFF]
+--       Compile with extra error context (line numbers, code)
+--   ARROW_OPTIONAL_INSTALL=OFF [default=OFF]
+--       If enabled install ONLY targets that have already been built. Please be
+--       advised that if this is enabled 'install' will fail silently on components
+--       that have not been built
+--   ARROW_GDB_INSTALL_DIR="" [default=""]
+--       Use a custom install directory for GDB plugin.
+--       In general, you don't need to specify this because the default
+--       (CMAKE_INSTALL_FULL_BINDIR on Windows, CMAKE_INSTALL_FULL_LIBDIR otherwise)
+--       is reasonable.
+--   Outputting build configuration summary to /Users/jiangyuan/open/doris/thirdparty/src/arrow-apache-arrow-24.0.0/cpp/release/cmake_summary.json
+-- Configuring done (6.4s)
+-- Generating done (0.3s)
+-- Build files have been written to: /Users/jiangyuan/open/doris/thirdparty/src/arrow-apache-arrow-24.0.0/cpp/release
+[  0%] Creating directories for 'brotli_ep'
+[  0%] Creating directories for 'xsimd_ep'
+[  0%] Performing download step (verify and extract) for 'xsimd_ep'
+[  0%] Performing download step (verify and extract) for 'brotli_ep'
+-- brotli_ep download command succeeded.  See also /Users/jiangyuan/open/doris/thirdparty/src/arrow-apache-arrow-24.0.0/cpp/release/brotli_ep-prefix/src/brotli_ep-stamp/brotli_ep-download-*.log
+-- xsimd_ep download command succeeded.  See also /Users/jiangyuan/open/doris/thirdparty/src/arrow-apache-arrow-24.0.0/cpp/release/src/xsimd_ep-stamp/xsimd_ep-download-*.log
+[  0%] No update step for 'brotli_ep'
+[  1%] No update step for 'xsimd_ep'
+[  2%] No patch step for 'brotli_ep'
+[  2%] No patch step for 'xsimd_ep'
+[  3%] Performing configure step for 'brotli_ep'
+[  3%] Performing configure step for 'xsimd_ep'
+-- xsimd_ep configure command succeeded.  See also /Users/jiangyuan/open/doris/thirdparty/src/arrow-apache-arrow-24.0.0/cpp/release/src/xsimd_ep-stamp/xsimd_ep-configure-*.log
+[  3%] Performing build step for 'xsimd_ep'
+-- brotli_ep configure command succeeded.  See also /Users/jiangyuan/open/doris/thirdparty/src/arrow-apache-arrow-24.0.0/cpp/release/brotli_ep-prefix/src/brotli_ep-stamp/brotli_ep-configure-*.log
+[  3%] Performing build step for 'brotli_ep'
+-- xsimd_ep build command succeeded.  See also /Users/jiangyuan/open/doris/thirdparty/src/arrow-apache-arrow-24.0.0/cpp/release/src/xsimd_ep-stamp/xsimd_ep-build-*.log
+[  4%] Performing install step for 'xsimd_ep'
+-- xsimd_ep install command succeeded.  See also /Users/jiangyuan/open/doris/thirdparty/src/arrow-apache-arrow-24.0.0/cpp/release/src/xsimd_ep-stamp/xsimd_ep-install-*.log
+[  5%] Completed 'xsimd_ep'
+[  5%] Built target xsimd_ep
+[  6%] Building CXX object src/arrow/CMakeFiles/arrow_array.dir/array/array_base.cc.o
+[  6%] Building CXX object src/arrow/CMakeFiles/arrow_array.dir/array/array_binary.cc.o
+[  6%] Building CXX object src/arrow/CMakeFiles/arrow_array.dir/array/array_decimal.cc.o
+[  6%] Building CXX object src/arrow/CMakeFiles/arrow_array.dir/array/array_dict.cc.o
+[  7%] Building CXX object src/arrow/CMakeFiles/arrow_array.dir/array/array_nested.cc.o
+[  7%] Building CXX object src/arrow/CMakeFiles/arrow_array.dir/array/array_primitive.cc.o
+[  7%] Building CXX object src/arrow/CMakeFiles/arrow_array.dir/array/array_run_end.cc.o
+-- brotli_ep build command succeeded.  See also /Users/jiangyuan/open/doris/thirdparty/src/arrow-apache-arrow-24.0.0/cpp/release/brotli_ep-prefix/src/brotli_ep-stamp/brotli_ep-build-*.log
+[  7%] Performing install step for 'brotli_ep'
+[  7%] Building CXX object src/arrow/CMakeFiles/arrow_array.dir/array/builder_adaptive.cc.o
+-- brotli_ep install command succeeded.  See also /Users/jiangyuan/open/doris/thirdparty/src/arrow-apache-arrow-24.0.0/cpp/release/brotli_ep-prefix/src/brotli_ep-stamp/brotli_ep-install-*.log
+[  7%] Completed 'brotli_ep'
+[  7%] Built target brotli_ep
+[  8%] Building CXX object src/arrow/CMakeFiles/arrow_array.dir/array/builder_base.cc.o
+[  8%] Building CXX object src/arrow/CMakeFiles/arrow_io.dir/io/buffered.cc.o
+[  9%] Building CXX object src/arrow/CMakeFiles/arrow_io.dir/io/caching.cc.o
+[  9%] Building CXX object src/arrow/CMakeFiles/arrow_array.dir/array/builder_binary.cc.o
+[  9%] Building CXX object src/arrow/CMakeFiles/arrow_io.dir/io/compressed.cc.o
+[  9%] Building CXX object src/arrow/CMakeFiles/arrow_array.dir/array/builder_decimal.cc.o
+[  9%] Building CXX object src/arrow/CMakeFiles/arrow_io.dir/io/file.cc.o
+[  9%] Building CXX object src/arrow/CMakeFiles/arrow_array.dir/array/builder_dict.cc.o
+[  9%] Building CXX object src/arrow/CMakeFiles/arrow_io.dir/io/hdfs.cc.o
+[ 10%] Building CXX object src/arrow/CMakeFiles/arrow_io.dir/io/hdfs_internal.cc.o
+[ 11%] Building CXX object src/arrow/CMakeFiles/arrow_array.dir/array/builder_run_end.cc.o
+[ 11%] Building CXX object src/arrow/CMakeFiles/arrow_io.dir/io/interfaces.cc.o
+[ 11%] Building CXX object src/arrow/CMakeFiles/arrow_array.dir/array/builder_nested.cc.o
+[ 11%] Building CXX object src/arrow/CMakeFiles/arrow_io.dir/io/memory.cc.o
+[ 12%] Building CXX object src/arrow/CMakeFiles/arrow_io.dir/io/slow.cc.o
+[ 12%] Building CXX object src/arrow/CMakeFiles/arrow_array.dir/array/builder_primitive.cc.o
+[ 12%] Building CXX object src/arrow/CMakeFiles/arrow_io.dir/io/stdio.cc.o
+[ 12%] Building CXX object src/arrow/CMakeFiles/arrow_array.dir/array/builder_union.cc.o
+[ 12%] Building CXX object src/arrow/CMakeFiles/arrow_io.dir/io/transform.cc.o
+[ 13%] Building CXX object src/arrow/CMakeFiles/arrow_array.dir/array/concatenate.cc.o
+[ 13%] Built target arrow_io
+[ 13%] Building CXX object src/arrow/CMakeFiles/arrow_array.dir/array/data.cc.o
+[ 13%] Building CXX object src/arrow/CMakeFiles/arrow_memory_pool.dir/memory_pool.cc.o
+[ 13%] Building CXX object src/arrow/CMakeFiles/arrow_array.dir/array/diff.cc.o
+[ 13%] Built target arrow_memory_pool
+[ 13%] Building CXX object src/arrow/CMakeFiles/arrow_array.dir/array/statistics.cc.o
+[ 13%] Building CXX object src/arrow/CMakeFiles/arrow_vendored.dir/vendored/base64.cpp.o
+[ 13%] Building CXX object src/arrow/CMakeFiles/arrow_vendored.dir/vendored/datetime.cpp.o
+[ 14%] Building CXX object src/arrow/CMakeFiles/arrow_array.dir/array/util.cc.o
+[ 15%] Building CXX object src/arrow/CMakeFiles/arrow_vendored.dir/vendored/double-conversion/bignum-dtoa.cc.o
+[ 15%] Building CXX object src/arrow/CMakeFiles/arrow_vendored.dir/vendored/double-conversion/bignum.cc.o
+[ 15%] Building CXX object src/arrow/CMakeFiles/arrow_vendored.dir/vendored/double-conversion/cached-powers.cc.o
+[ 15%] Building CXX object src/arrow/CMakeFiles/arrow_vendored.dir/vendored/double-conversion/double-to-string.cc.o
+[ 16%] Building CXX object src/arrow/CMakeFiles/arrow_vendored.dir/vendored/double-conversion/fast-dtoa.cc.o
+[ 16%] Building CXX object src/arrow/CMakeFiles/arrow_vendored.dir/vendored/double-conversion/fixed-dtoa.cc.o
+[ 16%] Building CXX object src/arrow/CMakeFiles/arrow_vendored.dir/vendored/double-conversion/string-to-double.cc.o
+[ 16%] Building CXX object src/arrow/CMakeFiles/arrow_vendored.dir/vendored/double-conversion/strtod.cc.o
+[ 17%] Building C object src/arrow/CMakeFiles/arrow_vendored.dir/vendored/musl/strptime.c.o
+[ 17%] Building CXX object src/arrow/CMakeFiles/arrow_array.dir/array/validate.cc.o
+[ 17%] Building C object src/arrow/CMakeFiles/arrow_vendored.dir/vendored/uriparser/UriCommon.c.o
+[ 17%] Building C object src/arrow/CMakeFiles/arrow_vendored.dir/vendored/uriparser/UriCompare.c.o
+[ 17%] Building C object src/arrow/CMakeFiles/arrow_vendored.dir/vendored/uriparser/UriEscape.c.o
+[ 18%] Building C object src/arrow/CMakeFiles/arrow_vendored.dir/vendored/uriparser/UriFile.c.o
+[ 18%] Building C object src/arrow/CMakeFiles/arrow_vendored.dir/vendored/uriparser/UriIp4.c.o
+[ 18%] Building C object src/arrow/CMakeFiles/arrow_vendored.dir/vendored/uriparser/UriIp4Base.c.o
+[ 18%] Building C object src/arrow/CMakeFiles/arrow_vendored.dir/vendored/uriparser/UriMemory.c.o
+[ 19%] Building C object src/arrow/CMakeFiles/arrow_vendored.dir/vendored/uriparser/UriNormalize.c.o
+[ 19%] Building C object src/arrow/CMakeFiles/arrow_vendored.dir/vendored/uriparser/UriNormalizeBase.c.o
+[ 19%] Building C object src/arrow/CMakeFiles/arrow_vendored.dir/vendored/uriparser/UriParse.c.o
+[ 19%] Building C object src/arrow/CMakeFiles/arrow_vendored.dir/vendored/uriparser/UriParseBase.c.o
+[ 20%] Building C object src/arrow/CMakeFiles/arrow_vendored.dir/vendored/uriparser/UriQuery.c.o
+[ 20%] Building C object src/arrow/CMakeFiles/arrow_vendored.dir/vendored/uriparser/UriRecompose.c.o
+[ 20%] Building C object src/arrow/CMakeFiles/arrow_vendored.dir/vendored/uriparser/UriResolve.c.o
+[ 20%] Building C object src/arrow/CMakeFiles/arrow_vendored.dir/vendored/uriparser/UriShorten.c.o
+[ 21%] Building CXX object src/arrow/CMakeFiles/arrow_vendored.dir/vendored/datetime/ios.mm.o
+[ 21%] Built target arrow_vendored
+[ 21%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/align_util.cc.o
+[ 21%] Built target arrow_array
+[ 21%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/async_util.cc.o
+[ 22%] Building CXX object src/arrow/CMakeFiles/arrow_orc.dir/adapters/orc/adapter.cc.o
+[ 22%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/atfork_internal.cc.o
+[ 23%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/basic_decimal.cc.o
+[ 23%] Building CXX object src/arrow/CMakeFiles/arrow_orc.dir/adapters/orc/options.cc.o
+[ 23%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/bit_block_counter.cc.o
+[ 23%] Building CXX object src/arrow/CMakeFiles/arrow_orc.dir/adapters/orc/util.cc.o
+[ 23%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/bit_run_reader.cc.o
+[ 23%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/bit_util.cc.o
+[ 24%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/bitmap.cc.o
+[ 24%] Built target arrow_orc
+[ 24%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/bitmap_builders.cc.o
+[ 24%] Building CXX object src/arrow/CMakeFiles/arrow_compute_core.dir/compute/api_aggregate.cc.o
+[ 24%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/bitmap_ops.cc.o
+[ 24%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/bpacking.cc.o
+[ 25%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/bpacking_scalar.cc.o
+[ 26%] Building CXX object src/arrow/CMakeFiles/arrow_compute_core.dir/compute/api_scalar.cc.o
+[ 26%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/bpacking_simd_default.cc.o
+[ 26%] Building CXX object src/arrow/CMakeFiles/arrow_compute_core.dir/compute/api_vector.cc.o
+[ 26%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/byte_size.cc.o
+[ 26%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/byte_stream_split_internal.cc.o
+[ 26%] Building CXX object src/arrow/CMakeFiles/arrow_compute_core.dir/compute/cast.cc.o
+[ 27%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/cancel.cc.o
+[ 27%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/compression.cc.o
+[ 27%] Building CXX object src/arrow/CMakeFiles/arrow_compute_core.dir/compute/exec.cc.o
+[ 27%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/counting_semaphore.cc.o
+[ 27%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/cpu_info.cc.o
+[ 28%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/crc32.cc.o
+[ 28%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/debug.cc.o
+[ 28%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/decimal.cc.o
+[ 29%] Building CXX object src/arrow/CMakeFiles/arrow_compute_core.dir/compute/expression.cc.o
+[ 29%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/delimiting.cc.o
+[ 30%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/dict_util.cc.o
+[ 30%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/fixed_width_internal.cc.o
+[ 30%] Building CXX object src/arrow/CMakeFiles/arrow_compute_core.dir/compute/function.cc.o
+[ 30%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/float16.cc.o
+[ 30%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/formatting.cc.o
+[ 31%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/future.cc.o
+[ 31%] Building CXX object src/arrow/CMakeFiles/arrow_compute_core.dir/compute/function_internal.cc.o
+[ 31%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/fuzz_internal.cc.o
+[ 32%] Building CXX object src/arrow/CMakeFiles/arrow_compute_core.dir/compute/kernel.cc.o
+[ 32%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/hashing.cc.o
+[ 32%] Building CXX object src/arrow/CMakeFiles/arrow_compute_core.dir/compute/ordering.cc.o
+[ 33%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/int_util.cc.o
+[ 33%] Building CXX object src/arrow/CMakeFiles/arrow_compute_core.dir/compute/registry.cc.o
+[ 33%] Building CXX object src/arrow/CMakeFiles/arrow_compute_core.dir/compute/kernels/chunked_internal.cc.o
+[ 33%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/io_util.cc.o
+[ 34%] Building CXX object src/arrow/CMakeFiles/arrow_compute_core.dir/compute/kernels/codegen_internal.cc.o
+[ 34%] Building CXX object src/arrow/CMakeFiles/arrow_compute_core.dir/compute/kernels/scalar_cast_boolean.cc.o
+[ 34%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/list_util.cc.o
+[ 34%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/logger.cc.o
+[ 34%] Building CXX object src/arrow/CMakeFiles/arrow_compute_core.dir/compute/kernels/scalar_cast_dictionary.cc.o
+[ 35%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/logging.cc.o
+[ 35%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/key_value_metadata.cc.o
+[ 35%] Building CXX object src/arrow/CMakeFiles/arrow_compute_core.dir/compute/kernels/scalar_cast_extension.cc.o
+[ 35%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/math_internal.cc.o
+[ 36%] Building CXX object src/arrow/CMakeFiles/arrow_compute_core.dir/compute/kernels/scalar_cast_internal.cc.o
+[ 36%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/memory.cc.o
+[ 37%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/mutex.cc.o
+[ 37%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/ree_util.cc.o
+[ 37%] Building CXX object src/arrow/CMakeFiles/arrow_compute_core.dir/compute/kernels/scalar_cast_nested.cc.o
+[ 37%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/secure_string.cc.o
+[ 37%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/string.cc.o
+[ 37%] Building CXX object src/arrow/CMakeFiles/arrow_compute_core.dir/compute/kernels/scalar_cast_numeric.cc.o
+[ 38%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/string_util.cc.o
+[ 38%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/task_group.cc.o
+[ 38%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/tdigest.cc.o
+[ 38%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/thread_pool.cc.o
+[ 39%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/time.cc.o
+[ 39%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/tracing.cc.o
+[ 39%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/trie.cc.o
+[ 39%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/union_util.cc.o
+[ 40%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/unreachable.cc.o
+[ 40%] Building CXX object src/arrow/CMakeFiles/arrow_compute_core.dir/compute/kernels/scalar_cast_string.cc.o
+[ 40%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/uri.cc.o
+[ 40%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/utf8.cc.o
+[ 40%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/value_parsing.cc.o
+[ 41%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/compression_brotli.cc.o
+[ 41%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/compression_lz4.cc.o
+[ 41%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/compression_snappy.cc.o
+[ 42%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/compression_zlib.cc.o
+[ 42%] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/compression_zstd.cc.o
+[ 42%] Built target arrow_util
+[ 43%] Building CXX object src/arrow/CMakeFiles/arrow_compute_core.dir/compute/kernels/scalar_cast_temporal.cc.o
+[ 43%] Building CXX object src/arrow/CMakeFiles/arrow_compute_core.dir/compute/kernels/temporal_internal.cc.o
+[ 43%] Building CXX object src/arrow/CMakeFiles/arrow_filesystem.dir/filesystem/filesystem.cc.o
+[ 43%] Building CXX object src/arrow/CMakeFiles/arrow_compute_core.dir/compute/kernels/vector_hash.cc.o
+[ 44%] Building CXX object src/arrow/CMakeFiles/arrow_filesystem.dir/filesystem/localfs.cc.o
+[ 44%] Building CXX object src/arrow/CMakeFiles/arrow_filesystem.dir/filesystem/mockfs.cc.o
+[ 44%] Building CXX object src/arrow/CMakeFiles/arrow_compute_core.dir/compute/kernels/vector_selection.cc.o
+[ 44%] Building CXX object src/arrow/CMakeFiles/arrow_filesystem.dir/filesystem/path_util.cc.o
+[ 45%] Building CXX object src/arrow/CMakeFiles/arrow_compute_core.dir/compute/kernels/vector_selection_filter_internal.cc.o
+[ 45%] Building CXX object src/arrow/CMakeFiles/arrow_filesystem.dir/filesystem/util_internal.cc.o
+[ 45%] Built target arrow_filesystem
+[ 45%] Building CXX object src/arrow/CMakeFiles/arrow_compute_core.dir/compute/kernels/vector_selection_internal.cc.o
+[ 45%] Building CXX object src/arrow/CMakeFiles/arrow_ipc.dir/ipc/dictionary.cc.o
+[ 46%] Building CXX object src/arrow/CMakeFiles/arrow_ipc.dir/ipc/feather.cc.o
+[ 46%] Building CXX object src/arrow/CMakeFiles/arrow_compute_core.dir/compute/kernels/vector_selection_take_internal.cc.o
+[ 46%] Building CXX object src/arrow/CMakeFiles/arrow_ipc.dir/ipc/message.cc.o
+[ 46%] Building CXX object src/arrow/CMakeFiles/arrow_ipc.dir/ipc/metadata_internal.cc.o
+[ 46%] Building CXX object src/arrow/CMakeFiles/arrow_compute_core.dir/compute/kernels/vector_swizzle.cc.o
+[ 46%] Building CXX object src/arrow/CMakeFiles/arrow_ipc.dir/ipc/options.cc.o
+[ 47%] Building CXX object src/arrow/CMakeFiles/arrow_ipc.dir/ipc/reader.cc.o
+[ 47%] Building CXX object src/arrow/CMakeFiles/arrow_ipc.dir/ipc/writer.cc.o
+[ 47%] Built target arrow_ipc
+[ 47%] Building CXX object src/arrow/CMakeFiles/arrow_json.dir/extension/fixed_shape_tensor.cc.o
+[ 47%] Building CXX object src/arrow/CMakeFiles/arrow_json.dir/extension/opaque.cc.o
+[ 48%] Building CXX object src/arrow/CMakeFiles/arrow_json.dir/extension/tensor_internal.cc.o
+[ 48%] Built target arrow_compute_core
+[ 48%] Bundling /Users/jiangyuan/open/doris/thirdparty/src/arrow-apache-arrow-24.0.0/cpp/release/release/libarrow_bundled_dependencies.a
+[ 48%] Built target arrow_bundled_dependencies_merge
+[ 48%] Building CXX object src/arrow/CMakeFiles/arrow_json.dir/extension/variable_shape_tensor.cc.o
+[ 48%] Generating Flight.pb.cc, Flight.pb.h, Flight.grpc.pb.cc, Flight.grpc.pb.h
+[ 48%] Built target flight_grpc_gen
+[ 48%] Building CXX object src/arrow/CMakeFiles/arrow_json.dir/json/options.cc.o
+[ 48%] Generating FlightSql.pb.cc, FlightSql.pb.h
+[ 48%] Built target flight_sql_protobuf_gen
+[ 48%] Building CXX object src/arrow/CMakeFiles/arrow_json.dir/json/chunked_builder.cc.o
+[ 49%] Building CXX object src/arrow/CMakeFiles/arrow_json.dir/json/chunker.cc.o
+[ 49%] Building CXX object src/arrow/CMakeFiles/arrow_json.dir/json/converter.cc.o
+[ 49%] Building CXX object src/arrow/CMakeFiles/arrow_json.dir/json/from_string.cc.o
+[ 49%] Building CXX object src/arrow/CMakeFiles/arrow_json.dir/json/object_parser.cc.o
+[ 50%] Building CXX object src/arrow/CMakeFiles/arrow_json.dir/json/object_writer.cc.o
+[ 50%] Building CXX object src/arrow/CMakeFiles/arrow_json.dir/json/parser.cc.o
+[ 50%] Building CXX object src/arrow/CMakeFiles/arrow_json.dir/json/reader.cc.o
+[ 50%] Built target arrow_json
+[ 51%] Building CXX object src/arrow/CMakeFiles/arrow_objlib.dir/buffer.cc.o
+[ 51%] Building CXX object src/arrow/CMakeFiles/arrow_objlib.dir/builder.cc.o
+[ 51%] Building CXX object src/arrow/CMakeFiles/arrow_objlib.dir/chunked_array.cc.o
+[ 52%] Building CXX object src/arrow/CMakeFiles/arrow_objlib.dir/chunk_resolver.cc.o
+[ 52%] Building CXX object src/arrow/CMakeFiles/arrow_objlib.dir/compare.cc.o
+[ 52%] Building CXX object src/arrow/CMakeFiles/arrow_objlib.dir/config.cc.o
+[ 52%] Building CXX object src/arrow/CMakeFiles/arrow_objlib.dir/datum.cc.o
+[ 53%] Building CXX object src/arrow/CMakeFiles/arrow_objlib.dir/device.cc.o
+[ 53%] Building CXX object src/arrow/CMakeFiles/arrow_objlib.dir/device_allocation_type_set.cc.o
+[ 53%] Building CXX object src/arrow/CMakeFiles/arrow_objlib.dir/extension_type.cc.o
+[ 53%] Building CXX object src/arrow/CMakeFiles/arrow_objlib.dir/extension/bool8.cc.o
+[ 54%] Building CXX object src/arrow/CMakeFiles/arrow_objlib.dir/extension/json.cc.o
+[ 54%] Building CXX object src/arrow/CMakeFiles/arrow_objlib.dir/extension/parquet_variant.cc.o
+[ 54%] Building CXX object src/arrow/CMakeFiles/arrow_objlib.dir/extension/uuid.cc.o
+[ 54%] Building CXX object src/arrow/CMakeFiles/arrow_objlib.dir/pretty_print.cc.o
+[ 55%] Building CXX object src/arrow/CMakeFiles/arrow_objlib.dir/record_batch.cc.o
+[ 55%] Building CXX object src/arrow/CMakeFiles/arrow_objlib.dir/result.cc.o
+[ 55%] Building CXX object src/arrow/CMakeFiles/arrow_objlib.dir/scalar.cc.o
+[ 55%] Building CXX object src/arrow/CMakeFiles/arrow_objlib.dir/sparse_tensor.cc.o
+[ 56%] Building CXX object src/arrow/CMakeFiles/arrow_objlib.dir/status.cc.o
+[ 56%] Building CXX object src/arrow/CMakeFiles/arrow_objlib.dir/table.cc.o
+[ 56%] Building CXX object src/arrow/CMakeFiles/arrow_objlib.dir/table_builder.cc.o
+[ 56%] Building CXX object src/arrow/CMakeFiles/arrow_objlib.dir/tensor.cc.o
+[ 57%] Building CXX object src/arrow/CMakeFiles/arrow_objlib.dir/tensor/coo_converter.cc.o
+[ 57%] Building CXX object src/arrow/CMakeFiles/arrow_objlib.dir/tensor/csf_converter.cc.o
+[ 57%] Building CXX object src/arrow/CMakeFiles/arrow_objlib.dir/tensor/csx_converter.cc.o
+[ 57%] Building CXX object src/arrow/CMakeFiles/arrow_objlib.dir/type.cc.o
+[ 58%] Building CXX object src/arrow/CMakeFiles/arrow_objlib.dir/type_traits.cc.o
+[ 58%] Building CXX object src/arrow/CMakeFiles/arrow_objlib.dir/visitor.cc.o
+[ 58%] Building CXX object src/arrow/CMakeFiles/arrow_objlib.dir/c/bridge.cc.o
+[ 58%] Building CXX object src/arrow/CMakeFiles/arrow_objlib.dir/c/dlpack.cc.o
+[ 58%] Built target arrow_objlib
+[ 59%] Linking CXX static library ../../release/libarrow.a
+[ 59%] Built target arrow_static
+[ 61%] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/arrow/fuzz_encoding_internal.cc.o
+[ 61%] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/initialize.cc.o
+[ 61%] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/kernels/aggregate_basic.cc.o
+[ 61%] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/arrow/fuzz_internal.cc.o
+[ 61%] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/arrow/path_internal.cc.o
+[ 61%] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/arrow/reader.cc.o
+[ 61%] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/kernels/aggregate_mode.cc.o
+[ 62%] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/arrow/reader_internal.cc.o
+[ 62%] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/kernels/aggregate_pivot.cc.o
+[ 62%] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/arrow/schema.cc.o
+[ 63%] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/kernels/aggregate_quantile.cc.o
+[ 63%] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/arrow/schema_internal.cc.o
+[ 63%] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/arrow/writer.cc.o
+[ 64%] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/bloom_filter.cc.o
+[ 64%] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/kernels/aggregate_tdigest.cc.o
+[ 64%] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/bloom_filter_reader.cc.o
+[ 64%] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/kernels/aggregate_var_std.cc.o
+[ 64%] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/bloom_filter_writer.cc.o
+[ 64%] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/chunker_internal.cc.o
+[ 64%] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/kernels/hash_aggregate.cc.o
+[ 65%] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/column_reader.cc.o
+[ 65%] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/column_scanner.cc.o
+[ 65%] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/column_writer.cc.o
+[ 66%] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/kernels/hash_aggregate_numeric.cc.o
+[ 66%] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/decoder.cc.o
+[ 67%] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/encoder.cc.o
+[ 67%] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/kernels/hash_aggregate_pivot.cc.o
+[ 67%] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/encryption/encryption.cc.o
+[ 67%] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/kernels/pivot_internal.cc.o
+[ 67%] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/encryption/internal_file_decryptor.cc.o
+[ 67%] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/encryption/internal_file_encryptor.cc.o
+[ 68%] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/kernels/ree_util_internal.cc.o
+[ 69%] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/exception.cc.o
+[ 69%] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/kernels/scalar_arithmetic.cc.o
+[ 69%] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/file_reader.cc.o
+[ 69%] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/file_writer.cc.o
+[ 70%] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/geospatial/statistics.cc.o
+[ 70%] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/geospatial/util_internal.cc.o
+[ 70%] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/geospatial/util_json_internal.cc.o
+[ 70%] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/level_comparison.cc.o
+[ 71%] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/level_conversion.cc.o
+[ 71%] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/metadata.cc.o
+[ 71%] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/xxhasher.cc.o
+[ 71%] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/page_index.cc.o
+[ 71%] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/kernels/scalar_boolean.cc.o
+[ 72%] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/__/generated/parquet_types.cpp.o
+[ 72%] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/kernels/scalar_compare.cc.o
+[ 72%] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/platform.cc.o
+[ 72%] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/printer.cc.o
+[ 72%] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/properties.cc.o
+[ 73%] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/schema.cc.o
+[ 73%] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/size_statistics.cc.o
+[ 73%] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/statistics.cc.o
+[ 74%] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/kernels/scalar_if_else.cc.o
+[ 74%] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/stream_reader.cc.o
+[ 75%] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/stream_writer.cc.o
+[ 75%] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/types.cc.o
+[ 75%] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/encryption/encryption_internal_nossl.cc.o
+[ 75%] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/kernels/scalar_nested.cc.o
+[ 75%] Built target parquet_objlib
+[ 75%] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/kernels/scalar_random.cc.o
+[ 76%] Building CXX object src/arrow/flight/CMakeFiles/arrow_flight_objlib.dir/Flight.pb.cc.o
+[ 76%] Building CXX object src/arrow/flight/CMakeFiles/arrow_flight_objlib.dir/client.cc.o
+[ 76%] Building CXX object src/arrow/flight/CMakeFiles/arrow_flight_objlib.dir/client_cookie_middleware.cc.o
+[ 76%] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/kernels/scalar_round.cc.o
+[ 77%] Building CXX object src/arrow/flight/CMakeFiles/arrow_flight_objlib.dir/client_tracing_middleware.cc.o
+[ 77%] Building CXX object src/arrow/flight/CMakeFiles/arrow_flight_objlib.dir/cookie_internal.cc.o
+[ 77%] Building CXX object src/arrow/flight/CMakeFiles/arrow_flight_objlib.dir/middleware.cc.o
+[ 77%] Building CXX object src/arrow/flight/CMakeFiles/arrow_flight_objlib.dir/serialization_internal.cc.o
+[ 78%] Building CXX object src/arrow/flight/CMakeFiles/arrow_flight_objlib.dir/server.cc.o
+[ 78%] Building CXX object src/arrow/flight/CMakeFiles/arrow_flight_objlib.dir/server_auth.cc.o
+[ 78%] Building CXX object src/arrow/flight/CMakeFiles/arrow_flight_objlib.dir/server_tracing_middleware.cc.o
+[ 78%] Building CXX object src/arrow/flight/CMakeFiles/arrow_flight_objlib.dir/transport.cc.o
+[ 79%] Building CXX object src/arrow/flight/CMakeFiles/arrow_flight_objlib.dir/transport_server.cc.o
+[ 79%] Building CXX object src/arrow/flight/CMakeFiles/arrow_flight_objlib.dir/transport/grpc/grpc_client.cc.o
+[ 79%] Building CXX object src/arrow/flight/CMakeFiles/arrow_flight_objlib.dir/transport/grpc/grpc_server.cc.o
+[ 79%] Building CXX object src/arrow/flight/CMakeFiles/arrow_flight_objlib.dir/transport/grpc/serialization_internal.cc.o
+[ 80%] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/kernels/scalar_set_lookup.cc.o
+[ 81%] Building CXX object src/arrow/flight/CMakeFiles/arrow_flight_objlib.dir/transport/grpc/protocol_grpc_internal.cc.o
+[ 81%] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/kernels/scalar_string_ascii.cc.o
+[ 81%] Building CXX object src/arrow/flight/CMakeFiles/arrow_flight_objlib.dir/transport/grpc/util_internal.cc.o
+[ 81%] Building CXX object src/arrow/flight/CMakeFiles/arrow_flight_objlib.dir/types.cc.o
+[ 81%] Built target arrow_flight_objlib
+[ 81%] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/kernels/scalar_string_utf8.cc.o
+[ 81%] Linking CXX static library ../../release/libparquet.a
+[ 81%] Built target parquet_static
+[ 81%] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/kernels/scalar_temporal_binary.cc.o
+[ 81%] Linking CXX static library ../../../release/libarrow_flight.a
+[ 81%] Built target arrow_flight_static
+[ 82%] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/kernels/scalar_temporal_unary.cc.o
+[ 82%] Building CXX object src/arrow/flight/sql/CMakeFiles/arrow_flight_sql_objlib.dir/server.cc.o
+[ 82%] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/kernels/scalar_validity.cc.o
+[ 82%] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/kernels/util_internal.cc.o
+[ 83%] Building CXX object src/arrow/flight/sql/CMakeFiles/arrow_flight_sql_objlib.dir/sql_info_internal.cc.o
+[ 83%] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/kernels/vector_array_sort.cc.o
+[ 83%] Building CXX object src/arrow/flight/sql/CMakeFiles/arrow_flight_sql_objlib.dir/column_metadata.cc.o
+[ 83%] Building CXX object src/arrow/flight/sql/CMakeFiles/arrow_flight_sql_objlib.dir/client.cc.o
+[ 83%] Building CXX object src/arrow/flight/sql/CMakeFiles/arrow_flight_sql_objlib.dir/protocol_internal.cc.o
+[ 84%] Building CXX object src/arrow/flight/sql/CMakeFiles/arrow_flight_sql_objlib.dir/server_session_middleware.cc.o
+[ 84%] Built target arrow_flight_sql_objlib
+[ 85%] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/kernels/vector_cumulative_ops.cc.o
+[ 85%] Linking CXX static library ../../../../release/libarrow_flight_sql.a
+[ 85%] Built target arrow_flight_sql_static
+[ 85%] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/kernels/vector_nested.cc.o
+[ 85%] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/kernels/vector_pairwise.cc.o
+[ 85%] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/kernels/vector_rank.cc.o
+[ 86%] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/kernels/vector_replace.cc.o
+[ 86%] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/kernels/vector_run_end_encode.cc.o
+[ 86%] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/kernels/vector_select_k.cc.o
+[ 86%] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/kernels/vector_sort.cc.o
+[ 87%] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/kernels/vector_statistics.cc.o
+[ 87%] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/key_hash_internal.cc.o
+[ 87%] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/key_map_internal.cc.o
+[ 88%] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/light_array_internal.cc.o
+[ 88%] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/row/encode_internal.cc.o
+[ 88%] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/row/compare_internal.cc.o
+[ 88%] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/row/grouper.cc.o
+[ 89%] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/row/row_encoder_internal.cc.o
+[ 89%] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/row/row_internal.cc.o
+[ 89%] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/util.cc.o
+[ 89%] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/util_internal.cc.o
+[ 89%] Built target arrow_compute_objlib
+[ 90%] Linking CXX static library ../../release/libarrow_compute.a
+[ 90%] Built target arrow_compute_static
+[ 90%] Building CXX object src/arrow/acero/CMakeFiles/arrow_acero_objlib.dir/scalar_aggregate_node.cc.o
+[ 90%] Building CXX object src/arrow/acero/CMakeFiles/arrow_acero_objlib.dir/accumulation_queue.cc.o
+[ 90%] Building CXX object src/arrow/acero/CMakeFiles/arrow_acero_objlib.dir/groupby_aggregate_node.cc.o
+[ 91%] Building CXX object src/arrow/acero/CMakeFiles/arrow_acero_objlib.dir/aggregate_internal.cc.o
+[ 91%] Building CXX object src/arrow/acero/CMakeFiles/arrow_acero_objlib.dir/asof_join_node.cc.o
+[ 91%] Building CXX object src/arrow/acero/CMakeFiles/arrow_acero_objlib.dir/bloom_filter.cc.o
+[1m/Users/jiangyuan/open/doris/thirdparty/src/arrow-apache-arrow-24.0.0/cpp/src/arrow/acero/asof_join_node.cc:794:17: [0m[0;1;35mwarning: [0m[1mprivate field 'node_' is not used [-Wunused-private-field][0m
+  794 |   AsofJoinNode* node_;[0m
+      | [0;1;32m                ^
+[0m[1m/Users/jiangyuan/open/doris/thirdparty/src/arrow-apache-arrow-24.0.0/cpp/src/arrow/acero/asof_join_node.cc:796:10: [0m[0;1;35mwarning: [0m[1mprivate field 'index_' is not used [-Wunused-private-field][0m
+  796 |   size_t index_;[0m
+      | [0;1;32m         ^
+[0m[ 91%] Building CXX object src/arrow/acero/CMakeFiles/arrow_acero_objlib.dir/exec_plan.cc.o
+2 warnings generated.
+[ 92%] Building CXX object src/arrow/acero/CMakeFiles/arrow_acero_objlib.dir/fetch_node.cc.o
+[ 92%] Building CXX object src/arrow/acero/CMakeFiles/arrow_acero_objlib.dir/filter_node.cc.o
+[ 92%] Building CXX object src/arrow/acero/CMakeFiles/arrow_acero_objlib.dir/hash_join.cc.o
+[ 92%] Building CXX object src/arrow/acero/CMakeFiles/arrow_acero_objlib.dir/hash_join_dict.cc.o
+[ 93%] Building CXX object src/arrow/acero/CMakeFiles/arrow_acero_objlib.dir/hash_join_node.cc.o
+[ 93%] Building CXX object src/arrow/acero/CMakeFiles/arrow_acero_objlib.dir/map_node.cc.o
+[ 93%] Building CXX object src/arrow/acero/CMakeFiles/arrow_acero_objlib.dir/options.cc.o
+[ 93%] Building CXX object src/arrow/acero/CMakeFiles/arrow_acero_objlib.dir/order_by_node.cc.o
+[ 94%] Building CXX object src/arrow/acero/CMakeFiles/arrow_acero_objlib.dir/order_by_impl.cc.o
+[ 94%] Building CXX object src/arrow/acero/CMakeFiles/arrow_acero_objlib.dir/partition_util.cc.o
+[ 94%] Building CXX object src/arrow/acero/CMakeFiles/arrow_acero_objlib.dir/pivot_longer_node.cc.o
+[ 94%] Building CXX object src/arrow/acero/CMakeFiles/arrow_acero_objlib.dir/project_node.cc.o
+[ 95%] Building CXX object src/arrow/acero/CMakeFiles/arrow_acero_objlib.dir/query_context.cc.o
+[ 95%] Building CXX object src/arrow/acero/CMakeFiles/arrow_acero_objlib.dir/sink_node.cc.o
+[ 95%] Building CXX object src/arrow/acero/CMakeFiles/arrow_acero_objlib.dir/sorted_merge_node.cc.o
+[ 95%] Building CXX object src/arrow/acero/CMakeFiles/arrow_acero_objlib.dir/source_node.cc.o
+[ 96%] Building CXX object src/arrow/acero/CMakeFiles/arrow_acero_objlib.dir/swiss_join.cc.o
+[ 96%] Building CXX object src/arrow/acero/CMakeFiles/arrow_acero_objlib.dir/task_util.cc.o
+[ 96%] Building CXX object src/arrow/acero/CMakeFiles/arrow_acero_objlib.dir/time_series_util.cc.o
+[ 96%] Building CXX object src/arrow/acero/CMakeFiles/arrow_acero_objlib.dir/tpch_node.cc.o
+[ 97%] Building CXX object src/arrow/acero/CMakeFiles/arrow_acero_objlib.dir/union_node.cc.o
+[ 97%] Building CXX object src/arrow/acero/CMakeFiles/arrow_acero_objlib.dir/util.cc.o
+[ 97%] Built target arrow_acero_objlib
+[ 97%] Linking CXX static library ../../../release/libarrow_acero.a
+[ 97%] Built target arrow_acero_static
+[ 97%] Building CXX object src/arrow/dataset/CMakeFiles/arrow_dataset_objlib.dir/dataset.cc.o
+[ 97%] Building CXX object src/arrow/dataset/CMakeFiles/arrow_dataset_objlib.dir/dataset_writer.cc.o
+[ 97%] Building CXX object src/arrow/dataset/CMakeFiles/arrow_dataset_objlib.dir/discovery.cc.o
+[ 98%] Building CXX object src/arrow/dataset/CMakeFiles/arrow_dataset_objlib.dir/file_base.cc.o
+[ 98%] Building CXX object src/arrow/dataset/CMakeFiles/arrow_dataset_objlib.dir/file_ipc.cc.o
+[ 98%] Building CXX object src/arrow/dataset/CMakeFiles/arrow_dataset_objlib.dir/partition.cc.o
+[ 98%] Building CXX object src/arrow/dataset/CMakeFiles/arrow_dataset_objlib.dir/plan.cc.o
+[ 99%] Building CXX object src/arrow/dataset/CMakeFiles/arrow_dataset_objlib.dir/projector.cc.o
+[ 99%] Building CXX object src/arrow/dataset/CMakeFiles/arrow_dataset_objlib.dir/scanner.cc.o
+[ 99%] Building CXX object src/arrow/dataset/CMakeFiles/arrow_dataset_objlib.dir/scan_node.cc.o
+[ 99%] Building CXX object src/arrow/dataset/CMakeFiles/arrow_dataset_objlib.dir/file_json.cc.o
+[100%] Building CXX object src/arrow/dataset/CMakeFiles/arrow_dataset_objlib.dir/file_orc.cc.o
+[100%] Building CXX object src/arrow/dataset/CMakeFiles/arrow_dataset_objlib.dir/file_parquet.cc.o
+[100%] Built target arrow_dataset_objlib
+[100%] Linking CXX static library ../../../release/libarrow_dataset.a
+[100%] Built target arrow_dataset_static
+[  2%] Built target brotli_ep
+[  5%] Built target xsimd_ep
+[ 11%] Built target arrow_array
+[ 14%] Built target arrow_io
+[ 14%] Built target arrow_memory_pool
+[ 21%] Built target arrow_vendored
+[ 36%] Built target arrow_util
+[ 37%] Built target arrow_orc
+[ 44%] Built target arrow_compute_core
+[ 45%] Built target arrow_filesystem
+[ 47%] Built target arrow_ipc
+[ 50%] Built target arrow_json
+[ 58%] Built target arrow_objlib
+[ 59%] Built target arrow_static
+[ 71%] Built target arrow_compute_objlib
+[ 72%] Built target arrow_compute_static
+[ 72%] Bundling /Users/jiangyuan/open/doris/thirdparty/src/arrow-apache-arrow-24.0.0/cpp/release/release/libarrow_bundled_dependencies.a
+[ 72%] Built target arrow_bundled_dependencies_merge
+[ 79%] Built target arrow_acero_objlib
+[ 79%] Built target arrow_acero_static
+[ 90%] Built target parquet_objlib
+[ 90%] Built target parquet_static
+[ 93%] Built target arrow_dataset_objlib
+[ 93%] Built target arrow_dataset_static
+[ 93%] Built target flight_grpc_gen
+[ 98%] Built target arrow_flight_objlib
+[ 98%] Built target arrow_flight_static
+[ 98%] Built target flight_sql_protobuf_gen
+[100%] Built target arrow_flight_sql_objlib
+[100%] Built target arrow_flight_sql_static
+Install the project...
+-- Install configuration: "Release"
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/Arrow/FindSnappyAlt.cmake
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/Arrow/FindOpenSSLAlt.cmake
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/Arrow/FindglogAlt.cmake
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/Parquet/FindThriftAlt.cmake
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/Arrow/FindProtobufAlt.cmake
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/Arrow/Findlz4Alt.cmake
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/Arrow/FindzstdAlt.cmake
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/Arrow/Findre2Alt.cmake
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/ArrowFlight/FindabslAlt.cmake
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/ArrowFlight/FindgRPCAlt.cmake
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/Arrow/FindorcAlt.cmake
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/config.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/libarrow_compute.a
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/ArrowCompute/ArrowComputeConfig.cmake
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/ArrowCompute/ArrowComputeConfigVersion.cmake
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/ArrowCompute/ArrowComputeTargets.cmake
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/ArrowCompute/ArrowComputeTargets-release.cmake
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/pkgconfig/arrow-compute.pc
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/libarrow_bundled_dependencies.a
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/libarrow.a
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/Arrow/ArrowConfig.cmake
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/Arrow/ArrowConfigVersion.cmake
+-- Old export file "/Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/Arrow/ArrowTargets.cmake" will be replaced.  Removing files [/Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/Arrow/ArrowTargets-release.cmake].
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/Arrow/ArrowTargets.cmake
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/Arrow/ArrowTargets-release.cmake
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/pkgconfig/arrow.pc
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/api.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/array.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/buffer.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/buffer_builder.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/builder.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/chunk_resolver.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/chunked_array.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/compare.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/config.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/datum.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/device.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/device_allocation_type_set.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/extension_type.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/memory_pool.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/memory_pool_test.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/pretty_print.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/record_batch.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/result.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/scalar.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/sparse_tensor.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/status.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/stl.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/stl_allocator.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/stl_iterator.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/table.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/table_builder.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/tensor.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/type.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/type_fwd.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/type_traits.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/visit_array_inline.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/visit_data_inline.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/visit_scalar_inline.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/visit_type_inline.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/visitor.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/visitor_generate.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/Arrow/ArrowOptions.cmake
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/Arrow/arrow-config.cmake
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/testing/async_test_util.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/testing/builder.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/testing/executor_util.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/testing/extension_type.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/testing/fixed_width_test_util.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/testing/future_util.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/testing/generator.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/testing/gtest_compat.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/testing/gtest_util.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/testing/matchers.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/testing/math.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/testing/process.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/testing/random.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/testing/uniform_real.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/testing/util.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/testing/visibility.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/array/array_base.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/array/array_binary.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/array/array_decimal.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/array/array_dict.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/array/array_nested.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/array/array_primitive.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/array/array_run_end.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/array/builder_adaptive.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/array/builder_base.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/array/builder_binary.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/array/builder_decimal.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/array/builder_dict.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/array/builder_nested.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/array/builder_primitive.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/array/builder_run_end.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/array/builder_time.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/array/builder_union.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/array/concatenate.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/array/data.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/array/diff.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/array/statistics.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/array/util.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/array/validate.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/c/abi.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/c/bridge.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/c/dlpack.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/c/dlpack_abi.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/c/helpers.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/compute/api.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/compute/api_aggregate.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/compute/api_scalar.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/compute/api_vector.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/compute/cast.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/compute/exec.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/compute/expression.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/compute/function.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/compute/function_options.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/compute/initialize.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/compute/kernel.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/compute/ordering.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/compute/registry.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/compute/type_fwd.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/compute/util.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/compute/visibility.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/compute/row/grouper.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/extension/bool8.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/extension/fixed_shape_tensor.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/extension/json.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/extension/opaque.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/extension/parquet_variant.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/extension/uuid.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/extension/variable_shape_tensor.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/io/api.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/io/buffered.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/io/caching.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/io/compressed.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/io/concurrency.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/io/file.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/io/hdfs.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/io/interfaces.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/io/memory.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/io/mman.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/io/slow.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/io/stdio.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/io/test_common.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/io/transform.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/io/type_fwd.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/tensor/converter.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/algorithm.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/align_util.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/aligned_storage.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/async_generator.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/async_generator_fwd.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/async_util.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/base64.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/basic_decimal.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/benchmark_util.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/binary_view_util.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/bit_block_counter.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/bit_run_reader.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/bit_util.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/bitmap.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/bitmap_builders.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/bitmap_generate.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/bitmap_ops.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/bitmap_reader.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/bitmap_visit.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/bitmap_writer.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/byte_size.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/cancel.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/checked_cast.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/compare.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/compression.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/concurrent_map.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/converter.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/cpu_info.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/crc32.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/debug.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/decimal.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/delimiting.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/endian.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/float16.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/formatting.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/functional.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/future.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/hash_util.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/hashing.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/int_util.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/int_util_overflow.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/io_util.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/iterator.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/key_value_metadata.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/launder.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/list_util.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/logger.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/logging.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/macros.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/math_constants.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/mutex.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/parallel.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/pcg_random.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/prefetch.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/queue.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/range.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/ree_util.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/regex.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/rows_to_batches.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/secure_string.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/simd.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/small_vector.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/string.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/string_util.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/task_group.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/test_common.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/thread_pool.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/time.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/tracing.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/type_fwd.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/type_traits.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/ubsan.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/union_util.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/unreachable.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/uri.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/utf8.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/value_parsing.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/vector.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/visibility.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/windows_compatibility.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/util/windows_fixup.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/vendored/ProducerConsumerQueue.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/vendored/datetime.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/vendored/strptime.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/vendored/xxhash.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/vendored/datetime/date.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/vendored/datetime/ios.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/vendored/datetime/tz.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/vendored/datetime/tz_private.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/vendored/datetime/visibility.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/vendored/double-conversion/bignum-dtoa.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/vendored/double-conversion/bignum.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/vendored/double-conversion/cached-powers.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/vendored/double-conversion/diy-fp.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/vendored/double-conversion/double-conversion.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/vendored/double-conversion/double-to-string.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/vendored/double-conversion/fast-dtoa.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/vendored/double-conversion/fixed-dtoa.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/vendored/double-conversion/ieee.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/vendored/double-conversion/string-to-double.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/vendored/double-conversion/strtod.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/vendored/double-conversion/utils.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/vendored/pcg/pcg_extras.hpp
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/vendored/pcg/pcg_random.hpp
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/vendored/pcg/pcg_uint128.hpp
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/vendored/portable-snippets/debug-trap.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/vendored/safeint/safe_math.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/vendored/safeint/safe_math_impl.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/vendored/xxhash/xxhash.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/acero/accumulation_queue.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/acero/aggregate_node.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/acero/api.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/acero/asof_join_node.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/acero/backpressure_handler.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/acero/benchmark_util.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/acero/bloom_filter.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/acero/exec_plan.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/acero/hash_join.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/acero/hash_join_dict.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/acero/hash_join_node.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/acero/map_node.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/acero/options.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/acero/order_by_impl.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/acero/partition_util.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/acero/query_context.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/acero/schema_util.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/acero/task_util.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/acero/test_nodes.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/acero/time_series_util.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/acero/tpch_node.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/acero/type_fwd.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/acero/util.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/acero/visibility.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/libarrow_acero.a
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/ArrowAcero/ArrowAceroConfig.cmake
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/ArrowAcero/ArrowAceroConfigVersion.cmake
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/ArrowAcero/ArrowAceroTargets.cmake
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/ArrowAcero/ArrowAceroTargets-release.cmake
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/pkgconfig/arrow-acero.pc
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/dataset/api.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/dataset/dataset.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/dataset/dataset_writer.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/dataset/discovery.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/dataset/file_base.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/dataset/file_csv.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/dataset/file_ipc.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/dataset/file_json.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/dataset/file_orc.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/dataset/file_parquet.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/dataset/parquet_encryption_config.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/dataset/partition.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/dataset/plan.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/dataset/projector.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/dataset/scanner.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/dataset/type_fwd.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/dataset/visibility.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/libarrow_dataset.a
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/ArrowDataset/ArrowDatasetConfig.cmake
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/ArrowDataset/ArrowDatasetConfigVersion.cmake
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/ArrowDataset/ArrowDatasetTargets.cmake
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/ArrowDataset/ArrowDatasetTargets-release.cmake
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/pkgconfig/arrow-dataset.pc
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/filesystem/api.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/filesystem/azurefs.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/filesystem/filesystem.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/filesystem/filesystem_library.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/filesystem/gcsfs.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/filesystem/hdfs.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/filesystem/localfs.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/filesystem/mockfs.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/filesystem/path_util.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/filesystem/s3_test_util.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/filesystem/s3fs.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/filesystem/test_util.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/filesystem/type_fwd.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/pkgconfig/arrow-filesystem.pc
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/flight/api.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/flight/client.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/flight/client_auth.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/flight/client_cookie_middleware.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/flight/client_middleware.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/flight/client_tracing_middleware.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/flight/middleware.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/flight/otel_logging.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/flight/platform.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/flight/server.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/flight/server_auth.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/flight/server_middleware.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/flight/server_tracing_middleware.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/flight/test_auth_handlers.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/flight/test_definitions.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/flight/test_flight_server.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/flight/test_util.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/flight/transport.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/flight/transport_server.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/flight/type_fwd.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/flight/types.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/flight/types_async.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/flight/visibility.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/libarrow_flight.a
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/ArrowFlight/ArrowFlightConfig.cmake
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/ArrowFlight/ArrowFlightConfigVersion.cmake
+-- Old export file "/Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/ArrowFlight/ArrowFlightTargets.cmake" will be replaced.  Removing files [/Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/ArrowFlight/ArrowFlightTargets-release.cmake].
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/ArrowFlight/ArrowFlightTargets.cmake
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/ArrowFlight/ArrowFlightTargets-release.cmake
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/pkgconfig/arrow-flight.pc
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/flight/sql/api.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/flight/sql/client.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/flight/sql/column_metadata.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/flight/sql/server.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/flight/sql/server_session_middleware.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/flight/sql/server_session_middleware_factory.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/flight/sql/types.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/flight/sql/visibility.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/libarrow_flight_sql.a
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/ArrowFlightSql/ArrowFlightSqlConfig.cmake
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/ArrowFlightSql/ArrowFlightSqlConfigVersion.cmake
+-- Old export file "/Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/ArrowFlightSql/ArrowFlightSqlTargets.cmake" will be replaced.  Removing files [/Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/ArrowFlightSql/ArrowFlightSqlTargets-release.cmake].
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/ArrowFlightSql/ArrowFlightSqlTargets.cmake
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/ArrowFlightSql/ArrowFlightSqlTargets-release.cmake
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/pkgconfig/arrow-flight-sql.pc
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/ipc/api.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/ipc/dictionary.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/ipc/feather.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/ipc/message.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/ipc/options.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/ipc/reader.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/ipc/test_common.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/ipc/type_fwd.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/ipc/util.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/ipc/writer.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/json/api.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/json/chunked_builder.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/json/chunker.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/json/converter.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/json/from_string.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/json/object_parser.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/json/object_writer.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/json/options.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/json/parser.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/json/rapidjson_defs.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/json/reader.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/json/test_common.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/json/type_fwd.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/pkgconfig/arrow-json.pc
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/adapters/orc/adapter.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/arrow/adapters/orc/options.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/pkgconfig/arrow-orc.pc
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/libparquet.a
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/Parquet/ParquetConfig.cmake
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/Parquet/ParquetConfigVersion.cmake
+-- Old export file "/Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/Parquet/ParquetTargets.cmake" will be replaced.  Removing files [/Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/Parquet/ParquetTargets-release.cmake].
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/Parquet/ParquetTargets.cmake
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/Parquet/ParquetTargets-release.cmake
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/pkgconfig/parquet.pc
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/api/io.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/api/reader.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/api/schema.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/api/writer.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/arrow/reader.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/arrow/schema.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/arrow/test_util.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/arrow/writer.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/encryption/crypto_factory.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/encryption/encryption.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/encryption/file_key_material_store.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/encryption/file_key_unwrapper.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/encryption/file_key_wrapper.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/encryption/file_system_key_material_store.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/encryption/key_encryption_key.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/encryption/key_material.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/encryption/key_metadata.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/encryption/key_toolkit.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/encryption/kms_client.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/encryption/kms_client_factory.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/encryption/local_wrap_kms_client.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/encryption/test_encryption_util.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/encryption/test_in_memory_kms.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/encryption/two_level_cache_with_expiration.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/encryption/type_fwd.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/geospatial/statistics.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/benchmark_util.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/bloom_filter.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/bloom_filter_reader.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/bloom_filter_writer.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/column_page.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/column_reader.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/column_scanner.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/column_writer.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/encoding.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/exception.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/file_reader.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/file_writer.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/hasher.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/index_location.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/level_comparison.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/level_comparison_inc.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/level_conversion.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/level_conversion_inc.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/metadata.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/page_index.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/platform.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/printer.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/properties.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/schema.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/size_statistics.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/statistics.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/stream_reader.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/stream_writer.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/test_util.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/type_fwd.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/types.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/visit_type_inline.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/windows_compatibility.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/windows_fixup.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/xxhasher.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/include/parquet/parquet_version.h
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/share/doc/arrow/LICENSE.txt
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/share/doc/arrow/NOTICE.txt
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/share/doc/arrow/README.md
+-- Installing: /Users/jiangyuan/open/doris/thirdparty/installed/share/arrow/gdb/gdb_arrow.py
+Cleaning up source: arrow-apache-arrow-24.0.0
+debug after clean: arrow
+Filesystem        Size    Used   Avail Capacity iused ifree %iused  Mounted on
+/dev/disk3s3s1   460Gi    10Gi    78Gi    12%    426k  823M    0%   /
+devfs            202Ki   202Ki     0Bi   100%     698     0  100%   /dev
+/dev/disk3s6     460Gi   7.0Gi    78Gi     9%       7  823M    0%   /System/Volumes/VM
+/dev/disk3s4     460Gi   6.6Gi    78Gi     8%    1.2k  823M    0%   /System/Volumes/Preboot
+/dev/disk3s2     460Gi    42Mi    78Gi     1%      54  823M    0%   /System/Volumes/Update
+/dev/disk1s2     500Mi   6.0Mi   481Mi     2%       1  4.9M    0%   /System/Volumes/xarts
+/dev/disk1s1     500Mi   5.4Mi   481Mi     2%      39  4.9M    0%   /System/Volumes/iSCPreboot
+/dev/disk1s3     500Mi   3.0Mi   481Mi     1%      88  4.9M    0%   /System/Volumes/Hardware
+/dev/disk3s1     460Gi   357Gi    78Gi    82%    4.9M  823M    1%   /System/Volumes/Data
+map auto_home      0Bi     0Bi     0Bi   100%       0     0     -   /System/Volumes/Data/home
+2.2G	/Users/jiangyuan/open/doris/thirdparty
+Finished to build all thirdparties

@@ -1,0 +1,23 @@
+diff --git a/be/CMakeLists.txt b/be/CMakeLists.txt
+index 7f8b577814d..53520e40f50 100644
+--- a/be/CMakeLists.txt
++++ b/be/CMakeLists.txt
+@@ -959,7 +959,8 @@ if (ENABLE_PCH)
+     if (OpenMP_CXX_FOUND OR OpenMP_FOUND)
+         if (DEFINED OpenMP_CXX_FLAGS AND NOT OpenMP_CXX_FLAGS STREQUAL "")
+             # Apply the OpenMP flags to all C++ compilations so PCH and all TUs match.
+-            add_compile_options($<$<COMPILE_LANGUAGE:CXX>:${OpenMP_CXX_FLAGS}>)
++            # FindOpenMP can return multiple arguments, such as AppleClang's -Xclang -fopenmp.
++            add_compile_options("$<$<COMPILE_LANGUAGE:CXX>:SHELL:${OpenMP_CXX_FLAGS}>")
+         endif()
+         # Ensure final link includes the OpenMP runtime when needed.
+         if (TARGET OpenMP::OpenMP_CXX)
+@@ -979,7 +980,7 @@ if (ENABLE_PCH)
+         target_link_libraries(pch PUBLIC OpenMP::OpenMP_CXX)
+         # Also add flags explicitly to be robust if usage requirements don’t apply during PCH.
+         if (DEFINED OpenMP_CXX_FLAGS AND NOT OpenMP_CXX_FLAGS STREQUAL "")
+-            target_compile_options(pch PUBLIC ${OpenMP_CXX_FLAGS})
++            target_compile_options(pch PUBLIC "SHELL:${OpenMP_CXX_FLAGS}")
+         endif()
+         # Copy usage requirements from the imported OpenMP target onto PCH.
+         if (TARGET OpenMP::OpenMP_CXX)

@@ -1,0 +1,14 @@
+{
+  "/Users/jiangyuan/doris-guide/step10/RESULT.md": {
+    "copy": "step10-result.original.md",
+    "sha256": "dcc4c241896e53260a144d0fce2492cd3c3f353bdef422161abd473f52480c1c"
+  },
+  "/Users/jiangyuan/doris-guide/step11/RESULT.md": {
+    "copy": "step11-result.original.md",
+    "sha256": "ba0aacd691bf81b7b05985f95eb0a06651b4e590cff7605c57eba73e4334d5f8"
+  },
+  "/Users/jiangyuan/doris-guide/step12/RESULT.md": {
+    "copy": "step12-result.original.md",
+    "sha256": "c5867d22aac1228767820a3581d76874006f9cd3f6ab8a251bffd8dcebbb3530"
+  }
+}

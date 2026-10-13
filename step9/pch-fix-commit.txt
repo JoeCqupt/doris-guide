@@ -1,0 +1,21 @@
+[fix](build) Preserve OpenMP option groups in PCH builds
+
+### What problem does this PR solve?
+
+Problem Summary: With AppleClang and PCH enabled, FindOpenMP returns
+-Xclang -fopenmp as a space-separated string. Passing this string directly
+to compile options produces one argument and fails both PCH and ordinary
+C++ compilation. Use SHELL groups in both affected locations so CMake
+parses the flags into arguments while preserving their grouping.
+
+### Release note
+
+Fix OpenMP compiler argument handling in AppleClang PCH builds.
+
+### Check List (For Author)
+
+- Test: Manual test: extracted original PCH configuration reproduces failure;
+  patched configuration builds and runs a PCH consumer. ASAN build.sh --be
+  -j 2 builds pch, then fails on a missing AWS SDK header. git diff --check passes.
+- Behavior changed: Yes, multi-argument OpenMP flags compile correctly.
+- Does this need documentation: No

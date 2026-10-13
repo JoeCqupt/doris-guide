@@ -1,0 +1,8 @@
+# macOS metadata
+.DS_Store
+
+# Local Doris runtime data
+/be-storage/
+
+# Temporary CMake build products; retain probe sources and learning logs
+**/build/

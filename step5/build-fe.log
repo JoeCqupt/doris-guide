@@ -1,0 +1,71 @@
+Target system: Darwin; Target arch: arm64
+Python 3.14.3
+find: /usr/bin/../sbin/authserver: Permission denied
+find: /usr/bin/../sbin/authserver: Permission denied
+Check JAVA_HOME version
+Apache Maven 3.9.15 (98b2cdbfdb5f1ac8781f537ea9acccaed7922349)
+Maven home: /opt/homebrew/Cellar/maven/3.9.15/libexec
+Java version: 17.0.17, vendor: Oracle Corporation, runtime: /Users/jiangyuan/dev/jdk-17.0.17.jdk/Contents/Home
+Default locale: zh_CN_#Hans, platform encoding: UTF-8
+OS name: "mac os x", version: "15.6.1", arch: "aarch64", family: "mac"
+cmake version 4.2.1
+
+CMake suite maintained and supported by Kitware (kitware.com/cmake).
+Get params:
+    BUILD_FE                            -- 0
+    BUILD_BE                            -- 0
+    BUILD_CLOUD                         -- 0
+    BUILD_META_TOOL                     -- OFF
+    BUILD_FILE_CACHE_MICROBENCH_TOOL    -- OFF
+    BUILD_INDEX_TOOL                    -- OFF
+    BUILD_BENCHMARK                     -- OFF
+    BUILD_TASK_EXECUTOR_SIMULATOR       -- OFF
+    BUILD_BE_JAVA_EXTENSIONS            -- 0
+    BUILD_BE_CDC_CLIENT                 -- 0
+    BUILD_HIVE_UDF                      -- 0
+    BUILD_JUICEFS                       -- OFF
+    BUILD_JINDOFS                       -- OFF
+    PARALLEL                            -- 3
+    CLEAN                               -- 0
+    GLIBC_COMPATIBILITY                 -- OFF
+    USE_AVX2                            -- ON
+    USE_LIBCPP                          -- ON
+    STRIP_DEBUG_INFO                    -- OFF
+    DORIS_DEV_DEBUG_INFO                -- 
+    USE_JEMALLOC                        -- OFF
+    USE_BTHREAD_SCANNER                 -- OFF
+    ENABLE_INJECTION_POINT              -- OFF
+    DENABLE_CLANG_COVERAGE              -- OFF
+    DISPLAY_BUILD_TIME                  -- OFF
+    ENABLE_PCH                          -- ON
+    ENABLE_UNITY_BUILD                  -- ON
+    EXTRA_FE_MODULES                    -- 
+    EXTRA_BE_MODULES                    -- 
+    EXTRA_CLOUD_MODULES                 -- 
+
+Feature List: -TDE,-TLS,-VARIANT_NESTED_GROUP,-HDFS_STORAGE_VAULT,+UI,+AZURE_BLOB,+AZURE_STORAGE_VAULT,-HIVE_UDF,-BE_JAVA_EXTENSIONS
+Target system: Darwin; Target arch: arm64
+Python 3.14.3
+find: /usr/bin/../sbin/authserver: Permission denied
+find: /usr/bin/../sbin/authserver: Permission denied
+Check JAVA_HOME version
+Apache Maven 3.9.15 (98b2cdbfdb5f1ac8781f537ea9acccaed7922349)
+Maven home: /opt/homebrew/Cellar/maven/3.9.15/libexec
+Java version: 17.0.17, vendor: Oracle Corporation, runtime: /Users/jiangyuan/dev/jdk-17.0.17.jdk/Contents/Home
+Default locale: zh_CN_#Hans, platform encoding: UTF-8
+OS name: "mac os x", version: "15.6.1", arch: "aarch64", family: "mac"
+cmake version 4.2.1
+
+CMake suite maintained and supported by Kitware (kitware.com/cmake).
+Build generated code
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C script
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C proto
+bash /Users/jiangyuan/open/doris/gensrc/script/gen_build_version.sh
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C thrift
+make[1]: Nothing to be done for `all'.
+/Users/jiangyuan/open/doris/thirdparty/installed/bin/thrift -I /Users/jiangyuan/open/doris/gensrc/thrift -I /Users/jiangyuan/open/doris/gensrc/thrift/../build//thrift/ --gen cpp:moveable_types,no_skeleton -out /Users/jiangyuan/open/doris/gensrc/thrift/../build//gen_cpp --allow-64bit-consts -strict /Users/jiangyuan/open/doris/gensrc/thrift/MasterService.thrift
+Done
+OUTPUT DIR=/Users/jiangyuan/open/doris/output/
+***************************************
+Successfully build Doris
+***************************************

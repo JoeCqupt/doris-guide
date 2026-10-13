@@ -1,0 +1,906 @@
+Target system: Darwin; Target arch: arm64
+Python 3.14.3
+find: /usr/bin/../sbin/authserver: Permission denied
+find: /usr/bin/../sbin/authserver: Permission denied
+cmake version 4.2.1
+
+CMake suite maintained and supported by Kitware (kitware.com/cmake).
+Get params:
+    PARALLEL            -- 2
+    CLEAN               -- 
+    PACKAGES            -- thrift
+    CONTINUE            -- 
+
+use vectorscan instead of hyperscan on aarch64
+use vectorscan instead of hyperscan on aarch64
+Download and build specified libs only: THRIFT
+===== Downloading thirdparty archives...
+Archive thrift-0.24.0.tar.gz already exist.
+===== Downloading thirdparty archives...done
+===== Checking all thirdpart archives...
+===== Checking all thirdpart archives...done
+===== Unpacking all thirdparty archives...
+thrift-0.24.0 already unpacked.
+===== Unpacking all thirdparty archives...done
+===== Cloning git repositories...
+===== Cloning git repositories...done
+===== Patching thirdparty archives...
+MacOS. Skipping BITSHUFFLE patching.
+~/open/doris/thirdparty/installed ~/open/doris/thirdparty
+~/open/doris/thirdparty
+PKG_CONFIG_PATH: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/pkgconfig
+CMAKE_PREFIX_PATH: /Users/jiangyuan/open/doris/thirdparty/installed
+cmake version 4.2.1
+
+CMake suite maintained and supported by Kitware (kitware.com/cmake).
+cmake is found
+byacc - 2.0 20260126
+byacc is found
+flex 2.6.4 Apple(flex-35)
+flex is found
+automake (GNU automake) 1.19
+Features: subsecond-mtime
+
+Copyright (C) 2026 Free Software Foundation, Inc.
+License GPLv2+: GNU GPL version 2 or later
+  <https://gnu.org/licenses/gpl-2.0.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by Tom Tromey <tromey@redhat.com>
+       and Alexandre Duret-Lutz <adl@gnu.org>.
+automake is found
+glibtoolize (GNU libtool) 2.5.4
+Copyright (C) 2026 Free Software Foundation, Inc.
+License GPLv2+: GNU GPL version 2 or later <https://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by Gary V. Vaughan <gary@gnu.org>, 2003
+libtool is found
+Do not strip thirdparty libraries
+===== begin build thrift-0.24.0
+checking for a BSD-compatible install... /opt/homebrew/opt/coreutils/bin/ginstall -c
+checking whether build environment is sane... yes
+checking for a race-free mkdir -p... /opt/homebrew/opt/coreutils/bin/gmkdir -p
+checking for gawk... no
+checking for mawk... no
+checking for nawk... no
+checking for awk... awk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether UID '501' is supported by ustar format... yes
+checking whether GID '20' is supported by ustar format... yes
+checking how to create a ustar tar archive... pax
+checking for pkg-config... no
+checking for gcc... /usr/bin/../bin/clang
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether /usr/bin/../bin/clang accepts -g... yes
+checking for /usr/bin/../bin/clang option to enable C11 features... none needed
+checking whether /usr/bin/../bin/clang understands -c and -o together... yes
+checking whether make supports the include directive... yes (GNU style)
+checking dependency style of /usr/bin/../bin/clang... gcc3
+checking how to run the C preprocessor... /usr/bin/../bin/clang -E
+checking whether the compiler supports GNU C++... yes
+checking whether /usr/bin/../bin/clang++ accepts -g... yes
+checking for /usr/bin/../bin/clang++ option to enable C++11 features... none needed
+checking dependency style of /usr/bin/../bin/clang++... gcc3
+checking build system type... aarch64-apple-darwin24.6.0
+checking host system type... aarch64-apple-darwin24.6.0
+checking how to print strings... printf
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for fgrep... /usr/bin/grep -F
+checking for ld used by /usr/bin/../bin/clang... /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld
+checking if the linker (/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld) is GNU ld... no
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 786432
+checking how to convert aarch64-apple-darwin24.6.0 file names to aarch64-apple-darwin24.6.0 format... func_convert_file_noop
+checking how to convert aarch64-apple-darwin24.6.0 file names to toolchain format... func_convert_file_noop
+checking for /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... dlltool
+checking how to associate runtime and link libraries... printf %s\n
+checking for ar... ar
+checking for archiver @FILE support... no
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from /usr/bin/../bin/clang object... ok
+checking for sysroot... no
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for mt... no
+checking if : is a manifest tool... no
+checking for dsymutil... dsymutil
+checking for nmedit... nmedit
+checking for lipo... lipo
+checking for otool... otool
+checking for otool64... no
+checking for -single_module linker flag... ld: warning: -single_module is obsolete
+no
+checking for -exported_symbols_list linker flag... yes
+checking for -force_load linker flag... yes
+checking for stdio.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if /usr/bin/../bin/clang supports -fno-rtti -fno-exceptions... yes
+checking for /usr/bin/../bin/clang option to produce PIC... -fno-common -DPIC
+checking if /usr/bin/../bin/clang PIC flag -fno-common -DPIC works... yes
+checking if /usr/bin/../bin/clang static flag -static works... no
+checking if /usr/bin/../bin/clang supports -c -o file.o... yes
+checking if /usr/bin/../bin/clang supports -c -o file.o... (cached) yes
+checking whether the /usr/bin/../bin/clang linker (/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld) supports shared libraries... yes
+checking dynamic linker characteristics... darwin24.6.0 dyld
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... no
+checking whether to build static libraries... yes
+checking how to run the C++ preprocessor... /usr/bin/../bin/clang++ -E
+checking for ld used by /usr/bin/../bin/clang++... /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld
+checking if the linker (/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld) is GNU ld... no
+checking whether the /usr/bin/../bin/clang++ linker (/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld) supports shared libraries... yes
+checking for /usr/bin/../bin/clang++ option to produce PIC... -fno-common -DPIC
+checking if /usr/bin/../bin/clang++ PIC flag -fno-common -DPIC works... yes
+checking if /usr/bin/../bin/clang++ static flag -static works... no
+checking if /usr/bin/../bin/clang++ supports -c -o file.o... yes
+checking if /usr/bin/../bin/clang++ supports -c -o file.o... (cached) yes
+checking whether the /usr/bin/../bin/clang++ linker (/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld) supports shared libraries... yes
+checking dynamic linker characteristics... darwin24.6.0 dyld
+checking how to hardcode library paths into programs... immediate
+checking whether make sets $(MAKE)... (cached) yes
+checking for bison... yes
+checking for bison version >= 2.5... yes
+checking for bison... bison -y
+checking for flex... flex
+checking for lex output file root... lex.yy
+checking for lex library... none needed
+checking for library containing yywrap... -ll
+checking whether yytext is a pointer... yes
+checking whether ln -s works... yes
+checking for gawk... (cached) awk
+checking for ranlib... (cached) ranlib
+checking whether we are using Clang... yes
+checking whether /usr/bin/../bin/clang++ supports C++11 features with -std=c++11... yes
+checking for boostlib >= 1.56.0 (105600) includes in "/Users/jiangyuan/open/doris/thirdparty/installed/include"... yes
+checking for boostlib >= 1.56.0 (105600) lib path in "/Users/jiangyuan/open/doris/thirdparty/installed/lib/aarch64-darwin24.6.0"... no
+checking for boostlib >= 1.56.0 (105600) lib path in "/Users/jiangyuan/open/doris/thirdparty/installed/lib64"... yes
+checking for boostlib >= 1.56.0 (105600)... yes
+checking for libevent >= 2.0... yes
+checking for zlib >= 1.2.3... yes
+checking for openssl/ssl.h in /Users/jiangyuan/open/doris/thirdparty/installed... yes
+checking whether compiling and linking against OpenSSL works... yes
+checking whether python3 version is >= 2.6... yes
+checking for python3 version... 3.14
+checking for python3 platform... darwin
+checking for GNU default python3 prefix... ${prefix}
+checking for GNU default python3 exec_prefix... ${exec_prefix}
+checking for python3 script directory (pythondir)... ${PYTHON_PREFIX}/lib/python3.14/site-packages
+checking for python3 extension module directory (pyexecdir)... ${PYTHON_EXEC_PREFIX}/lib/python3.14/site-packages
+checking for haxe... no
+checking for library containing strerror... none required
+checking for an ANSI C-conforming const... yes
+checking for inline... inline
+checking for working volatile... yes
+checking for C/C++ restrict keyword... no
+checking for _Bool... no
+checking for stdbool.h that conforms to C99... yes
+checking for egrep... (cached) /usr/bin/grep -E
+checking for sys/time.h... yes
+checking for vfork.h... no
+checking for sys/select.h... yes
+checking for sys/socket.h... yes
+checking for sys/wait.h that is POSIX.1 compatible... yes
+checking return type of signal handlers... void
+checking for arpa/inet.h... yes
+checking for fcntl.h... yes
+checking for inttypes.h... (cached) yes
+checking for libintl.h... yes
+checking for limits.h... yes
+checking for malloc.h... no
+checking for netdb.h... yes
+checking for netinet/in.h... yes
+checking for openssl/rand.h... yes
+checking for openssl/ssl.h... yes
+checking for openssl/x509v3.h... yes
+checking for poll.h... yes
+checking for pthread.h... yes
+checking for sched.h... yes
+checking for signal.h... yes
+checking for stddef.h... yes
+checking for stdint.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for sys/ioctl.h... yes
+checking for sys/param.h... yes
+checking for sys/poll.h... yes
+checking for sys/resource.h... yes
+checking for sys/socket.h... (cached) yes
+checking for sys/time.h... (cached) yes
+checking for sys/un.h... yes
+checking for unistd.h... (cached) yes
+checking for wchar.h... yes
+checking for pthread_create in -lpthread... yes
+checking for clock_gettime in -lrt... no
+checking for setsockopt in -lsocket... no
+checking for int16_t... yes
+checking for int32_t... yes
+checking for int64_t... yes
+checking for int8_t... yes
+checking for mode_t... yes
+checking for off_t... yes
+checking for size_t... yes
+checking for ssize_t... yes
+checking for uint16_t... yes
+checking for uint32_t... yes
+checking for uint64_t... yes
+checking for uint8_t... yes
+checking for ptrdiff_t... yes
+checking whether struct tm is in sys/time.h or time.h... time.h
+checking for /usr/bin/../bin/clang++ -std=c++11 options needed to detect all undeclared functions... none needed
+checking whether AI_ADDRCONFIG is declared... yes
+checking for working alloca.h... yes
+checking for alloca... yes
+checking for pid_t... yes
+checking for fork... yes
+checking for vfork... yes
+checking for vprintf... yes
+checking for working fork... yes
+checking for working vfork... (cached) yes
+checking for GNU libc compatible malloc... yes
+checking for working memcmp... yes
+checking for GNU libc compatible realloc... yes
+checking types of arguments for select... int,fd_set *,struct timeval *
+checking whether lstat correctly handles trailing slash... no
+checking whether stat accepts an empty string... no
+checking whether strerror_r is declared... yes
+checking whether strerror_r returns char *... no
+checking for strftime... yes
+checking for strtoul... yes
+checking for bzero... yes
+checking for ftruncate... yes
+checking for gethostbyname... yes
+checking for gethostbyname_r... no
+checking for gettimeofday... yes
+checking for memmove... yes
+checking for memset... yes
+checking for mkdir... yes
+checking for realpath... yes
+checking for select... yes
+checking for setlocale... yes
+checking for socket... yes
+checking for strchr... yes
+checking for strdup... yes
+checking for strerror... yes
+checking for strstr... yes
+checking for strtol... yes
+checking for sqrt... yes
+checking for alarm... yes
+checking for clock_gettime... yes
+checking for sched_get_priority_min... yes
+checking for sched_get_priority_max... yes
+checking for inet_ntoa... yes
+checking for pow... yes
+checking the behavior of a signed right shift... arithmetic
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating compiler/cpp/Makefile
+config.status: creating compiler/cpp/src/Makefile
+config.status: creating compiler/cpp/test/Makefile
+config.status: creating lib/Makefile
+config.status: creating lib/cl/Makefile
+config.status: creating lib/cpp/Makefile
+config.status: creating lib/cpp/test/Makefile
+config.status: creating lib/cpp/test/fuzz/Makefile
+config.status: creating lib/cpp/thrift-nb.pc
+config.status: creating lib/cpp/thrift-z.pc
+config.status: creating lib/cpp/thrift-qt5.pc
+config.status: creating lib/cpp/thrift.pc
+config.status: creating lib/c_glib/Makefile
+config.status: creating lib/c_glib/thrift_c_glib.pc
+config.status: creating lib/c_glib/test/Makefile
+config.status: creating lib/c_glib/test/fuzz/Makefile
+config.status: creating lib/d/Makefile
+config.status: creating lib/d/test/Makefile
+config.status: creating lib/erl/Makefile
+config.status: creating lib/go/Makefile
+config.status: creating lib/go/test/Makefile
+config.status: creating lib/go/test/fuzz/Makefile
+config.status: creating lib/haxe/test/Makefile
+config.status: creating lib/java/Makefile
+config.status: creating lib/js/Makefile
+config.status: creating lib/js/test/Makefile
+config.status: creating lib/json/Makefile
+config.status: creating lib/json/test/Makefile
+config.status: creating lib/kotlin/Makefile
+config.status: creating lib/netstd/Makefile
+config.status: creating lib/nodejs/Makefile
+config.status: creating lib/nodets/Makefile
+config.status: creating lib/perl/Makefile
+config.status: creating lib/perl/t/Makefile
+config.status: creating lib/php/Makefile
+config.status: creating lib/php/test/Makefile
+config.status: creating lib/dart/Makefile
+config.status: creating lib/py/Makefile
+config.status: creating lib/rb/Makefile
+config.status: creating lib/rb/test/fuzz/Makefile
+config.status: creating lib/rs/Makefile
+config.status: creating lib/rs/test/Makefile
+config.status: creating lib/rs/test/fuzz/Makefile
+config.status: creating lib/rs/test_recursive/Makefile
+config.status: creating lib/rs/test_recursive/src/Makefile
+config.status: creating lib/rs/test_recursive/src/maintenance/Makefile
+config.status: creating lib/rs/test_recursive/src/transit/Makefile
+config.status: creating lib/rs/test_recursive/src/transit/light/Makefile
+config.status: creating lib/rs/test_recursive/src/transit/services/Makefile
+config.status: creating lib/lua/Makefile
+config.status: creating lib/ts/Makefile
+config.status: creating lib/xml/Makefile
+config.status: creating lib/xml/test/Makefile
+config.status: creating test/Makefile
+config.status: creating test/features/Makefile
+config.status: creating test/c_glib/Makefile
+config.status: creating test/cl/Makefile
+config.status: creating test/cpp/Makefile
+config.status: creating test/erl/Makefile
+config.status: creating test/go/Makefile
+config.status: creating test/haxe/Makefile
+config.status: creating test/lua/Makefile
+config.status: creating test/netstd/Makefile
+config.status: creating test/php/Makefile
+config.status: creating test/dart/Makefile
+config.status: creating test/perl/Makefile
+config.status: creating test/py/Makefile
+config.status: creating test/py.twisted/Makefile
+config.status: creating test/py.tornado/Makefile
+config.status: creating test/rb/Makefile
+config.status: creating test/rs/Makefile
+config.status: creating tutorial/Makefile
+config.status: creating tutorial/c_glib/Makefile
+config.status: creating tutorial/cl/Makefile
+config.status: creating tutorial/cpp/Makefile
+config.status: creating tutorial/d/Makefile
+config.status: creating tutorial/go/Makefile
+config.status: creating tutorial/haxe/Makefile
+config.status: creating tutorial/java/Makefile
+config.status: creating tutorial/js/Makefile
+config.status: creating tutorial/netstd/Makefile
+config.status: creating tutorial/nodejs/Makefile
+config.status: creating tutorial/dart/Makefile
+config.status: creating tutorial/perl/Makefile
+config.status: creating tutorial/php/Makefile
+config.status: creating tutorial/py/Makefile
+config.status: creating tutorial/py.twisted/Makefile
+config.status: creating tutorial/py.tornado/Makefile
+config.status: creating tutorial/rb/Makefile
+config.status: creating tutorial/rs/Makefile
+config.status: creating config.h
+config.status: creating lib/cpp/src/thrift/config.h
+config.status: creating lib/c_glib/src/thrift/config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+
+thrift 0.24.0
+
+Building C (GLib) Library .... : no
+Building C++ Library ......... : yes
+Building Common Lisp Library.. : no
+Building D Library ........... : no
+Building Dart Library ........ : no
+Building .NET Standard Library : no
+Building Erlang Library ...... : no
+Building Go Library .......... : no
+Building Haxe Library ........ : no
+Building Java Library ........ : no
+Building Kotlin Library ...... : no
+Building Lua Library ......... : no
+Building NodeJS Library ...... : no
+Building Perl Library ........ : no
+Building PHP Library ......... : no
+Building Python Library ...... : no
+Building Py3 Library ......... : no
+Building Ruby Library ........ : no
+Building Rust Library ........ : no
+
+C++ Library:
+   C++ compiler .............. : /usr/bin/../bin/clang++ -std=c++11
+   Build TZlibTransport ...... : yes
+   Build TNonblockingServer .. : yes
+   Build TQTcpServer (Qt5) ... : no
+   C++ compiler version ...... : Apple clang version 17.0.0 (clang-1700.6.4.2)
+
+If something is missing that you think should be present,
+please skim the output of configure to find the missing
+component.  Details are present in config.log.
+
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  all-recursive
+Making all in compiler/cpp
+Making all in src
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  all-am
+/usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I.  -Wall -Wno-sign-compare -Wno-unused -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT thrift/libparse_a-thrifty.o -MD -MP -MF thrift/.deps/libparse_a-thrifty.Tpo -c -o thrift/libparse_a-thrifty.o `test -f 'thrift/thrifty.cc' || echo './'`thrift/thrifty.cc
+/usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I.  -Wall -Wno-sign-compare -Wno-unused -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT thrift/libparse_a-thriftl.o -MD -MP -MF thrift/.deps/libparse_a-thriftl.Tpo -c -o thrift/libparse_a-thriftl.o `test -f 'thrift/thriftl.cc' || echo './'`thrift/thriftl.cc
+mv -f thrift/.deps/libparse_a-thriftl.Tpo thrift/.deps/libparse_a-thriftl.Po
+mv -f thrift/.deps/libparse_a-thrifty.Tpo thrift/.deps/libparse_a-thrifty.Po
+rm -f thrift/libparse.a
+ar cru thrift/libparse.a thrift/libparse_a-thrifty.o thrift/libparse_a-thriftl.o 
+ranlib thrift/libparse.a
+Making all in .
+/usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I./src  -Wall -Wextra -pedantic -Werror -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/thrift-common.o -MD -MP -MF src/thrift/.deps/thrift-common.Tpo -c -o src/thrift/thrift-common.o `test -f 'src/thrift/common.cc' || echo './'`src/thrift/common.cc
+/usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I./src  -Wall -Wextra -pedantic -Werror -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/thrift-main.o -MD -MP -MF src/thrift/.deps/thrift-main.Tpo -c -o src/thrift/thrift-main.o `test -f 'src/thrift/main.cc' || echo './'`src/thrift/main.cc
+mv -f src/thrift/.deps/thrift-common.Tpo src/thrift/.deps/thrift-common.Po
+/usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I./src  -Wall -Wextra -pedantic -Werror -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/generate/thrift-t_c_glib_generator.o -MD -MP -MF src/thrift/generate/.deps/thrift-t_c_glib_generator.Tpo -c -o src/thrift/generate/thrift-t_c_glib_generator.o `test -f 'src/thrift/generate/t_c_glib_generator.cc' || echo './'`src/thrift/generate/t_c_glib_generator.cc
+mv -f src/thrift/.deps/thrift-main.Tpo src/thrift/.deps/thrift-main.Po
+/usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I./src  -Wall -Wextra -pedantic -Werror -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/generate/thrift-t_cl_generator.o -MD -MP -MF src/thrift/generate/.deps/thrift-t_cl_generator.Tpo -c -o src/thrift/generate/thrift-t_cl_generator.o `test -f 'src/thrift/generate/t_cl_generator.cc' || echo './'`src/thrift/generate/t_cl_generator.cc
+mv -f src/thrift/generate/.deps/thrift-t_cl_generator.Tpo src/thrift/generate/.deps/thrift-t_cl_generator.Po
+/usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I./src  -Wall -Wextra -pedantic -Werror -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/generate/thrift-t_cpp_generator.o -MD -MP -MF src/thrift/generate/.deps/thrift-t_cpp_generator.Tpo -c -o src/thrift/generate/thrift-t_cpp_generator.o `test -f 'src/thrift/generate/t_cpp_generator.cc' || echo './'`src/thrift/generate/t_cpp_generator.cc
+mv -f src/thrift/generate/.deps/thrift-t_c_glib_generator.Tpo src/thrift/generate/.deps/thrift-t_c_glib_generator.Po
+/usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I./src  -Wall -Wextra -pedantic -Werror -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/generate/thrift-t_d_generator.o -MD -MP -MF src/thrift/generate/.deps/thrift-t_d_generator.Tpo -c -o src/thrift/generate/thrift-t_d_generator.o `test -f 'src/thrift/generate/t_d_generator.cc' || echo './'`src/thrift/generate/t_d_generator.cc
+mv -f src/thrift/generate/.deps/thrift-t_d_generator.Tpo src/thrift/generate/.deps/thrift-t_d_generator.Po
+/usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I./src  -Wall -Wextra -pedantic -Werror -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/generate/thrift-t_dart_generator.o -MD -MP -MF src/thrift/generate/.deps/thrift-t_dart_generator.Tpo -c -o src/thrift/generate/thrift-t_dart_generator.o `test -f 'src/thrift/generate/t_dart_generator.cc' || echo './'`src/thrift/generate/t_dart_generator.cc
+mv -f src/thrift/generate/.deps/thrift-t_cpp_generator.Tpo src/thrift/generate/.deps/thrift-t_cpp_generator.Po
+/usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I./src  -Wall -Wextra -pedantic -Werror -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/generate/thrift-t_delphi_generator.o -MD -MP -MF src/thrift/generate/.deps/thrift-t_delphi_generator.Tpo -c -o src/thrift/generate/thrift-t_delphi_generator.o `test -f 'src/thrift/generate/t_delphi_generator.cc' || echo './'`src/thrift/generate/t_delphi_generator.cc
+mv -f src/thrift/generate/.deps/thrift-t_dart_generator.Tpo src/thrift/generate/.deps/thrift-t_dart_generator.Po
+/usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I./src  -Wall -Wextra -pedantic -Werror -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/generate/thrift-t_erl_generator.o -MD -MP -MF src/thrift/generate/.deps/thrift-t_erl_generator.Tpo -c -o src/thrift/generate/thrift-t_erl_generator.o `test -f 'src/thrift/generate/t_erl_generator.cc' || echo './'`src/thrift/generate/t_erl_generator.cc
+mv -f src/thrift/generate/.deps/thrift-t_delphi_generator.Tpo src/thrift/generate/.deps/thrift-t_delphi_generator.Po
+/usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I./src  -Wall -Wextra -pedantic -Werror -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/generate/thrift-t_go_generator.o -MD -MP -MF src/thrift/generate/.deps/thrift-t_go_generator.Tpo -c -o src/thrift/generate/thrift-t_go_generator.o `test -f 'src/thrift/generate/t_go_generator.cc' || echo './'`src/thrift/generate/t_go_generator.cc
+mv -f src/thrift/generate/.deps/thrift-t_erl_generator.Tpo src/thrift/generate/.deps/thrift-t_erl_generator.Po
+/usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I./src  -Wall -Wextra -pedantic -Werror -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/generate/thrift-t_gv_generator.o -MD -MP -MF src/thrift/generate/.deps/thrift-t_gv_generator.Tpo -c -o src/thrift/generate/thrift-t_gv_generator.o `test -f 'src/thrift/generate/t_gv_generator.cc' || echo './'`src/thrift/generate/t_gv_generator.cc
+mv -f src/thrift/generate/.deps/thrift-t_gv_generator.Tpo src/thrift/generate/.deps/thrift-t_gv_generator.Po
+/usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I./src  -Wall -Wextra -pedantic -Werror -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/generate/thrift-t_haxe_generator.o -MD -MP -MF src/thrift/generate/.deps/thrift-t_haxe_generator.Tpo -c -o src/thrift/generate/thrift-t_haxe_generator.o `test -f 'src/thrift/generate/t_haxe_generator.cc' || echo './'`src/thrift/generate/t_haxe_generator.cc
+mv -f src/thrift/generate/.deps/thrift-t_go_generator.Tpo src/thrift/generate/.deps/thrift-t_go_generator.Po
+/usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I./src  -Wall -Wextra -pedantic -Werror -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/generate/thrift-t_html_generator.o -MD -MP -MF src/thrift/generate/.deps/thrift-t_html_generator.Tpo -c -o src/thrift/generate/thrift-t_html_generator.o `test -f 'src/thrift/generate/t_html_generator.cc' || echo './'`src/thrift/generate/t_html_generator.cc
+mv -f src/thrift/generate/.deps/thrift-t_haxe_generator.Tpo src/thrift/generate/.deps/thrift-t_haxe_generator.Po
+/usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I./src  -Wall -Wextra -pedantic -Werror -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/generate/thrift-t_markdown_generator.o -MD -MP -MF src/thrift/generate/.deps/thrift-t_markdown_generator.Tpo -c -o src/thrift/generate/thrift-t_markdown_generator.o `test -f 'src/thrift/generate/t_markdown_generator.cc' || echo './'`src/thrift/generate/t_markdown_generator.cc
+mv -f src/thrift/generate/.deps/thrift-t_html_generator.Tpo src/thrift/generate/.deps/thrift-t_html_generator.Po
+/usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I./src  -Wall -Wextra -pedantic -Werror -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/generate/thrift-t_mmd_generator.o -MD -MP -MF src/thrift/generate/.deps/thrift-t_mmd_generator.Tpo -c -o src/thrift/generate/thrift-t_mmd_generator.o `test -f 'src/thrift/generate/t_mmd_generator.cc' || echo './'`src/thrift/generate/t_mmd_generator.cc
+mv -f src/thrift/generate/.deps/thrift-t_mmd_generator.Tpo src/thrift/generate/.deps/thrift-t_mmd_generator.Po
+/usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I./src  -Wall -Wextra -pedantic -Werror -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/generate/thrift-t_java_generator.o -MD -MP -MF src/thrift/generate/.deps/thrift-t_java_generator.Tpo -c -o src/thrift/generate/thrift-t_java_generator.o `test -f 'src/thrift/generate/t_java_generator.cc' || echo './'`src/thrift/generate/t_java_generator.cc
+mv -f src/thrift/generate/.deps/thrift-t_markdown_generator.Tpo src/thrift/generate/.deps/thrift-t_markdown_generator.Po
+/usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I./src  -Wall -Wextra -pedantic -Werror -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/generate/thrift-t_javame_generator.o -MD -MP -MF src/thrift/generate/.deps/thrift-t_javame_generator.Tpo -c -o src/thrift/generate/thrift-t_javame_generator.o `test -f 'src/thrift/generate/t_javame_generator.cc' || echo './'`src/thrift/generate/t_javame_generator.cc
+mv -f src/thrift/generate/.deps/thrift-t_javame_generator.Tpo src/thrift/generate/.deps/thrift-t_javame_generator.Po
+/usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I./src  -Wall -Wextra -pedantic -Werror -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/generate/thrift-t_js_generator.o -MD -MP -MF src/thrift/generate/.deps/thrift-t_js_generator.Tpo -c -o src/thrift/generate/thrift-t_js_generator.o `test -f 'src/thrift/generate/t_js_generator.cc' || echo './'`src/thrift/generate/t_js_generator.cc
+mv -f src/thrift/generate/.deps/thrift-t_java_generator.Tpo src/thrift/generate/.deps/thrift-t_java_generator.Po
+/usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I./src  -Wall -Wextra -pedantic -Werror -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/generate/thrift-t_json_generator.o -MD -MP -MF src/thrift/generate/.deps/thrift-t_json_generator.Tpo -c -o src/thrift/generate/thrift-t_json_generator.o `test -f 'src/thrift/generate/t_json_generator.cc' || echo './'`src/thrift/generate/t_json_generator.cc
+mv -f src/thrift/generate/.deps/thrift-t_js_generator.Tpo src/thrift/generate/.deps/thrift-t_js_generator.Po
+mv -f src/thrift/generate/.deps/thrift-t_json_generator.Tpo src/thrift/generate/.deps/thrift-t_json_generator.Po
+/usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I./src  -Wall -Wextra -pedantic -Werror -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/generate/thrift-t_kotlin_generator.o -MD -MP -MF src/thrift/generate/.deps/thrift-t_kotlin_generator.Tpo -c -o src/thrift/generate/thrift-t_kotlin_generator.o `test -f 'src/thrift/generate/t_kotlin_generator.cc' || echo './'`src/thrift/generate/t_kotlin_generator.cc
+/usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I./src  -Wall -Wextra -pedantic -Werror -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/generate/thrift-t_lua_generator.o -MD -MP -MF src/thrift/generate/.deps/thrift-t_lua_generator.Tpo -c -o src/thrift/generate/thrift-t_lua_generator.o `test -f 'src/thrift/generate/t_lua_generator.cc' || echo './'`src/thrift/generate/t_lua_generator.cc
+mv -f src/thrift/generate/.deps/thrift-t_lua_generator.Tpo src/thrift/generate/.deps/thrift-t_lua_generator.Po
+/usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I./src  -Wall -Wextra -pedantic -Werror -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/generate/thrift-t_netstd_generator.o -MD -MP -MF src/thrift/generate/.deps/thrift-t_netstd_generator.Tpo -c -o src/thrift/generate/thrift-t_netstd_generator.o `test -f 'src/thrift/generate/t_netstd_generator.cc' || echo './'`src/thrift/generate/t_netstd_generator.cc
+mv -f src/thrift/generate/.deps/thrift-t_kotlin_generator.Tpo src/thrift/generate/.deps/thrift-t_kotlin_generator.Po
+/usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I./src  -Wall -Wextra -pedantic -Werror -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/generate/thrift-t_ocaml_generator.o -MD -MP -MF src/thrift/generate/.deps/thrift-t_ocaml_generator.Tpo -c -o src/thrift/generate/thrift-t_ocaml_generator.o `test -f 'src/thrift/generate/t_ocaml_generator.cc' || echo './'`src/thrift/generate/t_ocaml_generator.cc
+mv -f src/thrift/generate/.deps/thrift-t_ocaml_generator.Tpo src/thrift/generate/.deps/thrift-t_ocaml_generator.Po
+/usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I./src  -Wall -Wextra -pedantic -Werror -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/generate/thrift-t_perl_generator.o -MD -MP -MF src/thrift/generate/.deps/thrift-t_perl_generator.Tpo -c -o src/thrift/generate/thrift-t_perl_generator.o `test -f 'src/thrift/generate/t_perl_generator.cc' || echo './'`src/thrift/generate/t_perl_generator.cc
+mv -f src/thrift/generate/.deps/thrift-t_netstd_generator.Tpo src/thrift/generate/.deps/thrift-t_netstd_generator.Po
+/usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I./src  -Wall -Wextra -pedantic -Werror -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/generate/thrift-t_php_generator.o -MD -MP -MF src/thrift/generate/.deps/thrift-t_php_generator.Tpo -c -o src/thrift/generate/thrift-t_php_generator.o `test -f 'src/thrift/generate/t_php_generator.cc' || echo './'`src/thrift/generate/t_php_generator.cc
+mv -f src/thrift/generate/.deps/thrift-t_perl_generator.Tpo src/thrift/generate/.deps/thrift-t_perl_generator.Po
+/usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I./src  -Wall -Wextra -pedantic -Werror -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/generate/thrift-t_py_generator.o -MD -MP -MF src/thrift/generate/.deps/thrift-t_py_generator.Tpo -c -o src/thrift/generate/thrift-t_py_generator.o `test -f 'src/thrift/generate/t_py_generator.cc' || echo './'`src/thrift/generate/t_py_generator.cc
+mv -f src/thrift/generate/.deps/thrift-t_php_generator.Tpo src/thrift/generate/.deps/thrift-t_php_generator.Po
+/usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I./src  -Wall -Wextra -pedantic -Werror -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/generate/thrift-t_rb_generator.o -MD -MP -MF src/thrift/generate/.deps/thrift-t_rb_generator.Tpo -c -o src/thrift/generate/thrift-t_rb_generator.o `test -f 'src/thrift/generate/t_rb_generator.cc' || echo './'`src/thrift/generate/t_rb_generator.cc
+mv -f src/thrift/generate/.deps/thrift-t_py_generator.Tpo src/thrift/generate/.deps/thrift-t_py_generator.Po
+/usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I./src  -Wall -Wextra -pedantic -Werror -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/generate/thrift-t_rs_generator.o -MD -MP -MF src/thrift/generate/.deps/thrift-t_rs_generator.Tpo -c -o src/thrift/generate/thrift-t_rs_generator.o `test -f 'src/thrift/generate/t_rs_generator.cc' || echo './'`src/thrift/generate/t_rs_generator.cc
+mv -f src/thrift/generate/.deps/thrift-t_rb_generator.Tpo src/thrift/generate/.deps/thrift-t_rb_generator.Po
+/usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I./src  -Wall -Wextra -pedantic -Werror -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/generate/thrift-t_st_generator.o -MD -MP -MF src/thrift/generate/.deps/thrift-t_st_generator.Tpo -c -o src/thrift/generate/thrift-t_st_generator.o `test -f 'src/thrift/generate/t_st_generator.cc' || echo './'`src/thrift/generate/t_st_generator.cc
+mv -f src/thrift/generate/.deps/thrift-t_st_generator.Tpo src/thrift/generate/.deps/thrift-t_st_generator.Po
+/usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I./src  -Wall -Wextra -pedantic -Werror -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/generate/thrift-t_xml_generator.o -MD -MP -MF src/thrift/generate/.deps/thrift-t_xml_generator.Tpo -c -o src/thrift/generate/thrift-t_xml_generator.o `test -f 'src/thrift/generate/t_xml_generator.cc' || echo './'`src/thrift/generate/t_xml_generator.cc
+mv -f src/thrift/generate/.deps/thrift-t_rs_generator.Tpo src/thrift/generate/.deps/thrift-t_rs_generator.Po
+/usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I./src  -Wall -Wextra -pedantic -Werror -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/generate/thrift-t_xsd_generator.o -MD -MP -MF src/thrift/generate/.deps/thrift-t_xsd_generator.Tpo -c -o src/thrift/generate/thrift-t_xsd_generator.o `test -f 'src/thrift/generate/t_xsd_generator.cc' || echo './'`src/thrift/generate/t_xsd_generator.cc
+mv -f src/thrift/generate/.deps/thrift-t_xsd_generator.Tpo src/thrift/generate/.deps/thrift-t_xsd_generator.Po
+/usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I./src  -Wall -Wextra -pedantic -Werror -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/generate/thrift-validator_parser.o -MD -MP -MF src/thrift/generate/.deps/thrift-validator_parser.Tpo -c -o src/thrift/generate/thrift-validator_parser.o `test -f 'src/thrift/generate/validator_parser.cc' || echo './'`src/thrift/generate/validator_parser.cc
+mv -f src/thrift/generate/.deps/thrift-t_xml_generator.Tpo src/thrift/generate/.deps/thrift-t_xml_generator.Po
+/usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I./src  -Wall -Wextra -pedantic -Werror -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/generate/thrift-go_validator_generator.o -MD -MP -MF src/thrift/generate/.deps/thrift-go_validator_generator.Tpo -c -o src/thrift/generate/thrift-go_validator_generator.o `test -f 'src/thrift/generate/go_validator_generator.cc' || echo './'`src/thrift/generate/go_validator_generator.cc
+mv -f src/thrift/generate/.deps/thrift-validator_parser.Tpo src/thrift/generate/.deps/thrift-validator_parser.Po
+/usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I./src  -Wall -Wextra -pedantic -Werror -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/audit/thrift-t_audit.o -MD -MP -MF src/thrift/audit/.deps/thrift-t_audit.Tpo -c -o src/thrift/audit/thrift-t_audit.o `test -f 'src/thrift/audit/t_audit.cpp' || echo './'`src/thrift/audit/t_audit.cpp
+mv -f src/thrift/generate/.deps/thrift-go_validator_generator.Tpo src/thrift/generate/.deps/thrift-go_validator_generator.Po
+/usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I./src  -Wall -Wextra -pedantic -Werror -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/generate/thrift-t_generator.o -MD -MP -MF src/thrift/generate/.deps/thrift-t_generator.Tpo -c -o src/thrift/generate/thrift-t_generator.o `test -f 'src/thrift/generate/t_generator.cc' || echo './'`src/thrift/generate/t_generator.cc
+mv -f src/thrift/audit/.deps/thrift-t_audit.Tpo src/thrift/audit/.deps/thrift-t_audit.Po
+/usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I./src  -Wall -Wextra -pedantic -Werror -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/parse/thrift-parse.o -MD -MP -MF src/thrift/parse/.deps/thrift-parse.Tpo -c -o src/thrift/parse/thrift-parse.o `test -f 'src/thrift/parse/parse.cc' || echo './'`src/thrift/parse/parse.cc
+mv -f src/thrift/generate/.deps/thrift-t_generator.Tpo src/thrift/generate/.deps/thrift-t_generator.Po
+/usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I./src  -Wall -Wextra -pedantic -Werror -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/parse/thrift-t_typedef.o -MD -MP -MF src/thrift/parse/.deps/thrift-t_typedef.Tpo -c -o src/thrift/parse/thrift-t_typedef.o `test -f 'src/thrift/parse/t_typedef.cc' || echo './'`src/thrift/parse/t_typedef.cc
+mv -f src/thrift/parse/.deps/thrift-parse.Tpo src/thrift/parse/.deps/thrift-parse.Po
+mv -f src/thrift/parse/.deps/thrift-t_typedef.Tpo src/thrift/parse/.deps/thrift-t_typedef.Po
+/bin/sh ../../libtool  --tag=CXX   --mode=link /usr/bin/../bin/clang++ -std=c++11 -Wall -Wextra -pedantic -Werror -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override  -L/Users/jiangyuan/open/doris/thirdparty/installed/lib -o thrift src/thrift/audit/thrift-t_audit.o src/thrift/thrift-common.o src/thrift/generate/thrift-t_generator.o src/thrift/thrift-main.o src/thrift/parse/thrift-parse.o src/thrift/parse/thrift-t_typedef.o src/thrift/generate/thrift-t_c_glib_generator.o src/thrift/generate/thrift-t_cl_generator.o src/thrift/generate/thrift-t_cpp_generator.o src/thrift/generate/thrift-t_d_generator.o src/thrift/generate/thrift-t_dart_generator.o src/thrift/generate/thrift-t_delphi_generator.o src/thrift/generate/thrift-t_erl_generator.o src/thrift/generate/thrift-t_go_generator.o src/thrift/generate/thrift-t_gv_generator.o src/thrift/generate/thrift-t_haxe_generator.o src/thrift/generate/thrift-t_html_generator.o src/thrift/generate/thrift-t_markdown_generator.o src/thrift/generate/thrift-t_mmd_generator.o src/thrift/generate/thrift-t_java_generator.o src/thrift/generate/thrift-t_javame_generator.o src/thrift/generate/thrift-t_js_generator.o src/thrift/generate/thrift-t_json_generator.o src/thrift/generate/thrift-t_kotlin_generator.o src/thrift/generate/thrift-t_lua_generator.o src/thrift/generate/thrift-t_netstd_generator.o src/thrift/generate/thrift-t_ocaml_generator.o src/thrift/generate/thrift-t_perl_generator.o src/thrift/generate/thrift-t_php_generator.o src/thrift/generate/thrift-t_py_generator.o src/thrift/generate/thrift-t_rb_generator.o src/thrift/generate/thrift-t_rs_generator.o src/thrift/generate/thrift-t_st_generator.o src/thrift/generate/thrift-t_xml_generator.o src/thrift/generate/thrift-t_xsd_generator.o src/thrift/generate/thrift-validator_parser.o src/thrift/generate/thrift-go_validator_generator.o -ll  src/thrift/libparse.a -lpthread -lcrypto -ldl -lssl
+libtool: link: /usr/bin/../bin/clang++ -std=c++11 -Wall -Wextra -pedantic -Werror -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -o thrift src/thrift/audit/thrift-t_audit.o src/thrift/thrift-common.o src/thrift/generate/thrift-t_generator.o src/thrift/thrift-main.o src/thrift/parse/thrift-parse.o src/thrift/parse/thrift-t_typedef.o src/thrift/generate/thrift-t_c_glib_generator.o src/thrift/generate/thrift-t_cl_generator.o src/thrift/generate/thrift-t_cpp_generator.o src/thrift/generate/thrift-t_d_generator.o src/thrift/generate/thrift-t_dart_generator.o src/thrift/generate/thrift-t_delphi_generator.o src/thrift/generate/thrift-t_erl_generator.o src/thrift/generate/thrift-t_go_generator.o src/thrift/generate/thrift-t_gv_generator.o src/thrift/generate/thrift-t_haxe_generator.o src/thrift/generate/thrift-t_html_generator.o src/thrift/generate/thrift-t_markdown_generator.o src/thrift/generate/thrift-t_mmd_generator.o src/thrift/generate/thrift-t_java_generator.o src/thrift/generate/thrift-t_javame_generator.o src/thrift/generate/thrift-t_js_generator.o src/thrift/generate/thrift-t_json_generator.o src/thrift/generate/thrift-t_kotlin_generator.o src/thrift/generate/thrift-t_lua_generator.o src/thrift/generate/thrift-t_netstd_generator.o src/thrift/generate/thrift-t_ocaml_generator.o src/thrift/generate/thrift-t_perl_generator.o src/thrift/generate/thrift-t_php_generator.o src/thrift/generate/thrift-t_py_generator.o src/thrift/generate/thrift-t_rb_generator.o src/thrift/generate/thrift-t_rs_generator.o src/thrift/generate/thrift-t_st_generator.o src/thrift/generate/thrift-t_xml_generator.o src/thrift/generate/thrift-t_xsd_generator.o src/thrift/generate/thrift-validator_parser.o src/thrift/generate/thrift-go_validator_generator.o -Wl,-bind_at_load  -L/Users/jiangyuan/open/doris/thirdparty/installed/lib -ll src/thrift/libparse.a -lpthread -lcrypto -ldl -lssl
+ld: warning: -bind_at_load is deprecated on macOS
+Making all in lib
+Making all in json
+make[4]: Nothing to be done for `all-am'.
+Making all in xml
+make[4]: Nothing to be done for `all-am'.
+Making all in cpp
+Making all in .
+depbase=`echo src/thrift/concurrency/Mutex.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+	/bin/sh ../../libtool  --tag=CXX   --mode=compile /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS  -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/concurrency/Mutex.lo -MD -MP -MF $depbase.Tpo -c -o src/thrift/concurrency/Mutex.lo src/thrift/concurrency/Mutex.cpp &&\
+	mv -f $depbase.Tpo $depbase.Plo
+depbase=`echo src/thrift/concurrency/ThreadFactory.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+	/bin/sh ../../libtool  --tag=CXX   --mode=compile /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS  -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/concurrency/ThreadFactory.lo -MD -MP -MF $depbase.Tpo -c -o src/thrift/concurrency/ThreadFactory.lo src/thrift/concurrency/ThreadFactory.cpp &&\
+	mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/concurrency/Mutex.lo -MD -MP -MF src/thrift/concurrency/.deps/Mutex.Tpo -c src/thrift/concurrency/Mutex.cpp -o src/thrift/concurrency/Mutex.o
+libtool: compile:  /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/concurrency/ThreadFactory.lo -MD -MP -MF src/thrift/concurrency/.deps/ThreadFactory.Tpo -c src/thrift/concurrency/ThreadFactory.cpp -o src/thrift/concurrency/ThreadFactory.o
+depbase=`echo src/thrift/concurrency/Thread.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+	/bin/sh ../../libtool  --tag=CXX   --mode=compile /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS  -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/concurrency/Thread.lo -MD -MP -MF $depbase.Tpo -c -o src/thrift/concurrency/Thread.lo src/thrift/concurrency/Thread.cpp &&\
+	mv -f $depbase.Tpo $depbase.Plo
+depbase=`echo src/thrift/concurrency/Monitor.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+	/bin/sh ../../libtool  --tag=CXX   --mode=compile /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS  -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/concurrency/Monitor.lo -MD -MP -MF $depbase.Tpo -c -o src/thrift/concurrency/Monitor.lo src/thrift/concurrency/Monitor.cpp &&\
+	mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/concurrency/Thread.lo -MD -MP -MF src/thrift/concurrency/.deps/Thread.Tpo -c src/thrift/concurrency/Thread.cpp -o src/thrift/concurrency/Thread.o
+libtool: compile:  /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/concurrency/Monitor.lo -MD -MP -MF src/thrift/concurrency/.deps/Monitor.Tpo -c src/thrift/concurrency/Monitor.cpp -o src/thrift/concurrency/Monitor.o
+/bin/sh ../../libtool  --tag=CXX   --mode=compile /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -I/Users/jiangyuan/open/doris/thirdparty/installed/include  -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/server/libthriftnb_la-TNonblockingServer.lo -MD -MP -MF src/thrift/server/.deps/libthriftnb_la-TNonblockingServer.Tpo -c -o src/thrift/server/libthriftnb_la-TNonblockingServer.lo `test -f 'src/thrift/server/TNonblockingServer.cpp' || echo './'`src/thrift/server/TNonblockingServer.cpp
+libtool: compile:  /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/server/libthriftnb_la-TNonblockingServer.lo -MD -MP -MF src/thrift/server/.deps/libthriftnb_la-TNonblockingServer.Tpo -c src/thrift/server/TNonblockingServer.cpp -o src/thrift/server/libthriftnb_la-TNonblockingServer.o
+/bin/sh ../../libtool  --tag=CXX   --mode=compile /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -I/Users/jiangyuan/open/doris/thirdparty/installed/include  -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/async/libthriftnb_la-TEvhttpServer.lo -MD -MP -MF src/thrift/async/.deps/libthriftnb_la-TEvhttpServer.Tpo -c -o src/thrift/async/libthriftnb_la-TEvhttpServer.lo `test -f 'src/thrift/async/TEvhttpServer.cpp' || echo './'`src/thrift/async/TEvhttpServer.cpp
+libtool: compile:  /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/async/libthriftnb_la-TEvhttpServer.lo -MD -MP -MF src/thrift/async/.deps/libthriftnb_la-TEvhttpServer.Tpo -c src/thrift/async/TEvhttpServer.cpp -o src/thrift/async/libthriftnb_la-TEvhttpServer.o
+mv -f src/thrift/async/.deps/libthriftnb_la-TEvhttpServer.Tpo src/thrift/async/.deps/libthriftnb_la-TEvhttpServer.Plo
+/bin/sh ../../libtool  --tag=CXX   --mode=compile /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -I/Users/jiangyuan/open/doris/thirdparty/installed/include  -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/async/libthriftnb_la-TEvhttpClientChannel.lo -MD -MP -MF src/thrift/async/.deps/libthriftnb_la-TEvhttpClientChannel.Tpo -c -o src/thrift/async/libthriftnb_la-TEvhttpClientChannel.lo `test -f 'src/thrift/async/TEvhttpClientChannel.cpp' || echo './'`src/thrift/async/TEvhttpClientChannel.cpp
+libtool: compile:  /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/async/libthriftnb_la-TEvhttpClientChannel.lo -MD -MP -MF src/thrift/async/.deps/libthriftnb_la-TEvhttpClientChannel.Tpo -c src/thrift/async/TEvhttpClientChannel.cpp -o src/thrift/async/libthriftnb_la-TEvhttpClientChannel.o
+mv -f src/thrift/server/.deps/libthriftnb_la-TNonblockingServer.Tpo src/thrift/server/.deps/libthriftnb_la-TNonblockingServer.Plo
+/bin/sh ../../libtool  --tag=CXX   --mode=compile /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS   -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/transport/libthriftz_la-TZlibTransport.lo -MD -MP -MF src/thrift/transport/.deps/libthriftz_la-TZlibTransport.Tpo -c -o src/thrift/transport/libthriftz_la-TZlibTransport.lo `test -f 'src/thrift/transport/TZlibTransport.cpp' || echo './'`src/thrift/transport/TZlibTransport.cpp
+libtool: compile:  /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/transport/libthriftz_la-TZlibTransport.lo -MD -MP -MF src/thrift/transport/.deps/libthriftz_la-TZlibTransport.Tpo -c src/thrift/transport/TZlibTransport.cpp -o src/thrift/transport/libthriftz_la-TZlibTransport.o
+mv -f src/thrift/async/.deps/libthriftnb_la-TEvhttpClientChannel.Tpo src/thrift/async/.deps/libthriftnb_la-TEvhttpClientChannel.Plo
+/bin/sh ../../libtool  --tag=CXX   --mode=compile /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS   -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/transport/libthriftz_la-THeaderTransport.lo -MD -MP -MF src/thrift/transport/.deps/libthriftz_la-THeaderTransport.Tpo -c -o src/thrift/transport/libthriftz_la-THeaderTransport.lo `test -f 'src/thrift/transport/THeaderTransport.cpp' || echo './'`src/thrift/transport/THeaderTransport.cpp
+libtool: compile:  /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/transport/libthriftz_la-THeaderTransport.lo -MD -MP -MF src/thrift/transport/.deps/libthriftz_la-THeaderTransport.Tpo -c src/thrift/transport/THeaderTransport.cpp -o src/thrift/transport/libthriftz_la-THeaderTransport.o
+mv -f src/thrift/transport/.deps/libthriftz_la-TZlibTransport.Tpo src/thrift/transport/.deps/libthriftz_la-TZlibTransport.Plo
+/bin/sh ../../libtool  --tag=CXX   --mode=compile /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS   -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/protocol/libthriftz_la-THeaderProtocol.lo -MD -MP -MF src/thrift/protocol/.deps/libthriftz_la-THeaderProtocol.Tpo -c -o src/thrift/protocol/libthriftz_la-THeaderProtocol.lo `test -f 'src/thrift/protocol/THeaderProtocol.cpp' || echo './'`src/thrift/protocol/THeaderProtocol.cpp
+libtool: compile:  /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/protocol/libthriftz_la-THeaderProtocol.lo -MD -MP -MF src/thrift/protocol/.deps/libthriftz_la-THeaderProtocol.Tpo -c src/thrift/protocol/THeaderProtocol.cpp -o src/thrift/protocol/libthriftz_la-THeaderProtocol.o
+mv -f src/thrift/protocol/.deps/libthriftz_la-THeaderProtocol.Tpo src/thrift/protocol/.deps/libthriftz_la-THeaderProtocol.Plo
+depbase=`echo src/thrift/TApplicationException.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+	/bin/sh ../../libtool  --tag=CXX   --mode=compile /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS  -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/TApplicationException.lo -MD -MP -MF $depbase.Tpo -c -o src/thrift/TApplicationException.lo src/thrift/TApplicationException.cpp &&\
+	mv -f $depbase.Tpo $depbase.Plo
+mv -f src/thrift/transport/.deps/libthriftz_la-THeaderTransport.Tpo src/thrift/transport/.deps/libthriftz_la-THeaderTransport.Plo
+depbase=`echo src/thrift/TOutput.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+	/bin/sh ../../libtool  --tag=CXX   --mode=compile /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS  -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/TOutput.lo -MD -MP -MF $depbase.Tpo -c -o src/thrift/TOutput.lo src/thrift/TOutput.cpp &&\
+	mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/TApplicationException.lo -MD -MP -MF src/thrift/.deps/TApplicationException.Tpo -c src/thrift/TApplicationException.cpp -o src/thrift/TApplicationException.o
+libtool: compile:  /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/TOutput.lo -MD -MP -MF src/thrift/.deps/TOutput.Tpo -c src/thrift/TOutput.cpp -o src/thrift/TOutput.o
+depbase=`echo src/thrift/TUuid.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+	/bin/sh ../../libtool  --tag=CXX   --mode=compile /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS  -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/TUuid.lo -MD -MP -MF $depbase.Tpo -c -o src/thrift/TUuid.lo src/thrift/TUuid.cpp &&\
+	mv -f $depbase.Tpo $depbase.Plo
+depbase=`echo src/thrift/VirtualProfiling.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+	/bin/sh ../../libtool  --tag=CXX   --mode=compile /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS  -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/VirtualProfiling.lo -MD -MP -MF $depbase.Tpo -c -o src/thrift/VirtualProfiling.lo src/thrift/VirtualProfiling.cpp &&\
+	mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/TUuid.lo -MD -MP -MF src/thrift/.deps/TUuid.Tpo -c src/thrift/TUuid.cpp -o src/thrift/TUuid.o
+libtool: compile:  /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/VirtualProfiling.lo -MD -MP -MF src/thrift/.deps/VirtualProfiling.Tpo -c src/thrift/VirtualProfiling.cpp -o src/thrift/VirtualProfiling.o
+depbase=`echo src/thrift/async/TAsyncChannel.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+	/bin/sh ../../libtool  --tag=CXX   --mode=compile /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS  -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/async/TAsyncChannel.lo -MD -MP -MF $depbase.Tpo -c -o src/thrift/async/TAsyncChannel.lo src/thrift/async/TAsyncChannel.cpp &&\
+	mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/async/TAsyncChannel.lo -MD -MP -MF src/thrift/async/.deps/TAsyncChannel.Tpo -c src/thrift/async/TAsyncChannel.cpp -o src/thrift/async/TAsyncChannel.o
+depbase=`echo src/thrift/async/TAsyncProtocolProcessor.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+	/bin/sh ../../libtool  --tag=CXX   --mode=compile /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS  -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/async/TAsyncProtocolProcessor.lo -MD -MP -MF $depbase.Tpo -c -o src/thrift/async/TAsyncProtocolProcessor.lo src/thrift/async/TAsyncProtocolProcessor.cpp &&\
+	mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/async/TAsyncProtocolProcessor.lo -MD -MP -MF src/thrift/async/.deps/TAsyncProtocolProcessor.Tpo -c src/thrift/async/TAsyncProtocolProcessor.cpp -o src/thrift/async/TAsyncProtocolProcessor.o
+depbase=`echo src/thrift/async/TConcurrentClientSyncInfo.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+	/bin/sh ../../libtool  --tag=CXX   --mode=compile /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS  -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/async/TConcurrentClientSyncInfo.lo -MD -MP -MF $depbase.Tpo -c -o src/thrift/async/TConcurrentClientSyncInfo.lo src/thrift/async/TConcurrentClientSyncInfo.cpp &&\
+	mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/async/TConcurrentClientSyncInfo.lo -MD -MP -MF src/thrift/async/.deps/TConcurrentClientSyncInfo.Tpo -c src/thrift/async/TConcurrentClientSyncInfo.cpp -o src/thrift/async/TConcurrentClientSyncInfo.o
+depbase=`echo src/thrift/concurrency/ThreadManager.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+	/bin/sh ../../libtool  --tag=CXX   --mode=compile /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS  -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/concurrency/ThreadManager.lo -MD -MP -MF $depbase.Tpo -c -o src/thrift/concurrency/ThreadManager.lo src/thrift/concurrency/ThreadManager.cpp &&\
+	mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/concurrency/ThreadManager.lo -MD -MP -MF src/thrift/concurrency/.deps/ThreadManager.Tpo -c src/thrift/concurrency/ThreadManager.cpp -o src/thrift/concurrency/ThreadManager.o
+depbase=`echo src/thrift/concurrency/TimerManager.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+	/bin/sh ../../libtool  --tag=CXX   --mode=compile /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS  -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/concurrency/TimerManager.lo -MD -MP -MF $depbase.Tpo -c -o src/thrift/concurrency/TimerManager.lo src/thrift/concurrency/TimerManager.cpp &&\
+	mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/concurrency/TimerManager.lo -MD -MP -MF src/thrift/concurrency/.deps/TimerManager.Tpo -c src/thrift/concurrency/TimerManager.cpp -o src/thrift/concurrency/TimerManager.o
+depbase=`echo src/thrift/processor/PeekProcessor.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+	/bin/sh ../../libtool  --tag=CXX   --mode=compile /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS  -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/processor/PeekProcessor.lo -MD -MP -MF $depbase.Tpo -c -o src/thrift/processor/PeekProcessor.lo src/thrift/processor/PeekProcessor.cpp &&\
+	mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/processor/PeekProcessor.lo -MD -MP -MF src/thrift/processor/.deps/PeekProcessor.Tpo -c src/thrift/processor/PeekProcessor.cpp -o src/thrift/processor/PeekProcessor.o
+depbase=`echo src/thrift/protocol/TDebugProtocol.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+	/bin/sh ../../libtool  --tag=CXX   --mode=compile /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS  -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/protocol/TDebugProtocol.lo -MD -MP -MF $depbase.Tpo -c -o src/thrift/protocol/TDebugProtocol.lo src/thrift/protocol/TDebugProtocol.cpp &&\
+	mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/protocol/TDebugProtocol.lo -MD -MP -MF src/thrift/protocol/.deps/TDebugProtocol.Tpo -c src/thrift/protocol/TDebugProtocol.cpp -o src/thrift/protocol/TDebugProtocol.o
+depbase=`echo src/thrift/protocol/TJSONProtocol.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+	/bin/sh ../../libtool  --tag=CXX   --mode=compile /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS  -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/protocol/TJSONProtocol.lo -MD -MP -MF $depbase.Tpo -c -o src/thrift/protocol/TJSONProtocol.lo src/thrift/protocol/TJSONProtocol.cpp &&\
+	mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/protocol/TJSONProtocol.lo -MD -MP -MF src/thrift/protocol/.deps/TJSONProtocol.Tpo -c src/thrift/protocol/TJSONProtocol.cpp -o src/thrift/protocol/TJSONProtocol.o
+depbase=`echo src/thrift/protocol/TBase64Utils.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+	/bin/sh ../../libtool  --tag=CXX   --mode=compile /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS  -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/protocol/TBase64Utils.lo -MD -MP -MF $depbase.Tpo -c -o src/thrift/protocol/TBase64Utils.lo src/thrift/protocol/TBase64Utils.cpp &&\
+	mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/protocol/TBase64Utils.lo -MD -MP -MF src/thrift/protocol/.deps/TBase64Utils.Tpo -c src/thrift/protocol/TBase64Utils.cpp -o src/thrift/protocol/TBase64Utils.o
+depbase=`echo src/thrift/protocol/TMultiplexedProtocol.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+	/bin/sh ../../libtool  --tag=CXX   --mode=compile /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS  -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/protocol/TMultiplexedProtocol.lo -MD -MP -MF $depbase.Tpo -c -o src/thrift/protocol/TMultiplexedProtocol.lo src/thrift/protocol/TMultiplexedProtocol.cpp &&\
+	mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/protocol/TMultiplexedProtocol.lo -MD -MP -MF src/thrift/protocol/.deps/TMultiplexedProtocol.Tpo -c src/thrift/protocol/TMultiplexedProtocol.cpp -o src/thrift/protocol/TMultiplexedProtocol.o
+depbase=`echo src/thrift/protocol/TProtocol.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+	/bin/sh ../../libtool  --tag=CXX   --mode=compile /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS  -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/protocol/TProtocol.lo -MD -MP -MF $depbase.Tpo -c -o src/thrift/protocol/TProtocol.lo src/thrift/protocol/TProtocol.cpp &&\
+	mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/protocol/TProtocol.lo -MD -MP -MF src/thrift/protocol/.deps/TProtocol.Tpo -c src/thrift/protocol/TProtocol.cpp -o src/thrift/protocol/TProtocol.o
+depbase=`echo src/thrift/transport/TTransportException.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+	/bin/sh ../../libtool  --tag=CXX   --mode=compile /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS  -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/transport/TTransportException.lo -MD -MP -MF $depbase.Tpo -c -o src/thrift/transport/TTransportException.lo src/thrift/transport/TTransportException.cpp &&\
+	mv -f $depbase.Tpo $depbase.Plo
+depbase=`echo src/thrift/transport/TFDTransport.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+	/bin/sh ../../libtool  --tag=CXX   --mode=compile /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS  -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/transport/TFDTransport.lo -MD -MP -MF $depbase.Tpo -c -o src/thrift/transport/TFDTransport.lo src/thrift/transport/TFDTransport.cpp &&\
+	mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/transport/TTransportException.lo -MD -MP -MF src/thrift/transport/.deps/TTransportException.Tpo -c src/thrift/transport/TTransportException.cpp -o src/thrift/transport/TTransportException.o
+libtool: compile:  /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/transport/TFDTransport.lo -MD -MP -MF src/thrift/transport/.deps/TFDTransport.Tpo -c src/thrift/transport/TFDTransport.cpp -o src/thrift/transport/TFDTransport.o
+depbase=`echo src/thrift/transport/TFileTransport.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+	/bin/sh ../../libtool  --tag=CXX   --mode=compile /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS  -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/transport/TFileTransport.lo -MD -MP -MF $depbase.Tpo -c -o src/thrift/transport/TFileTransport.lo src/thrift/transport/TFileTransport.cpp &&\
+	mv -f $depbase.Tpo $depbase.Plo
+depbase=`echo src/thrift/transport/TSimpleFileTransport.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+	/bin/sh ../../libtool  --tag=CXX   --mode=compile /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS  -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/transport/TSimpleFileTransport.lo -MD -MP -MF $depbase.Tpo -c -o src/thrift/transport/TSimpleFileTransport.lo src/thrift/transport/TSimpleFileTransport.cpp &&\
+	mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/transport/TFileTransport.lo -MD -MP -MF src/thrift/transport/.deps/TFileTransport.Tpo -c src/thrift/transport/TFileTransport.cpp -o src/thrift/transport/TFileTransport.o
+libtool: compile:  /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/transport/TSimpleFileTransport.lo -MD -MP -MF src/thrift/transport/.deps/TSimpleFileTransport.Tpo -c src/thrift/transport/TSimpleFileTransport.cpp -o src/thrift/transport/TSimpleFileTransport.o
+depbase=`echo src/thrift/transport/THttpTransport.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+	/bin/sh ../../libtool  --tag=CXX   --mode=compile /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS  -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/transport/THttpTransport.lo -MD -MP -MF $depbase.Tpo -c -o src/thrift/transport/THttpTransport.lo src/thrift/transport/THttpTransport.cpp &&\
+	mv -f $depbase.Tpo $depbase.Plo
+src/thrift/transport/TFileTransport.cpp:783:7: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+  783 |       sprintf(errorMsg,
+      |       ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+libtool: compile:  /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/transport/THttpTransport.lo -MD -MP -MF src/thrift/transport/.deps/THttpTransport.Tpo -c src/thrift/transport/THttpTransport.cpp -o src/thrift/transport/THttpTransport.o
+1 warning generated.
+depbase=`echo src/thrift/transport/THttpClient.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+	/bin/sh ../../libtool  --tag=CXX   --mode=compile /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS  -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/transport/THttpClient.lo -MD -MP -MF $depbase.Tpo -c -o src/thrift/transport/THttpClient.lo src/thrift/transport/THttpClient.cpp &&\
+	mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/transport/THttpClient.lo -MD -MP -MF src/thrift/transport/.deps/THttpClient.Tpo -c src/thrift/transport/THttpClient.cpp -o src/thrift/transport/THttpClient.o
+depbase=`echo src/thrift/transport/THttpServer.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+	/bin/sh ../../libtool  --tag=CXX   --mode=compile /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS  -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/transport/THttpServer.lo -MD -MP -MF $depbase.Tpo -c -o src/thrift/transport/THttpServer.lo src/thrift/transport/THttpServer.cpp &&\
+	mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/transport/THttpServer.lo -MD -MP -MF src/thrift/transport/.deps/THttpServer.Tpo -c src/thrift/transport/THttpServer.cpp -o src/thrift/transport/THttpServer.o
+depbase=`echo src/thrift/transport/TSocket.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+	/bin/sh ../../libtool  --tag=CXX   --mode=compile /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS  -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/transport/TSocket.lo -MD -MP -MF $depbase.Tpo -c -o src/thrift/transport/TSocket.lo src/thrift/transport/TSocket.cpp &&\
+	mv -f $depbase.Tpo $depbase.Plo
+depbase=`echo src/thrift/transport/TPipe.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+	/bin/sh ../../libtool  --tag=CXX   --mode=compile /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS  -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/transport/TPipe.lo -MD -MP -MF $depbase.Tpo -c -o src/thrift/transport/TPipe.lo src/thrift/transport/TPipe.cpp &&\
+	mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/transport/TSocket.lo -MD -MP -MF src/thrift/transport/.deps/TSocket.Tpo -c src/thrift/transport/TSocket.cpp -o src/thrift/transport/TSocket.o
+libtool: compile:  /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/transport/TPipe.lo -MD -MP -MF src/thrift/transport/.deps/TPipe.Tpo -c src/thrift/transport/TPipe.cpp -o src/thrift/transport/TPipe.o
+depbase=`echo src/thrift/transport/TPipeServer.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+	/bin/sh ../../libtool  --tag=CXX   --mode=compile /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS  -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/transport/TPipeServer.lo -MD -MP -MF $depbase.Tpo -c -o src/thrift/transport/TPipeServer.lo src/thrift/transport/TPipeServer.cpp &&\
+	mv -f $depbase.Tpo $depbase.Plo
+src/thrift/transport/TSocket.cpp:460:3: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+  460 |   sprintf(port, "%d", port_);
+      |   ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+src/thrift/transport/TSocket.cpp:771:5: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+  771 |     sprintf(errBuf, "TSocket::setGenericTimeout with negative input: %d\n", timeout_ms);
+      |     ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+libtool: compile:  /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/transport/TPipeServer.lo -MD -MP -MF src/thrift/transport/.deps/TPipeServer.Tpo -c src/thrift/transport/TPipeServer.cpp -o src/thrift/transport/TPipeServer.o
+2 warnings generated.
+depbase=`echo src/thrift/transport/TSSLSocket.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+	/bin/sh ../../libtool  --tag=CXX   --mode=compile /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS  -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/transport/TSSLSocket.lo -MD -MP -MF $depbase.Tpo -c -o src/thrift/transport/TSSLSocket.lo src/thrift/transport/TSSLSocket.cpp &&\
+	mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/transport/TSSLSocket.lo -MD -MP -MF src/thrift/transport/.deps/TSSLSocket.Tpo -c src/thrift/transport/TSSLSocket.cpp -o src/thrift/transport/TSSLSocket.o
+depbase=`echo src/thrift/transport/TSocketPool.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+	/bin/sh ../../libtool  --tag=CXX   --mode=compile /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS  -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/transport/TSocketPool.lo -MD -MP -MF $depbase.Tpo -c -o src/thrift/transport/TSocketPool.lo src/thrift/transport/TSocketPool.cpp &&\
+	mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/transport/TSocketPool.lo -MD -MP -MF src/thrift/transport/.deps/TSocketPool.Tpo -c src/thrift/transport/TSocketPool.cpp -o src/thrift/transport/TSocketPool.o
+src/thrift/transport/TSSLSocket.cpp:190:24: warning: 'TLSv1_method' is deprecated [-Wdeprecated-declarations]
+  190 |     ctx_ = SSL_CTX_new(TLSv1_method());
+      |                        ^
+/Users/jiangyuan/open/doris/thirdparty/installed/include/openssl/ssl.h:1887:1: note: 'TLSv1_method' has been explicitly marked deprecated here
+ 1887 | DEPRECATEDIN_1_1_0(__owur const SSL_METHOD *TLSv1_method(void)) /* TLSv1.0 */
+      | ^
+/Users/jiangyuan/open/doris/thirdparty/installed/include/openssl/opensslconf.h:163:34: note: expanded from macro 'DEPRECATEDIN_1_1_0'
+  163 | # define DEPRECATEDIN_1_1_0(f)   DECLARE_DEPRECATED(f)
+      |                                  ^
+/Users/jiangyuan/open/doris/thirdparty/installed/include/openssl/opensslconf.h:121:55: note: expanded from macro 'DECLARE_DEPRECATED'
+  121 | #   define DECLARE_DEPRECATED(f)    f __attribute__ ((deprecated));
+      |                                                       ^
+src/thrift/transport/TSSLSocket.cpp:192:24: warning: 'TLSv1_1_method' is deprecated [-Wdeprecated-declarations]
+  192 |     ctx_ = SSL_CTX_new(TLSv1_1_method());
+      |                        ^
+/Users/jiangyuan/open/doris/thirdparty/installed/include/openssl/ssl.h:1893:1: note: 'TLSv1_1_method' has been explicitly marked deprecated here
+ 1893 | DEPRECATEDIN_1_1_0(__owur const SSL_METHOD *TLSv1_1_method(void)) /* TLSv1.1 */
+      | ^
+/Users/jiangyuan/open/doris/thirdparty/installed/include/openssl/opensslconf.h:163:34: note: expanded from macro 'DEPRECATEDIN_1_1_0'
+  163 | # define DEPRECATEDIN_1_1_0(f)   DECLARE_DEPRECATED(f)
+      |                                  ^
+/Users/jiangyuan/open/doris/thirdparty/installed/include/openssl/opensslconf.h:121:55: note: expanded from macro 'DECLARE_DEPRECATED'
+  121 | #   define DECLARE_DEPRECATED(f)    f __attribute__ ((deprecated));
+      |                                                       ^
+src/thrift/transport/TSSLSocket.cpp:194:24: warning: 'TLSv1_2_method' is deprecated [-Wdeprecated-declarations]
+  194 |     ctx_ = SSL_CTX_new(TLSv1_2_method());
+      |                        ^
+/Users/jiangyuan/open/doris/thirdparty/installed/include/openssl/ssl.h:1899:1: note: 'TLSv1_2_method' has been explicitly marked deprecated here
+ 1899 | DEPRECATEDIN_1_1_0(__owur const SSL_METHOD *TLSv1_2_method(void)) /* TLSv1.2 */
+      | ^
+/Users/jiangyuan/open/doris/thirdparty/installed/include/openssl/opensslconf.h:163:34: note: expanded from macro 'DEPRECATEDIN_1_1_0'
+  163 | # define DEPRECATEDIN_1_1_0(f)   DECLARE_DEPRECATED(f)
+      |                                  ^
+/Users/jiangyuan/open/doris/thirdparty/installed/include/openssl/opensslconf.h:121:55: note: expanded from macro 'DECLARE_DEPRECATED'
+  121 | #   define DECLARE_DEPRECATED(f)    f __attribute__ ((deprecated));
+      |                                                       ^
+src/thrift/transport/TSSLSocket.cpp:773:27: warning: 'ASN1_STRING_data' is deprecated [-Wdeprecated-declarations]
+  773 |       char* data = (char*)ASN1_STRING_data(name->d.ia5);
+      |                           ^
+/Users/jiangyuan/open/doris/thirdparty/installed/include/openssl/asn1.h:554:1: note: 'ASN1_STRING_data' has been explicitly marked deprecated here
+  554 | DEPRECATEDIN_1_1_0(unsigned char *ASN1_STRING_data(ASN1_STRING *x))
+      | ^
+/Users/jiangyuan/open/doris/thirdparty/installed/include/openssl/opensslconf.h:163:34: note: expanded from macro 'DEPRECATEDIN_1_1_0'
+  163 | # define DEPRECATEDIN_1_1_0(f)   DECLARE_DEPRECATED(f)
+      |                                  ^
+/Users/jiangyuan/open/doris/thirdparty/installed/include/openssl/opensslconf.h:121:55: note: expanded from macro 'DECLARE_DEPRECATED'
+  121 | #   define DECLARE_DEPRECATED(f)    f __attribute__ ((deprecated));
+      |                                                       ^
+src/thrift/transport/TSSLSocket.cpp:76:13: warning: unused function 'callbackLocking' [-Wunused-function]
+   76 | static void callbackLocking(int mode, int n, const char*, int) {
+      |             ^~~~~~~~~~~~~~~
+src/thrift/transport/TSSLSocket.cpp:97:30: warning: unused function 'dyn_create' [-Wunused-function]
+   97 | static CRYPTO_dynlock_value* dyn_create(const char*, int) {
+      |                              ^~~~~~~~~~
+src/thrift/transport/TSSLSocket.cpp:101:13: warning: unused function 'dyn_lock' [-Wunused-function]
+  101 | static void dyn_lock(int mode, struct CRYPTO_dynlock_value* lock, const char*, int) {
+      |             ^~~~~~~~
+src/thrift/transport/TSSLSocket.cpp:111:13: warning: unused function 'dyn_destroy' [-Wunused-function]
+  111 | static void dyn_destroy(struct CRYPTO_dynlock_value* lock, const char*, int) {
+      |             ^~~~~~~~~~~
+8 warnings generated.
+depbase=`echo src/thrift/transport/TServerSocket.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+	/bin/sh ../../libtool  --tag=CXX   --mode=compile /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS  -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/transport/TServerSocket.lo -MD -MP -MF $depbase.Tpo -c -o src/thrift/transport/TServerSocket.lo src/thrift/transport/TServerSocket.cpp &&\
+	mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/transport/TServerSocket.lo -MD -MP -MF src/thrift/transport/.deps/TServerSocket.Tpo -c src/thrift/transport/TServerSocket.cpp -o src/thrift/transport/TServerSocket.o
+depbase=`echo src/thrift/transport/TSSLServerSocket.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+	/bin/sh ../../libtool  --tag=CXX   --mode=compile /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS  -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/transport/TSSLServerSocket.lo -MD -MP -MF $depbase.Tpo -c -o src/thrift/transport/TSSLServerSocket.lo src/thrift/transport/TSSLServerSocket.cpp &&\
+	mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/transport/TSSLServerSocket.lo -MD -MP -MF src/thrift/transport/.deps/TSSLServerSocket.Tpo -c src/thrift/transport/TSSLServerSocket.cpp -o src/thrift/transport/TSSLServerSocket.o
+depbase=`echo src/thrift/transport/TNonblockingServerSocket.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+	/bin/sh ../../libtool  --tag=CXX   --mode=compile /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS  -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/transport/TNonblockingServerSocket.lo -MD -MP -MF $depbase.Tpo -c -o src/thrift/transport/TNonblockingServerSocket.lo src/thrift/transport/TNonblockingServerSocket.cpp &&\
+	mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/transport/TNonblockingServerSocket.lo -MD -MP -MF src/thrift/transport/.deps/TNonblockingServerSocket.Tpo -c src/thrift/transport/TNonblockingServerSocket.cpp -o src/thrift/transport/TNonblockingServerSocket.o
+depbase=`echo src/thrift/transport/TNonblockingSSLServerSocket.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+	/bin/sh ../../libtool  --tag=CXX   --mode=compile /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS  -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/transport/TNonblockingSSLServerSocket.lo -MD -MP -MF $depbase.Tpo -c -o src/thrift/transport/TNonblockingSSLServerSocket.lo src/thrift/transport/TNonblockingSSLServerSocket.cpp &&\
+	mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/transport/TNonblockingSSLServerSocket.lo -MD -MP -MF src/thrift/transport/.deps/TNonblockingSSLServerSocket.Tpo -c src/thrift/transport/TNonblockingSSLServerSocket.cpp -o src/thrift/transport/TNonblockingSSLServerSocket.o
+src/thrift/transport/TNonblockingServerSocket.cpp:326:7: warning: unused variable 'one' [-Wunused-variable]
+  326 |   int one = 1;
+      |       ^~~
+1 warning generated.
+depbase=`echo src/thrift/transport/TTransportUtils.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+	/bin/sh ../../libtool  --tag=CXX   --mode=compile /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS  -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/transport/TTransportUtils.lo -MD -MP -MF $depbase.Tpo -c -o src/thrift/transport/TTransportUtils.lo src/thrift/transport/TTransportUtils.cpp &&\
+	mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/transport/TTransportUtils.lo -MD -MP -MF src/thrift/transport/.deps/TTransportUtils.Tpo -c src/thrift/transport/TTransportUtils.cpp -o src/thrift/transport/TTransportUtils.o
+depbase=`echo src/thrift/transport/TBufferTransports.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+	/bin/sh ../../libtool  --tag=CXX   --mode=compile /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS  -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/transport/TBufferTransports.lo -MD -MP -MF $depbase.Tpo -c -o src/thrift/transport/TBufferTransports.lo src/thrift/transport/TBufferTransports.cpp &&\
+	mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/transport/TBufferTransports.lo -MD -MP -MF src/thrift/transport/.deps/TBufferTransports.Tpo -c src/thrift/transport/TBufferTransports.cpp -o src/thrift/transport/TBufferTransports.o
+depbase=`echo src/thrift/transport/TWebSocketServer.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+	/bin/sh ../../libtool  --tag=CXX   --mode=compile /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS  -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/transport/TWebSocketServer.lo -MD -MP -MF $depbase.Tpo -c -o src/thrift/transport/TWebSocketServer.lo src/thrift/transport/TWebSocketServer.cpp &&\
+	mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/transport/TWebSocketServer.lo -MD -MP -MF src/thrift/transport/.deps/TWebSocketServer.Tpo -c src/thrift/transport/TWebSocketServer.cpp -o src/thrift/transport/TWebSocketServer.o
+depbase=`echo src/thrift/transport/SocketCommon.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+	/bin/sh ../../libtool  --tag=CXX   --mode=compile /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS  -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/transport/SocketCommon.lo -MD -MP -MF $depbase.Tpo -c -o src/thrift/transport/SocketCommon.lo src/thrift/transport/SocketCommon.cpp &&\
+	mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/transport/SocketCommon.lo -MD -MP -MF src/thrift/transport/.deps/SocketCommon.Tpo -c src/thrift/transport/SocketCommon.cpp -o src/thrift/transport/SocketCommon.o
+depbase=`echo src/thrift/server/TConnectedClient.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+	/bin/sh ../../libtool  --tag=CXX   --mode=compile /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS  -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/server/TConnectedClient.lo -MD -MP -MF $depbase.Tpo -c -o src/thrift/server/TConnectedClient.lo src/thrift/server/TConnectedClient.cpp &&\
+	mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/server/TConnectedClient.lo -MD -MP -MF src/thrift/server/.deps/TConnectedClient.Tpo -c src/thrift/server/TConnectedClient.cpp -o src/thrift/server/TConnectedClient.o
+depbase=`echo src/thrift/server/TServer.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+	/bin/sh ../../libtool  --tag=CXX   --mode=compile /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS  -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/server/TServer.lo -MD -MP -MF $depbase.Tpo -c -o src/thrift/server/TServer.lo src/thrift/server/TServer.cpp &&\
+	mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/server/TServer.lo -MD -MP -MF src/thrift/server/.deps/TServer.Tpo -c src/thrift/server/TServer.cpp -o src/thrift/server/TServer.o
+depbase=`echo src/thrift/server/TServerFramework.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+	/bin/sh ../../libtool  --tag=CXX   --mode=compile /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS  -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/server/TServerFramework.lo -MD -MP -MF $depbase.Tpo -c -o src/thrift/server/TServerFramework.lo src/thrift/server/TServerFramework.cpp &&\
+	mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/server/TServerFramework.lo -MD -MP -MF src/thrift/server/.deps/TServerFramework.Tpo -c src/thrift/server/TServerFramework.cpp -o src/thrift/server/TServerFramework.o
+depbase=`echo src/thrift/server/TSimpleServer.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+	/bin/sh ../../libtool  --tag=CXX   --mode=compile /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS  -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/server/TSimpleServer.lo -MD -MP -MF $depbase.Tpo -c -o src/thrift/server/TSimpleServer.lo src/thrift/server/TSimpleServer.cpp &&\
+	mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/server/TSimpleServer.lo -MD -MP -MF src/thrift/server/.deps/TSimpleServer.Tpo -c src/thrift/server/TSimpleServer.cpp -o src/thrift/server/TSimpleServer.o
+depbase=`echo src/thrift/server/TThreadPoolServer.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+	/bin/sh ../../libtool  --tag=CXX   --mode=compile /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS  -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/server/TThreadPoolServer.lo -MD -MP -MF $depbase.Tpo -c -o src/thrift/server/TThreadPoolServer.lo src/thrift/server/TThreadPoolServer.cpp &&\
+	mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/server/TThreadPoolServer.lo -MD -MP -MF src/thrift/server/.deps/TThreadPoolServer.Tpo -c src/thrift/server/TThreadPoolServer.cpp -o src/thrift/server/TThreadPoolServer.o
+depbase=`echo src/thrift/server/TThreadedServer.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+	/bin/sh ../../libtool  --tag=CXX   --mode=compile /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H   -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS  -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/server/TThreadedServer.lo -MD -MP -MF $depbase.Tpo -c -o src/thrift/server/TThreadedServer.lo src/thrift/server/TThreadedServer.cpp &&\
+	mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  /usr/bin/../bin/clang++ -std=c++11 -DHAVE_CONFIG_H -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I/Users/jiangyuan/open/doris/thirdparty/installed/include -I./src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -MT src/thrift/server/TThreadedServer.lo -MD -MP -MF src/thrift/server/.deps/TThreadedServer.Tpo -c src/thrift/server/TThreadedServer.cpp -o src/thrift/server/TThreadedServer.o
+/bin/sh ../../libtool  --tag=CXX   --mode=link /usr/bin/../bin/clang++ -std=c++11 -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -release 0.24.0 -L/Users/jiangyuan/open/doris/thirdparty/installed/lib64 -L/Users/jiangyuan/open/doris/thirdparty/installed/lib -o libthriftnb.la -rpath /Users/jiangyuan/open/doris/thirdparty/installed/lib src/thrift/server/libthriftnb_la-TNonblockingServer.lo src/thrift/async/libthriftnb_la-TEvhttpServer.lo src/thrift/async/libthriftnb_la-TEvhttpClientChannel.lo  -lpthread -lcrypto -ldl -lssl
+libtool: link: ar cr .libs/libthriftnb.a  src/thrift/server/libthriftnb_la-TNonblockingServer.o src/thrift/async/libthriftnb_la-TEvhttpServer.o src/thrift/async/libthriftnb_la-TEvhttpClientChannel.o
+libtool: link: ranlib .libs/libthriftnb.a
+libtool: link: ( cd ".libs" && rm -f "libthriftnb.la" && ln -s "../libthriftnb.la" "libthriftnb.la" )
+/bin/sh ../../libtool  --tag=CXX   --mode=link /usr/bin/../bin/clang++ -std=c++11 -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -release 0.24.0 -L/Users/jiangyuan/open/doris/thirdparty/installed/lib64  -lz -L/Users/jiangyuan/open/doris/thirdparty/installed/lib -o libthriftz.la -rpath /Users/jiangyuan/open/doris/thirdparty/installed/lib src/thrift/transport/libthriftz_la-TZlibTransport.lo src/thrift/transport/libthriftz_la-THeaderTransport.lo src/thrift/protocol/libthriftz_la-THeaderProtocol.lo  -lpthread -lcrypto -ldl -lssl
+/bin/sh ../../libtool  --tag=CXX   --mode=link /usr/bin/../bin/clang++ -std=c++11 -Wall -Wextra -pedantic -I/Users/jiangyuan/open/doris/thirdparty/installed/include -Wno-unused-but-set-variable -Wno-inconsistent-missing-override -release 0.24.0 -L/Users/jiangyuan/open/doris/thirdparty/installed/lib -o libthrift.la -rpath /Users/jiangyuan/open/doris/thirdparty/installed/lib src/thrift/TApplicationException.lo src/thrift/TOutput.lo src/thrift/TUuid.lo src/thrift/VirtualProfiling.lo src/thrift/async/TAsyncChannel.lo src/thrift/async/TAsyncProtocolProcessor.lo src/thrift/async/TConcurrentClientSyncInfo.lo src/thrift/concurrency/ThreadManager.lo src/thrift/concurrency/TimerManager.lo src/thrift/processor/PeekProcessor.lo src/thrift/protocol/TDebugProtocol.lo src/thrift/protocol/TJSONProtocol.lo src/thrift/protocol/TBase64Utils.lo src/thrift/protocol/TMultiplexedProtocol.lo src/thrift/protocol/TProtocol.lo src/thrift/transport/TTransportException.lo src/thrift/transport/TFDTransport.lo src/thrift/transport/TFileTransport.lo src/thrift/transport/TSimpleFileTransport.lo src/thrift/transport/THttpTransport.lo src/thrift/transport/THttpClient.lo src/thrift/transport/THttpServer.lo src/thrift/transport/TSocket.lo src/thrift/transport/TPipe.lo src/thrift/transport/TPipeServer.lo src/thrift/transport/TSSLSocket.lo src/thrift/transport/TSocketPool.lo src/thrift/transport/TServerSocket.lo src/thrift/transport/TSSLServerSocket.lo src/thrift/transport/TNonblockingServerSocket.lo src/thrift/transport/TNonblockingSSLServerSocket.lo src/thrift/transport/TTransportUtils.lo src/thrift/transport/TBufferTransports.lo src/thrift/transport/TWebSocketServer.lo src/thrift/transport/SocketCommon.lo src/thrift/server/TConnectedClient.lo src/thrift/server/TServer.lo src/thrift/server/TServerFramework.lo src/thrift/server/TSimpleServer.lo src/thrift/server/TThreadPoolServer.lo src/thrift/server/TThreadedServer.lo src/thrift/concurrency/Mutex.lo src/thrift/concurrency/ThreadFactory.lo src/thrift/concurrency/Thread.lo src/thrift/concurrency/Monitor.lo -L/Users/jiangyuan/open/doris/thirdparty/installed/lib64 -L/Users/jiangyuan/open/doris/thirdparty/installed/lib -lssl -lcrypto -lpthread -lcrypto -ldl -lssl
+libtool: link: ar cr .libs/libthriftz.a  src/thrift/transport/libthriftz_la-TZlibTransport.o src/thrift/transport/libthriftz_la-THeaderTransport.o src/thrift/protocol/libthriftz_la-THeaderProtocol.o
+libtool: link: ranlib .libs/libthriftz.a
+libtool: link: ar cr .libs/libthrift.a  src/thrift/TApplicationException.o src/thrift/TOutput.o src/thrift/TUuid.o src/thrift/VirtualProfiling.o src/thrift/async/TAsyncChannel.o src/thrift/async/TAsyncProtocolProcessor.o src/thrift/async/TConcurrentClientSyncInfo.o src/thrift/concurrency/ThreadManager.o src/thrift/concurrency/TimerManager.o src/thrift/processor/PeekProcessor.o src/thrift/protocol/TDebugProtocol.o src/thrift/protocol/TJSONProtocol.o src/thrift/protocol/TBase64Utils.o src/thrift/protocol/TMultiplexedProtocol.o src/thrift/protocol/TProtocol.o src/thrift/transport/TTransportException.o src/thrift/transport/TFDTransport.o src/thrift/transport/TFileTransport.o src/thrift/transport/TSimpleFileTransport.o src/thrift/transport/THttpTransport.o src/thrift/transport/THttpClient.o src/thrift/transport/THttpServer.o src/thrift/transport/TSocket.o src/thrift/transport/TPipe.o src/thrift/transport/TPipeServer.o src/thrift/transport/TSSLSocket.o src/thrift/transport/TSocketPool.o src/thrift/transport/TServerSocket.o src/thrift/transport/TSSLServerSocket.o src/thrift/transport/TNonblockingServerSocket.o src/thrift/transport/TNonblockingSSLServerSocket.o src/thrift/transport/TTransportUtils.o src/thrift/transport/TBufferTransports.o src/thrift/transport/TWebSocketServer.o src/thrift/transport/SocketCommon.o src/thrift/server/TConnectedClient.o src/thrift/server/TServer.o src/thrift/server/TServerFramework.o src/thrift/server/TSimpleServer.o src/thrift/server/TThreadPoolServer.o src/thrift/server/TThreadedServer.o src/thrift/concurrency/Mutex.o src/thrift/concurrency/ThreadFactory.o src/thrift/concurrency/Thread.o src/thrift/concurrency/Monitor.o
+libtool: link: ( cd ".libs" && rm -f "libthriftz.la" && ln -s "../libthriftz.la" "libthriftz.la" )
+libtool: link: ranlib .libs/libthrift.a
+libtool: link: ( cd ".libs" && rm -f "libthrift.la" && ln -s "../libthrift.la" "libthrift.la" )
+make[3]: Nothing to be done for `all-am'.
+make[2]: Nothing to be done for `all-am'.
+Making install in compiler/cpp
+Making install in src
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  install-am
+make[4]: Nothing to be done for `install-exec-am'.
+make[4]: Nothing to be done for `install-data-am'.
+Making install in .
+ /opt/homebrew/opt/coreutils/bin/gmkdir -p '/Users/jiangyuan/open/doris/thirdparty/installed/bin'
+  /bin/sh ../../libtool   --mode=install /opt/homebrew/opt/coreutils/bin/ginstall -c thrift '/Users/jiangyuan/open/doris/thirdparty/installed/bin'
+libtool: install: /opt/homebrew/opt/coreutils/bin/ginstall -c thrift /Users/jiangyuan/open/doris/thirdparty/installed/bin/thrift
+make[3]: Nothing to be done for `install-data-am'.
+Making install in lib
+Making install in json
+make[4]: Nothing to be done for `install-exec-am'.
+make[4]: Nothing to be done for `install-data-am'.
+Making install in xml
+make[4]: Nothing to be done for `install-exec-am'.
+make[4]: Nothing to be done for `install-data-am'.
+Making install in cpp
+Making install in .
+ /opt/homebrew/opt/coreutils/bin/gmkdir -p '/Users/jiangyuan/open/doris/thirdparty/installed/lib'
+ /bin/sh ../../libtool   --mode=install /opt/homebrew/opt/coreutils/bin/ginstall -c   libthrift.la libthriftnb.la libthriftz.la '/Users/jiangyuan/open/doris/thirdparty/installed/lib'
+libtool: install: /opt/homebrew/opt/coreutils/bin/ginstall -c .libs/libthrift.lai /Users/jiangyuan/open/doris/thirdparty/installed/lib/libthrift.la
+libtool: install: /opt/homebrew/opt/coreutils/bin/ginstall -c .libs/libthriftnb.lai /Users/jiangyuan/open/doris/thirdparty/installed/lib/libthriftnb.la
+libtool: install: /opt/homebrew/opt/coreutils/bin/ginstall -c .libs/libthriftz.lai /Users/jiangyuan/open/doris/thirdparty/installed/lib/libthriftz.la
+libtool: install: /opt/homebrew/opt/coreutils/bin/ginstall -c .libs/libthrift.a /Users/jiangyuan/open/doris/thirdparty/installed/lib/libthrift.a
+libtool: install: chmod 644 /Users/jiangyuan/open/doris/thirdparty/installed/lib/libthrift.a
+libtool: install: ranlib /Users/jiangyuan/open/doris/thirdparty/installed/lib/libthrift.a
+libtool: install: /opt/homebrew/opt/coreutils/bin/ginstall -c .libs/libthriftnb.a /Users/jiangyuan/open/doris/thirdparty/installed/lib/libthriftnb.a
+libtool: install: chmod 644 /Users/jiangyuan/open/doris/thirdparty/installed/lib/libthriftnb.a
+libtool: install: ranlib /Users/jiangyuan/open/doris/thirdparty/installed/lib/libthriftnb.a
+libtool: install: /opt/homebrew/opt/coreutils/bin/ginstall -c .libs/libthriftz.a /Users/jiangyuan/open/doris/thirdparty/installed/lib/libthriftz.a
+libtool: install: chmod 644 /Users/jiangyuan/open/doris/thirdparty/installed/lib/libthriftz.a
+libtool: install: ranlib /Users/jiangyuan/open/doris/thirdparty/installed/lib/libthriftz.a
+ /opt/homebrew/opt/coreutils/bin/gmkdir -p '/Users/jiangyuan/open/doris/thirdparty/installed/include/thrift/async'
+ /opt/homebrew/opt/coreutils/bin/ginstall -c -m 644 src/thrift/async/TAsyncChannel.h src/thrift/async/TAsyncDispatchProcessor.h src/thrift/async/TAsyncProcessor.h src/thrift/async/TAsyncBufferProcessor.h src/thrift/async/TAsyncProtocolProcessor.h src/thrift/async/TConcurrentClientSyncInfo.h src/thrift/async/TEvhttpClientChannel.h src/thrift/async/TEvhttpServer.h '/Users/jiangyuan/open/doris/thirdparty/installed/include/thrift/async'
+ /opt/homebrew/opt/coreutils/bin/gmkdir -p '/Users/jiangyuan/open/doris/thirdparty/installed/include/thrift/concurrency'
+ /opt/homebrew/opt/coreutils/bin/ginstall -c -m 644 src/thrift/concurrency/Exception.h src/thrift/concurrency/Mutex.h src/thrift/concurrency/Monitor.h src/thrift/concurrency/ThreadFactory.h src/thrift/concurrency/Thread.h src/thrift/concurrency/ThreadManager.h src/thrift/concurrency/TimerManager.h src/thrift/concurrency/FunctionRunner.h '/Users/jiangyuan/open/doris/thirdparty/installed/include/thrift/concurrency'
+ /opt/homebrew/opt/coreutils/bin/gmkdir -p '/Users/jiangyuan/open/doris/thirdparty/installed/include/thrift/processor'
+ /opt/homebrew/opt/coreutils/bin/ginstall -c -m 644 src/thrift/processor/PeekProcessor.h src/thrift/processor/StatsProcessor.h src/thrift/processor/TMultiplexedProcessor.h '/Users/jiangyuan/open/doris/thirdparty/installed/include/thrift/processor'
+ /opt/homebrew/opt/coreutils/bin/gmkdir -p '/Users/jiangyuan/open/doris/thirdparty/installed/include/thrift/protocol'
+ /opt/homebrew/opt/coreutils/bin/ginstall -c -m 644 src/thrift/protocol/TEnum.h src/thrift/protocol/TList.h src/thrift/protocol/TSet.h src/thrift/protocol/TMap.h src/thrift/protocol/TBinaryProtocol.h src/thrift/protocol/TBinaryProtocol.tcc src/thrift/protocol/TCompactProtocol.h src/thrift/protocol/TCompactProtocol.tcc src/thrift/protocol/TDebugProtocol.h src/thrift/protocol/THeaderProtocol.h src/thrift/protocol/TBase64Utils.h src/thrift/protocol/TJSONProtocol.h src/thrift/protocol/TMultiplexedProtocol.h src/thrift/protocol/TProtocolDecorator.h src/thrift/protocol/TProtocolTap.h src/thrift/protocol/TProtocolTypes.h src/thrift/protocol/TProtocolException.h src/thrift/protocol/TVirtualProtocol.h src/thrift/protocol/TProtocol.h '/Users/jiangyuan/open/doris/thirdparty/installed/include/thrift/protocol'
+ /opt/homebrew/opt/coreutils/bin/gmkdir -p '/Users/jiangyuan/open/doris/thirdparty/installed/include/thrift/qt'
+ /opt/homebrew/opt/coreutils/bin/ginstall -c -m 644 src/thrift/qt/TQIODeviceTransport.h src/thrift/qt/TQTcpServer.h '/Users/jiangyuan/open/doris/thirdparty/installed/include/thrift/qt'
+ /opt/homebrew/opt/coreutils/bin/gmkdir -p '/Users/jiangyuan/open/doris/thirdparty/installed/include/thrift/server'
+ /opt/homebrew/opt/coreutils/bin/ginstall -c -m 644 src/thrift/server/TConnectedClient.h src/thrift/server/TServer.h src/thrift/server/TServerFramework.h src/thrift/server/TSimpleServer.h src/thrift/server/TThreadPoolServer.h src/thrift/server/TThreadedServer.h src/thrift/server/TNonblockingServer.h '/Users/jiangyuan/open/doris/thirdparty/installed/include/thrift/server'
+ /opt/homebrew/opt/coreutils/bin/gmkdir -p '/Users/jiangyuan/open/doris/thirdparty/installed/include/thrift'
+ /opt/homebrew/opt/coreutils/bin/ginstall -c -m 644 ../../config.h src/thrift/thrift-config.h src/thrift/thrift_export.h src/thrift/TDispatchProcessor.h src/thrift/TUuid.h src/thrift/Thrift.h src/thrift/TOutput.h src/thrift/TProcessor.h src/thrift/TApplicationException.h src/thrift/TLogging.h src/thrift/TPrintTo.h src/thrift/TToString.h src/thrift/TBase.h src/thrift/TConfiguration.h src/thrift/TNonCopyable.h '/Users/jiangyuan/open/doris/thirdparty/installed/include/thrift'
+ /opt/homebrew/opt/coreutils/bin/gmkdir -p '/Users/jiangyuan/open/doris/thirdparty/installed/include/thrift/transport'
+ /opt/homebrew/opt/coreutils/bin/ginstall -c -m 644 src/thrift/transport/PlatformSocket.h src/thrift/transport/TFDTransport.h src/thrift/transport/TFileTransport.h src/thrift/transport/THeaderTransport.h src/thrift/transport/TSimpleFileTransport.h src/thrift/transport/TServerSocket.h src/thrift/transport/TSSLServerSocket.h src/thrift/transport/TServerTransport.h src/thrift/transport/TNonblockingServerTransport.h src/thrift/transport/TNonblockingServerSocket.h src/thrift/transport/TNonblockingSSLServerSocket.h src/thrift/transport/THttpTransport.h src/thrift/transport/THttpClient.h src/thrift/transport/THttpServer.h src/thrift/transport/TSocket.h src/thrift/transport/TSocketUtils.h src/thrift/transport/TPipe.h src/thrift/transport/TPipeServer.h src/thrift/transport/TSSLSocket.h src/thrift/transport/TSocketPool.h src/thrift/transport/TVirtualTransport.h src/thrift/transport/TTransport.h src/thrift/transport/TTransportException.h src/thrift/transport/TTransportUtils.h src/thrift/transport/TBufferTransports.h src/thrift/transport/TShortReadTransport.h src/thrift/transport/TZlibTransport.h src/thrift/transport/TWebSocketServer.h src/thrift/transport/SocketCommon.h '/Users/jiangyuan/open/doris/thirdparty/installed/include/thrift/transport'
+ /opt/homebrew/opt/coreutils/bin/gmkdir -p '/Users/jiangyuan/open/doris/thirdparty/installed/lib/pkgconfig'
+ /opt/homebrew/opt/coreutils/bin/ginstall -c -m 644 thrift.pc thrift-nb.pc thrift-z.pc '/Users/jiangyuan/open/doris/thirdparty/installed/lib/pkgconfig'
+make[3]: Nothing to be done for `install-exec-am'.
+make[3]: Nothing to be done for `install-data-am'.
+make[2]: Nothing to be done for `install-exec-am'.
+make[2]: Nothing to be done for `install-data-am'.
+Cleaning up source: thrift-0.24.0
+debug after clean: thrift
+Filesystem                             Size    Used   Avail Capacity iused ifree %iused  Mounted on
+/dev/disk3s3s1                        460Gi    10Gi    98Gi    10%    426k  1.0G    0%   /
+devfs                                 201Ki   201Ki     0Bi   100%     694     0  100%   /dev
+/dev/disk3s6                          460Gi   5.0Gi    98Gi     5%       5  1.0G    0%   /System/Volumes/VM
+/dev/disk3s4                          460Gi   6.6Gi    98Gi     7%    1.2k  1.0G    0%   /System/Volumes/Preboot
+/dev/disk3s2                          460Gi    41Mi    98Gi     1%      54  1.0G    0%   /System/Volumes/Update
+/dev/disk1s2                          500Mi   6.0Mi   481Mi     2%       1  4.9M    0%   /System/Volumes/xarts
+/dev/disk1s1                          500Mi   5.4Mi   481Mi     2%      39  4.9M    0%   /System/Volumes/iSCPreboot
+/dev/disk1s3                          500Mi   3.0Mi   481Mi     1%      88  4.9M    0%   /System/Volumes/Hardware
+/dev/disk3s1                          460Gi   339Gi    98Gi    78%    4.7M  1.0G    0%   /System/Volumes/Data
+map auto_home                           0Bi     0Bi     0Bi   100%       0     0     -   /System/Volumes/Data/home
+/Applications/小宇宙.app/Wrapper      460Gi   340Gi    96Gi    78%    4.7M  1.0G    0%   /private/var/folders/_4/6bql8h112v9g5bnfx0j8k2sr0000gn/X/049C68E9-0062-5FE6-96C5-AC66BCFD5C27
+1.8G	/Users/jiangyuan/open/doris/thirdparty
+Finished to build all thirdparties

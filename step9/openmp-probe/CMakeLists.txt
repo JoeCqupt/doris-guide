@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.20)
+project(OpenMPProbe LANGUAGES C CXX)
+find_package(OpenMP REQUIRED COMPONENTS C CXX)
+add_executable(probe_c main.c)
+target_link_libraries(probe_c PRIVATE OpenMP::OpenMP_C)
+add_executable(probe_cxx main.cpp)
+target_link_libraries(probe_cxx PRIVATE OpenMP::OpenMP_CXX)

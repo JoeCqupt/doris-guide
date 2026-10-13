@@ -1,0 +1,2962 @@
+Target system: Darwin; Target arch: arm64
+Python 3.14.3
+Check JAVA_HOME version
+Apache Maven 3.9.15 (98b2cdbfdb5f1ac8781f537ea9acccaed7922349)
+Maven home: /opt/homebrew/Cellar/maven/3.9.15/libexec
+Java version: 17.0.17, vendor: Oracle Corporation, runtime: /Users/jiangyuan/dev/jdk-17.0.17.jdk/Contents/Home
+Default locale: zh_CN_#Hans, platform encoding: UTF-8
+OS name: "mac os x", version: "15.6.1", arch: "aarch64", family: "mac"
+cmake version 4.2.1
+
+CMake suite maintained and supported by Kitware (kitware.com/cmake).
+Get params:
+    BUILD_FE                            -- 0
+    BUILD_BE                            -- 1
+    BUILD_CLOUD                         -- 0
+    BUILD_META_TOOL                     -- OFF
+    BUILD_FILE_CACHE_MICROBENCH_TOOL    -- OFF
+    BUILD_INDEX_TOOL                    -- OFF
+    BUILD_BENCHMARK                     -- OFF
+    BUILD_TASK_EXECUTOR_SIMULATOR       -- OFF
+    BUILD_BE_JAVA_EXTENSIONS            -- 1
+    BUILD_BE_CDC_CLIENT                 -- 1
+    BUILD_HIVE_UDF                      -- 0
+    BUILD_JUICEFS                       -- OFF
+    BUILD_JINDOFS                       -- OFF
+    PARALLEL                            -- 2
+    CLEAN                               -- 0
+    GLIBC_COMPATIBILITY                 -- OFF
+    USE_AVX2                            -- ON
+    USE_LIBCPP                          -- ON
+    STRIP_DEBUG_INFO                    -- OFF
+    DORIS_DEV_DEBUG_INFO                -- 
+    USE_JEMALLOC                        -- OFF
+    USE_BTHREAD_SCANNER                 -- OFF
+    ENABLE_INJECTION_POINT              -- OFF
+    DENABLE_CLANG_COVERAGE              -- OFF
+    DISPLAY_BUILD_TIME                  -- OFF
+    ENABLE_PCH                          -- ON
+    ENABLE_UNITY_BUILD                  -- ON
+    EXTRA_FE_MODULES                    -- 
+    EXTRA_BE_MODULES                    -- 
+    EXTRA_CLOUD_MODULES                 -- 
+
+Feature List: -TDE,-TLS,-VARIANT_NESTED_GROUP,-HDFS_STORAGE_VAULT,+UI,-AZURE_BLOB,-AZURE_STORAGE_VAULT,-HIVE_UDF,+BE_JAVA_EXTENSIONS
+Target system: Darwin; Target arch: arm64
+Python 3.14.3
+Check JAVA_HOME version
+Apache Maven 3.9.15 (98b2cdbfdb5f1ac8781f537ea9acccaed7922349)
+Maven home: /opt/homebrew/Cellar/maven/3.9.15/libexec
+Java version: 17.0.17, vendor: Oracle Corporation, runtime: /Users/jiangyuan/dev/jdk-17.0.17.jdk/Contents/Home
+Default locale: zh_CN_#Hans, platform encoding: UTF-8
+OS name: "mac os x", version: "15.6.1", arch: "aarch64", family: "mac"
+cmake version 4.2.1
+
+CMake suite maintained and supported by Kitware (kitware.com/cmake).
+Build generated code
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C script
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C proto
+bash /Users/jiangyuan/open/doris/gensrc/script/gen_build_version.sh
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C thrift
+make[1]: Nothing to be done for `all'.
+make[1]: Nothing to be done for `all'.
+Done
+Update datasketches-cpp submodule ...
+/Users/jiangyuan/open/doris
+Current commit ID of datasketches-cpp submodule: 46025e9aeed8368b1184cbde9634dd99d0ee47c0, expected is 46025e9aeed8368b1184cbde9634dd99d0ee47c0
+Update apache-orc submodule ...
+/Users/jiangyuan/open/doris
+Current commit ID of apache-orc submodule: be0f1b73a7aeb78824a03e0dcb692c50a176d513, expected is be0f1b73a7aeb78824a03e0dcb692c50a176d513
+Update clucene submodule ...
+/Users/jiangyuan/open/doris
+Current commit ID of clucene submodule: 08d45e541fef1e48dc4ab00d2d5fde9569b49ee3, expected is 08d45e541fef1e48dc4ab00d2d5fde9569b49ee3
+Update openblas submodule ...
+/Users/jiangyuan/open/doris
+Current commit ID of openblas submodule: 77986e49425532bf8f651db74cbe1579bcb4a5bf, expected is 77986e49425532bf8f651db74cbe1579bcb4a5bf
+Update faiss submodule ...
+/Users/jiangyuan/open/doris
+Current commit ID of faiss submodule: 032afe95f671cd50b82d52d901345600776d7855, expected is 032afe95f671cd50b82d52d901345600776d7855
+Build Backend: ASAN
+-- Make program: /usr/bin/make
+-- Use ccache:  and 
+-- Extra cxx flags: 
+-- Build fs benchmark tool: OFF
+-- Build task executor simulator: OFF
+-- Build file cache lru tool: OFF
+-- The CXX compiler identification is Clang 20.1.8
+-- The C compiler identification is Clang 20.1.8
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /opt/homebrew/opt/llvm@20/bin/clang++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /opt/homebrew/opt/llvm@20/bin/clang - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- GLIBC_COMPATIBILITY is OFF
+-- USE_LIBCPP is ON
+-- USE_JEMALLOC is OFF
+-- USE_UNWIND is OFF
+-- ENABLE_PCH is ON
+-- ENABLE_UNITY_BUILD is ON
+-- USE_AVX2 is ON
+-- Build type is ASAN
+-- Build target arch is arm64
+-- DORIS_HOME is /Users/jiangyuan/open/doris
+-- THIRDPARTY_DIR is /Users/jiangyuan/open/doris/thirdparty/installed
+-- ENABLE_BUILD_HYGIENE is ON
+header hygiene: 33 layering rule(s), 10 third-party ban(s), 16+16 budget(s), pch whitelist: all satisfied
+extern/instantiation pairing: 285 declaration(s), 47 covered family(s), all paired
+unity-skip coverage: 5 test-included source file(s) all covered
+build hygiene: all checks passed (python: python3 3.14.3)
+-- make test: OFF
+-- make benchmark: OFF
+-- build fs benchmark tool: OFF
+-- build task executor simulator: OFF
+-- build file cache lru tool: OFF
+-- build gensrc if necessary
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C script
+bash /Users/jiangyuan/open/doris/gensrc/script/gen_build_version.sh
+get java cmd: /Users/jiangyuan/dev/jdk-17.0.17.jdk/Contents/Home/bin/java
+get java version: java full version \"17.0.17+8-LTS-360\"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C proto
+make[1]: Nothing to be done for `all'.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C thrift
+make[1]: Nothing to be done for `all'.
+CMake Warning (dev) at CMakeLists.txt:242 (find_package):
+  Policy CMP0167 is not set: The FindBoost module is removed.  Run "cmake
+  --help-policy CMP0167" for policy details.  Use the cmake_policy command to
+  set the policy and suppress this warning.
+
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Found Boost: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/Boost-1.81.0/BoostConfig.cmake (found suitable version "1.81.0", minimum required is "1.81.0") found components: system date_time
+CMake Warning (dev) at CMakeLists.txt:243 (find_package):
+  Policy CMP0167 is not set: The FindBoost module is removed.  Run "cmake
+  --help-policy CMP0167" for policy details.  Use the cmake_policy command to
+  set the policy and suppress this warning.
+
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Found Boost: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/Boost-1.81.0/BoostConfig.cmake (found suitable version "1.81.0", minimum required is "1.81.0") found components: system container
+-- build azure: OFF
+-- Found ZLIB: /Users/jiangyuan/open/doris/thirdparty/installed/lib/libz.a (found version "1.3.1")
+Configuring DataSketches version 5.3.20261008.0834
+-- Build type: ASAN
+-- compiler Clang version 20.1.8
+-- Disable the metrics collection
+-- Performing Test ORC_CXX_HAS_CSTDINT
+-- Performing Test ORC_CXX_HAS_CSTDINT - Success
+-- Performing Test ORC_CXX_HAS_THREAD_LOCAL
+-- Performing Test ORC_CXX_HAS_THREAD_LOCAL - Success
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- SNAPPY_HOME: /Users/jiangyuan/open/doris/thirdparty/installed
+-- Found the Snappy header: /Users/jiangyuan/open/doris/thirdparty/installed/include/snappy.h
+-- Found the Snappy library: /Users/jiangyuan/open/doris/thirdparty/installed/lib/libsnappy.a
+-- ZLIB_HOME: /Users/jiangyuan/open/doris/thirdparty/installed
+-- Found the ZLIB header: /Users/jiangyuan/open/doris/thirdparty/installed/include/zlib.h
+-- Found the ZLIB library: /Users/jiangyuan/open/doris/thirdparty/installed/lib/libz.a
+-- Found the ZLIB static library: /Users/jiangyuan/open/doris/thirdparty/installed/lib/libz.a
+-- ZSTD_HOME: /Users/jiangyuan/open/doris/thirdparty/installed
+-- Found the zstd header: /Users/jiangyuan/open/doris/thirdparty/installed/include/zstd/zstd.h
+-- Found the zstd library: /Users/jiangyuan/open/doris/thirdparty/installed/lib/libzstd.a
+-- Found the zstd static library: /Users/jiangyuan/open/doris/thirdparty/installed/lib/libzstd.a
+-- LZ4_HOME: /Users/jiangyuan/open/doris/thirdparty/installed
+-- Found the LZ4 header: /Users/jiangyuan/open/doris/thirdparty/installed/include/lz4/lz4.h
+-- Found the LZ4 library: /Users/jiangyuan/open/doris/thirdparty/installed/lib/liblz4.a
+-- PROTOBUF_HOME: /Users/jiangyuan/open/doris/thirdparty/installed
+-- Found the Protobuf headers: /Users/jiangyuan/open/doris/thirdparty/installed/include
+-- Found the Protobuf library: /Users/jiangyuan/open/doris/thirdparty/installed/lib/libprotobuf.a
+-- Found the Protoc library: /Users/jiangyuan/open/doris/thirdparty/installed/lib/libprotoc.a
+-- Found the Protoc executable: /Users/jiangyuan/open/doris/thirdparty/installed/bin/protoc
+-- Found the Protobuf static library: /Users/jiangyuan/open/doris/thirdparty/installed/lib/libprotobuf.a
+-- Found the Protoc static library: /Users/jiangyuan/open/doris/thirdparty/installed/lib/libprotoc.a
+-- Performing Test HAS_PREAD
+-- Performing Test HAS_PREAD - Success
+-- Performing Test HAS_STRPTIME
+-- Performing Test HAS_STRPTIME - Success
+-- Performing Test HAS_BUILTIN_OVERFLOW_CHECK
+-- Performing Test HAS_BUILTIN_OVERFLOW_CHECK - Success
+-- Performing Test HAS_DIAGNOSTIC_PUSH
+-- Performing Test HAS_DIAGNOSTIC_PUSH - Success
+-- Performing Test HAS_STD_ISNAN
+-- Performing Test HAS_STD_ISNAN - Success
+-- Performing Test HAS_DOUBLE_TO_STRING
+-- Performing Test HAS_DOUBLE_TO_STRING - Success
+-- Performing Test HAS_INT64_TO_STRING
+-- Performing Test HAS_INT64_TO_STRING - Success
+-- Performing Test HAS_PRE_1970
+-- Performing Test HAS_PRE_1970 - Success
+-- Performing Test HAS_POST_2038
+-- Performing Test HAS_POST_2038 - Success
+-- Performing Test NEEDS_Z_PREFIX
+-- Performing Test NEEDS_Z_PREFIX - Failed
+Compiling as ASAN
+-- old Boost_INCLUDE_DIR    : /Users/jiangyuan/open/doris/thirdparty/installed/include
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/cmake/CLuceneBoost.cmake:8 (FIND_PACKAGE):
+  Policy CMP0167 is not set: The FindBoost module is removed.  Run "cmake
+  --help-policy CMP0167" for policy details.  Use the cmake_policy command to
+  set the policy and suppress this warning.
+
+Call Stack (most recent call first):
+  /Users/jiangyuan/open/doris/contrib/clucene/CMakeLists.txt:208 (GET_BOOST_INCLUDE_PATH)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Found Boost: /Users/jiangyuan/open/doris/thirdparty/installed/lib64/cmake/Boost-1.81.0/BoostConfig.cmake (found version "1.81.0")
+Boost found
+-- Boost_INCLUDE_DIR    : /Users/jiangyuan/open/doris/thirdparty/installed/include
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/CMakeLists.txt:11 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Found Roaring: /Users/jiangyuan/open/doris/thirdparty/installed/include
+-- Zstd target already exists
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/ext/for/CMakeLists.txt:101 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Looking for include files sys/time.h, time.h
+-- Looking for include files sys/time.h, time.h - found
+-- Looking for C++ include stdlib.h
+-- Looking for C++ include stdlib.h - found
+-- Looking for C++ include stdarg.h
+-- Looking for C++ include stdarg.h - found
+-- Looking for C++ include stdio.h
+-- Looking for C++ include stdio.h - found
+-- Looking for C++ include stddef.h
+-- Looking for C++ include stddef.h - found
+-- Looking for C++ include ctype.h
+-- Looking for C++ include ctype.h - found
+-- Looking for C++ include algorithm
+-- Looking for C++ include algorithm - found
+-- Looking for C++ include functional
+-- Looking for C++ include functional - found
+-- Looking for C++ include map
+-- Looking for C++ include map - found
+-- Looking for C++ include vector
+-- Looking for C++ include vector - found
+-- Looking for C++ include list
+-- Looking for C++ include list - found
+-- Looking for C++ include set
+-- Looking for C++ include set - found
+-- Looking for C++ include math.h
+-- Looking for C++ include math.h - found
+-- Looking for C++ include fcntl.h
+-- Looking for C++ include fcntl.h - found
+-- Looking for C++ include limits.h
+-- Looking for C++ include limits.h - found
+-- Looking for C++ include string.h
+-- Looking for C++ include string.h - found
+-- Looking for C++ include sys/time.h
+-- Looking for C++ include sys/time.h - found
+-- Looking for C++ include memory.h
+-- Looking for C++ include memory.h - found
+-- Looking for C++ include sys/types.h
+-- Looking for C++ include sys/types.h - found
+-- Looking for C++ include stdint.h
+-- Looking for C++ include stdint.h - found
+-- Looking for C++ include unistd.h
+-- Looking for C++ include unistd.h - found
+-- Looking for C++ include io.h
+-- Looking for C++ include io.h - not found
+-- Looking for C++ include direct.h
+-- Looking for C++ include direct.h - not found
+-- Looking for C++ include sys/dir.h
+-- Looking for C++ include sys/dir.h - found
+-- Looking for C++ include sys/ndir.h
+-- Looking for C++ include sys/ndir.h - not found
+-- Looking for C++ include dirent.h
+-- Looking for C++ include dirent.h - found
+-- Looking for C++ include wctype.h
+-- Looking for C++ include wctype.h - found
+-- Looking for C++ include stat.h
+-- Looking for C++ include stat.h - not found
+-- Looking for C++ include sys/stat.h
+-- Looking for C++ include sys/stat.h - found
+-- Looking for C++ include stdexcept
+-- Looking for C++ include stdexcept - found
+-- Looking for C++ include errno.h
+-- Looking for C++ include errno.h - found
+-- Looking for C++ include windef.h
+-- Looking for C++ include windef.h - not found
+-- Looking for C++ include windows.h
+-- Looking for C++ include windows.h - not found
+-- Looking for C++ include wchar.h
+-- Looking for C++ include wchar.h - found
+-- Looking for C++ include hash_map
+-- Looking for C++ include hash_map - not found
+-- Looking for C++ include hash_set
+-- Looking for C++ include hash_set - not found
+-- Looking for C++ include ext/hash_map
+-- Looking for C++ include ext/hash_map - found
+-- Looking for C++ include tr1/unordered_set
+-- Looking for C++ include tr1/unordered_set - not found
+-- Looking for C++ include tr1/unordered_map
+-- Looking for C++ include tr1/unordered_map - not found
+-- Looking for C++ include sys/timeb.h
+-- Looking for C++ include sys/timeb.h - found
+-- Looking for C++ include tchar.h
+-- Looking for C++ include tchar.h - not found
+-- Looking for C++ include strings.h
+-- Looking for C++ include strings.h - found
+-- Looking for C++ include sys/mman.h
+-- Looking for C++ include sys/mman.h - found
+-- Looking for C++ include winerror.h
+-- Looking for C++ include winerror.h - not found
+-- Choosing type for int8_t
+-- Check size of int8_t
+-- Check size of int8_t - done
+-- Choosing type for int8_t - signed int8_t
+-- Choosing type for uint8_t
+-- Check size of uint8_t
+-- Check size of uint8_t - done
+-- Choosing type for uint8_t - unsigned uint8_t
+-- Choosing type for int16_t
+-- Check size of int16_t
+-- Check size of int16_t - done
+-- Choosing type for int16_t - signed int16_t
+-- Choosing type for uint16_t
+-- Check size of uint16_t
+-- Check size of uint16_t - done
+-- Choosing type for uint16_t - unsigned uint16_t
+-- Choosing type for int32_t
+-- Check size of int32_t
+-- Check size of int32_t - done
+-- Choosing type for int32_t - signed int32_t
+-- Choosing type for uint32_t
+-- Check size of uint32_t
+-- Check size of uint32_t - done
+-- Choosing type for uint32_t - unsigned uint32_t
+-- Choosing type for int64_t
+-- Check size of int64_t
+-- Check size of int64_t - done
+-- Choosing type for int64_t - signed int64_t
+-- Choosing type for uint64_t
+-- Check size of uint64_t
+-- Check size of uint64_t - done
+-- Choosing type for uint64_t - unsigned uint64_t
+-- Choosing type for size_t
+-- Check size of size_t
+-- Check size of size_t - done
+-- Choosing type for size_t - unsigned size_t
+-- Choosing option for HAVE_TYPE__TIMEB
+-- Performing Test _CL_HAVE_OPTION__TIMEB
+-- Performing Test _CL_HAVE_OPTION__TIMEB - Failed
+-- Performing Test _CL_HAVE_OPTION_TIMEB
+-- Performing Test _CL_HAVE_OPTION_TIMEB - Success
+-- Choosing option for HAVE_TYPE__TIMEB - timeb
+-- Performing Test HAVE_SYMBOL_FLOAT_T
+-- Performing Test HAVE_SYMBOL_FLOAT_T - Success
+-- Check size of DWORD
+-- Check size of DWORD - failed
+-- Looking for printf
+-- Looking for printf - found
+-- Looking for strftime
+-- Looking for strftime - found
+-- Looking for wcscpy
+-- Looking for wcscpy - found
+-- Looking for wcsncpy
+-- Looking for wcsncpy - found
+-- Looking for wcscat
+-- Looking for wcscat - found
+-- Looking for wcschr
+-- Looking for wcschr - found
+-- Looking for wcsstr
+-- Looking for wcsstr - found
+-- Looking for wcslen
+-- Looking for wcslen - found
+-- Looking for wcscmp
+-- Looking for wcscmp - found
+-- Looking for wcsncmp
+-- Looking for wcsncmp - found
+-- Looking for wcscspn
+-- Looking for wcscspn - found
+-- Looking for wcsupr
+-- Looking for wcsupr - not found
+-- Looking for wcscasecmp
+-- Looking for wcscasecmp - found
+-- Looking for wcsicmp
+-- Looking for wcsicmp - not found
+-- Looking for wcstoll
+-- Looking for wcstoll - found
+-- Looking for wprintf
+-- Looking for wprintf - found
+-- Looking for lltow
+-- Looking for lltow - not found
+-- Looking for wcstod
+-- Looking for wcstod - found
+-- Looking for wcsdup
+-- Looking for wcsdup - found
+-- Looking for strupr
+-- Looking for strupr - not found
+-- Looking for strlwr
+-- Looking for strlwr - not found
+-- Looking for lltoa
+-- Looking for lltoa - not found
+-- Looking for strtoll
+-- Looking for strtoll - found
+-- Looking for gettimeofday
+-- Looking for gettimeofday - found
+-- Looking for _vsnwprintf
+-- Looking for _vsnwprintf - not found
+-- Looking for mmap
+-- Looking for mmap - found
+-- Looking for MapViewOfFile
+-- Looking for MapViewOfFile(0,0,0,0,0) - not found
+-- Choosing function for fileHandleStat
+-- Looking for fstat
+-- Looking for fstat - found
+-- Choosing function for fileHandleStat - fstat
+-- Choosing function for fileStat
+-- Looking for stat
+-- Looking for stat - found
+-- Choosing function for fileStat - stat
+-- Choosing function for fileSize
+-- Looking for filelength
+-- Looking for filelength - not found
+-- Looking for _filelength
+-- Looking for _filelength - not found
+-- Choosing function for fileSize - using default
+-- Choosing function for fileSeek
+-- Looking for lseek
+-- Looking for lseek - found
+-- Choosing function for fileSeek - lseek
+-- Choosing option for HAVE_TYPE_CL_STAT_T
+-- Performing Test _CL_HAVE_OPTION_STAT
+-- Performing Test _CL_HAVE_OPTION_STAT - Success
+-- Choosing option for HAVE_TYPE_CL_STAT_T - stat
+-- Choosing function for fileTell
+-- Looking for telli64
+-- Looking for telli64 - not found
+-- Looking for _telli64
+-- Looking for _telli64 - not found
+-- Looking for tell64
+-- Looking for tell64 - not found
+-- Looking for tell
+-- Looking for tell - not found
+-- Looking for _tell
+-- Looking for _tell - not found
+-- Choosing function for fileTell - using default
+-- Choosing function for _realpath
+-- Looking for realpath
+-- Looking for realpath - found
+-- Choosing function for _realpath - realpath
+-- Choosing function for _rename
+-- Looking for rename
+-- Looking for rename - found
+-- Choosing function for _rename - rename
+-- Choosing function for _close
+-- Looking for _close
+-- Looking for _close((int)0) - not found
+-- Looking for close
+-- Looking for close - found
+-- Choosing function for _close - close
+-- Choosing function for _read
+-- Looking for _read
+-- Looking for _read((int)0, (void*)0, (unsigned int)0) - not found
+-- Looking for read
+-- Looking for read - found
+-- Choosing function for _read - read
+-- Choosing function for _cl_open
+-- Looking for _open
+-- Looking for _open(0,0,0) - not found
+-- Looking for open
+-- Looking for open - found
+-- Choosing function for _cl_open - open
+-- Choosing function for _write
+-- Looking for _write
+-- Looking for _write((int)0, (const void*)0, (unsigned int)0) - not found
+-- Looking for write
+-- Looking for write - found
+-- Choosing function for _write - write
+-- Choosing function for _unlink
+-- Looking for _unlink
+-- Looking for _unlink((const char*)0) - not found
+-- Looking for unlink
+-- Looking for unlink - found
+-- Choosing function for _unlink - unlink
+-- Choosing function for _ftime
+-- Looking for _ftime
+-- Looking for _ftime(0) - not found
+-- Looking for ftime
+-- Looking for ftime - found
+-- Choosing function for _ftime - ftime
+-- Choosing function for _mkdir
+-- Looking for _mkdir
+-- Looking for _mkdir((const char*)0) - not found
+-- Choosing function for _mkdir - using default
+-- Choosing function for SLEEPFUNCTION
+-- Looking for usleep
+-- Looking for usleep - found
+-- Choosing function for SLEEPFUNCTION - usleep
+-- Choosing function for _snprintf
+-- Looking for snprintf
+-- Looking for snprintf - found
+-- Choosing function for _snprintf - snprintf
+-- Choosing function for _snwprintf
+-- Looking for snwprintf
+-- Looking for snwprintf - not found
+-- Looking for _snwprintf
+-- Looking for _snwprintf - not found
+-- Choosing function for _snwprintf - not found
+-- Choosing symbol for _O_RANDOM
+-- Looking for _O_RANDOM
+-- Looking for _O_RANDOM - not found
+-- Looking for O_RANDOM
+-- Looking for O_RANDOM - not found
+-- Choosing symbol for _O_RANDOM - not found
+-- Choosing symbol for _O_BINARY
+-- Looking for _O_BINARY
+-- Looking for _O_BINARY - not found
+-- Looking for O_BINARY
+-- Looking for O_BINARY - not found
+-- Choosing symbol for _O_BINARY - not found
+-- Choosing symbol for _S_IREAD
+-- Looking for _S_IREAD
+-- Looking for _S_IREAD - not found
+-- Looking for S_IREAD
+-- Looking for S_IREAD - found
+-- Choosing symbol for _S_IREAD - S_IREAD
+-- Choosing symbol for _S_IWRITE
+-- Looking for _S_IWRITE
+-- Looking for _S_IWRITE - not found
+-- Looking for S_IWRITE
+-- Looking for S_IWRITE - found
+-- Choosing symbol for _S_IWRITE - S_IWRITE
+-- Choosing type for TCHAR
+-- Check size of TCHAR
+-- Check size of TCHAR - failed
+-- Check size of wchar_t
+-- Check size of wchar_t - done
+-- Choosing type for TCHAR -  wchar_t
+-- Choosing symbol for _T
+-- Looking for _T
+-- Looking for _T - not found
+-- Choosing symbol for _T - not found
+-- Performing Test _CL_HAVE_PTHREAD_MUTEX_RECURSIVE
+-- Performing Test _CL_HAVE_PTHREAD_MUTEX_RECURSIVE - Success
+-- Performing Test _CL_HAVE_GCC_ATOMIC_FUNCTIONS
+-- Performing Test _CL_HAVE_GCC_ATOMIC_FUNCTIONS - Success
+-- Performing Test _CL_HAVE_TRY_BLOCKS
+-- Performing Test _CL_HAVE_TRY_BLOCKS - Success
+-- Checking support new float byte<->float conversions
+-- Checking support new float byte<->float conversions - yes
+-- Choosing namespace for hashmaps
+-- Performing Test _CL_HAVE_STD__TR1_HASHMAP
+-- Performing Test _CL_HAVE_STD__TR1_HASHMAP - Failed
+-- Performing Test _CL_HAVE_STD_HASHMAP
+-- Performing Test _CL_HAVE_STD_HASHMAP - Failed
+-- Performing Test _CL_HAVE_STDEXT_HASHMAP
+-- Performing Test _CL_HAVE_STDEXT_HASHMAP - Failed
+-- Performing Test _CL_HAVE___GNU_CXX_HASHMAP
+-- Performing Test _CL_HAVE___GNU_CXX_HASHMAP - Success
+-- Choosing namespace for hashmaps - __gnu_cxx::func
+-- Performing Test _CL_HAVE_NAMESPACES
+-- Performing Test _CL_HAVE_NAMESPACES - Success
+-- Performing Test _CL_HAVE_NO_SNPRINTF_BUG
+-- Performing Test _CL_HAVE_NO_SNPRINTF_BUG - Success
+-- Performing Test _CL_ILONGLONG_LL
+-- Performing Test _CL_ILONGLONG_LL - Success
+-- Performing Test LUCENE_STATIC_CONSTANT_SYNTAX
+-- Performing Test LUCENE_STATIC_CONSTANT_SYNTAX - Success
+-- Check for ANSI scope
+-- Check for ANSI scope - found
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /Users/jiangyuan/open/doris/contrib/clucene/src/core/CMakeLists.txt:274 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Checking to see if CXX compiler accepts flag -fprofile-arcs -ftest-coverage
+-- Checking to see if CXX compiler accepts flag -fprofile-arcs -ftest-coverage - yes
+-- Performing Test ICONV_SECOND_ARGUMENT_IS_CONST
+-- Performing Test ICONV_SECOND_ARGUMENT_IS_CONST - Failed
+-- Found Iconv: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/libiconv.tbd
+-- Looking for sched_getcpu
+-- Looking for sched_getcpu - not found
+-- ARM_MARCH is armv8-a+crc
+-- UBSAN_IGNORELIST is /Users/jiangyuan/open/doris/conf/ubsan_ignorelist.txt
+-- Compiler: Clang-20.1.8
+-- CXX Standard: 20
+-- C Standard: 17
+-- CXX Flags:  -O0 -fsanitize=address -fsanitize=undefined -fno-sanitize=float-cast-overflow -DUNDEFINED_BEHAVIOR_SANITIZER -DADDRESS_SANITIZER -fsanitize-ignorelist=/Users/jiangyuan/open/doris/conf/ubsan_ignorelist.txt 
+-- C Flags:  -O0 -fsanitize=address -fsanitize=undefined -fno-sanitize=float-cast-overflow -DUNDEFINED_BEHAVIOR_SANITIZER -DADDRESS_SANITIZER -fsanitize-ignorelist=/Users/jiangyuan/open/doris/conf/ubsan_ignorelist.txt 
+-- CC Flags: 
+-- Compiler Options: -ffile-prefix-map=/Users/jiangyuan/open/doris=.;-g;-gdwarf-5;-Wall;-Wextra;-Werror;-Wundef;-pthread;-fstrict-aliasing;-fno-omit-frame-pointer;$<$<COMPILE_LANGUAGE:CXX>:-Wnon-virtual-dtor>;-Wno-unused-parameter;-Wno-sign-compare;-fcolor-diagnostics;-Wpedantic;-Wshadow;-Wshadow-field;-Wunused;-Wunused-command-line-argument;-Wunused-exception-parameter;-Wunused-volatile-lvalue;-Wunused-template;-Wunused-member-function;-Wunused-macros;-Wconversion;-Wthread-safety;-Wno-gnu-statement-expression;-Wno-implicit-float-conversion;-Wno-sign-conversion;-Wno-pass-failed;$<$<COMPILE_LANGUAGE:CXX>:-stdlib=libc++>;-march=armv8-a+crc
+-- Compiler Definitions: OS_MACOSX;BOOST_PROCESS_POSIX_NO_SIGTIMEDWAIT;BOOST_STACKTRACE_USE_NOOP;GLOG_CUSTOM_PREFIX_SUPPORT;USE_LIBCPP;__STDC_FORMAT_MACROS;BOOST_DATE_TIME_POSIX_TIME_STD_CONFIG;BOOST_SYSTEM_NO_DEPRECATED;BOOST_UUID_RANDOM_PROVIDER_FORCE_POSIX=1;BRPC_ENABLE_CPU_PROFILER;S2_USE_GFLAGS;S2_USE_GLOG;HAVE_INTTYPES_H;HAVE_NETINET_IN_H;_DARWIN_C_SOURCE;LIBDIVIDE_NEON;NDEBUG_SANITIZER;USE_DORIS_HADOOP_HDFS
+-- Doris Dependencies: jvm;Boost::date_time;Boost::container;gflags;glog;backtrace;re2;hyperscan;odbc;pprof;protobuf;gtest;gtest_main;benchmark;gmock;snappy;curl;lz4;lzo2;thrift;thriftnb;crc32c;libevent_core;libevent_openssl;libevent;libevent_pthreads;libbz2;libz;crypto;openssl;leveldb;grpc++_reflection;grpc;grpc++;grpc++_unsecure;gpr;upb;cares;address_sorting;z;brotlicommon;brotlidec;brotlienc;zstd;arrow;arrow_compute;arrow_flight;arrow_flight_sql;arrow_dataset;arrow_acero;adbc_driver_manager;parquet;m;lance_c;brpc;rocksdb;cyrus-sasl;rdkafka_cpp;rdkafka;s2;bitshuffle;roaring;fmt;cctz;base64;aws-cpp-sdk-core;aws-cpp-sdk-s3;aws-cpp-sdk-transfer;aws-cpp-sdk-s3-crt;aws-crt-cpp;aws-c-cal;aws-c-auth;aws-c-compression;aws-c-common;aws-c-event-stream;aws-c-io;aws-c-http;aws-c-mqtt;aws-checksums;aws-c-s3;aws-c-sdkutils;aws-cpp-sdk-identity-management;aws-cpp-sdk-sts;aws-cpp-sdk-kinesis;minizip;simdjson;simdutf;idn;xml2;lzma;gsasl;krb5support;krb5;com_err;k5crypto;gssapi_krb5;streamvbyte;bfd;iberty;intl;icuuc;icui18n;icudata;pugixml;hadoop_hdfs;absl::cord;absl::cord_internal;absl::cordz_functions;absl::cordz_info;absl::cordz_update_scope;absl::cordz_update_tracker;absl::crc_cord_state;absl::flags;absl::random_random;absl::spinlock_wait;absl::status;absl::statusor;absl::strings;bfd;iberty;intl;krb5support;krb5;com_err;gssapi_krb5;k5crypto;orc;ic;clucene-core-static;clucene-shared-static;clucene-contribs-lib
+-- Link Flags: Agent;Common;Core;Exec;Exprs;Format;IO;Storage;Runtime;Service;Udf;Util;DorisGen;Load;InformationSchema;Cloud;CommonCPP;jvm;Boost::date_time;Boost::container;gflags;glog;backtrace;re2;hyperscan;odbc;pprof;protobuf;gtest;gtest_main;benchmark;gmock;snappy;curl;lz4;lzo2;thrift;thriftnb;crc32c;libevent_core;libevent_openssl;libevent;libevent_pthreads;libbz2;libz;crypto;openssl;leveldb;grpc++_reflection;grpc;grpc++;grpc++_unsecure;gpr;upb;cares;address_sorting;z;brotlicommon;brotlidec;brotlienc;zstd;arrow;arrow_compute;arrow_flight;arrow_flight_sql;arrow_dataset;arrow_acero;adbc_driver_manager;parquet;m;lance_c;brpc;rocksdb;cyrus-sasl;rdkafka_cpp;rdkafka;s2;bitshuffle;roaring;fmt;cctz;base64;aws-cpp-sdk-core;aws-cpp-sdk-s3;aws-cpp-sdk-transfer;aws-cpp-sdk-s3-crt;aws-crt-cpp;aws-c-cal;aws-c-auth;aws-c-compression;aws-c-common;aws-c-event-stream;aws-c-io;aws-c-http;aws-c-mqtt;aws-checksums;aws-c-s3;aws-c-sdkutils;aws-cpp-sdk-identity-management;aws-cpp-sdk-sts;aws-cpp-sdk-kinesis;minizip;simdjson;simdutf;idn;xml2;lzma;gsasl;krb5support;krb5;com_err;k5crypto;gssapi_krb5;streamvbyte;bfd;iberty;intl;icuuc;icui18n;icudata;pugixml;hadoop_hdfs;absl::cord;absl::cord_internal;absl::cordz_functions;absl::cordz_info;absl::cordz_update_scope;absl::cordz_update_tracker;absl::crc_cord_state;absl::flags;absl::random_random;absl::spinlock_wait;absl::status;absl::statusor;absl::strings;bfd;iberty;intl;krb5support;krb5;com_err;gssapi_krb5;k5crypto;orc;ic;clucene-core-static;clucene-shared-static;clucene-contribs-lib;-lapple_nghttp2;-lresolv;-liconv;-framework CoreFoundation;-framework CoreGraphics;-framework CoreText;-framework Foundation;-framework SystemConfiguration;-framework Security;-Wl,-U,_MallocExtension_ReleaseFreeMemory
+-- Performing Test HAS_WARNING_OPTION
+-- Performing Test HAS_WARNING_OPTION - Success
+-- The ASM compiler identification is Clang with GNU-like command-line
+-- Found assembler: /opt/homebrew/opt/llvm@20/bin/clang
+CMake Warning at /Users/jiangyuan/open/doris/contrib/openblas/CMakeLists.txt:127 (message):
+  CMake support is experimental.  It does not yet support all build options
+  and may not produce the same Makefiles that OpenBLAS ships with.
+
+
+-- Looking for stdatomic.h
+-- Looking for stdatomic.h - found
+-- GEMM multithread threshold set to 4.
+-- Disabling Advanced Vector Extensions 512 (AVX512).
+-- Multi-threading enabled with 11 threads.
+-- Running getarch
+-- GETARCH results:
+CORE=ARMV8
+LIBCORE=armv8
+NUM_CORES=11
+MAKEFLAGS += -j 11
+
+-- Compiling a 64-bit binary.
+-- Found OpenMP_C: -fopenmp=libomp
+-- Found OpenMP: TRUE  found components: C
+-- Building Single Precision
+-- Building Double Precision
+-- Building Complex Precision
+-- Building Double Complex Precision
+-- Reading vars from /Users/jiangyuan/open/doris/contrib/openblas/kernel/arm64/KERNEL...
+-- OSDarwinCOMPILERCLANG
+-- Reading vars from /Users/jiangyuan/open/doris/contrib/openblas/kernel/arm64/KERNEL.ARMV8...
+-- OSDarwinCOMPILERCLANG
+-- c lapack
+-- Building deprecated routines
+-- Building Single Precision
+-- Building Double Precision
+-- Building Single Precision Complex
+-- Building Double Precision Complex
+-- Generating openblas_config.h in include/openblas
+-- Copying LAPACKE header files to include/openblas
+-- FAISS_OPT_LEVEL=avx2
+-- Found OpenMP_CXX: -fopenmp=libomp
+-- Found OpenMP: TRUE
+-- Using OpenBLAS target for linking
+-- dsymutil found: /opt/homebrew/opt/llvm@20/bin/dsymutil
+-- llvm-strip found: /opt/homebrew/opt/llvm@20/bin/llvm-strip
+-- dir='/Users/jiangyuan/open/doris/be/../contrib/apache-orc/c++/include'
+-- dir='/Users/jiangyuan/open/doris/be/build_ASAN/apache-orc/c++/include'
+-- dir='/Users/jiangyuan/open/doris/be/build_ASAN/clucene/src/shared'
+-- dir='/Users/jiangyuan/open/doris/be/../contrib/clucene/src/core'
+-- dir='/Users/jiangyuan/open/doris/be/../contrib/clucene/src/shared'
+-- dir='/Users/jiangyuan/open/doris/be/../contrib/clucene/src/contribs-lib'
+-- dir='/Users/jiangyuan/open/doris/be/src'
+-- dir='/Users/jiangyuan/open/doris/be/../common'
+-- dir='/Users/jiangyuan/open/doris/be/../gensrc/build'
+-- dir='/Users/jiangyuan/open/doris/thirdparty/installed/include'
+-- dir='/Users/jiangyuan/open/doris/thirdparty/installed/gperftools/include'
+-- dir='/Users/jiangyuan/dev/jdk-17.0.17.jdk/Contents/Home/include'
+-- dir='/Users/jiangyuan/dev/jdk-17.0.17.jdk/Contents/Home/include/darwin'
+-- Configuring done (49.1s)
+-- Generating done (2.1s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    ENABLE_DYNAMIC_ARCH
+
+
+-- Build files have been written to: /Users/jiangyuan/open/doris/be/build_ASAN
+[  0%] Building CXX object src/common_cpp/CMakeFiles/CommonCPP.dir/aws_common.cpp.o
+[  0%] Building CXX object CMakeFiles/pch.dir/cmake_pch.hxx.pch
+[  0%] Building CXX object src/common_cpp/CMakeFiles/CommonCPP.dir/custom_aws_credentials_provider_chain.cpp.o
+[  0%] Building CXX object src/common_cpp/CMakeFiles/CommonCPP.dir/obj-client/auth/aws_credential_factory.cpp.o
+[  0%] Building CXX object src/common_cpp/CMakeFiles/CommonCPP.dir/obj-client/client_bvar.cpp.o
+[  0%] Building CXX object src/common_cpp/CMakeFiles/CommonCPP.dir/obj-client/obj_storage_client.cpp.o
+[  0%] Building CXX object CMakeFiles/pch.dir/src/pch/pch.cc.o
+[  0%] Linking CXX static library bin/libpch.a
+[  0%] Built target pch
+[  0%] Building CXX object src/common_cpp/CMakeFiles/CommonCPP.dir/obj-client/rate_limited_obj_storage_client.cpp.o
+[  0%] Generating orc_proto.pb.h, orc_proto.pb.cc
+[  0%] Building CXX object apache-orc/c++/src/CMakeFiles/orc.dir/io/InputStream.cc.o
+[  0%] Building CXX object apache-orc/c++/src/CMakeFiles/orc.dir/io/OutputStream.cc.o
+[  0%] Building CXX object src/common_cpp/CMakeFiles/CommonCPP.dir/obj-client/s3_obj_storage_client.cpp.o
+[  0%] Building CXX object apache-orc/c++/src/CMakeFiles/orc.dir/sargs/ExpressionTree.cc.o
+[  0%] Building CXX object apache-orc/c++/src/CMakeFiles/orc.dir/sargs/Literal.cc.o
+[  0%] Building CXX object apache-orc/c++/src/CMakeFiles/orc.dir/sargs/PredicateLeaf.cc.o
+[  0%] Building CXX object apache-orc/c++/src/CMakeFiles/orc.dir/sargs/SargsApplier.cc.o
+[  0%] Building CXX object src/common_cpp/CMakeFiles/CommonCPP.dir/obj_retry_strategy.cpp.o
+[  0%] Building CXX object apache-orc/c++/src/CMakeFiles/orc.dir/sargs/SearchArgument.cc.o
+[  0%] Building CXX object src/common_cpp/CMakeFiles/CommonCPP.dir/sync_point.cpp.o
+[  0%] Building CXX object apache-orc/c++/src/CMakeFiles/orc.dir/sargs/TruthValue.cc.o
+[  0%] Building CXX object apache-orc/c++/src/CMakeFiles/orc.dir/wrap/orc-proto-wrapper.cc.o
+[  0%] Building CXX object src/common_cpp/CMakeFiles/CommonCPP.dir/token_bucket_rate_limiter.cpp.o
+[  0%] Building CXX object apache-orc/c++/src/CMakeFiles/orc.dir/Adaptor.cc.o
+[  0%] Building CXX object apache-orc/c++/src/CMakeFiles/orc.dir/BlockBuffer.cc.o
+[  0%] Building CXX object apache-orc/c++/src/CMakeFiles/orc.dir/BloomFilter.cc.o
+[  0%] Building CXX object src/common_cpp/CMakeFiles/CommonCPP.dir/util.cpp.o
+[  0%] Linking CXX static library libCommonCPP.a
+[  0%] Built target CommonCPP
+[  0%] Building CXX object apache-orc/c++/src/CMakeFiles/orc.dir/ByteRLE.cc.o
+[  0%] Generating vp4d_sse.o
+[  0%] Building CXX object apache-orc/c++/src/CMakeFiles/orc.dir/ColumnPrinter.cc.o
+[  0%] Building CXX object apache-orc/c++/src/CMakeFiles/orc.dir/ColumnReader.cc.o
+[  0%] Generating bitpack_avx2.o
+[  0%] Building CXX object apache-orc/c++/src/CMakeFiles/orc.dir/ColumnWriter.cc.o
+[  0%] Building CXX object apache-orc/c++/src/CMakeFiles/orc.dir/Common.cc.o
+[  0%] Building CXX object apache-orc/c++/src/CMakeFiles/orc.dir/Compression.cc.o
+[  0%] Building CXX object apache-orc/c++/src/CMakeFiles/orc.dir/Exceptions.cc.o
+[  0%] Building CXX object apache-orc/c++/src/CMakeFiles/orc.dir/Int128.cc.o
+[  0%] Building CXX object apache-orc/c++/src/CMakeFiles/orc.dir/LzoDecompressor.cc.o
+[  0%] Building CXX object apache-orc/c++/src/CMakeFiles/orc.dir/MemoryPool.cc.o
+[  0%] Building CXX object apache-orc/c++/src/CMakeFiles/orc.dir/Murmur3.cc.o
+[  0%] Building CXX object apache-orc/c++/src/CMakeFiles/orc.dir/OrcFile.cc.o
+[  0%] Building CXX object apache-orc/c++/src/CMakeFiles/orc.dir/Reader.cc.o
+[  0%] Building CXX object apache-orc/c++/src/CMakeFiles/orc.dir/RLEv1.cc.o
+[  0%] Building CXX object apache-orc/c++/src/CMakeFiles/orc.dir/RLEV2Util.cc.o
+[  0%] Building CXX object apache-orc/c++/src/CMakeFiles/orc.dir/RleDecoderV2.cc.o
+[  0%] Building CXX object apache-orc/c++/src/CMakeFiles/orc.dir/RleEncoderV2.cc.o
+[  0%] Building CXX object apache-orc/c++/src/CMakeFiles/orc.dir/RLE.cc.o
+[  0%] Building CXX object apache-orc/c++/src/CMakeFiles/orc.dir/SchemaEvolution.cc.o
+[  0%] Building CXX object apache-orc/c++/src/CMakeFiles/orc.dir/Statistics.cc.o
+[  0%] Building CXX object apache-orc/c++/src/CMakeFiles/orc.dir/StripeStream.cc.o
+[  0%] Building CXX object apache-orc/c++/src/CMakeFiles/orc.dir/Timezone.cc.o
+[  0%] Building CXX object apache-orc/c++/src/CMakeFiles/orc.dir/TypeImpl.cc.o
+[  0%] Generating bitpack_sse.o
+[  0%] Building CXX object apache-orc/c++/src/CMakeFiles/orc.dir/Vector.cc.o
+[  0%] Building CXX object apache-orc/c++/src/CMakeFiles/orc.dir/Writer.cc.o
+[  0%] Linking CXX static library ../../../bin/liborc.a
+[  0%] Built target orc
+[  0%] Generating bitunpack_avx2.o
+[  0%] Building CXX object clucene/src/shared/CMakeFiles/clucene-shared-static.dir/CLucene/SharedHeader.cpp.o
+[  0%] Building CXX object clucene/src/shared/CMakeFiles/clucene-shared-static.dir/CLucene/config/gunichartables.cpp.o
+[  0%] Building CXX object clucene/src/shared/CMakeFiles/clucene-shared-static.dir/CLucene/config/repl_tcslwr.cpp.o
+[  0%] Building CXX object clucene/src/shared/CMakeFiles/clucene-shared-static.dir/CLucene/config/repl_tcstoll.cpp.o
+[  0%] Building CXX object clucene/src/shared/CMakeFiles/clucene-shared-static.dir/CLucene/config/repl_tcscasecmp.cpp.o
+[  0%] Building CXX object clucene/src/shared/CMakeFiles/clucene-shared-static.dir/CLucene/config/repl_tprintf.cpp.o
+[  0%] Building CXX object clucene/src/shared/CMakeFiles/clucene-shared-static.dir/CLucene/config/repl_lltot.cpp.o
+[  0%] Building CXX object clucene/src/shared/CMakeFiles/clucene-shared-static.dir/CLucene/config/repl_tcstod.cpp.o
+[  0%] Building CXX object clucene/src/shared/CMakeFiles/clucene-shared-static.dir/CLucene/config/utf8.cpp.o
+[  0%] Building CXX object clucene/src/shared/CMakeFiles/clucene-shared-static.dir/CLucene/config/threads.cpp.o
+[  0%] Building CXX object clucene/src/shared/CMakeFiles/clucene-shared-static.dir/CLucene/debug/condition.cpp.o
+[  0%] Building CXX object clucene/src/shared/CMakeFiles/clucene-shared-static.dir/CLucene/util/StringBuffer.cpp.o
+[  0%] Building CXX object clucene/src/shared/CMakeFiles/clucene-shared-static.dir/CLucene/util/Misc.cpp.o
+[  0%] Building CXX object clucene/src/shared/CMakeFiles/clucene-shared-static.dir/CLucene/util/dirent.cpp.o
+[  0%] Linking CXX static library ../../../bin/libclucene-shared-static.a
+[  0%] Built target clucene-shared-static
+[  0%] Generating bitunpack_sse.o
+[  0%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/StdHeader.cpp.o
+[  0%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/debug/error.cpp.o
+[  0%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/util/ThreadLocal.cpp.o
+[  0%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/util/Reader.cpp.o
+[  0%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/util/Equators.cpp.o
+[  0%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/util/FastCharStream.cpp.o
+[  0%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/util/MD5Digester.cpp.o
+[  0%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/util/StringIntern.cpp.o
+[  0%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/util/BitSet.cpp.o
+[  0%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/util/bkd/bkd_writer.cpp.o
+[  0%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/util/bkd/bkd_reader.cpp.o
+[  0%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/util/bkd/index_tree.cpp.o
+[  0%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/util/bkd/packed_index_tree.cpp.o
+[  0%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/util/bkd/legacy_index_tree.cpp.o
+[  0%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/util/bkd/heap_point_writer.cpp.o
+[  0%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/util/bkd/heap_point_reader.cpp.o
+[  0%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/util/bkd/point_reader.cpp.o
+[  0%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/util/bkd/docids_writer.cpp.o
+[  0%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/util/bkd/bkd_msb_radix_sorter.cpp.o
+[  0%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/util/BitUtil.cpp.o
+[  0%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/util/BytesRef.cpp.o
+[  0%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/util/BytesRefBuilder.cpp.o
+[  0%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/util/CodecUtil.cpp.o
+[  0%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/util/LongBitSet.cpp.o
+[  0%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/util/IntroSorter.cpp.o
+[  0%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/util/Sorter.cpp.o
+[  0%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/util/MSBRadixSorter.cpp.o
+[  0%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/util/FixedBitSet.cpp.o
+[  0%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/util/FutureArrays.cpp.o
+[  0%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/util/NumericUtils.cpp.o
+[  0%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/util/stringUtil.cpp.o
+[  0%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/util/PFORUtil.cpp.o
+[  0%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/queryParser/FastCharStream.cpp.o
+[  0%] Generating bitutil_avx2.o
+[  0%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/queryParser/MultiFieldQueryParser.cpp.o
+[  0%] Generating bitutil_sse.o
+[  0%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/queryParser/QueryParser.cpp.o
+[  0%] Generating transpose_avx2.o
+[  0%] Generating transpose_sse.o
+[  0%] Generating vp4c_avx2.o
+[  0%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/queryParser/QueryParserTokenManager.cpp.o
+[  0%] Generating vp4c_sse.o
+[  0%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/queryParser/QueryToken.cpp.o
+[  0%] Generating vp4d_avx2.o
+[  0%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/queryParser/legacy/Lexer.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/queryParser/legacy/MultiFieldQueryParser.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/queryParser/legacy/QueryParser.cpp.o
+[  1%] Building C object clucene/src/ext/for/CMakeFiles/ic.dir/v8.c.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/queryParser/legacy/QueryParserBase.cpp.o
+[  1%] Building C object clucene/src/ext/for/CMakeFiles/ic.dir/vint.c.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/queryParser/legacy/QueryToken.cpp.o
+[  1%] Building C object clucene/src/ext/for/CMakeFiles/ic.dir/trlec.c.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/queryParser/legacy/TokenList.cpp.o
+[  1%] Building C object clucene/src/ext/for/CMakeFiles/ic.dir/trled.c.o
+[  1%] Building C object clucene/src/ext/for/CMakeFiles/ic.dir/vsimple.c.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/analysis/standard/StandardAnalyzer.cpp.o
+[  1%] Building C object clucene/src/ext/for/CMakeFiles/ic.dir/bitutil.c.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/analysis/standard/StandardFilter.cpp.o
+[  1%] Building C object clucene/src/ext/for/CMakeFiles/ic.dir/bitpack.c.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/analysis/standard/StandardTokenizer.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/analysis/standard95/StandardTokenizerImpl.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/analysis/Analyzers.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/analysis/AnalysisHeader.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/store/MMapInput.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/store/IndexInput.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/store/ByteArrayDataInput.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/store/Lock.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/store/LockFactory.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/store/IndexOutput.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/store/Directory.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/store/FSDirectory.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/store/RAMDirectory.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/document/Document.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/document/DateField.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/document/DateTools.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/document/Field.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/document/FieldSelector.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/document/NumberTools.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/index/IndexFileNames.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/index/IndexFileNameFilter.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/index/IndexDeletionPolicy.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/index/SegmentMergeInfo.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/index/SegmentInfos.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/index/MergeScheduler.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/index/SegmentTermDocs.cpp.o
+[  1%] Building C object clucene/src/ext/for/CMakeFiles/ic.dir/bitunpack.c.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/index/FieldsWriter.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/index/TermInfosWriter.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/index/Term.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/index/Terms.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/index/MergePolicy.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/index/DocumentsWriter.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/index/SDocumentWriter.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/index/BlockMaxBM25Similarity.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/index/DocumentsWriterThreadState.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/index/SegmentTermVector.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/index/TermVectorReader.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/index/FieldInfos.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/index/CompoundFile.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/index/SkipListReader.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/index/SkipListWriter.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/index/IndexFileDeleter.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/index/SegmentReader.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/index/DirectoryIndexReader.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/index/TermVectorWriter.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/index/IndexReader.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/index/SegmentTermPositions.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/index/SegmentMerger.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/index/IndexWriter.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/index/MultiReader.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/index/MultiSegmentReader.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/index/Payload.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/index/SegmentTermEnum.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/index/TermInfo.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/index/IndexModifier.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/index/SegmentMergeQueue.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/index/FieldsReader.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/index/TermInfosReader.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/index/MultipleTermPositions.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/Compare.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/Scorer.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/ScorerDocQueue.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/PhraseScorer.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/SloppyPhraseScorer.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/DisjunctionSumScorer.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/ConjunctionScorer.cpp.o
+[  1%] Building C object clucene/src/ext/for/CMakeFiles/ic.dir/vp4c.c.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/PhraseQuery.cpp.o
+[  1%] Building C object clucene/src/ext/for/CMakeFiles/ic.dir/vp4d.c.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/PrefixQuery.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/ExactPhraseScorer.cpp.o
+[  1%] Building C object clucene/src/ext/for/CMakeFiles/ic.dir/transpose.c.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/TermScorer.cpp.o
+[  1%] Linking C static library ../../../../bin/libic.a
+[  1%] Built target ic
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/Similarity.cpp.o
+[  1%] Building CXX object src/agent/CMakeFiles/Agent.dir/Unity/unity_0_cxx.cxx.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/BooleanScorer.cpp.o
+[  1%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/BooleanScorer2.cpp.o
+[  2%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/HitQueue.cpp.o
+[  2%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/FieldCacheImpl.cpp.o
+[  2%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/ChainedFilter.cpp.o
+[  2%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/RangeFilter.cpp.o
+[  2%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/CachingWrapperFilter.cpp.o
+[  2%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/QueryFilter.cpp.o
+[  2%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/TermQuery.cpp.o
+[  2%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/FuzzyQuery.cpp.o
+[  2%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/SearchHeader.cpp.o
+[  2%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/RangeQuery.cpp.o
+[  2%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/IndexSearcher.cpp.o
+[  2%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/Sort.cpp.o
+[  2%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/PhrasePositions.cpp.o
+[  2%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/FieldDocSortedHitQueue.cpp.o
+In file included from /Users/jiangyuan/open/doris/be/build_ASAN/src/agent/CMakeFiles/Agent.dir/Unity/unity_0_cxx.cxx:16:
+In file included from /Users/jiangyuan/open/doris/be/src/agent/task_worker_pool.cpp:63:
+In file included from /Users/jiangyuan/open/doris/be/src/io/fs/hdfs_file_system.h:32:
+[1m/Users/jiangyuan/open/doris/be/src/io/fs/hdfs.h:20:10: [0m[0;1;31mfatal error: [0m[1m'hadoop_hdfs_3_4/hdfs.h' file not found[0m
+   20 | #include <hadoop_hdfs_3_4/hdfs.h> // IWYU pragma: export[0m
+      | [0;1;32m         ^~~~~~~~~~~~~~~~~~~~~~~~
+[0m[  2%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/WildcardTermEnum.cpp.o
+[  2%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/MultiSearcher.cpp.o
+1 error generated.
+make[2]: *** [src/agent/CMakeFiles/Agent.dir/Unity/unity_0_cxx.cxx.o] Error 1
+make[1]: *** [src/agent/CMakeFiles/Agent.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+[  2%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/Hits.cpp.o
+[  2%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/MultiTermQuery.cpp.o
+[  2%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/FilteredTermEnum.cpp.o
+[  2%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/FieldSortedHitQueue.cpp.o
+[  2%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/WildcardQuery.cpp.o
+[  2%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/Explanation.cpp.o
+[  2%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/BooleanQuery.cpp.o
+[  2%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/FieldCache.cpp.o
+[  2%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/DateFilter.cpp.o
+[  2%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/MatchAllDocsQuery.cpp.o
+[  2%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/MultiPhraseQuery.cpp.o
+[  2%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/ConstantScoreQuery.cpp.o
+[  2%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/CachingSpanFilter.cpp.o
+[  2%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/SpanQueryFilter.cpp.o
+[  2%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/spans/NearSpansOrdered.cpp.o
+[  2%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/spans/NearSpansUnordered.cpp.o
+[  2%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/spans/SpanFirstQuery.cpp.o
+[  2%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/spans/SpanNearQuery.cpp.o
+[  2%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/spans/SpanNotQuery.cpp.o
+[  2%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/spans/SpanOrQuery.cpp.o
+[  2%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/spans/SpanScorer.cpp.o
+[  2%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/spans/SpanTermQuery.cpp.o
+[  2%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/spans/SpanWeight.cpp.o
+[  2%] Building CXX object clucene/src/core/CMakeFiles/clucene-core-static.dir/CLucene/search/spans/TermSpans.cpp.o
+[  2%] Linking CXX static library ../../../bin/libclucene-core-static.a
+[  2%] Built target clucene-core-static
+make: *** [all] Error 2

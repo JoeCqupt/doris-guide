@@ -1,0 +1,2 @@
+exit_code=2
+log=/Users/jiangyuan/doris-guide/step9/build-be-20261008-174856.log
