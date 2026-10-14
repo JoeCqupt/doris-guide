@@ -1,0 +1,83 @@
+--------------
+ANALYZE TABLE doris_book.orders_intro_v1 WITH SYNC
+--------------
+
+Query OK, 0 rows affected (0.173 sec)
+
+--------------
+SHOW TABLE STATS doris_book.orders_intro_v1
+--------------
+
++--------------+-------------+-----------+---------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+---------+---------------+-------------+---------------------+---------------------+
+| updated_rows | query_times | row_count | updated_time        | columns                                                                                                                                               | trigger | new_partition | user_inject | enable_auto_analyze | last_analyze_time   |
++--------------+-------------+-----------+---------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+---------+---------------+-------------+---------------------+---------------------+
+| 0            | 0           | 0         | 2026-10-14 13:45:07 | [orders_intro_v1:amount, orders_intro_v1:city, orders_intro_v1:user_id, orders_intro_v1:status, orders_intro_v1:order_id, orders_intro_v1:order_date] | MANUAL  | false         | false       | true                | 2026-10-14 13:45:09 |
++--------------+-------------+-----------+---------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+---------+---------------+-------------+---------------------+---------------------+
+1 row in set (0.001 sec)
+
+--------------
+EXPLAIN SELECT city,COUNT(*),SUM(amount) FROM doris_book.orders_intro_v1 WHERE amount>100 GROUP BY city
+--------------
+
++-----------------------------------------------------------------------------------+
+| Explain String(Nereids Planner)                                                   |
++-----------------------------------------------------------------------------------+
+| PLAN FRAGMENT 0                                                                   |
+|   OUTPUT EXPRS:                                                                   |
+|     city[#11]                                                                     |
+|     COUNT(*)[#12]                                                                 |
+|     SUM(amount)[#13]                                                              |
+|   PARTITION: HASH_PARTITIONED: city[#8]                                           |
+|                                                                                   |
+|   HAS_COLO_PLAN_NODE: true                                                        |
+|                                                                                   |
+|   VRESULT SINK                                                                    |
+|      MYSQL_PROTOCOL                                                               |
+|                                                                                   |
+|   3:VAGGREGATE (merge finalize)(46)                                               |
+|   |  output: count(partial_count(*)[#10])[#12], sum(partial_sum(amount)[#9])[#13] |
+|   |  group by: city[#8]                                                           |
+|   |  sortByGroupKey:false                                                         |
+|   |  cardinality=3                                                                |
+|   |  distribute expr lists: city[#8]                                              |
+|   |                                                                               |
+|   2:VEXCHANGE                                                                     |
+|      offset: 0                                                                    |
+|      distribute expr lists:                                                       |
+|                                                                                   |
+| PLAN FRAGMENT 1                                                                   |
+|                                                                                   |
+|   PARTITION: HASH_PARTITIONED: order_id[#1]                                       |
+|                                                                                   |
+|   HAS_COLO_PLAN_NODE: false                                                       |
+|                                                                                   |
+|   STREAM DATA SINK                                                                |
+|     EXCHANGE ID: 02                                                               |
+|     HASH_PARTITIONED: city[#8]                                                    |
+|                                                                                   |
+|   1:VAGGREGATE (update serialize)(44)                                             |
+|   |  STREAMING                                                                    |
+|   |  output: partial_sum(amount[#7])[#9], partial_count(*)[#10]                   |
+|   |  group by: city[#6]                                                           |
+|   |  sortByGroupKey:false                                                         |
+|   |  cardinality=3                                                                |
+|   |  distribute expr lists:                                                       |
+|   |                                                                               |
+|   0:VOlapScanNode(32)                                                             |
+|      TABLE: doris_book.orders_intro_v1(orders_intro_v1), PREAGGREGATION: ON       |
+|      PREDICATES: (amount[#4] > 100.00)                                            |
+|      partitions=1/1 (orders_intro_v1)                                             |
+|      tablets=2/2, tabletList=1791956598859,1791956598861                          |
+|      cardinality=8, avgRowSize=0.0, numNodes=1                                    |
+|      pushAggOp=NONE                                                               |
+|      POOLING-SCAN                                                                 |
+|      final projections: city[#3], amount[#4]                                      |
+|      final project output tuple id: 1                                             |
+|                                                                                   |
+|                                                                                   |
+|                                                                                   |
+| ========== STATISTICS ==========                                                  |
++-----------------------------------------------------------------------------------+
+55 rows in set (0.007 sec)
+
+Bye

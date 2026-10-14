@@ -1,0 +1,21 @@
+{
+    "TxnId": -1,
+    "Label": "book_lab_20261014_stream_01",
+    "Comment": "",
+    "TwoPhaseCommit": "false",
+    "Status": "Label Already Exists",
+    "ExistingJobStatus": "FINISHED",
+    "Message": "[LABEL_ALREADY_EXISTS]TStatus: errCode = 2, detailMessage = Label [book_lab_20261014_stream_01] has already been used, relate to txn [9], status [VISIBLE].",
+    "NumberTotalRows": 0,
+    "NumberLoadedRows": 0,
+    "NumberFilteredRows": 0,
+    "NumberUnselectedRows": 0,
+    "LoadBytes": 0,
+    "LoadTimeMs": 8,
+    "BeginTxnTimeMs": 0,
+    "StreamLoadPutTimeMs": 0,
+    "ReadDataTimeMs": 0,
+    "WriteDataTimeMs": 0,
+    "ReceiveDataTimeMs": 0,
+    "CommitAndPublishTimeMs": 0
+}

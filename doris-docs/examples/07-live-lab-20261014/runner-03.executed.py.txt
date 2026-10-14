@@ -1,0 +1,29 @@
+from pathlib import Path
+import subprocess,json,urllib.request,base64
+r=Path('/Users/jiangyuan/doris-guide/doris-docs/examples/07-live-lab-20261014')
+mysql=['/opt/homebrew/bin/mysql','--connect-timeout=5','--default-character-set=utf8mb4','-h127.0.0.1','-P9030','-uroot','--batch','--raw']
+result=[]
+def run(name,sql,expected=None):
+ (r/(name+'.sql')).write_text(sql+'\n');p=subprocess.run(mysql+(['--skip-column-names'] if expected else ['-vvv']),input=sql,text=True,capture_output=True,timeout=180)
+ (r/(name+'.out.txt')).write_text(p.stdout);(r/(name+'.stderr.txt')).write_text(p.stderr)
+ ok=p.returncode==0 and (expected is None or p.stdout.strip()==expected);result.append({'case':name,'passed':ok,'exit_code':p.returncode,'expected':expected});(r/'extended-results.json').write_text(json.dumps(result,ensure_ascii=False,indent=2))
+ print(name,ok,flush=True)
+ if not ok:print((p.stderr+p.stdout)[-700:],flush=True)
+ return ok
+run('26-partition-table',"CREATE TABLE doris_book.partition_events(d DATE,id INT,v INT) DUPLICATE KEY(d,id) PARTITION BY RANGE(d)(PARTITION p1 VALUES LESS THAN ('2026-10-02'),PARTITION p2 VALUES LESS THAN ('2026-10-03')) DISTRIBUTED BY HASH(id) BUCKETS 1 PROPERTIES('replication_num'='1'); SHOW PARTITIONS FROM doris_book.partition_events; INSERT INTO doris_book.partition_events VALUES('2026-10-01',1,10),('2026-10-02',2,20); SHOW PARTITIONS FROM doris_book.partition_events; SELECT d,COUNT(*),SUM(v) FROM doris_book.partition_events GROUP BY d ORDER BY d;")
+run('27-delete',"DELETE FROM doris_book.unique_updates WHERE id=7; SELECT COUNT(*) FROM doris_book.unique_updates; INSERT INTO doris_book.unique_updates VALUES(7,'C',40,120); SELECT * FROM doris_book.unique_updates;")
+run('28-schema-change',"ALTER TABLE doris_book.unique_updates ADD COLUMN note VARCHAR(20) DEFAULT 'book'; SHOW CREATE TABLE doris_book.unique_updates; SHOW ALTER TABLE COLUMN FROM doris_book;")
+run('29-scale-table',"CREATE TABLE doris_book.scale_numbers(id BIGINT,k BIGINT) DUPLICATE KEY(id) DISTRIBUTED BY HASH(id) BUCKETS 2 PROPERTIES('replication_num'='1'); INSERT INTO doris_book.scale_numbers SELECT number,number%1000 FROM numbers('number'='100000');")
+run('30-scale-profile',"SET enable_profile=true; SET auto_profile_threshold_ms=0; EXPLAIN SELECT k,COUNT(*) n,SUM(id) total FROM doris_book.scale_numbers WHERE id>=50000 GROUP BY k ORDER BY total DESC,k LIMIT 5; SELECT k,COUNT(*) n,SUM(id) total FROM doris_book.scale_numbers WHERE id>=50000 GROUP BY k ORDER BY total DESC,k LIMIT 5; EXPLAIN SELECT COUNT(*) FROM doris_book.scale_numbers a JOIN doris_book.unique_updates b ON a.k=b.id; SELECT COUNT(*) FROM doris_book.scale_numbers a JOIN doris_book.unique_updates b ON a.k=b.id;")
+run('31-scale-assert',"SELECT k,COUNT(*),SUM(id) FROM doris_book.scale_numbers WHERE id>=50000 GROUP BY k ORDER BY SUM(id) DESC,k LIMIT 5; SELECT COUNT(*) FROM doris_book.scale_numbers a JOIN doris_book.unique_updates b ON a.k=b.id;",'999\t50\t3774950\n998\t50\t3774900\n997\t50\t3774850\n996\t50\t3774800\n995\t50\t3774750\n100')
+run('32-before-restart',"SELECT COUNT(*),SUM(amount) FROM doris_book.orders_intro_v1; SELECT * FROM doris_book.unique_updates ORDER BY id; SELECT COUNT(*),SUM(v) FROM doris_book.stream_events; SELECT COUNT(*),SUM(id) FROM doris_book.scale_numbers; SHOW LOAD FROM doris_book ORDER BY CreateTime DESC LIMIT 10; SHOW ALTER TABLE COLUMN FROM doris_book;")
+headers={'Authorization':'Basic '+base64.b64encode(b'root:').decode()}
+def get(url):
+ with urllib.request.urlopen(urllib.request.Request(url,headers=headers),timeout=20) as f:return f.read()
+raw=get('http://127.0.0.1:8030/rest/v1/query_profile');(r/'profiles-index.raw.json').write_bytes(raw)
+for row in json.loads(raw)['data']['rows']:
+ if row['Task Type']!='QUERY':continue
+ id=row['Profile ID'];data=get('http://127.0.0.1:8030/rest/v1/query_profile/text/'+id)
+ (r/'profiles'/(id+'.json')).write_bytes(data)
+ j=json.loads(data);(r/'profiles'/(id+'.txt')).write_text(j['data'])
+print('Profiles',len(list((r/'profiles').glob('*.txt'))))

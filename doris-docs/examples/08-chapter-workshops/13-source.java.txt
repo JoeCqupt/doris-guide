@@ -1,0 +1,18 @@
+        try {
+            switch (jobState) {
+                case PENDING:
+                    stateWait("FE.ALTER_JOB_V2_PENDING");
+                    runPendingJob();
+                    break;
+                case WAITING_TXN:
+                    stateWait("FE.ALTER_JOB_V2_WAITING_TXN");
+                    runWaitingTxnJob();
+                    break;
+                case RUNNING:
+                    stateWait("FE.ALTER_JOB_V2_RUNNING");
+                    runRunningJob();
+                    break;
+                default:
+                    break;
+            }
+        } catch (Exception e) {

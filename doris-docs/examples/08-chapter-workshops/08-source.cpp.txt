@@ -1,0 +1,14 @@
+Status PipelineTask::execute(bool* done) {
+    if (_exec_state != State::RUNNABLE || _blocked_dep != nullptr) [[unlikely]] {
+#ifdef BE_TEST
+        return Status::InternalError("Pipeline task is not runnable! Task info: {}",
+                                     debug_string());
+#else
+        return Status::FatalError("Pipeline task is not runnable! Task info: {}", debug_string());
+#endif
+    }
+
+    auto fragment_context = _fragment_context.lock();
+    if (!fragment_context) {
+        return Status::InternalError("Fragment already finished! Query: {}", print_id(_query_id));
+    }

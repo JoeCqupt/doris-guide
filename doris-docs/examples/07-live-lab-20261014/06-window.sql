@@ -1,0 +1,1 @@
+SET enable_profile=true; SET auto_profile_threshold_ms=0; EXPLAIN SELECT order_id,rn FROM (SELECT order_id,ROW_NUMBER() OVER(ORDER BY amount DESC,order_id) rn FROM doris_book.orders_intro_v1)t WHERE rn<=2; SELECT order_id,rn FROM (SELECT order_id,ROW_NUMBER() OVER(ORDER BY amount DESC,order_id) rn FROM doris_book.orders_intro_v1)t WHERE rn<=2 ORDER BY rn;

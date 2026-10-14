@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM doris_book.orders_intro_v1; SELECT city,COUNT(*),SUM(amount),COUNT(DISTINCT user_id) FROM doris_book.orders_intro_v1 WHERE order_date='2026-10-01' AND status='PAID' GROUP BY city ORDER BY city; SELECT COUNT(*),SUM(amount),COUNT(DISTINCT user_id) FROM doris_book.orders_intro_v1 WHERE order_date='2026-10-01' AND status='PAID';

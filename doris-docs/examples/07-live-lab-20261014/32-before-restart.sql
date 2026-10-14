@@ -1,0 +1,1 @@
+SELECT COUNT(*),SUM(amount) FROM doris_book.orders_intro_v1; SELECT * FROM doris_book.unique_updates ORDER BY id; SELECT COUNT(*),SUM(v) FROM doris_book.stream_events; SELECT COUNT(*),SUM(id) FROM doris_book.scale_numbers; SHOW LOAD FROM doris_book ORDER BY CreateTime DESC LIMIT 10; SHOW ALTER TABLE COLUMN FROM doris_book;

@@ -1,0 +1,32 @@
+[
+  {
+    "case": "17-stream-visible",
+    "passed": true,
+    "expected": "3\t60",
+    "actual": "3\t60"
+  },
+  {
+    "case": "19-label-no-duplicate",
+    "passed": true,
+    "expected": "3\t60",
+    "actual": "3\t60"
+  },
+  {
+    "case": "21-before-2pc-commit",
+    "passed": true,
+    "expected": "3\t60",
+    "actual": "3\t60"
+  },
+  {
+    "case": "24-after-2pc-commit",
+    "passed": true,
+    "expected": "6\t120",
+    "actual": "6\t120"
+  },
+  {
+    "case": "25-average-numeric-assert",
+    "passed": true,
+    "expected": "1\t1\t1\t1\n1",
+    "actual": "1\t1\t1\t1\n1"
+  }
+]

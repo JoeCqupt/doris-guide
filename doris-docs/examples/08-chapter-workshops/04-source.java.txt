@@ -1,0 +1,10 @@
+    public void run(ConnectContext ctx, StmtExecutor executor) throws Exception {
+        ShowResultSet resultSet = doRun(ctx, executor);
+        if (resultSet != null) {
+            if (executor.isProxy()) {
+                executor.setProxyShowResultSet(resultSet);
+            } else {
+                executor.sendResultSet(resultSet);
+            }
+        }
+    }

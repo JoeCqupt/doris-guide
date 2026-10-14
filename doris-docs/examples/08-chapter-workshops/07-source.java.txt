@@ -1,0 +1,15 @@
+        // all PhysicalDistribute translate to ExchangeNode. upstream as input.
+        ExchangeNode exchangeNode = new ExchangeNode(context.nextPlanNodeId(), upstreamFragment.getPlanRoot());
+        updateLegacyPlanIdToPhysicalPlan(exchangeNode, distribute);
+        List<ExprId> validOutputIds = distribute.getOutputExprIds();
+        if (upstream instanceof PhysicalHashAggregate) {
+            // we must add group by keys to output list,
+            // otherwise we could not process aggregate's output without group by keys
+            List<ExprId> keys = ((PhysicalHashAggregate<?>) upstream).getGroupByExpressions().stream()
+                    .filter(SlotReference.class::isInstance)
+                    .map(SlotReference.class::cast)
+                    .map(SlotReference::getExprId)
+                    .collect(Collectors.toList());
+            keys.addAll(validOutputIds);
+            validOutputIds = keys;
+        }

@@ -1,0 +1,3450 @@
+Summary:
+   - Profile ID: 649b1cb4d6f9437e-8a036223d38609b7
+   - Task Type: QUERY
+   - Start Time: 2026-10-14 13:47:34
+   - End Time: 2026-10-14 13:47:34
+   - Total: 17ms
+   - Task State: OK
+   - User: root
+   - Default Catalog: internal
+   - Default Db: 
+   - Sql Statement: SELECT k,COUNT(*) n,SUM(id) total FROM doris_book.scale_numbers WHERE id>=50000 GROUP BY k ORDER BY total DESC,k LIMIT 5
+   - Distributed Plan: N/A
+   - Profile Completion State: COMPLETE
+Execution Summary:
+   - Workload Group: normal
+     - Max Concurrency: 2.147483647B (2147483647)
+     - Max Queue Size: 0
+     - Scan Thread Num: -1
+     - Max Remote Scan Thread Num: -1
+     - Min Remote Scan Thread Num: -1
+     - Memory Low Watermark: 75
+     - Memory High Watermark: 85
+     - Tag: N/A
+     - Read Bytes Per Second: -1.0 B/sec
+     - Remote Read Bytes Per Second: -1.0 B/sec
+   - Parse SQL Time: 1ms
+   - Plan Time: 4ms
+     - Garbage Collect During Plan Time: 0ms
+     - Nereids Preload External Metadata Time: 0ms
+     - Wait Change Visible Time: 0ms
+     - Nereids Lock Table Time: 0ms
+     - Nereids Analysis Time: 1ms
+     - Nereids Rewrite Time: 1ms
+       - Nereids Fold Const By BE Time: 0ms
+     - Nereids Collect Table Partition Time: 0ms
+   - Nereids Pre Rewrite By Mv Time: N/A
+     - Nereids Optimize Time: 1ms
+     - Nereids Translate Time: 1ms
+       - Init Scan Node Time: N/A
+       - Finalize Scan Node Time: N/A
+         - Get Splits Time: N/A
+           - External Table Meta Time: N/A
+             - External Table Get Table Meta Time: N/A
+             - External Table Get Partition Values Time: N/A
+         - Get Partitions Time: N/A
+         - Get Partition Files Time: N/A
+             - External Table Get File Scan Tasks Time: N/A
+         - Sink Set Partition Values Time: N/A
+       - Create Scan Range Time: N/A
+     - Nereids Distribute Time: 1ms
+   - Get Meta Version Time: N/A
+     - Get Meta Version Rate Limit Wait Time: N/A
+     - Get Partition Version Time: N/A
+     - Get Partition Version Count (hasData): N/A
+     - Get Partition Version Count: N/A
+     - Get Table Version Time: N/A
+     - Get Table Version Count: N/A
+   - Schedule Time: 8ms
+     - Fragment Assign Time: 1ms
+     - Fragment Serialize Time: 1ms
+     - Fragment RPC Phase1 Time: 5ms
+     - Fragment RPC Phase2 Time: 1ms
+     - Fragment Compressed Size: 4.87 KB
+     - Fragment RPC Count: 2
+   - Schedule Time Of BE: {"phase1":{"127.0.0.1: 8060":{"RPC Work Time":"3ms","RPC Latency From FE To BE":"1ms","RPC Work Queue Time":"0ms","RPC Latency From BE To FE":"1ms"}},"phase2":{"127.0.0.1: 8060":{"RPC Work Time":"0ms","RPC Latency From FE To BE":"0ms","RPC Work Queue Time":"0ms","RPC Latency From BE To FE":"1ms"}}}
+   - Wait and Fetch Result Time: 4ms
+   - Fetch Result Time: 4ms
+   - Write Result Time: 0ms
+   - Doris Version: a53b182f810
+   - Is Nereids: Yes
+   - Is Cached: No
+   - Total Instances Num: 13
+   - Instances Num Per BE: 127.0.0.1:8060:13
+   - Parallel Fragment Exec Instance Num: 6
+   - Trace ID: 
+   - Transaction Commit Time: N/A
+   - System Message: N/A
+   - Executed By Frontend: N/A
+   - Query Backend Selection: N/A
+   - Load Backend Selection: N/A
+   - Splits Assignment Weight: N/A
+     - Queue Timeout: 0
+
+ChangedSessionVariables:
+[
+  {
+    "VarName": "enable_profile",
+    "CurrentValue": "true",
+    "DefaultValue": "false"
+  },
+  {
+    "VarName": "auto_profile_threshold_ms",
+    "CurrentValue": "0",
+    "DefaultValue": "-1"
+  }
+]
+MergedProfile:
+     Fragments:
+       Fragment 0:
+         Pipeline 0(instance_num=1):
+            - WaitWorkerTime: avg 43.0us, max 43.0us, min 43.0us
+           RESULT_SINK_OPERATOR(id=6):
+             CommonCounters:
+                - ExecTime: avg 58.0us, max 58.0us, min 58.0us
+                - InputRows: sum 5, avg 5, max 5, min 5
+                - MemoryUsage: sum 0.00 , avg 0.00 , max 0.00 , min 0.00 
+                - MemoryUsagePeak: sum 0.00 , avg 0.00 , max 0.00 , min 0.00 
+                - WaitForDependency[RESULT_SINK_OPERATOR_DEPENDENCY]Time: avg 0ns, max 0ns, min 0ns
+             CustomCounters:
+                - WaitForDependencyTime: avg 0ns, max 0ns, min 0ns
+           EXCHANGE_OPERATOR(id=5):
+              - PlanInfo
+                 - offset: 0
+                 - limit: 5
+             CommonCounters:
+                - BlocksProduced: sum 1, avg 1, max 1, min 1
+                - ExecTime: avg 28.0us, max 28.0us, min 28.0us
+                - MaxOutputBlockBytes: sum 130.00 B, avg 130.00 B, max 130.00 B, min 130.00 B
+                - MemoryUsage: sum 0.00 , avg 0.00 , max 0.00 , min 0.00 
+                - MemoryUsagePeak: sum 896.00 B, avg 896.00 B, max 896.00 B, min 896.00 B
+                - MinOutputBlockBytes: sum 130.00 B, avg 130.00 B, max 130.00 B, min 130.00 B
+                - OutputBlockBytes: sum 130.00 B, avg 130.00 B, max 130.00 B, min 130.00 B
+                - RowsProduced: sum 5, avg 5, max 5, min 5
+             CustomCounters:
+                - WaitForDependencyTime: avg 0ns, max 0ns, min 0ns
+                  - WaitForData0: avg 2.603ms, max 2.603ms, min 2.603ms
+       Fragment 1:
+         Pipeline 0(instance_num=6):
+            - WaitWorkerTime: avg 77.0us, max 128.0us, min 27.0us
+           DATA_STREAM_SINK_OPERATOR(id=5, dest_id=5):
+             CommonCounters:
+                - ExecTime: avg 26.666us, max 114.0us, min 6.0us
+                - InputRows: sum 5, avg 0, max 5, min 0
+                - MemoryUsage: sum 0.00 , avg 0.00 , max 0.00 , min 0.00 
+                - MemoryUsagePeak: sum 0.00 , avg 0.00 , max 0.00 , min 0.00 
+                - WaitForDependencyTime: avg 0ns, max 0ns, min 0ns
+                  - WaitForRpcBufferQueue: avg 0ns, max 0ns, min 0ns
+             CustomCounters:
+                - BlocksProduced: sum 6, avg 1, max 1, min 1
+                - OverallThroughput: sum 0.0 /sec, avg 0.0 /sec, max 0.0 /sec, min 0.0 /sec
+           LOCAL_MERGE_SORT_SOURCE_OPERATOR(nereids_id=54, id=4):
+              - PlanInfo
+                 - order by: total DESC, k ASC
+                 - algorithm: heap sort
+                 - local merge sort
+                 - merge by exchange
+                 - offset: 0
+                 - limit: 5
+             CommonCounters:
+                - BlocksProduced: sum 1, avg 0, max 1, min 0
+                - ExecTime: avg 4.0us, max 14.0us, min 1000ns
+                - MaxOutputBlockBytes: sum 130.00 B, avg 21.00 B, max 130.00 B, min 0.00 
+                - MemoryUsage: sum 0.00 , avg 0.00 , max 0.00 , min 0.00 
+                - MemoryUsagePeak: sum 0.00 , avg 0.00 , max 0.00 , min 0.00 
+                - MinOutputBlockBytes: sum 130.00 B, avg 21.00 B, max 130.00 B, min 0.00 
+                - OutputBlockBytes: sum 130.00 B, avg 21.00 B, max 130.00 B, min 0.00 
+                - RowsProduced: sum 5, avg 0, max 5, min 0
+                - WaitForDependency[LOCAL_MERGE_SORT_SOURCE_OPERATOR_DEPENDENCY]Time: avg 2.531ms, max 2.615ms, min 2.434ms
+             CustomCounters:
+         Pipeline 1(instance_num=6):
+            - WaitWorkerTime: avg 65.666us, max 171.0us, min 28.0us
+           SORT_SINK_OPERATOR(nereids_id=54, id=4):
+             CommonCounters:
+                - ExecTime: avg 251.833us, max 333.0us, min 217.0us
+                - InputRows: sum 1.0K (1000), avg 166, max 175, min 157
+                - MemoryUsage: sum 39.00 KB, avg 6.50 KB, max 6.50 KB, min 6.50 KB
+                - MemoryUsagePeak: sum 39.00 KB, avg 6.50 KB, max 6.50 KB, min 6.50 KB
+                - WaitForDependency[SORT_SINK_OPERATOR_DEPENDENCY]Time: avg 0ns, max 0ns, min 0ns
+             CustomCounters:
+                - MemoryUsageSortBlocks: sum 39.00 KB, avg 6.50 KB, max 6.50 KB, min 6.50 KB
+           LOCAL_EXCHANGE_OPERATOR(PASSTHROUGH)(id=8):
+              - PlanInfo
+                 - type: PASSTHROUGH
+             CommonCounters:
+                - BlocksProduced: sum 6, avg 1, max 1, min 1
+                - ExecTime: avg 2.166us, max 4.0us, min 1000ns
+                - MaxOutputBlockBytes: sum 25.39 KB, avg 4.23 KB, max 4.44 KB, min 3.99 KB
+                - MemoryUsage: sum 0.00 , avg 0.00 , max 0.00 , min 0.00 
+                - MemoryUsagePeak: sum 85.50 KB, avg 14.25 KB, max 14.25 KB, min 14.25 KB
+                - MinOutputBlockBytes: sum 25.39 KB, avg 4.23 KB, max 4.44 KB, min 3.99 KB
+                - OutputBlockBytes: sum 25.39 KB, avg 4.23 KB, max 4.44 KB, min 3.99 KB
+                - RowsProduced: sum 1.0K (1000), avg 166, max 175, min 157
+                - WaitForDependency[LOCAL_EXCHANGE_OPERATOR_DEPENDENCY]Time: avg 2.240ms, max 2.332ms, min 2.125ms
+             CustomCounters:
+                - GetBlockFailedTime: sum 0, avg 0, max 0, min 0
+         Pipeline 2(instance_num=6):
+            - WaitWorkerTime: avg 86.333us, max 166.0us, min 22.0us
+           LOCAL_EXCHANGE_SINK_OPERATOR(PASSTHROUGH)(id=8):
+             CommonCounters:
+                - ExecTime: avg 6.500us, max 15.0us, min 4.0us
+                - InputRows: sum 1.0K (1000), avg 166, max 175, min 157
+                - MemoryUsage: sum 171.00 KB, avg 28.50 KB, max 42.75 KB, min 14.25 KB
+                - MemoryUsagePeak: sum 171.00 KB, avg 28.50 KB, max 42.75 KB, min 14.25 KB
+                - WaitForDependency[LOCAL_EXCHANGE_SINK_DEPENDENCY]Time: avg 0ns, max 0ns, min 0ns
+             CustomCounters:
+           AGGREGATION_OPERATOR(nereids_id=53, id=3):
+              - PlanInfo
+                 - output: count(partial_count(*))[#6], sum(partial_sum(id))[#7]
+                 - group by: k
+                 - sortByGroupKey:false
+                 - cardinality=0
+             CommonCounters:
+                - BlocksProduced: sum 6, avg 1, max 1, min 1
+                - ExecTime: avg 11.0us, max 18.0us, min 6.0us
+                - MaxOutputBlockBytes: sum 25.39 KB, avg 4.23 KB, max 4.44 KB, min 3.99 KB
+                - MemoryUsage: sum 0.00 , avg 0.00 , max 0.00 , min 0.00 
+                - MemoryUsagePeak: sum 0.00 , avg 0.00 , max 0.00 , min 0.00 
+                - MinOutputBlockBytes: sum 25.39 KB, avg 4.23 KB, max 4.44 KB, min 3.99 KB
+                - OutputBlockBytes: sum 25.39 KB, avg 4.23 KB, max 4.44 KB, min 3.99 KB
+                - RowsProduced: sum 1.0K (1000), avg 166, max 175, min 157
+                - WaitForDependency[AGGREGATION_OPERATOR_DEPENDENCY]Time: avg 2.255ms, max 2.317ms, min 2.197ms
+             CustomCounters:
+                - HashTableInputCount: sum 0, avg 0, max 0, min 0
+                - HashTableSize: sum 0, avg 0, max 0, min 0
+                - MemoryUsageHashTable: sum 0.00 , avg 0.00 , max 0.00 , min 0.00 
+         Pipeline 3(instance_num=6):
+            - WaitWorkerTime: avg 117.500us, max 222.0us, min 41.0us
+           AGGREGATION_SINK_OPERATOR(nereids_id=53, id=3):
+             CommonCounters:
+                - ExecTime: avg 23.833us, max 45.0us, min 15.0us
+                - InputRows: sum 1.0K (1000), avg 166, max 175, min 157
+                - MemoryUsage: sum 1.59 MB, avg 271.98 KB, max 271.98 KB, min 271.98 KB
+                - MemoryUsagePeak: sum 1.59 MB, avg 271.98 KB, max 271.98 KB, min 271.98 KB
+                - WaitForDependency[AGGREGATION_SINK_OPERATOR_DEPENDENCY]Time: avg 0ns, max 0ns, min 0ns
+             CustomCounters:
+                - MemoryUsageHashTable: sum 23.91 KB, avg 3.98 KB, max 3.98 KB, min 3.98 KB
+                - MemoryUsageSerializeKeyArena: sum 1.57 MB, avg 268.00 KB, max 268.00 KB, min 268.00 KB
+           EXCHANGE_OPERATOR(id=2):
+              - PlanInfo
+                 - offset: 0
+             CommonCounters:
+                - BlocksProduced: sum 6, avg 1, max 1, min 1
+                - ExecTime: avg 7.166us, max 9.0us, min 5.0us
+                - MaxOutputBlockBytes: sum 25.39 KB, avg 4.23 KB, max 4.44 KB, min 3.99 KB
+                - MemoryUsage: sum 0.00 , avg 0.00 , max 0.00 , min 0.00 
+                - MemoryUsagePeak: sum 39.00 KB, avg 6.50 KB, max 6.50 KB, min 6.50 KB
+                - MinOutputBlockBytes: sum 25.39 KB, avg 4.23 KB, max 4.44 KB, min 3.99 KB
+                - OutputBlockBytes: sum 25.39 KB, avg 4.23 KB, max 4.44 KB, min 3.99 KB
+                - RowsProduced: sum 1.0K (1000), avg 166, max 175, min 157
+             CustomCounters:
+                - WaitForDependencyTime: avg 0ns, max 0ns, min 0ns
+                  - WaitForData0: avg 2.186ms, max 2.236ms, min 2.102ms
+       Fragment 2:
+         Pipeline 0(instance_num=6):
+            - WaitWorkerTime: avg 182.500us, max 279.0us, min 106.0us
+           DATA_STREAM_SINK_OPERATOR(id=2, dest_id=2):
+             CommonCounters:
+                - ExecTime: avg 69.833us, max 121.0us, min 33.0us
+                - InputRows: sum 1.0K (1000), avg 166, max 175, min 157
+                - MemoryUsage: sum 0.00 , avg 0.00 , max 0.00 , min 0.00 
+                - MemoryUsagePeak: sum 0.00 , avg 0.00 , max 0.00 , min 0.00 
+                - WaitForDependencyTime: avg 0ns, max 0ns, min 0ns
+                  - WaitForRpcBufferQueue: avg 0ns, max 0ns, min 0ns
+             CustomCounters:
+                - BlocksProduced: sum 36, avg 6, max 6, min 6
+                - OverallThroughput: sum 0.0 /sec, avg 0.0 /sec, max 0.0 /sec, min 0.0 /sec
+           STREAMING_AGGREGATION_OPERATOR(nereids_id=51, id=1):
+              - PlanInfo
+                 - STREAMING
+                 - output: partial_count(*)[#3], partial_sum(id)[#4]
+                 - group by: k
+                 - sortByGroupKey:false
+                 - cardinality=0
+             CommonCounters:
+                - BlocksProduced: sum 6, avg 1, max 1, min 1
+                - ExecTime: avg 169.666us, max 222.0us, min 76.0us
+                - MaxOutputBlockBytes: sum 25.39 KB, avg 4.23 KB, max 4.44 KB, min 3.99 KB
+                - MemoryUsage: sum 1.59 MB, avg 271.98 KB, max 271.98 KB, min 271.98 KB
+                - MemoryUsagePeak: sum 1.59 MB, avg 271.98 KB, max 271.98 KB, min 271.98 KB
+                - MinOutputBlockBytes: sum 25.39 KB, avg 4.23 KB, max 4.44 KB, min 3.99 KB
+                - OutputBlockBytes: sum 25.39 KB, avg 4.23 KB, max 4.44 KB, min 3.99 KB
+                - RowsProduced: sum 1.0K (1000), avg 166, max 175, min 157
+             CustomCounters:
+                - MemoryUsageHashTable: sum 23.91 KB, avg 3.98 KB, max 3.98 KB, min 3.98 KB
+                - MemoryUsageSerializeKeyArena: sum 1.57 MB, avg 268.00 KB, max 268.00 KB, min 268.00 KB
+                - MemoryUsageSerializeKeyArenaPeak: sum 1.57 MB, avg 268.00 KB, max 268.00 KB, min 268.00 KB
+           LOCAL_EXCHANGE_OPERATOR(LOCAL_HASH_SHUFFLE)(id=7):
+             CommonCounters:
+                - BlocksProduced: sum 39, avg 6, max 7, min 6
+                - ExecTime: avg 121.333us, max 241.0us, min 47.0us
+                - MaxOutputBlockBytes: sum 238.10 KB, avg 39.68 KB, max 53.30 KB, min 34.63 KB
+                - MemoryUsage: sum 0.00 , avg 0.00 , max 0.00 , min 0.00 
+                - MemoryUsagePeak: sum 1.69 MB, avg 288.00 KB, max 288.00 KB, min 288.00 KB
+                - MinOutputBlockBytes: sum 73.92 KB, avg 12.32 KB, max 14.04 KB, min 11.07 KB
+                - OutputBlockBytes: sum 878.91 KB, avg 146.48 KB, max 153.81 KB, min 137.99 KB
+                - RowsProduced: sum 50.0K (50000), avg 8.333K (8333), max 8.75K (8750), min 7.85K (7850)
+                - WaitForDependency[LOCAL_EXCHANGE_OPERATOR_DEPENDENCY]Time: avg 1.649ms, max 1.779ms, min 1.515ms
+             CustomCounters:
+                - GetBlockFailedTime: sum 39, avg 6, max 7, min 6
+         Pipeline 1(instance_num=6):
+            - WaitWorkerTime: avg 64.333us, max 97.0us, min 36.0us
+           LOCAL_EXCHANGE_SINK_OPERATOR(LOCAL_HASH_SHUFFLE)(id=7):
+             CommonCounters:
+                - ExecTime: avg 69.833us, max 138.0us, min 36.0us
+                - InputRows: sum 50.0K (50000), avg 8.333K (8333), max 12.256K (12256), min 4.584K (4584)
+                - MemoryUsage: sum 1.27 MB, avg 216.00 KB, max 288.00 KB, min 144.00 KB
+                - MemoryUsagePeak: sum 1.27 MB, avg 216.00 KB, max 288.00 KB, min 144.00 KB
+                - WaitForDependency[LOCAL_EXCHANGE_SINK_DEPENDENCY]Time: avg 0ns, max 0ns, min 0ns
+             CustomCounters:
+           LOCAL_EXCHANGE_OPERATOR(PASSTHROUGH)(id=6):
+              - PlanInfo
+                 - type: PASSTHROUGH
+             CommonCounters:
+                - BlocksProduced: sum 8, avg 1, max 2, min 1
+                - ExecTime: avg 2.666us, max 8.0us, min 1000ns
+                - MaxOutputBlockBytes: sum 734.91 KB, avg 122.48 KB, max 143.44 KB, min 80.58 KB
+                - MemoryUsage: sum 0.00 , avg 0.00 , max 0.00 , min 0.00 
+                - MemoryUsagePeak: sum 864.00 KB, avg 144.00 KB, max 144.00 KB, min 144.00 KB
+                - MinOutputBlockBytes: sum 654.89 KB, avg 109.15 KB, max 143.44 KB, min 72.00 KB
+                - OutputBlockBytes: sum 878.91 KB, avg 146.48 KB, max 215.44 KB, min 80.58 KB
+                - RowsProduced: sum 50.0K (50000), avg 8.333K (8333), max 12.256K (12256), min 4.584K (4584)
+                - WaitForDependency[LOCAL_EXCHANGE_OPERATOR_DEPENDENCY]Time: avg 1.980ms, max 2.35ms, min 1.880ms
+             CustomCounters:
+                - GetBlockFailedTime: sum 8, avg 1, max 2, min 1
+         Pipeline 2(instance_num=1):
+            - WaitWorkerTime: avg 160.0us, max 160.0us, min 160.0us
+           LOCAL_EXCHANGE_SINK_OPERATOR(PASSTHROUGH)(id=6):
+             CommonCounters:
+                - ExecTime: avg 39.0us, max 39.0us, min 39.0us
+                - InputRows: sum 50.0K (50000), avg 50.0K (50000), max 50.0K (50000), min 50.0K (50000)
+                - MemoryUsage: sum 144.00 KB, avg 144.00 KB, max 144.00 KB, min 144.00 KB
+                - MemoryUsagePeak: sum 288.00 KB, avg 288.00 KB, max 288.00 KB, min 288.00 KB
+                - WaitForDependency[LOCAL_EXCHANGE_SINK_DEPENDENCY]Time: avg 0ns, max 0ns, min 0ns
+             CustomCounters:
+           OLAP_SCAN_OPERATOR(nereids_id=38, id=0, table_name=scale_numbers(scale_numbers)):
+              - PlanInfo
+                 - TABLE: doris_book.scale_numbers(scale_numbers), PREAGGREGATION: ON
+                 - PREDICATES: (id >= 50000)
+                 - partitions=1/1 (scale_numbers)
+                 - tablets=2/2, tabletList=1791956598937,1791956598939
+                 - cardinality=1, avgRowSize=0.0, numNodes=1
+                 - pushAggOp=NONE
+                 - POOLING-SCAN
+             CommonCounters:
+                - BlocksProduced: sum 8, avg 8, max 8, min 8
+                - ExecTime: avg 1.930ms, max 1.930ms, min 1.930ms
+                - MaxOutputBlockBytes: sum 143.44 KB, avg 143.44 KB, max 143.44 KB, min 143.44 KB
+                - MemoryUsage: sum 0.00 , avg 0.00 , max 0.00 , min 0.00 
+                - MemoryUsagePeak: sum 144.00 KB, avg 144.00 KB, max 144.00 KB, min 144.00 KB
+                - MinOutputBlockBytes: sum 72.00 KB, avg 72.00 KB, max 72.00 KB, min 72.00 KB
+                - OutputBlockBytes: sum 878.91 KB, avg 878.91 KB, max 878.91 KB, min 878.91 KB
+                - RowsProduced: sum 50.0K (50000), avg 50.0K (50000), max 50.0K (50000), min 50.0K (50000)
+                - WaitForDependency[OLAP_SCAN_OPERATOR_DEPENDENCY]Time: avg 1.175ms, max 1.175ms, min 1.175ms
+             CustomCounters:
+                - RuntimeFilterInfo: sum , avg , max , min 
+                - ScanBytes: sum 808.38 KB, avg 808.38 KB, max 808.38 KB, min 808.38 KB
+                - ScanRows: sum 50.0K (50000), avg 50.0K (50000), max 50.0K (50000), min 50.0K (50000)
+               Scanner:
+
+DetailProfile(649b1cb4d6f9437e-8a036223d38609b7):
+  Fragments:
+    Fragment 0:
+      FragmentLevelProfile:(host=TNetworkAddress(hostname:127.0.0.1, port:9050)):
+         - BuildPipelinesTime: 10.0us
+         - BuildTasksTime: 44.0us
+         - InitContextTime: 9.0us
+         - PlanLocalLocalExchangerTime: 0ns
+         - PrepareAllPipelinesTime: 7.0us
+         - PrepareTime: 72.0us
+      Pipeline 0(host=TNetworkAddress(hostname:127.0.0.1, port:9050)):
+        PipelineTask(index=0):
+           - TaskState: FINALIZED
+           - BlockedByDependency: 
+           - WakeUpEarly: 0
+           - CoreChangeTimes: 1
+           - ExecuteTime: 151.0us
+             - CloseTime: 7.0us
+             - GetBlockTime: 8.0us
+             - OpenTime: 5.0us
+             - PrepareTime: 30.0us
+             - SinkTime: 54.0us
+           - GetBlockCounter: 2
+           - MemoryReserveFailedTimes: 0
+           - MemoryReserveTimes: 3
+           - NumScheduleTimes: 3
+           - NumYieldTimes: 0
+           - TaskCpuTime: 189.917us
+           - WaitWorkerTime: 43.0us
+          RESULT_SINK_OPERATOR(id=6):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - CloseTime: 3.0us
+               - ExecTime: 58.0us
+               - InitTime: 2.0us
+               - InputRows: 5
+               - MemoryUsage: 0.00 
+               - MemoryUsagePeak: 0.00 
+               - OpenTime: 3.0us
+               - PendingFinishDependency: 0ns
+               - WaitForDependency[RESULT_SINK_OPERATOR_DEPENDENCY]Time: 0ns
+            CustomCounters:
+               - AppendBatchTime: 49.0us
+                 - ResultSendTime: 39.0us
+                 - TupleConvertTime: 6.0us
+               - BytesSent: 75.00 B
+               - NumSentRows: 5
+               - WaitForDependencyTime: 0ns
+               - WriteDataTime: 49.0us
+          EXCHANGE_OPERATOR(id=5):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - BlocksProduced: 1
+               - CloseTime: 4.0us
+               - ExecTime: 28.0us
+               - InitTime: 17.0us
+               - MaxOutputBlockBytes: 130.00 B
+               - MemoryUsage: 0.00 
+               - MemoryUsagePeak: 896.00 B
+               - MinOutputBlockBytes: 130.00 B
+               - OpenTime: 1000ns
+               - OutputBlockBytes: 130.00 B
+               - ProjectionTime: 0ns
+               - RowsProduced: 5
+            CustomCounters:
+               - InstanceID: 649b1cb4d6f9437e-8a036223d38609c4
+               - BlocksProduced: 0
+               - CreateMergerTime: 6.0us
+               - DataArrivalWaitTime: 0ns
+               - DecompressBytes: 0.00 
+               - DecompressTime: 0ns
+               - DeserializeRowBatchTimer: 0ns
+               - FilterTime: 0ns
+               - FirstBatchArrivalWaitTime: 0ns
+               - GetDataFromRecvrTime: 0ns
+               - LocalBytesReceived: 896.00 B
+               - MaxFindRecvrCpuTime(NS): 0
+               - MaxWaitForWorkerTime: 0
+               - MaxWaitToProcessTime: 0
+               - MergeGetNext: 0ns
+               - MergeGetNextBlock: 0ns
+               - RemoteBytesReceived: 0.00 
+               - SendersBlockedTotalTimer(*): 0ns
+               - WaitForDependencyTime: 0ns
+                 - WaitForData0: 2.603ms
+    Fragment 1:
+      FragmentLevelProfile:(host=TNetworkAddress(hostname:127.0.0.1, port:9050)):
+         - BuildPipelinesTime: 33.0us
+         - BuildTasksTime: 607.0us
+         - InitContextTime: 1000ns
+         - PlanLocalLocalExchangerTime: 0ns
+         - PrepareAllPipelinesTime: 430.0us
+         - PrepareTime: 1.72ms
+      Pipeline 0(host=TNetworkAddress(hostname:127.0.0.1, port:9050)):
+        PipelineTask(index=0):
+           - TaskState: FINALIZED
+           - BlockedByDependency: 
+           - WakeUpEarly: 0
+           - CoreChangeTimes: 2
+           - ExecuteTime: 31.0us
+             - CloseTime: 1000ns
+             - GetBlockTime: 16.0us
+             - OpenTime: 6.0us
+             - PrepareTime: 21.0us
+             - SinkTime: 2.0us
+           - GetBlockCounter: 1
+           - MemoryReserveFailedTimes: 0
+           - MemoryReserveTimes: 2
+           - NumScheduleTimes: 4
+           - NumYieldTimes: 0
+           - TaskCpuTime: 62.458us
+           - WaitWorkerTime: 27.0us
+          DATA_STREAM_SINK_OPERATOR(id=5, dest_id=5):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - CloseTime: 0ns
+               - ExecTime: 14.0us
+               - InitTime: 8.0us
+               - InputRows: 5
+               - MemoryUsage: 0.00 
+               - MemoryUsagePeak: 0.00 
+               - OpenTime: 3.0us
+               - PendingFinishDependency: 0ns
+               - WaitForDependencyTime: 0ns
+                 - WaitForBroadcastBuffer: 0ns
+                 - WaitForRpcBufferQueue: 0ns
+            CustomCounters:
+               - BlocksProduced: 1
+               - BytesSent: 0.00 
+               - CompressTime: 0ns
+               - DistributeRowsIntoChannelsTime: 0ns
+               - LocalBytesSent: 130.00 B
+               - LocalSendTime: 2.0us
+               - LocalSentRows: 5
+               - MergeBlockTime: 0ns
+               - OverallThroughput: 0.0 /sec
+               - SendNewPartitionTime: 0ns
+                 - AddPartitionRequestTime: 0ns
+               - SerializeBatchTime: 0ns
+               - SplitBlockHashComputeTime: 0ns
+               - UncompressedRowBatchSize: 0.00 
+          LOCAL_MERGE_SORT_SOURCE_OPERATOR(nereids_id=54, id=4):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - BlocksProduced: 1
+               - CloseTime: 0ns
+               - ExecTime: 14.0us
+               - InitTime: 0ns
+               - MaxOutputBlockBytes: 130.00 B
+               - MemoryUsage: 0.00 
+               - MemoryUsagePeak: 0.00 
+               - MinOutputBlockBytes: 130.00 B
+               - OpenTime: 0ns
+               - OutputBlockBytes: 130.00 B
+               - ProjectionTime: 0ns
+               - RowsProduced: 5
+               - WaitForDependency[LOCAL_MERGE_SORT_SOURCE_OPERATOR_DEPENDENCY]Time: 2.615ms
+            CustomCounters:
+               - MergeGetNext: 4.0us
+               - MergeGetNextBlock: 0ns
+        PipelineTask(index=4):
+           - TaskState: FINALIZED
+           - BlockedByDependency: 
+           - WakeUpEarly: 0
+           - CoreChangeTimes: 2
+           - ExecuteTime: 121.0us
+             - CloseTime: 1000ns
+             - GetBlockTime: 6.0us
+             - OpenTime: 2.0us
+             - PrepareTime: 15.0us
+             - SinkTime: 2.0us
+           - GetBlockCounter: 1
+           - MemoryReserveFailedTimes: 0
+           - MemoryReserveTimes: 2
+           - NumScheduleTimes: 3
+           - NumYieldTimes: 0
+           - TaskCpuTime: 80.791us
+           - WaitWorkerTime: 128.0us
+          DATA_STREAM_SINK_OPERATOR(id=5, dest_id=5):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - CloseTime: 0ns
+               - ExecTime: 9.0us
+               - InitTime: 7.0us
+               - InputRows: 0
+               - MemoryUsage: 0.00 
+               - MemoryUsagePeak: 0.00 
+               - OpenTime: 1000ns
+               - PendingFinishDependency: 0ns
+               - WaitForDependencyTime: 0ns
+                 - WaitForBroadcastBuffer: 0ns
+                 - WaitForRpcBufferQueue: 0ns
+            CustomCounters:
+               - BlocksProduced: 1
+               - BytesSent: 0.00 
+               - CompressTime: 0ns
+               - DistributeRowsIntoChannelsTime: 0ns
+               - LocalBytesSent: 0.00 
+               - LocalSendTime: 0ns
+               - LocalSentRows: 0
+               - MergeBlockTime: 0ns
+               - OverallThroughput: 0.0 /sec
+               - SendNewPartitionTime: 0ns
+                 - AddPartitionRequestTime: 0ns
+               - SerializeBatchTime: 0ns
+               - SplitBlockHashComputeTime: 0ns
+               - UncompressedRowBatchSize: 0.00 
+          LOCAL_MERGE_SORT_SOURCE_OPERATOR(nereids_id=54, id=4):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - BlocksProduced: 0
+               - CloseTime: 0ns
+               - ExecTime: 6.0us
+               - InitTime: 0ns
+               - MaxOutputBlockBytes: 0.00 
+               - MemoryUsage: 0.00 
+               - MemoryUsagePeak: 0.00 
+               - MinOutputBlockBytes: 0.00 
+               - OpenTime: 0ns
+               - OutputBlockBytes: 0.00 
+               - ProjectionTime: 0ns
+               - RowsProduced: 0
+               - WaitForDependency[LOCAL_MERGE_SORT_SOURCE_OPERATOR_DEPENDENCY]Time: 2.529ms
+            CustomCounters:
+        PipelineTask(index=8):
+           - TaskState: FINALIZED
+           - BlockedByDependency: 
+           - WakeUpEarly: 0
+           - CoreChangeTimes: 2
+           - ExecuteTime: 121.0us
+             - CloseTime: 0ns
+             - GetBlockTime: 1000ns
+             - OpenTime: 109.0us
+             - PrepareTime: 10.0us
+             - SinkTime: 2.0us
+           - GetBlockCounter: 1
+           - MemoryReserveFailedTimes: 0
+           - MemoryReserveTimes: 2
+           - NumScheduleTimes: 3
+           - NumYieldTimes: 0
+           - TaskCpuTime: 57.582us
+           - WaitWorkerTime: 68.0us
+          DATA_STREAM_SINK_OPERATOR(id=5, dest_id=5):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - CloseTime: 0ns
+               - ExecTime: 114.0us
+               - InitTime: 5.0us
+               - InputRows: 0
+               - MemoryUsage: 0.00 
+               - MemoryUsagePeak: 0.00 
+               - OpenTime: 107.0us
+               - PendingFinishDependency: 0ns
+               - WaitForDependencyTime: 0ns
+                 - WaitForBroadcastBuffer: 0ns
+                 - WaitForRpcBufferQueue: 0ns
+            CustomCounters:
+               - BlocksProduced: 1
+               - BytesSent: 0.00 
+               - CompressTime: 0ns
+               - DistributeRowsIntoChannelsTime: 0ns
+               - LocalBytesSent: 0.00 
+               - LocalSendTime: 1000ns
+               - LocalSentRows: 0
+               - MergeBlockTime: 0ns
+               - OverallThroughput: 0.0 /sec
+               - SendNewPartitionTime: 0ns
+                 - AddPartitionRequestTime: 0ns
+               - SerializeBatchTime: 0ns
+               - SplitBlockHashComputeTime: 0ns
+               - UncompressedRowBatchSize: 0.00 
+          LOCAL_MERGE_SORT_SOURCE_OPERATOR(nereids_id=54, id=4):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - BlocksProduced: 0
+               - CloseTime: 0ns
+               - ExecTime: 1000ns
+               - InitTime: 0ns
+               - MaxOutputBlockBytes: 0.00 
+               - MemoryUsage: 0.00 
+               - MemoryUsagePeak: 0.00 
+               - MinOutputBlockBytes: 0.00 
+               - OpenTime: 0ns
+               - OutputBlockBytes: 0.00 
+               - ProjectionTime: 0ns
+               - RowsProduced: 0
+               - WaitForDependency[LOCAL_MERGE_SORT_SOURCE_OPERATOR_DEPENDENCY]Time: 2.434ms
+            CustomCounters:
+        PipelineTask(index=12):
+           - TaskState: FINALIZED
+           - BlockedByDependency: 
+           - WakeUpEarly: 0
+           - CoreChangeTimes: 2
+           - ExecuteTime: 12.0us
+             - CloseTime: 1000ns
+             - GetBlockTime: 1000ns
+             - OpenTime: 3.0us
+             - PrepareTime: 10.0us
+             - SinkTime: 2.0us
+           - GetBlockCounter: 1
+           - MemoryReserveFailedTimes: 0
+           - MemoryReserveTimes: 2
+           - NumScheduleTimes: 3
+           - NumYieldTimes: 0
+           - TaskCpuTime: 27.500us
+           - WaitWorkerTime: 64.0us
+          DATA_STREAM_SINK_OPERATOR(id=5, dest_id=5):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - CloseTime: 1000ns
+               - ExecTime: 8.0us
+               - InitTime: 4.0us
+               - InputRows: 0
+               - MemoryUsage: 0.00 
+               - MemoryUsagePeak: 0.00 
+               - OpenTime: 1000ns
+               - PendingFinishDependency: 0ns
+               - WaitForDependencyTime: 0ns
+                 - WaitForBroadcastBuffer: 0ns
+                 - WaitForRpcBufferQueue: 0ns
+            CustomCounters:
+               - BlocksProduced: 1
+               - BytesSent: 0.00 
+               - CompressTime: 0ns
+               - DistributeRowsIntoChannelsTime: 0ns
+               - LocalBytesSent: 0.00 
+               - LocalSendTime: 1000ns
+               - LocalSentRows: 0
+               - MergeBlockTime: 0ns
+               - OverallThroughput: 0.0 /sec
+               - SendNewPartitionTime: 0ns
+                 - AddPartitionRequestTime: 0ns
+               - SerializeBatchTime: 0ns
+               - SplitBlockHashComputeTime: 0ns
+               - UncompressedRowBatchSize: 0.00 
+          LOCAL_MERGE_SORT_SOURCE_OPERATOR(nereids_id=54, id=4):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - BlocksProduced: 0
+               - CloseTime: 0ns
+               - ExecTime: 1000ns
+               - InitTime: 0ns
+               - MaxOutputBlockBytes: 0.00 
+               - MemoryUsage: 0.00 
+               - MemoryUsagePeak: 0.00 
+               - MinOutputBlockBytes: 0.00 
+               - OpenTime: 0ns
+               - OutputBlockBytes: 0.00 
+               - ProjectionTime: 0ns
+               - RowsProduced: 0
+               - WaitForDependency[LOCAL_MERGE_SORT_SOURCE_OPERATOR_DEPENDENCY]Time: 2.543ms
+            CustomCounters:
+        PipelineTask(index=16):
+           - TaskState: FINALIZED
+           - BlockedByDependency: 
+           - WakeUpEarly: 0
+           - CoreChangeTimes: 3
+           - ExecuteTime: 9.0us
+             - CloseTime: 0ns
+             - GetBlockTime: 1000ns
+             - OpenTime: 1000ns
+             - PrepareTime: 10.0us
+             - SinkTime: 1000ns
+           - GetBlockCounter: 1
+           - MemoryReserveFailedTimes: 0
+           - MemoryReserveTimes: 2
+           - NumScheduleTimes: 3
+           - NumYieldTimes: 0
+           - TaskCpuTime: 22.501us
+           - WaitWorkerTime: 113.0us
+          DATA_STREAM_SINK_OPERATOR(id=5, dest_id=5):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - CloseTime: 0ns
+               - ExecTime: 6.0us
+               - InitTime: 4.0us
+               - InputRows: 0
+               - MemoryUsage: 0.00 
+               - MemoryUsagePeak: 0.00 
+               - OpenTime: 1000ns
+               - PendingFinishDependency: 0ns
+               - WaitForDependencyTime: 0ns
+                 - WaitForBroadcastBuffer: 0ns
+                 - WaitForRpcBufferQueue: 0ns
+            CustomCounters:
+               - BlocksProduced: 1
+               - BytesSent: 0.00 
+               - CompressTime: 0ns
+               - DistributeRowsIntoChannelsTime: 0ns
+               - LocalBytesSent: 0.00 
+               - LocalSendTime: 1000ns
+               - LocalSentRows: 0
+               - MergeBlockTime: 0ns
+               - OverallThroughput: 0.0 /sec
+               - SendNewPartitionTime: 0ns
+                 - AddPartitionRequestTime: 0ns
+               - SerializeBatchTime: 0ns
+               - SplitBlockHashComputeTime: 0ns
+               - UncompressedRowBatchSize: 0.00 
+          LOCAL_MERGE_SORT_SOURCE_OPERATOR(nereids_id=54, id=4):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - BlocksProduced: 0
+               - CloseTime: 0ns
+               - ExecTime: 1000ns
+               - InitTime: 0ns
+               - MaxOutputBlockBytes: 0.00 
+               - MemoryUsage: 0.00 
+               - MemoryUsagePeak: 0.00 
+               - MinOutputBlockBytes: 0.00 
+               - OpenTime: 0ns
+               - OutputBlockBytes: 0.00 
+               - ProjectionTime: 0ns
+               - RowsProduced: 0
+               - WaitForDependency[LOCAL_MERGE_SORT_SOURCE_OPERATOR_DEPENDENCY]Time: 2.499ms
+            CustomCounters:
+        PipelineTask(index=20):
+           - TaskState: FINALIZED
+           - BlockedByDependency: 
+           - WakeUpEarly: 0
+           - CoreChangeTimes: 2
+           - ExecuteTime: 10.0us
+             - CloseTime: 1000ns
+             - GetBlockTime: 1000ns
+             - OpenTime: 2.0us
+             - PrepareTime: 16.0us
+             - SinkTime: 2.0us
+           - GetBlockCounter: 1
+           - MemoryReserveFailedTimes: 0
+           - MemoryReserveTimes: 2
+           - NumScheduleTimes: 3
+           - NumYieldTimes: 0
+           - TaskCpuTime: 30.832us
+           - WaitWorkerTime: 62.0us
+          DATA_STREAM_SINK_OPERATOR(id=5, dest_id=5):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - CloseTime: 1000ns
+               - ExecTime: 9.0us
+               - InitTime: 4.0us
+               - InputRows: 0
+               - MemoryUsage: 0.00 
+               - MemoryUsagePeak: 0.00 
+               - OpenTime: 2.0us
+               - PendingFinishDependency: 0ns
+               - WaitForDependencyTime: 0ns
+                 - WaitForBroadcastBuffer: 0ns
+                 - WaitForRpcBufferQueue: 0ns
+            CustomCounters:
+               - BlocksProduced: 1
+               - BytesSent: 0.00 
+               - CompressTime: 0ns
+               - DistributeRowsIntoChannelsTime: 0ns
+               - LocalBytesSent: 0.00 
+               - LocalSendTime: 0ns
+               - LocalSentRows: 0
+               - MergeBlockTime: 0ns
+               - OverallThroughput: 0.0 /sec
+               - SendNewPartitionTime: 0ns
+                 - AddPartitionRequestTime: 0ns
+               - SerializeBatchTime: 0ns
+               - SplitBlockHashComputeTime: 0ns
+               - UncompressedRowBatchSize: 0.00 
+          LOCAL_MERGE_SORT_SOURCE_OPERATOR(nereids_id=54, id=4):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - BlocksProduced: 0
+               - CloseTime: 0ns
+               - ExecTime: 1000ns
+               - InitTime: 0ns
+               - MaxOutputBlockBytes: 0.00 
+               - MemoryUsage: 0.00 
+               - MemoryUsagePeak: 0.00 
+               - MinOutputBlockBytes: 0.00 
+               - OpenTime: 0ns
+               - OutputBlockBytes: 0.00 
+               - ProjectionTime: 0ns
+               - RowsProduced: 0
+               - WaitForDependency[LOCAL_MERGE_SORT_SOURCE_OPERATOR_DEPENDENCY]Time: 2.569ms
+            CustomCounters:
+      Pipeline 1(host=TNetworkAddress(hostname:127.0.0.1, port:9050)):
+        PipelineTask(index=1):
+           - TaskState: FINALIZED
+           - BlockedByDependency: 
+           - WakeUpEarly: 0
+           - CoreChangeTimes: 1
+           - ExecuteTime: 482.0us
+             - CloseTime: 1000ns
+             - GetBlockTime: 5.0us
+             - OpenTime: 3.0us
+             - PrepareTime: 13.0us
+             - SinkTime: 249.0us
+           - GetBlockCounter: 2
+           - MemoryReserveFailedTimes: 0
+           - MemoryReserveTimes: 4
+           - NumScheduleTimes: 3
+           - NumYieldTimes: 0
+           - TaskCpuTime: 141.417us
+           - WaitWorkerTime: 36.0us
+          SORT_SINK_OPERATOR(nereids_id=54, id=4):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - CloseTime: 0ns
+               - ExecTime: 251.0us
+               - InitTime: 2.0us
+               - InputRows: 175
+               - MemoryUsage: 6.50 KB
+               - MemoryUsagePeak: 6.50 KB
+               - OpenTime: 3.0us
+               - PendingFinishDependency: 0ns
+               - WaitForDependency[SORT_SINK_OPERATOR_DEPENDENCY]Time: 0ns
+            CustomCounters:
+               - TOP-N: true
+               - SortAlgorithm: HEAP_SORT
+               - AppendBlockTime: 243.0us
+               - MemoryUsageSortBlocks: 6.50 KB
+               - MergeBlockTime: 0ns
+               - PartialSortCounter: 0
+               - PartialSortTime: 239.0us
+               - TopNFilterRows: 0
+               - TopNFilterTime: 0ns
+               - UpdateRuntimePredicateTime: 0ns
+          LOCAL_EXCHANGE_OPERATOR(PASSTHROUGH)(id=8):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - BlocksProduced: 1
+               - CloseTime: 0ns
+               - ExecTime: 4.0us
+               - InitTime: 1000ns
+               - MaxOutputBlockBytes: 4.44 KB
+               - MemoryUsage: 0.00 
+               - MemoryUsagePeak: 14.25 KB
+               - MinOutputBlockBytes: 4.44 KB
+               - OpenTime: 0ns
+               - OutputBlockBytes: 4.44 KB
+               - ProjectionTime: 0ns
+               - RowsProduced: 175
+               - WaitForDependency[LOCAL_EXCHANGE_OPERATOR_DEPENDENCY]Time: 2.125ms
+            CustomCounters:
+               - GetBlockFailedTime: 0
+        PipelineTask(index=5):
+           - TaskState: FINALIZED
+           - BlockedByDependency: 
+           - WakeUpEarly: 0
+           - CoreChangeTimes: 1
+           - ExecuteTime: 366.0us
+             - CloseTime: 0ns
+             - GetBlockTime: 6.0us
+             - OpenTime: 51.0us
+             - PrepareTime: 10.0us
+             - SinkTime: 282.0us
+           - GetBlockCounter: 2
+           - MemoryReserveFailedTimes: 0
+           - MemoryReserveTimes: 4
+           - NumScheduleTimes: 3
+           - NumYieldTimes: 0
+           - TaskCpuTime: 158.251us
+           - WaitWorkerTime: 28.0us
+          SORT_SINK_OPERATOR(nereids_id=54, id=4):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - CloseTime: 0ns
+               - ExecTime: 333.0us
+               - InitTime: 1000ns
+               - InputRows: 174
+               - MemoryUsage: 6.50 KB
+               - MemoryUsagePeak: 6.50 KB
+               - OpenTime: 49.0us
+               - PendingFinishDependency: 0ns
+               - WaitForDependency[SORT_SINK_OPERATOR_DEPENDENCY]Time: 0ns
+            CustomCounters:
+               - TOP-N: true
+               - SortAlgorithm: HEAP_SORT
+               - AppendBlockTime: 276.0us
+               - MemoryUsageSortBlocks: 6.50 KB
+               - MergeBlockTime: 0ns
+               - PartialSortCounter: 0
+               - PartialSortTime: 272.0us
+               - TopNFilterRows: 0
+               - TopNFilterTime: 0ns
+               - UpdateRuntimePredicateTime: 0ns
+          LOCAL_EXCHANGE_OPERATOR(PASSTHROUGH)(id=8):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - BlocksProduced: 1
+               - CloseTime: 0ns
+               - ExecTime: 4.0us
+               - InitTime: 1000ns
+               - MaxOutputBlockBytes: 4.42 KB
+               - MemoryUsage: 0.00 
+               - MemoryUsagePeak: 14.25 KB
+               - MinOutputBlockBytes: 4.42 KB
+               - OpenTime: 0ns
+               - OutputBlockBytes: 4.42 KB
+               - ProjectionTime: 0ns
+               - RowsProduced: 174
+               - WaitForDependency[LOCAL_EXCHANGE_OPERATOR_DEPENDENCY]Time: 2.276ms
+            CustomCounters:
+               - GetBlockFailedTime: 0
+        PipelineTask(index=9):
+           - TaskState: FINALIZED
+           - BlockedByDependency: 
+           - WakeUpEarly: 0
+           - CoreChangeTimes: 1
+           - ExecuteTime: 228.0us
+             - CloseTime: 1000ns
+             - GetBlockTime: 3.0us
+             - OpenTime: 7.0us
+             - PrepareTime: 8.0us
+             - SinkTime: 212.0us
+           - GetBlockCounter: 2
+           - MemoryReserveFailedTimes: 0
+           - MemoryReserveTimes: 4
+           - NumScheduleTimes: 3
+           - NumYieldTimes: 0
+           - TaskCpuTime: 65.210us
+           - WaitWorkerTime: 62.0us
+          SORT_SINK_OPERATOR(nereids_id=54, id=4):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - CloseTime: 0ns
+               - ExecTime: 218.0us
+               - InitTime: 0ns
+               - InputRows: 162
+               - MemoryUsage: 6.50 KB
+               - MemoryUsagePeak: 6.50 KB
+               - OpenTime: 7.0us
+               - PendingFinishDependency: 0ns
+               - WaitForDependency[SORT_SINK_OPERATOR_DEPENDENCY]Time: 0ns
+            CustomCounters:
+               - TOP-N: true
+               - SortAlgorithm: HEAP_SORT
+               - AppendBlockTime: 207.0us
+               - MemoryUsageSortBlocks: 6.50 KB
+               - MergeBlockTime: 0ns
+               - PartialSortCounter: 0
+               - PartialSortTime: 204.0us
+               - TopNFilterRows: 0
+               - TopNFilterTime: 0ns
+               - UpdateRuntimePredicateTime: 0ns
+          LOCAL_EXCHANGE_OPERATOR(PASSTHROUGH)(id=8):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - BlocksProduced: 1
+               - CloseTime: 0ns
+               - ExecTime: 2.0us
+               - InitTime: 0ns
+               - MaxOutputBlockBytes: 4.11 KB
+               - MemoryUsage: 0.00 
+               - MemoryUsagePeak: 14.25 KB
+               - MinOutputBlockBytes: 4.11 KB
+               - OpenTime: 0ns
+               - OutputBlockBytes: 4.11 KB
+               - ProjectionTime: 0ns
+               - RowsProduced: 162
+               - WaitForDependency[LOCAL_EXCHANGE_OPERATOR_DEPENDENCY]Time: 2.327ms
+            CustomCounters:
+               - GetBlockFailedTime: 0
+        PipelineTask(index=13):
+           - TaskState: FINALIZED
+           - BlockedByDependency: 
+           - WakeUpEarly: 0
+           - CoreChangeTimes: 3
+           - ExecuteTime: 257.0us
+             - CloseTime: 0ns
+             - GetBlockTime: 2.0us
+             - OpenTime: 5.0us
+             - PrepareTime: 6.0us
+             - SinkTime: 245.0us
+           - GetBlockCounter: 2
+           - MemoryReserveFailedTimes: 0
+           - MemoryReserveTimes: 4
+           - NumScheduleTimes: 3
+           - NumYieldTimes: 0
+           - TaskCpuTime: 90.458us
+           - WaitWorkerTime: 171.0us
+          SORT_SINK_OPERATOR(nereids_id=54, id=4):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - CloseTime: 0ns
+               - ExecTime: 248.0us
+               - InitTime: 1000ns
+               - InputRows: 157
+               - MemoryUsage: 6.50 KB
+               - MemoryUsagePeak: 6.50 KB
+               - OpenTime: 5.0us
+               - PendingFinishDependency: 0ns
+               - WaitForDependency[SORT_SINK_OPERATOR_DEPENDENCY]Time: 0ns
+            CustomCounters:
+               - TOP-N: true
+               - SortAlgorithm: HEAP_SORT
+               - AppendBlockTime: 240.0us
+               - MemoryUsageSortBlocks: 6.50 KB
+               - MergeBlockTime: 0ns
+               - PartialSortCounter: 0
+               - PartialSortTime: 237.0us
+               - TopNFilterRows: 0
+               - TopNFilterTime: 0ns
+               - UpdateRuntimePredicateTime: 0ns
+          LOCAL_EXCHANGE_OPERATOR(PASSTHROUGH)(id=8):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - BlocksProduced: 1
+               - CloseTime: 0ns
+               - ExecTime: 1000ns
+               - InitTime: 0ns
+               - MaxOutputBlockBytes: 3.99 KB
+               - MemoryUsage: 0.00 
+               - MemoryUsagePeak: 14.25 KB
+               - MinOutputBlockBytes: 3.99 KB
+               - OpenTime: 0ns
+               - OutputBlockBytes: 3.99 KB
+               - ProjectionTime: 0ns
+               - RowsProduced: 157
+               - WaitForDependency[LOCAL_EXCHANGE_OPERATOR_DEPENDENCY]Time: 2.188ms
+            CustomCounters:
+               - GetBlockFailedTime: 0
+        PipelineTask(index=17):
+           - TaskState: FINALIZED
+           - BlockedByDependency: 
+           - WakeUpEarly: 0
+           - CoreChangeTimes: 2
+           - ExecuteTime: 388.0us
+             - CloseTime: 1000ns
+             - GetBlockTime: 3.0us
+             - OpenTime: 19.0us
+             - PrepareTime: 7.0us
+             - SinkTime: 228.0us
+           - GetBlockCounter: 2
+           - MemoryReserveFailedTimes: 0
+           - MemoryReserveTimes: 4
+           - NumScheduleTimes: 3
+           - NumYieldTimes: 0
+           - TaskCpuTime: 227.918us
+           - WaitWorkerTime: 30.0us
+          SORT_SINK_OPERATOR(nereids_id=54, id=4):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - CloseTime: 0ns
+               - ExecTime: 244.0us
+               - InitTime: 0ns
+               - InputRows: 174
+               - MemoryUsage: 6.50 KB
+               - MemoryUsagePeak: 6.50 KB
+               - OpenTime: 18.0us
+               - PendingFinishDependency: 0ns
+               - WaitForDependency[SORT_SINK_OPERATOR_DEPENDENCY]Time: 0ns
+            CustomCounters:
+               - TOP-N: true
+               - SortAlgorithm: HEAP_SORT
+               - AppendBlockTime: 221.0us
+               - MemoryUsageSortBlocks: 6.50 KB
+               - MergeBlockTime: 0ns
+               - PartialSortCounter: 0
+               - PartialSortTime: 219.0us
+               - TopNFilterRows: 0
+               - TopNFilterTime: 0ns
+               - UpdateRuntimePredicateTime: 0ns
+          LOCAL_EXCHANGE_OPERATOR(PASSTHROUGH)(id=8):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - BlocksProduced: 1
+               - CloseTime: 0ns
+               - ExecTime: 1000ns
+               - InitTime: 0ns
+               - MaxOutputBlockBytes: 4.42 KB
+               - MemoryUsage: 0.00 
+               - MemoryUsagePeak: 14.25 KB
+               - MinOutputBlockBytes: 4.42 KB
+               - OpenTime: 0ns
+               - OutputBlockBytes: 4.42 KB
+               - ProjectionTime: 0ns
+               - RowsProduced: 174
+               - WaitForDependency[LOCAL_EXCHANGE_OPERATOR_DEPENDENCY]Time: 2.195ms
+            CustomCounters:
+               - GetBlockFailedTime: 0
+        PipelineTask(index=21):
+           - TaskState: FINALIZED
+           - BlockedByDependency: 
+           - WakeUpEarly: 0
+           - CoreChangeTimes: 1
+           - ExecuteTime: 224.0us
+             - CloseTime: 0ns
+             - GetBlockTime: 1000ns
+             - OpenTime: 5.0us
+             - PrepareTime: 8.0us
+             - SinkTime: 212.0us
+           - GetBlockCounter: 2
+           - MemoryReserveFailedTimes: 0
+           - MemoryReserveTimes: 4
+           - NumScheduleTimes: 3
+           - NumYieldTimes: 0
+           - TaskCpuTime: 56.582us
+           - WaitWorkerTime: 67.0us
+          SORT_SINK_OPERATOR(nereids_id=54, id=4):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - CloseTime: 0ns
+               - ExecTime: 217.0us
+               - InitTime: 1000ns
+               - InputRows: 158
+               - MemoryUsage: 6.50 KB
+               - MemoryUsagePeak: 6.50 KB
+               - OpenTime: 5.0us
+               - PendingFinishDependency: 0ns
+               - WaitForDependency[SORT_SINK_OPERATOR_DEPENDENCY]Time: 0ns
+            CustomCounters:
+               - TOP-N: true
+               - SortAlgorithm: HEAP_SORT
+               - AppendBlockTime: 206.0us
+               - MemoryUsageSortBlocks: 6.50 KB
+               - MergeBlockTime: 0ns
+               - PartialSortCounter: 0
+               - PartialSortTime: 204.0us
+               - TopNFilterRows: 0
+               - TopNFilterTime: 0ns
+               - UpdateRuntimePredicateTime: 0ns
+          LOCAL_EXCHANGE_OPERATOR(PASSTHROUGH)(id=8):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - BlocksProduced: 1
+               - CloseTime: 0ns
+               - ExecTime: 1000ns
+               - InitTime: 0ns
+               - MaxOutputBlockBytes: 4.01 KB
+               - MemoryUsage: 0.00 
+               - MemoryUsagePeak: 14.25 KB
+               - MinOutputBlockBytes: 4.01 KB
+               - OpenTime: 0ns
+               - OutputBlockBytes: 4.01 KB
+               - ProjectionTime: 0ns
+               - RowsProduced: 158
+               - WaitForDependency[LOCAL_EXCHANGE_OPERATOR_DEPENDENCY]Time: 2.332ms
+            CustomCounters:
+               - GetBlockFailedTime: 0
+      Pipeline 2(host=TNetworkAddress(hostname:127.0.0.1, port:9050)):
+        PipelineTask(index=2):
+           - TaskState: FINALIZED
+           - BlockedByDependency: 
+           - WakeUpEarly: 0
+           - CoreChangeTimes: 2
+           - ExecuteTime: 14.0us
+             - CloseTime: 0ns
+             - GetBlockTime: 5.0us
+             - OpenTime: 0ns
+             - PrepareTime: 16.0us
+             - SinkTime: 5.0us
+           - GetBlockCounter: 1
+           - MemoryReserveFailedTimes: 0
+           - MemoryReserveTimes: 2
+           - NumScheduleTimes: 3
+           - NumYieldTimes: 0
+           - TaskCpuTime: 34.85us
+           - WaitWorkerTime: 166.0us
+          LOCAL_EXCHANGE_SINK_OPERATOR(PASSTHROUGH)(id=8):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - CloseTime: 0ns
+               - ExecTime: 4.0us
+               - InitTime: 0ns
+               - InputRows: 175
+               - MemoryUsage: 28.50 KB
+               - MemoryUsagePeak: 28.50 KB
+               - OpenTime: 0ns
+               - PendingFinishDependency: 0ns
+               - WaitForDependency[LOCAL_EXCHANGE_SINK_DEPENDENCY]Time: 0ns
+            CustomCounters:
+               - PartitionExprsSize: 0
+               - ComputeHashValueTime: 0ns
+               - DistributeDataTime: 0ns
+          AGGREGATION_OPERATOR(nereids_id=53, id=3):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - BlocksProduced: 1
+               - CloseTime: 0ns
+               - ExecTime: 9.0us
+               - InitTime: 5.0us
+               - MaxOutputBlockBytes: 4.44 KB
+               - MemoryUsage: 0.00 
+               - MemoryUsagePeak: 0.00 
+               - MinOutputBlockBytes: 4.44 KB
+               - OpenTime: 0ns
+               - OutputBlockBytes: 4.44 KB
+               - ProjectionTime: 0ns
+               - RowsProduced: 175
+               - WaitForDependency[AGGREGATION_OPERATOR_DEPENDENCY]Time: 2.197ms
+            CustomCounters:
+               - DeserializeAndMergeTime: 0ns
+               - GetResultsTime: 3.0us
+               - HashTableComputeTime: 0ns
+               - HashTableEmplaceTime: 0ns
+               - HashTableInputCount: 0
+               - HashTableIterateTime: 0ns
+               - HashTableSize: 0
+               - InsertKeysToColumnTime: 1000ns
+               - InsertValuesToColumnTime: 0ns
+               - MemoryUsageArena: 0.00 
+               - MemoryUsageContainer: 0.00 
+               - MemoryUsageHashTable: 0.00 
+               - MergeTime: 0ns
+        PipelineTask(index=6):
+           - TaskState: FINALIZED
+           - BlockedByDependency: 
+           - WakeUpEarly: 0
+           - CoreChangeTimes: 2
+           - ExecuteTime: 25.0us
+             - CloseTime: 1000ns
+             - GetBlockTime: 7.0us
+             - OpenTime: 3.0us
+             - PrepareTime: 10.0us
+             - SinkTime: 5.0us
+           - GetBlockCounter: 1
+           - MemoryReserveFailedTimes: 0
+           - MemoryReserveTimes: 2
+           - NumScheduleTimes: 3
+           - NumYieldTimes: 0
+           - TaskCpuTime: 43.916us
+           - WaitWorkerTime: 22.0us
+          LOCAL_EXCHANGE_SINK_OPERATOR(PASSTHROUGH)(id=8):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - CloseTime: 0ns
+               - ExecTime: 4.0us
+               - InitTime: 1000ns
+               - InputRows: 174
+               - MemoryUsage: 14.25 KB
+               - MemoryUsagePeak: 14.25 KB
+               - OpenTime: 0ns
+               - PendingFinishDependency: 0ns
+               - WaitForDependency[LOCAL_EXCHANGE_SINK_DEPENDENCY]Time: 0ns
+            CustomCounters:
+               - PartitionExprsSize: 0
+               - ComputeHashValueTime: 0ns
+               - DistributeDataTime: 0ns
+          AGGREGATION_OPERATOR(nereids_id=53, id=3):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - BlocksProduced: 1
+               - CloseTime: 0ns
+               - ExecTime: 9.0us
+               - InitTime: 3.0us
+               - MaxOutputBlockBytes: 4.42 KB
+               - MemoryUsage: 0.00 
+               - MemoryUsagePeak: 0.00 
+               - MinOutputBlockBytes: 4.42 KB
+               - OpenTime: 0ns
+               - OutputBlockBytes: 4.42 KB
+               - ProjectionTime: 0ns
+               - RowsProduced: 174
+               - WaitForDependency[AGGREGATION_OPERATOR_DEPENDENCY]Time: 2.307ms
+            CustomCounters:
+               - DeserializeAndMergeTime: 0ns
+               - GetResultsTime: 4.0us
+               - HashTableComputeTime: 0ns
+               - HashTableEmplaceTime: 0ns
+               - HashTableInputCount: 0
+               - HashTableIterateTime: 1000ns
+               - HashTableSize: 0
+               - InsertKeysToColumnTime: 0ns
+               - InsertValuesToColumnTime: 0ns
+               - MemoryUsageArena: 0.00 
+               - MemoryUsageContainer: 0.00 
+               - MemoryUsageHashTable: 0.00 
+               - MergeTime: 0ns
+        PipelineTask(index=10):
+           - TaskState: FINALIZED
+           - BlockedByDependency: 
+           - WakeUpEarly: 0
+           - CoreChangeTimes: 3
+           - ExecuteTime: 32.0us
+             - CloseTime: 2.0us
+             - GetBlockTime: 17.0us
+             - OpenTime: 1000ns
+             - PrepareTime: 8.0us
+             - SinkTime: 8.0us
+           - GetBlockCounter: 1
+           - MemoryReserveFailedTimes: 0
+           - MemoryReserveTimes: 2
+           - NumScheduleTimes: 3
+           - NumYieldTimes: 0
+           - TaskCpuTime: 48.709us
+           - WaitWorkerTime: 118.0us
+          LOCAL_EXCHANGE_SINK_OPERATOR(PASSTHROUGH)(id=8):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - CloseTime: 1000ns
+               - ExecTime: 7.0us
+               - InitTime: 1000ns
+               - InputRows: 162
+               - MemoryUsage: 28.50 KB
+               - MemoryUsagePeak: 28.50 KB
+               - OpenTime: 0ns
+               - PendingFinishDependency: 0ns
+               - WaitForDependency[LOCAL_EXCHANGE_SINK_DEPENDENCY]Time: 0ns
+            CustomCounters:
+               - PartitionExprsSize: 0
+               - ComputeHashValueTime: 0ns
+               - DistributeDataTime: 0ns
+          AGGREGATION_OPERATOR(nereids_id=53, id=3):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - BlocksProduced: 1
+               - CloseTime: 1000ns
+               - ExecTime: 18.0us
+               - InitTime: 2.0us
+               - MaxOutputBlockBytes: 4.11 KB
+               - MemoryUsage: 0.00 
+               - MemoryUsagePeak: 0.00 
+               - MinOutputBlockBytes: 4.11 KB
+               - OpenTime: 0ns
+               - OutputBlockBytes: 4.11 KB
+               - ProjectionTime: 0ns
+               - RowsProduced: 162
+               - WaitForDependency[AGGREGATION_OPERATOR_DEPENDENCY]Time: 2.203ms
+            CustomCounters:
+               - DeserializeAndMergeTime: 0ns
+               - GetResultsTime: 9.0us
+               - HashTableComputeTime: 0ns
+               - HashTableEmplaceTime: 0ns
+               - HashTableInputCount: 0
+               - HashTableIterateTime: 0ns
+               - HashTableSize: 0
+               - InsertKeysToColumnTime: 2.0us
+               - InsertValuesToColumnTime: 0ns
+               - MemoryUsageArena: 0.00 
+               - MemoryUsageContainer: 0.00 
+               - MemoryUsageHashTable: 0.00 
+               - MergeTime: 0ns
+        PipelineTask(index=14):
+           - TaskState: FINALIZED
+           - BlockedByDependency: 
+           - WakeUpEarly: 0
+           - CoreChangeTimes: 1
+           - ExecuteTime: 22.0us
+             - CloseTime: 1000ns
+             - GetBlockTime: 5.0us
+             - OpenTime: 2.0us
+             - PrepareTime: 9.0us
+             - SinkTime: 4.0us
+           - GetBlockCounter: 1
+           - MemoryReserveFailedTimes: 0
+           - MemoryReserveTimes: 2
+           - NumScheduleTimes: 3
+           - NumYieldTimes: 0
+           - TaskCpuTime: 37.333us
+           - WaitWorkerTime: 55.0us
+          LOCAL_EXCHANGE_SINK_OPERATOR(PASSTHROUGH)(id=8):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - CloseTime: 1000ns
+               - ExecTime: 4.0us
+               - InitTime: 0ns
+               - InputRows: 157
+               - MemoryUsage: 42.75 KB
+               - MemoryUsagePeak: 42.75 KB
+               - OpenTime: 1000ns
+               - PendingFinishDependency: 0ns
+               - WaitForDependency[LOCAL_EXCHANGE_SINK_DEPENDENCY]Time: 0ns
+            CustomCounters:
+               - PartitionExprsSize: 0
+               - ComputeHashValueTime: 0ns
+               - DistributeDataTime: 0ns
+          AGGREGATION_OPERATOR(nereids_id=53, id=3):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - BlocksProduced: 1
+               - CloseTime: 0ns
+               - ExecTime: 6.0us
+               - InitTime: 2.0us
+               - MaxOutputBlockBytes: 3.99 KB
+               - MemoryUsage: 0.00 
+               - MemoryUsagePeak: 0.00 
+               - MinOutputBlockBytes: 3.99 KB
+               - OpenTime: 0ns
+               - OutputBlockBytes: 3.99 KB
+               - ProjectionTime: 0ns
+               - RowsProduced: 157
+               - WaitForDependency[AGGREGATION_OPERATOR_DEPENDENCY]Time: 2.290ms
+            CustomCounters:
+               - DeserializeAndMergeTime: 0ns
+               - GetResultsTime: 3.0us
+               - HashTableComputeTime: 0ns
+               - HashTableEmplaceTime: 0ns
+               - HashTableInputCount: 0
+               - HashTableIterateTime: 1000ns
+               - HashTableSize: 0
+               - InsertKeysToColumnTime: 0ns
+               - InsertValuesToColumnTime: 0ns
+               - MemoryUsageArena: 0.00 
+               - MemoryUsageContainer: 0.00 
+               - MemoryUsageHashTable: 0.00 
+               - MergeTime: 0ns
+        PipelineTask(index=18):
+           - TaskState: FINALIZED
+           - BlockedByDependency: 
+           - WakeUpEarly: 0
+           - CoreChangeTimes: 2
+           - ExecuteTime: 140.0us
+             - CloseTime: 0ns
+             - GetBlockTime: 18.0us
+             - OpenTime: 1000ns
+             - PrepareTime: 11.0us
+             - SinkTime: 7.0us
+           - GetBlockCounter: 1
+           - MemoryReserveFailedTimes: 0
+           - MemoryReserveTimes: 2
+           - NumScheduleTimes: 3
+           - NumYieldTimes: 0
+           - TaskCpuTime: 79.458us
+           - WaitWorkerTime: 84.0us
+          LOCAL_EXCHANGE_SINK_OPERATOR(PASSTHROUGH)(id=8):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - CloseTime: 0ns
+               - ExecTime: 5.0us
+               - InitTime: 0ns
+               - InputRows: 174
+               - MemoryUsage: 42.75 KB
+               - MemoryUsagePeak: 42.75 KB
+               - OpenTime: 0ns
+               - PendingFinishDependency: 0ns
+               - WaitForDependency[LOCAL_EXCHANGE_SINK_DEPENDENCY]Time: 0ns
+            CustomCounters:
+               - PartitionExprsSize: 0
+               - ComputeHashValueTime: 0ns
+               - DistributeDataTime: 0ns
+          AGGREGATION_OPERATOR(nereids_id=53, id=3):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - BlocksProduced: 1
+               - CloseTime: 0ns
+               - ExecTime: 18.0us
+               - InitTime: 2.0us
+               - MaxOutputBlockBytes: 4.42 KB
+               - MemoryUsage: 0.00 
+               - MemoryUsagePeak: 0.00 
+               - MinOutputBlockBytes: 4.42 KB
+               - OpenTime: 0ns
+               - OutputBlockBytes: 4.42 KB
+               - ProjectionTime: 0ns
+               - RowsProduced: 174
+               - WaitForDependency[AGGREGATION_OPERATOR_DEPENDENCY]Time: 2.217ms
+            CustomCounters:
+               - DeserializeAndMergeTime: 0ns
+               - GetResultsTime: 10.0us
+               - HashTableComputeTime: 0ns
+               - HashTableEmplaceTime: 0ns
+               - HashTableInputCount: 0
+               - HashTableIterateTime: 1000ns
+               - HashTableSize: 0
+               - InsertKeysToColumnTime: 2.0us
+               - InsertValuesToColumnTime: 0ns
+               - MemoryUsageArena: 0.00 
+               - MemoryUsageContainer: 0.00 
+               - MemoryUsageHashTable: 0.00 
+               - MergeTime: 0ns
+        PipelineTask(index=22):
+           - TaskState: FINALIZED
+           - BlockedByDependency: 
+           - WakeUpEarly: 0
+           - CoreChangeTimes: 2
+           - ExecuteTime: 22.0us
+             - CloseTime: 1000ns
+             - GetBlockTime: 5.0us
+             - OpenTime: 0ns
+             - PrepareTime: 9.0us
+             - SinkTime: 13.0us
+           - GetBlockCounter: 1
+           - MemoryReserveFailedTimes: 0
+           - MemoryReserveTimes: 2
+           - NumScheduleTimes: 3
+           - NumYieldTimes: 0
+           - TaskCpuTime: 36.749us
+           - WaitWorkerTime: 73.0us
+          LOCAL_EXCHANGE_SINK_OPERATOR(PASSTHROUGH)(id=8):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - CloseTime: 1000ns
+               - ExecTime: 15.0us
+               - InitTime: 1000ns
+               - InputRows: 158
+               - MemoryUsage: 14.25 KB
+               - MemoryUsagePeak: 14.25 KB
+               - OpenTime: 0ns
+               - PendingFinishDependency: 0ns
+               - WaitForDependency[LOCAL_EXCHANGE_SINK_DEPENDENCY]Time: 0ns
+            CustomCounters:
+               - PartitionExprsSize: 0
+               - ComputeHashValueTime: 0ns
+               - DistributeDataTime: 0ns
+          AGGREGATION_OPERATOR(nereids_id=53, id=3):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - BlocksProduced: 1
+               - CloseTime: 0ns
+               - ExecTime: 6.0us
+               - InitTime: 2.0us
+               - MaxOutputBlockBytes: 4.01 KB
+               - MemoryUsage: 0.00 
+               - MemoryUsagePeak: 0.00 
+               - MinOutputBlockBytes: 4.01 KB
+               - OpenTime: 0ns
+               - OutputBlockBytes: 4.01 KB
+               - ProjectionTime: 0ns
+               - RowsProduced: 158
+               - WaitForDependency[AGGREGATION_OPERATOR_DEPENDENCY]Time: 2.317ms
+            CustomCounters:
+               - DeserializeAndMergeTime: 0ns
+               - GetResultsTime: 3.0us
+               - HashTableComputeTime: 0ns
+               - HashTableEmplaceTime: 0ns
+               - HashTableInputCount: 0
+               - HashTableIterateTime: 1000ns
+               - HashTableSize: 0
+               - InsertKeysToColumnTime: 0ns
+               - InsertValuesToColumnTime: 0ns
+               - MemoryUsageArena: 0.00 
+               - MemoryUsageContainer: 0.00 
+               - MemoryUsageHashTable: 0.00 
+               - MergeTime: 0ns
+      Pipeline 3(host=TNetworkAddress(hostname:127.0.0.1, port:9050)):
+        PipelineTask(index=3):
+           - TaskState: FINALIZED
+           - BlockedByDependency: 
+           - WakeUpEarly: 0
+           - CoreChangeTimes: 2
+           - ExecuteTime: 38.0us
+             - CloseTime: 2.0us
+             - GetBlockTime: 2.0us
+             - OpenTime: 3.0us
+             - PrepareTime: 20.0us
+             - SinkTime: 28.0us
+           - GetBlockCounter: 2
+           - MemoryReserveFailedTimes: 0
+           - MemoryReserveTimes: 4
+           - NumScheduleTimes: 3
+           - NumYieldTimes: 0
+           - TaskCpuTime: 64.582us
+           - WaitWorkerTime: 155.0us
+          AGGREGATION_SINK_OPERATOR(nereids_id=53, id=3):
+            CommonCounters:
+               - IsColocate: 1
+               - IsShuffled: 1
+               - FollowedByShuffledOperator: 0
+               - CloseTime: 0ns
+               - ExecTime: 30.0us
+               - InitTime: 4.0us
+               - InputRows: 175
+               - MemoryUsage: 271.98 KB
+               - MemoryUsagePeak: 271.98 KB
+               - OpenTime: 2.0us
+               - PendingFinishDependency: 0ns
+               - WaitForDependency[AGGREGATION_SINK_OPERATOR_DEPENDENCY]Time: 0ns
+            CustomCounters:
+               - BuildTime: 0ns
+               - DeserializeAndMergeTime: 1000ns
+               - DoLimitComputeTime: 0ns
+               - ExprTime: 0ns
+               - HashTableComputeTime: 10.0us
+               - HashTableEmplaceTime: 10.0us
+               - HashTableInputCount: 175
+               - HashTableSize: 175
+               - MemoryUsageArena: 0.00 
+               - MemoryUsageContainer: 268.00 KB
+               - MemoryUsageHashTable: 3.98 KB
+               - MemoryUsageSerializeKeyArena: 268.00 KB
+               - MergeTime: 23.0us
+          EXCHANGE_OPERATOR(id=2):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 1
+               - BlocksProduced: 1
+               - CloseTime: 2.0us
+               - ExecTime: 9.0us
+               - InitTime: 6.0us
+               - MaxOutputBlockBytes: 4.44 KB
+               - MemoryUsage: 0.00 
+               - MemoryUsagePeak: 6.50 KB
+               - MinOutputBlockBytes: 4.44 KB
+               - OpenTime: 0ns
+               - OutputBlockBytes: 4.44 KB
+               - ProjectionTime: 0ns
+               - RowsProduced: 175
+            CustomCounters:
+               - InstanceID: 649b1cb4d6f9437e-8a036223d38609be
+               - BlocksProduced: 0
+               - CreateMergerTime: 0ns
+               - DataArrivalWaitTime: 0ns
+               - DecompressBytes: 0.00 
+               - DecompressTime: 0ns
+               - DeserializeRowBatchTimer: 0ns
+               - FilterTime: 0ns
+               - FirstBatchArrivalWaitTime: 0ns
+               - GetDataFromRecvrTime: 1000ns
+               - LocalBytesReceived: 6.50 KB
+               - MaxFindRecvrCpuTime(NS): 0
+               - MaxWaitForWorkerTime: 0
+               - MaxWaitToProcessTime: 0
+               - RemoteBytesReceived: 0.00 
+               - SendersBlockedTotalTimer(*): 0ns
+               - WaitForDependencyTime: 0ns
+                 - WaitForData0: 2.132ms
+        PipelineTask(index=7):
+           - TaskState: FINALIZED
+           - BlockedByDependency: 
+           - WakeUpEarly: 0
+           - CoreChangeTimes: 2
+           - ExecuteTime: 61.0us
+             - CloseTime: 1000ns
+             - GetBlockTime: 2.0us
+             - OpenTime: 28.0us
+             - PrepareTime: 14.0us
+             - SinkTime: 19.0us
+           - GetBlockCounter: 2
+           - MemoryReserveFailedTimes: 0
+           - MemoryReserveTimes: 4
+           - NumScheduleTimes: 3
+           - NumYieldTimes: 0
+           - TaskCpuTime: 97.750us
+           - WaitWorkerTime: 74.0us
+          AGGREGATION_SINK_OPERATOR(nereids_id=53, id=3):
+            CommonCounters:
+               - IsColocate: 1
+               - IsShuffled: 1
+               - FollowedByShuffledOperator: 0
+               - CloseTime: 0ns
+               - ExecTime: 45.0us
+               - InitTime: 2.0us
+               - InputRows: 174
+               - MemoryUsage: 271.98 KB
+               - MemoryUsagePeak: 271.98 KB
+               - OpenTime: 24.0us
+               - PendingFinishDependency: 0ns
+               - WaitForDependency[AGGREGATION_SINK_OPERATOR_DEPENDENCY]Time: 0ns
+            CustomCounters:
+               - BuildTime: 0ns
+               - DeserializeAndMergeTime: 0ns
+               - DoLimitComputeTime: 0ns
+               - ExprTime: 0ns
+               - HashTableComputeTime: 13.0us
+               - HashTableEmplaceTime: 12.0us
+               - HashTableInputCount: 174
+               - HashTableSize: 174
+               - MemoryUsageArena: 0.00 
+               - MemoryUsageContainer: 268.00 KB
+               - MemoryUsageHashTable: 3.98 KB
+               - MemoryUsageSerializeKeyArena: 268.00 KB
+               - MergeTime: 14.0us
+          EXCHANGE_OPERATOR(id=2):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 1
+               - BlocksProduced: 1
+               - CloseTime: 1000ns
+               - ExecTime: 7.0us
+               - InitTime: 4.0us
+               - MaxOutputBlockBytes: 4.42 KB
+               - MemoryUsage: 0.00 
+               - MemoryUsagePeak: 6.50 KB
+               - MinOutputBlockBytes: 4.42 KB
+               - OpenTime: 0ns
+               - OutputBlockBytes: 4.42 KB
+               - ProjectionTime: 0ns
+               - RowsProduced: 174
+            CustomCounters:
+               - InstanceID: 649b1cb4d6f9437e-8a036223d38609bf
+               - BlocksProduced: 0
+               - CreateMergerTime: 0ns
+               - DataArrivalWaitTime: 0ns
+               - DecompressBytes: 0.00 
+               - DecompressTime: 0ns
+               - DeserializeRowBatchTimer: 0ns
+               - FilterTime: 0ns
+               - FirstBatchArrivalWaitTime: 0ns
+               - GetDataFromRecvrTime: 1000ns
+               - LocalBytesReceived: 6.50 KB
+               - MaxFindRecvrCpuTime(NS): 0
+               - MaxWaitForWorkerTime: 0
+               - MaxWaitToProcessTime: 0
+               - RemoteBytesReceived: 0.00 
+               - SendersBlockedTotalTimer(*): 0ns
+               - WaitForDependencyTime: 0ns
+                 - WaitForData0: 2.198ms
+        PipelineTask(index=11):
+           - TaskState: FINALIZED
+           - BlockedByDependency: 
+           - WakeUpEarly: 0
+           - CoreChangeTimes: 1
+           - ExecuteTime: 50.0us
+             - CloseTime: 1000ns
+             - GetBlockTime: 2.0us
+             - OpenTime: 5.0us
+             - PrepareTime: 13.0us
+             - SinkTime: 14.0us
+           - GetBlockCounter: 2
+           - MemoryReserveFailedTimes: 0
+           - MemoryReserveTimes: 4
+           - NumScheduleTimes: 3
+           - NumYieldTimes: 0
+           - TaskCpuTime: 71.668us
+           - WaitWorkerTime: 41.0us
+          AGGREGATION_SINK_OPERATOR(nereids_id=53, id=3):
+            CommonCounters:
+               - IsColocate: 1
+               - IsShuffled: 1
+               - FollowedByShuffledOperator: 0
+               - CloseTime: 0ns
+               - ExecTime: 19.0us
+               - InitTime: 3.0us
+               - InputRows: 162
+               - MemoryUsage: 271.98 KB
+               - MemoryUsagePeak: 271.98 KB
+               - OpenTime: 4.0us
+               - PendingFinishDependency: 0ns
+               - WaitForDependency[AGGREGATION_SINK_OPERATOR_DEPENDENCY]Time: 0ns
+            CustomCounters:
+               - BuildTime: 0ns
+               - DeserializeAndMergeTime: 0ns
+               - DoLimitComputeTime: 0ns
+               - ExprTime: 0ns
+               - HashTableComputeTime: 9.0us
+               - HashTableEmplaceTime: 9.0us
+               - HashTableInputCount: 162
+               - HashTableSize: 162
+               - MemoryUsageArena: 0.00 
+               - MemoryUsageContainer: 268.00 KB
+               - MemoryUsageHashTable: 3.98 KB
+               - MemoryUsageSerializeKeyArena: 268.00 KB
+               - MergeTime: 11.0us
+          EXCHANGE_OPERATOR(id=2):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 1
+               - BlocksProduced: 1
+               - CloseTime: 1000ns
+               - ExecTime: 9.0us
+               - InitTime: 5.0us
+               - MaxOutputBlockBytes: 4.11 KB
+               - MemoryUsage: 0.00 
+               - MemoryUsagePeak: 6.50 KB
+               - MinOutputBlockBytes: 4.11 KB
+               - OpenTime: 1000ns
+               - OutputBlockBytes: 4.11 KB
+               - ProjectionTime: 0ns
+               - RowsProduced: 162
+            CustomCounters:
+               - InstanceID: 649b1cb4d6f9437e-8a036223d38609c0
+               - BlocksProduced: 0
+               - CreateMergerTime: 0ns
+               - DataArrivalWaitTime: 0ns
+               - DecompressBytes: 0.00 
+               - DecompressTime: 0ns
+               - DeserializeRowBatchTimer: 0ns
+               - FilterTime: 0ns
+               - FirstBatchArrivalWaitTime: 0ns
+               - GetDataFromRecvrTime: 2.0us
+               - LocalBytesReceived: 6.50 KB
+               - MaxFindRecvrCpuTime(NS): 0
+               - MaxWaitForWorkerTime: 0
+               - MaxWaitToProcessTime: 0
+               - RemoteBytesReceived: 0.00 
+               - SendersBlockedTotalTimer(*): 0ns
+               - WaitForDependencyTime: 0ns
+                 - WaitForData0: 2.222ms
+        PipelineTask(index=15):
+           - TaskState: FINALIZED
+           - BlockedByDependency: 
+           - WakeUpEarly: 0
+           - CoreChangeTimes: 2
+           - ExecuteTime: 25.0us
+             - CloseTime: 2.0us
+             - GetBlockTime: 3.0us
+             - OpenTime: 3.0us
+             - PrepareTime: 11.0us
+             - SinkTime: 16.0us
+           - GetBlockCounter: 2
+           - MemoryReserveFailedTimes: 0
+           - MemoryReserveTimes: 4
+           - NumScheduleTimes: 3
+           - NumYieldTimes: 0
+           - TaskCpuTime: 42.84us
+           - WaitWorkerTime: 222.0us
+          AGGREGATION_SINK_OPERATOR(nereids_id=53, id=3):
+            CommonCounters:
+               - IsColocate: 1
+               - IsShuffled: 1
+               - FollowedByShuffledOperator: 0
+               - CloseTime: 1000ns
+               - ExecTime: 19.0us
+               - InitTime: 2.0us
+               - InputRows: 157
+               - MemoryUsage: 271.98 KB
+               - MemoryUsagePeak: 271.98 KB
+               - OpenTime: 2.0us
+               - PendingFinishDependency: 0ns
+               - WaitForDependency[AGGREGATION_SINK_OPERATOR_DEPENDENCY]Time: 0ns
+            CustomCounters:
+               - BuildTime: 0ns
+               - DeserializeAndMergeTime: 1000ns
+               - DoLimitComputeTime: 0ns
+               - ExprTime: 0ns
+               - HashTableComputeTime: 8.0us
+               - HashTableEmplaceTime: 8.0us
+               - HashTableInputCount: 157
+               - HashTableSize: 157
+               - MemoryUsageArena: 0.00 
+               - MemoryUsageContainer: 268.00 KB
+               - MemoryUsageHashTable: 3.98 KB
+               - MemoryUsageSerializeKeyArena: 268.00 KB
+               - MergeTime: 12.0us
+          EXCHANGE_OPERATOR(id=2):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 1
+               - BlocksProduced: 1
+               - CloseTime: 0ns
+               - ExecTime: 6.0us
+               - InitTime: 4.0us
+               - MaxOutputBlockBytes: 3.99 KB
+               - MemoryUsage: 0.00 
+               - MemoryUsagePeak: 6.50 KB
+               - MinOutputBlockBytes: 3.99 KB
+               - OpenTime: 0ns
+               - OutputBlockBytes: 3.99 KB
+               - ProjectionTime: 0ns
+               - RowsProduced: 157
+            CustomCounters:
+               - InstanceID: 649b1cb4d6f9437e-8a036223d38609c1
+               - BlocksProduced: 0
+               - CreateMergerTime: 0ns
+               - DataArrivalWaitTime: 0ns
+               - DecompressBytes: 0.00 
+               - DecompressTime: 0ns
+               - DeserializeRowBatchTimer: 0ns
+               - FilterTime: 0ns
+               - FirstBatchArrivalWaitTime: 0ns
+               - GetDataFromRecvrTime: 2.0us
+               - LocalBytesReceived: 6.50 KB
+               - MaxFindRecvrCpuTime(NS): 0
+               - MaxWaitForWorkerTime: 0
+               - MaxWaitToProcessTime: 0
+               - RemoteBytesReceived: 0.00 
+               - SendersBlockedTotalTimer(*): 0ns
+               - WaitForDependencyTime: 0ns
+                 - WaitForData0: 2.102ms
+        PipelineTask(index=19):
+           - TaskState: FINALIZED
+           - BlockedByDependency: 
+           - WakeUpEarly: 0
+           - CoreChangeTimes: 1
+           - ExecuteTime: 21.0us
+             - CloseTime: 0ns
+             - GetBlockTime: 1000ns
+             - OpenTime: 3.0us
+             - PrepareTime: 12.0us
+             - SinkTime: 12.0us
+           - GetBlockCounter: 2
+           - MemoryReserveFailedTimes: 0
+           - MemoryReserveTimes: 4
+           - NumScheduleTimes: 3
+           - NumYieldTimes: 0
+           - TaskCpuTime: 39.583us
+           - WaitWorkerTime: 77.0us
+          AGGREGATION_SINK_OPERATOR(nereids_id=53, id=3):
+            CommonCounters:
+               - IsColocate: 1
+               - IsShuffled: 1
+               - FollowedByShuffledOperator: 0
+               - CloseTime: 0ns
+               - ExecTime: 15.0us
+               - InitTime: 2.0us
+               - InputRows: 174
+               - MemoryUsage: 271.98 KB
+               - MemoryUsagePeak: 271.98 KB
+               - OpenTime: 1000ns
+               - PendingFinishDependency: 0ns
+               - WaitForDependency[AGGREGATION_SINK_OPERATOR_DEPENDENCY]Time: 0ns
+            CustomCounters:
+               - BuildTime: 0ns
+               - DeserializeAndMergeTime: 0ns
+               - DoLimitComputeTime: 0ns
+               - ExprTime: 0ns
+               - HashTableComputeTime: 6.0us
+               - HashTableEmplaceTime: 6.0us
+               - HashTableInputCount: 174
+               - HashTableSize: 174
+               - MemoryUsageArena: 0.00 
+               - MemoryUsageContainer: 268.00 KB
+               - MemoryUsageHashTable: 3.98 KB
+               - MemoryUsageSerializeKeyArena: 268.00 KB
+               - MergeTime: 7.0us
+          EXCHANGE_OPERATOR(id=2):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 1
+               - BlocksProduced: 1
+               - CloseTime: 0ns
+               - ExecTime: 5.0us
+               - InitTime: 4.0us
+               - MaxOutputBlockBytes: 4.42 KB
+               - MemoryUsage: 0.00 
+               - MemoryUsagePeak: 6.50 KB
+               - MinOutputBlockBytes: 4.42 KB
+               - OpenTime: 0ns
+               - OutputBlockBytes: 4.42 KB
+               - ProjectionTime: 0ns
+               - RowsProduced: 174
+            CustomCounters:
+               - InstanceID: 649b1cb4d6f9437e-8a036223d38609c2
+               - BlocksProduced: 0
+               - CreateMergerTime: 0ns
+               - DataArrivalWaitTime: 0ns
+               - DecompressBytes: 0.00 
+               - DecompressTime: 0ns
+               - DeserializeRowBatchTimer: 0ns
+               - FilterTime: 0ns
+               - FirstBatchArrivalWaitTime: 0ns
+               - GetDataFromRecvrTime: 1000ns
+               - LocalBytesReceived: 6.50 KB
+               - MaxFindRecvrCpuTime(NS): 0
+               - MaxWaitForWorkerTime: 0
+               - MaxWaitToProcessTime: 0
+               - RemoteBytesReceived: 0.00 
+               - SendersBlockedTotalTimer(*): 0ns
+               - WaitForDependencyTime: 0ns
+                 - WaitForData0: 2.230ms
+        PipelineTask(index=23):
+           - TaskState: FINALIZED
+           - BlockedByDependency: 
+           - WakeUpEarly: 0
+           - CoreChangeTimes: 2
+           - ExecuteTime: 22.0us
+             - CloseTime: 0ns
+             - GetBlockTime: 1000ns
+             - OpenTime: 4.0us
+             - PrepareTime: 13.0us
+             - SinkTime: 10.0us
+           - GetBlockCounter: 2
+           - MemoryReserveFailedTimes: 0
+           - MemoryReserveTimes: 4
+           - NumScheduleTimes: 3
+           - NumYieldTimes: 0
+           - TaskCpuTime: 44.750us
+           - WaitWorkerTime: 136.0us
+          AGGREGATION_SINK_OPERATOR(nereids_id=53, id=3):
+            CommonCounters:
+               - IsColocate: 1
+               - IsShuffled: 1
+               - FollowedByShuffledOperator: 0
+               - CloseTime: 0ns
+               - ExecTime: 15.0us
+               - InitTime: 3.0us
+               - InputRows: 158
+               - MemoryUsage: 271.98 KB
+               - MemoryUsagePeak: 271.98 KB
+               - OpenTime: 4.0us
+               - PendingFinishDependency: 0ns
+               - WaitForDependency[AGGREGATION_SINK_OPERATOR_DEPENDENCY]Time: 0ns
+            CustomCounters:
+               - BuildTime: 0ns
+               - DeserializeAndMergeTime: 0ns
+               - DoLimitComputeTime: 0ns
+               - ExprTime: 0ns
+               - HashTableComputeTime: 5.0us
+               - HashTableEmplaceTime: 4.0us
+               - HashTableInputCount: 158
+               - HashTableSize: 158
+               - MemoryUsageArena: 0.00 
+               - MemoryUsageContainer: 268.00 KB
+               - MemoryUsageHashTable: 3.98 KB
+               - MemoryUsageSerializeKeyArena: 268.00 KB
+               - MergeTime: 6.0us
+          EXCHANGE_OPERATOR(id=2):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 1
+               - BlocksProduced: 1
+               - CloseTime: 0ns
+               - ExecTime: 7.0us
+               - InitTime: 6.0us
+               - MaxOutputBlockBytes: 4.01 KB
+               - MemoryUsage: 0.00 
+               - MemoryUsagePeak: 6.50 KB
+               - MinOutputBlockBytes: 4.01 KB
+               - OpenTime: 0ns
+               - OutputBlockBytes: 4.01 KB
+               - ProjectionTime: 0ns
+               - RowsProduced: 158
+            CustomCounters:
+               - InstanceID: 649b1cb4d6f9437e-8a036223d38609c3
+               - BlocksProduced: 0
+               - CreateMergerTime: 0ns
+               - DataArrivalWaitTime: 0ns
+               - DecompressBytes: 0.00 
+               - DecompressTime: 0ns
+               - DeserializeRowBatchTimer: 0ns
+               - FilterTime: 0ns
+               - FirstBatchArrivalWaitTime: 0ns
+               - GetDataFromRecvrTime: 0ns
+               - LocalBytesReceived: 6.50 KB
+               - MaxFindRecvrCpuTime(NS): 0
+               - MaxWaitForWorkerTime: 0
+               - MaxWaitToProcessTime: 0
+               - RemoteBytesReceived: 0.00 
+               - SendersBlockedTotalTimer(*): 0ns
+               - WaitForDependencyTime: 0ns
+                 - WaitForData0: 2.236ms
+    Fragment 2:
+      FragmentLevelProfile:(host=TNetworkAddress(hostname:127.0.0.1, port:9050)):
+         - BuildPipelinesTime: 45.0us
+         - BuildTasksTime: 326.0us
+         - InitContextTime: 1000ns
+         - PlanLocalLocalExchangerTime: 0ns
+         - PrepareAllPipelinesTime: 221.0us
+         - PrepareTime: 594.0us
+      Pipeline 0(host=TNetworkAddress(hostname:127.0.0.1, port:9050)):
+        PipelineTask(index=0):
+           - TaskState: FINALIZED
+           - BlockedByDependency: 
+           - WakeUpEarly: 0
+           - CoreChangeTimes: 2
+           - ExecuteTime: 342.0us
+             - CloseTime: 4.0us
+             - GetBlockTime: 247.0us
+             - OpenTime: 38.0us
+             - PrepareTime: 20.0us
+             - SinkTime: 35.0us
+           - GetBlockCounter: 7
+           - MemoryReserveFailedTimes: 0
+           - MemoryReserveTimes: 8
+           - NumScheduleTimes: 9
+           - NumYieldTimes: 0
+           - TaskCpuTime: 376.585us
+           - WaitWorkerTime: 193.0us
+          DATA_STREAM_SINK_OPERATOR(id=2, dest_id=2):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - CloseTime: 1000ns
+               - ExecTime: 69.0us
+               - InitTime: 6.0us
+               - InputRows: 175
+               - MemoryUsage: 0.00 
+               - MemoryUsagePeak: 0.00 
+               - OpenTime: 30.0us
+               - PendingFinishDependency: 0ns
+               - WaitForDependencyTime: 0ns
+                 - WaitForBroadcastBuffer: 0ns
+                 - WaitForRpcBufferQueue: 0ns
+            CustomCounters:
+               - Partitioner: Crc32CHashPartitioner(6)
+               - BlocksProduced: 6
+               - BytesSent: 0.00 
+               - CompressTime: 0ns
+               - DistributeRowsIntoChannelsTime: 27.0us
+               - LocalBytesSent: 4.44 KB
+               - LocalSendTime: 13.0us
+               - LocalSentRows: 175
+               - MergeBlockTime: 2.0us
+               - OverallThroughput: 0.0 /sec
+               - SendNewPartitionTime: 0ns
+                 - AddPartitionRequestTime: 0ns
+               - SerializeBatchTime: 0ns
+               - SplitBlockHashComputeTime: 1000ns
+               - UncompressedRowBatchSize: 0.00 
+          STREAMING_AGGREGATION_OPERATOR(nereids_id=51, id=1):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - BlocksProduced: 1
+               - CloseTime: 2.0us
+               - ExecTime: 140.0us
+               - InitTime: 4.0us
+               - MaxOutputBlockBytes: 4.44 KB
+               - MemoryUsage: 271.98 KB
+               - MemoryUsagePeak: 271.98 KB
+               - MinOutputBlockBytes: 4.44 KB
+               - OpenTime: 7.0us
+               - OutputBlockBytes: 4.44 KB
+               - ProjectionTime: 0ns
+               - RowsProduced: 175
+            CustomCounters:
+               - BuildTime: 110.0us
+               - DeserializeAndMergeTime: 0ns
+               - ExprTime: 6.0us
+               - GetResultsTime: 7.0us
+               - HashTableComputeTime: 79.0us
+               - HashTableEmplaceTime: 52.0us
+               - HashTableInputCount: 8.75K (8750)
+               - HashTableIterateTime: 0ns
+               - HashTableLimitComputeTime: 0ns
+               - HashTableSize: 175
+               - InsertKeysToColumnTime: 1000ns
+               - InsertValuesToColumnTime: 3.0us
+               - MemoryUsageHashTable: 3.98 KB
+               - MemoryUsageSerializeKeyArena: 268.00 KB
+               - MemoryUsageSerializeKeyArenaPeak: 268.00 KB
+               - MemoryUseLimit: 136.53 MB
+               - MergeTime: 0ns
+               - StreamingAggTime: 0ns
+          LOCAL_EXCHANGE_OPERATOR(LOCAL_HASH_SHUFFLE)(id=7):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - BlocksProduced: 6
+               - CloseTime: 0ns
+               - ExecTime: 102.0us
+               - InitTime: 1000ns
+               - MaxOutputBlockBytes: 40.01 KB
+               - MemoryUsage: 0.00 
+               - MemoryUsagePeak: 288.00 KB
+               - MinOutputBlockBytes: 14.04 KB
+               - OpenTime: 0ns
+               - OutputBlockBytes: 153.81 KB
+               - ProjectionTime: 0ns
+               - RowsProduced: 8.75K (8750)
+               - WaitForDependency[LOCAL_EXCHANGE_OPERATOR_DEPENDENCY]Time: 1.667ms
+            CustomCounters:
+               - CopyDataTime: 96.0us
+               - GetBlockFailedTime: 6
+        PipelineTask(index=3):
+           - TaskState: FINALIZED
+           - BlockedByDependency: 
+           - WakeUpEarly: 0
+           - CoreChangeTimes: 2
+           - ExecuteTime: 532.0us
+             - CloseTime: 3.0us
+             - GetBlockTime: 478.0us
+             - OpenTime: 7.0us
+             - PrepareTime: 22.0us
+             - SinkTime: 25.0us
+           - GetBlockCounter: 7
+           - MemoryReserveFailedTimes: 0
+           - MemoryReserveTimes: 8
+           - NumScheduleTimes: 7
+           - NumYieldTimes: 0
+           - TaskCpuTime: 420.790us
+           - WaitWorkerTime: 138.0us
+          DATA_STREAM_SINK_OPERATOR(id=2, dest_id=2):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - CloseTime: 0ns
+               - ExecTime: 33.0us
+               - InitTime: 7.0us
+               - InputRows: 174
+               - MemoryUsage: 0.00 
+               - MemoryUsagePeak: 0.00 
+               - OpenTime: 4.0us
+               - PendingFinishDependency: 0ns
+               - WaitForDependencyTime: 0ns
+                 - WaitForBroadcastBuffer: 0ns
+                 - WaitForRpcBufferQueue: 0ns
+            CustomCounters:
+               - Partitioner: Crc32CHashPartitioner(6)
+               - BlocksProduced: 6
+               - BytesSent: 0.00 
+               - CompressTime: 0ns
+               - DistributeRowsIntoChannelsTime: 17.0us
+               - LocalBytesSent: 4.42 KB
+               - LocalSendTime: 5.0us
+               - LocalSentRows: 174
+               - MergeBlockTime: 2.0us
+               - OverallThroughput: 0.0 /sec
+               - SendNewPartitionTime: 0ns
+                 - AddPartitionRequestTime: 0ns
+               - SerializeBatchTime: 0ns
+               - SplitBlockHashComputeTime: 0ns
+               - UncompressedRowBatchSize: 0.00 
+          STREAMING_AGGREGATION_OPERATOR(nereids_id=51, id=1):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - BlocksProduced: 1
+               - CloseTime: 2.0us
+               - ExecTime: 221.0us
+               - InitTime: 3.0us
+               - MaxOutputBlockBytes: 4.42 KB
+               - MemoryUsage: 271.98 KB
+               - MemoryUsagePeak: 271.98 KB
+               - MinOutputBlockBytes: 4.42 KB
+               - OpenTime: 2.0us
+               - OutputBlockBytes: 4.42 KB
+               - ProjectionTime: 0ns
+               - RowsProduced: 174
+            CustomCounters:
+               - BuildTime: 201.0us
+               - DeserializeAndMergeTime: 0ns
+               - ExprTime: 17.0us
+               - GetResultsTime: 5.0us
+               - HashTableComputeTime: 148.0us
+               - HashTableEmplaceTime: 87.0us
+               - HashTableInputCount: 8.7K (8700)
+               - HashTableIterateTime: 1000ns
+               - HashTableLimitComputeTime: 0ns
+               - HashTableSize: 174
+               - InsertKeysToColumnTime: 0ns
+               - InsertValuesToColumnTime: 2.0us
+               - MemoryUsageHashTable: 3.98 KB
+               - MemoryUsageSerializeKeyArena: 268.00 KB
+               - MemoryUsageSerializeKeyArenaPeak: 268.00 KB
+               - MemoryUseLimit: 136.53 MB
+               - MergeTime: 0ns
+               - StreamingAggTime: 0ns
+          LOCAL_EXCHANGE_OPERATOR(LOCAL_HASH_SHUFFLE)(id=7):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - BlocksProduced: 6
+               - CloseTime: 0ns
+               - ExecTime: 241.0us
+               - InitTime: 1000ns
+               - MaxOutputBlockBytes: 53.30 KB
+               - MemoryUsage: 0.00 
+               - MemoryUsagePeak: 288.00 KB
+               - MinOutputBlockBytes: 12.38 KB
+               - OpenTime: 0ns
+               - OutputBlockBytes: 152.93 KB
+               - ProjectionTime: 0ns
+               - RowsProduced: 8.7K (8700)
+               - WaitForDependency[LOCAL_EXCHANGE_OPERATOR_DEPENDENCY]Time: 1.536ms
+            CustomCounters:
+               - CopyDataTime: 234.0us
+               - GetBlockFailedTime: 6
+        PipelineTask(index=5):
+           - TaskState: FINALIZED
+           - BlockedByDependency: 
+           - WakeUpEarly: 0
+           - CoreChangeTimes: 3
+           - ExecuteTime: 594.0us
+             - CloseTime: 8.0us
+             - GetBlockTime: 438.0us
+             - OpenTime: 4.0us
+             - PrepareTime: 18.0us
+             - SinkTime: 80.0us
+           - GetBlockCounter: 7
+           - MemoryReserveFailedTimes: 0
+           - MemoryReserveTimes: 8
+           - NumScheduleTimes: 8
+           - NumYieldTimes: 0
+           - TaskCpuTime: 442.545us
+           - WaitWorkerTime: 172.0us
+          DATA_STREAM_SINK_OPERATOR(id=2, dest_id=2):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - CloseTime: 1000ns
+               - ExecTime: 79.0us
+               - InitTime: 5.0us
+               - InputRows: 162
+               - MemoryUsage: 0.00 
+               - MemoryUsagePeak: 0.00 
+               - OpenTime: 3.0us
+               - PendingFinishDependency: 0ns
+               - WaitForDependencyTime: 0ns
+                 - WaitForBroadcastBuffer: 0ns
+                 - WaitForRpcBufferQueue: 0ns
+            CustomCounters:
+               - Partitioner: Crc32CHashPartitioner(6)
+               - BlocksProduced: 6
+               - BytesSent: 0.00 
+               - CompressTime: 0ns
+               - DistributeRowsIntoChannelsTime: 60.0us
+               - LocalBytesSent: 4.11 KB
+               - LocalSendTime: 32.0us
+               - LocalSentRows: 162
+               - MergeBlockTime: 3.0us
+               - OverallThroughput: 0.0 /sec
+               - SendNewPartitionTime: 0ns
+                 - AddPartitionRequestTime: 0ns
+               - SerializeBatchTime: 0ns
+               - SplitBlockHashComputeTime: 4.0us
+               - UncompressedRowBatchSize: 0.00 
+          STREAMING_AGGREGATION_OPERATOR(nereids_id=51, id=1):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - BlocksProduced: 1
+               - CloseTime: 3.0us
+               - ExecTime: 222.0us
+               - InitTime: 3.0us
+               - MaxOutputBlockBytes: 4.11 KB
+               - MemoryUsage: 271.98 KB
+               - MemoryUsagePeak: 271.98 KB
+               - MinOutputBlockBytes: 4.11 KB
+               - OpenTime: 1000ns
+               - OutputBlockBytes: 4.11 KB
+               - ProjectionTime: 0ns
+               - RowsProduced: 162
+            CustomCounters:
+               - BuildTime: 187.0us
+               - DeserializeAndMergeTime: 0ns
+               - ExprTime: 4.0us
+               - GetResultsTime: 19.0us
+               - HashTableComputeTime: 73.0us
+               - HashTableEmplaceTime: 50.0us
+               - HashTableInputCount: 8.1K (8100)
+               - HashTableIterateTime: 1000ns
+               - HashTableLimitComputeTime: 0ns
+               - HashTableSize: 162
+               - InsertKeysToColumnTime: 1000ns
+               - InsertValuesToColumnTime: 3.0us
+               - MemoryUsageHashTable: 3.98 KB
+               - MemoryUsageSerializeKeyArena: 268.00 KB
+               - MemoryUsageSerializeKeyArenaPeak: 268.00 KB
+               - MemoryUseLimit: 136.53 MB
+               - MergeTime: 0ns
+               - StreamingAggTime: 0ns
+          LOCAL_EXCHANGE_OPERATOR(LOCAL_HASH_SHUFFLE)(id=7):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - BlocksProduced: 6
+               - CloseTime: 0ns
+               - ExecTime: 202.0us
+               - InitTime: 0ns
+               - MaxOutputBlockBytes: 37.05 KB
+               - MemoryUsage: 0.00 
+               - MemoryUsagePeak: 288.00 KB
+               - MinOutputBlockBytes: 12.81 KB
+               - OpenTime: 0ns
+               - OutputBlockBytes: 142.38 KB
+               - ProjectionTime: 0ns
+               - RowsProduced: 8.1K (8100)
+               - WaitForDependency[LOCAL_EXCHANGE_OPERATOR_DEPENDENCY]Time: 1.515ms
+            CustomCounters:
+               - CopyDataTime: 188.0us
+               - GetBlockFailedTime: 6
+        PipelineTask(index=7):
+           - TaskState: FINALIZED
+           - BlockedByDependency: 
+           - WakeUpEarly: 0
+           - CoreChangeTimes: 3
+           - ExecuteTime: 330.0us
+             - CloseTime: 2.0us
+             - GetBlockTime: 237.0us
+             - OpenTime: 23.0us
+             - PrepareTime: 16.0us
+             - SinkTime: 35.0us
+           - GetBlockCounter: 8
+           - MemoryReserveFailedTimes: 0
+           - MemoryReserveTimes: 9
+           - NumScheduleTimes: 10
+           - NumYieldTimes: 0
+           - TaskCpuTime: 351.625us
+           - WaitWorkerTime: 106.0us
+          DATA_STREAM_SINK_OPERATOR(id=2, dest_id=2):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - CloseTime: 0ns
+               - ExecTime: 54.0us
+               - InitTime: 5.0us
+               - InputRows: 157
+               - MemoryUsage: 0.00 
+               - MemoryUsagePeak: 0.00 
+               - OpenTime: 16.0us
+               - PendingFinishDependency: 0ns
+               - WaitForDependencyTime: 0ns
+                 - WaitForBroadcastBuffer: 0ns
+                 - WaitForRpcBufferQueue: 0ns
+            CustomCounters:
+               - Partitioner: Crc32CHashPartitioner(6)
+               - BlocksProduced: 6
+               - BytesSent: 0.00 
+               - CompressTime: 0ns
+               - DistributeRowsIntoChannelsTime: 28.0us
+               - LocalBytesSent: 3.99 KB
+               - LocalSendTime: 16.0us
+               - LocalSentRows: 157
+               - MergeBlockTime: 2.0us
+               - OverallThroughput: 0.0 /sec
+               - SendNewPartitionTime: 0ns
+                 - AddPartitionRequestTime: 0ns
+               - SerializeBatchTime: 0ns
+               - SplitBlockHashComputeTime: 1000ns
+               - UncompressedRowBatchSize: 0.00 
+          STREAMING_AGGREGATION_OPERATOR(nereids_id=51, id=1):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - BlocksProduced: 1
+               - CloseTime: 1000ns
+               - ExecTime: 172.0us
+               - InitTime: 5.0us
+               - MaxOutputBlockBytes: 3.99 KB
+               - MemoryUsage: 271.98 KB
+               - MemoryUsagePeak: 271.98 KB
+               - MinOutputBlockBytes: 3.99 KB
+               - OpenTime: 4.0us
+               - OutputBlockBytes: 3.99 KB
+               - ProjectionTime: 0ns
+               - RowsProduced: 157
+            CustomCounters:
+               - BuildTime: 151.0us
+               - DeserializeAndMergeTime: 0ns
+               - ExprTime: 3.0us
+               - GetResultsTime: 3.0us
+               - HashTableComputeTime: 103.0us
+               - HashTableEmplaceTime: 75.0us
+               - HashTableInputCount: 7.85K (7850)
+               - HashTableIterateTime: 1000ns
+               - HashTableLimitComputeTime: 0ns
+               - HashTableSize: 157
+               - InsertKeysToColumnTime: 0ns
+               - InsertValuesToColumnTime: 1000ns
+               - MemoryUsageHashTable: 3.98 KB
+               - MemoryUsageSerializeKeyArena: 268.00 KB
+               - MemoryUsageSerializeKeyArenaPeak: 268.00 KB
+               - MemoryUseLimit: 136.53 MB
+               - MergeTime: 0ns
+               - StreamingAggTime: 0ns
+          LOCAL_EXCHANGE_OPERATOR(LOCAL_HASH_SHUFFLE)(id=7):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - BlocksProduced: 7
+               - CloseTime: 0ns
+               - ExecTime: 66.0us
+               - InitTime: 0ns
+               - MaxOutputBlockBytes: 34.63 KB
+               - MemoryUsage: 0.00 
+               - MemoryUsagePeak: 288.00 KB
+               - MinOutputBlockBytes: 11.29 KB
+               - OpenTime: 0ns
+               - OutputBlockBytes: 137.99 KB
+               - ProjectionTime: 0ns
+               - RowsProduced: 7.85K (7850)
+               - WaitForDependency[LOCAL_EXCHANGE_OPERATOR_DEPENDENCY]Time: 1.773ms
+            CustomCounters:
+               - CopyDataTime: 60.0us
+               - GetBlockFailedTime: 7
+        PipelineTask(index=9):
+           - TaskState: FINALIZED
+           - BlockedByDependency: 
+           - WakeUpEarly: 0
+           - CoreChangeTimes: 3
+           - ExecuteTime: 416.0us
+             - CloseTime: 1000ns
+             - GetBlockTime: 257.0us
+             - OpenTime: 102.0us
+             - PrepareTime: 19.0us
+             - SinkTime: 18.0us
+           - GetBlockCounter: 8
+           - MemoryReserveFailedTimes: 0
+           - MemoryReserveTimes: 9
+           - NumScheduleTimes: 8
+           - NumYieldTimes: 0
+           - TaskCpuTime: 342.293us
+           - WaitWorkerTime: 207.0us
+          DATA_STREAM_SINK_OPERATOR(id=2, dest_id=2):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - CloseTime: 0ns
+               - ExecTime: 121.0us
+               - InitTime: 6.0us
+               - InputRows: 174
+               - MemoryUsage: 0.00 
+               - MemoryUsagePeak: 0.00 
+               - OpenTime: 98.0us
+               - PendingFinishDependency: 0ns
+               - WaitForDependencyTime: 0ns
+                 - WaitForBroadcastBuffer: 0ns
+                 - WaitForRpcBufferQueue: 0ns
+            CustomCounters:
+               - Partitioner: Crc32CHashPartitioner(6)
+               - BlocksProduced: 6
+               - BytesSent: 0.00 
+               - CompressTime: 0ns
+               - DistributeRowsIntoChannelsTime: 13.0us
+               - LocalBytesSent: 4.42 KB
+               - LocalSendTime: 5.0us
+               - LocalSentRows: 174
+               - MergeBlockTime: 2.0us
+               - OverallThroughput: 0.0 /sec
+               - SendNewPartitionTime: 0ns
+                 - AddPartitionRequestTime: 0ns
+               - SerializeBatchTime: 0ns
+               - SplitBlockHashComputeTime: 0ns
+               - UncompressedRowBatchSize: 0.00 
+          STREAMING_AGGREGATION_OPERATOR(nereids_id=51, id=1):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - BlocksProduced: 1
+               - CloseTime: 1000ns
+               - ExecTime: 187.0us
+               - InitTime: 3.0us
+               - MaxOutputBlockBytes: 4.42 KB
+               - MemoryUsage: 271.98 KB
+               - MemoryUsagePeak: 271.98 KB
+               - MinOutputBlockBytes: 4.42 KB
+               - OpenTime: 4.0us
+               - OutputBlockBytes: 4.42 KB
+               - ProjectionTime: 0ns
+               - RowsProduced: 174
+            CustomCounters:
+               - BuildTime: 165.0us
+               - DeserializeAndMergeTime: 0ns
+               - ExprTime: 5.0us
+               - GetResultsTime: 9.0us
+               - HashTableComputeTime: 120.0us
+               - HashTableEmplaceTime: 93.0us
+               - HashTableInputCount: 8.7K (8700)
+               - HashTableIterateTime: 0ns
+               - HashTableLimitComputeTime: 0ns
+               - HashTableSize: 174
+               - InsertKeysToColumnTime: 1000ns
+               - InsertValuesToColumnTime: 0ns
+               - MemoryUsageHashTable: 3.98 KB
+               - MemoryUsageSerializeKeyArena: 268.00 KB
+               - MemoryUsageSerializeKeyArenaPeak: 268.00 KB
+               - MemoryUseLimit: 136.53 MB
+               - MergeTime: 0ns
+               - StreamingAggTime: 0ns
+          LOCAL_EXCHANGE_OPERATOR(LOCAL_HASH_SHUFFLE)(id=7):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - BlocksProduced: 7
+               - CloseTime: 0ns
+               - ExecTime: 70.0us
+               - InitTime: 0ns
+               - MaxOutputBlockBytes: 38.39 KB
+               - MemoryUsage: 0.00 
+               - MemoryUsagePeak: 288.00 KB
+               - MinOutputBlockBytes: 12.32 KB
+               - OpenTime: 0ns
+               - OutputBlockBytes: 152.93 KB
+               - ProjectionTime: 0ns
+               - RowsProduced: 8.7K (8700)
+               - WaitForDependency[LOCAL_EXCHANGE_OPERATOR_DEPENDENCY]Time: 1.627ms
+            CustomCounters:
+               - CopyDataTime: 53.0us
+               - GetBlockFailedTime: 7
+        PipelineTask(index=11):
+           - TaskState: FINALIZED
+           - BlockedByDependency: 
+           - WakeUpEarly: 0
+           - CoreChangeTimes: 4
+           - ExecuteTime: 208.0us
+             - CloseTime: 3.0us
+             - GetBlockTime: 123.0us
+             - OpenTime: 8.0us
+             - PrepareTime: 20.0us
+             - SinkTime: 52.0us
+           - GetBlockCounter: 8
+           - MemoryReserveFailedTimes: 0
+           - MemoryReserveTimes: 9
+           - NumScheduleTimes: 9
+           - NumYieldTimes: 0
+           - TaskCpuTime: 236.959us
+           - WaitWorkerTime: 279.0us
+          DATA_STREAM_SINK_OPERATOR(id=2, dest_id=2):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - CloseTime: 1000ns
+               - ExecTime: 63.0us
+               - InitTime: 6.0us
+               - InputRows: 158
+               - MemoryUsage: 0.00 
+               - MemoryUsagePeak: 0.00 
+               - OpenTime: 6.0us
+               - PendingFinishDependency: 0ns
+               - WaitForDependencyTime: 0ns
+                 - WaitForBroadcastBuffer: 0ns
+                 - WaitForRpcBufferQueue: 0ns
+            CustomCounters:
+               - Partitioner: Crc32CHashPartitioner(6)
+               - BlocksProduced: 6
+               - BytesSent: 0.00 
+               - CompressTime: 0ns
+               - DistributeRowsIntoChannelsTime: 46.0us
+               - LocalBytesSent: 4.01 KB
+               - LocalSendTime: 31.0us
+               - LocalSentRows: 158
+               - MergeBlockTime: 1000ns
+               - OverallThroughput: 0.0 /sec
+               - SendNewPartitionTime: 0ns
+                 - AddPartitionRequestTime: 0ns
+               - SerializeBatchTime: 0ns
+               - SplitBlockHashComputeTime: 0ns
+               - UncompressedRowBatchSize: 0.00 
+          STREAMING_AGGREGATION_OPERATOR(nereids_id=51, id=1):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - BlocksProduced: 1
+               - CloseTime: 1000ns
+               - ExecTime: 76.0us
+               - InitTime: 4.0us
+               - MaxOutputBlockBytes: 4.01 KB
+               - MemoryUsage: 271.98 KB
+               - MemoryUsagePeak: 271.98 KB
+               - MinOutputBlockBytes: 4.01 KB
+               - OpenTime: 2.0us
+               - OutputBlockBytes: 4.01 KB
+               - ProjectionTime: 0ns
+               - RowsProduced: 158
+            CustomCounters:
+               - BuildTime: 65.0us
+               - DeserializeAndMergeTime: 0ns
+               - ExprTime: 4.0us
+               - GetResultsTime: 3.0us
+               - HashTableComputeTime: 48.0us
+               - HashTableEmplaceTime: 26.0us
+               - HashTableInputCount: 7.9K (7900)
+               - HashTableIterateTime: 0ns
+               - HashTableLimitComputeTime: 0ns
+               - HashTableSize: 158
+               - InsertKeysToColumnTime: 0ns
+               - InsertValuesToColumnTime: 1000ns
+               - MemoryUsageHashTable: 3.98 KB
+               - MemoryUsageSerializeKeyArena: 268.00 KB
+               - MemoryUsageSerializeKeyArenaPeak: 268.00 KB
+               - MemoryUseLimit: 136.53 MB
+               - MergeTime: 0ns
+               - StreamingAggTime: 0ns
+          LOCAL_EXCHANGE_OPERATOR(LOCAL_HASH_SHUFFLE)(id=7):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - BlocksProduced: 7
+               - CloseTime: 0ns
+               - ExecTime: 47.0us
+               - InitTime: 1000ns
+               - MaxOutputBlockBytes: 34.72 KB
+               - MemoryUsage: 0.00 
+               - MemoryUsagePeak: 288.00 KB
+               - MinOutputBlockBytes: 11.07 KB
+               - OpenTime: 0ns
+               - OutputBlockBytes: 138.87 KB
+               - ProjectionTime: 0ns
+               - RowsProduced: 7.9K (7900)
+               - WaitForDependency[LOCAL_EXCHANGE_OPERATOR_DEPENDENCY]Time: 1.779ms
+            CustomCounters:
+               - CopyDataTime: 38.0us
+               - GetBlockFailedTime: 7
+      Pipeline 1(host=TNetworkAddress(hostname:127.0.0.1, port:9050)):
+        PipelineTask(index=1):
+           - TaskState: FINALIZED
+           - BlockedByDependency: 
+           - WakeUpEarly: 0
+           - CoreChangeTimes: 4
+           - ExecuteTime: 164.0us
+             - CloseTime: 1000ns
+             - GetBlockTime: 13.0us
+             - OpenTime: 2.0us
+             - PrepareTime: 5.0us
+             - SinkTime: 137.0us
+           - GetBlockCounter: 5
+           - MemoryReserveFailedTimes: 0
+           - MemoryReserveTimes: 8
+           - NumScheduleTimes: 5
+           - NumYieldTimes: 0
+           - TaskCpuTime: 162.623us
+           - WaitWorkerTime: 80.0us
+          LOCAL_EXCHANGE_SINK_OPERATOR(LOCAL_HASH_SHUFFLE)(id=7):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - CloseTime: 1000ns
+               - ExecTime: 138.0us
+               - InitTime: 1000ns
+               - InputRows: 12.256K (12256)
+               - MemoryUsage: 288.00 KB
+               - MemoryUsagePeak: 288.00 KB
+               - OpenTime: 2.0us
+               - PendingFinishDependency: 0ns
+               - WaitForDependency[LOCAL_EXCHANGE_SINK_DEPENDENCY]Time: 0ns
+            CustomCounters:
+               - PartitionExprsSize: 1
+               - ComputeHashValueTime: 75.0us
+               - DistributeDataTime: 57.0us
+          LOCAL_EXCHANGE_OPERATOR(PASSTHROUGH)(id=6):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - BlocksProduced: 2
+               - CloseTime: 0ns
+               - ExecTime: 8.0us
+               - InitTime: 0ns
+               - MaxOutputBlockBytes: 143.44 KB
+               - MemoryUsage: 0.00 
+               - MemoryUsagePeak: 144.00 KB
+               - MinOutputBlockBytes: 72.00 KB
+               - OpenTime: 0ns
+               - OutputBlockBytes: 215.44 KB
+               - ProjectionTime: 0ns
+               - RowsProduced: 12.256K (12256)
+               - WaitForDependency[LOCAL_EXCHANGE_OPERATOR_DEPENDENCY]Time: 1.880ms
+            CustomCounters:
+               - GetBlockFailedTime: 2
+        PipelineTask(index=4):
+           - TaskState: FINALIZED
+           - BlockedByDependency: 
+           - WakeUpEarly: 0
+           - CoreChangeTimes: 4
+           - ExecuteTime: 143.0us
+             - CloseTime: 0ns
+             - GetBlockTime: 5.0us
+             - OpenTime: 1000ns
+             - PrepareTime: 10.0us
+             - SinkTime: 58.0us
+           - GetBlockCounter: 5
+           - MemoryReserveFailedTimes: 0
+           - MemoryReserveTimes: 8
+           - NumScheduleTimes: 5
+           - NumYieldTimes: 0
+           - TaskCpuTime: 129.541us
+           - WaitWorkerTime: 89.0us
+          LOCAL_EXCHANGE_SINK_OPERATOR(LOCAL_HASH_SHUFFLE)(id=7):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - CloseTime: 0ns
+               - ExecTime: 59.0us
+               - InitTime: 0ns
+               - InputRows: 8.68K (8680)
+               - MemoryUsage: 288.00 KB
+               - MemoryUsagePeak: 288.00 KB
+               - OpenTime: 1000ns
+               - PendingFinishDependency: 0ns
+               - WaitForDependency[LOCAL_EXCHANGE_SINK_DEPENDENCY]Time: 0ns
+            CustomCounters:
+               - PartitionExprsSize: 1
+               - ComputeHashValueTime: 21.0us
+               - DistributeDataTime: 36.0us
+          LOCAL_EXCHANGE_OPERATOR(PASSTHROUGH)(id=6):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - BlocksProduced: 2
+               - CloseTime: 0ns
+               - ExecTime: 2.0us
+               - InitTime: 0ns
+               - MaxOutputBlockBytes: 80.58 KB
+               - MemoryUsage: 0.00 
+               - MemoryUsagePeak: 144.00 KB
+               - MinOutputBlockBytes: 72.00 KB
+               - OpenTime: 0ns
+               - OutputBlockBytes: 152.58 KB
+               - ProjectionTime: 0ns
+               - RowsProduced: 8.68K (8680)
+               - WaitForDependency[LOCAL_EXCHANGE_OPERATOR_DEPENDENCY]Time: 1.962ms
+            CustomCounters:
+               - GetBlockFailedTime: 2
+        PipelineTask(index=6):
+           - TaskState: FINALIZED
+           - BlockedByDependency: 
+           - WakeUpEarly: 0
+           - CoreChangeTimes: 2
+           - ExecuteTime: 96.0us
+             - CloseTime: 18.0us
+             - GetBlockTime: 4.0us
+             - OpenTime: 1000ns
+             - PrepareTime: 8.0us
+             - SinkTime: 75.0us
+           - GetBlockCounter: 3
+           - MemoryReserveFailedTimes: 0
+           - MemoryReserveTimes: 5
+           - NumScheduleTimes: 4
+           - NumYieldTimes: 0
+           - TaskCpuTime: 99.501us
+           - WaitWorkerTime: 38.0us
+          LOCAL_EXCHANGE_SINK_OPERATOR(LOCAL_HASH_SHUFFLE)(id=7):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - CloseTime: 14.0us
+               - ExecTime: 73.0us
+               - InitTime: 0ns
+               - InputRows: 8.16K (8160)
+               - MemoryUsage: 144.00 KB
+               - MemoryUsagePeak: 144.00 KB
+               - OpenTime: 1000ns
+               - PendingFinishDependency: 0ns
+               - WaitForDependency[LOCAL_EXCHANGE_SINK_DEPENDENCY]Time: 0ns
+            CustomCounters:
+               - PartitionExprsSize: 1
+               - ComputeHashValueTime: 19.0us
+               - DistributeDataTime: 38.0us
+          LOCAL_EXCHANGE_OPERATOR(PASSTHROUGH)(id=6):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - BlocksProduced: 1
+               - CloseTime: 0ns
+               - ExecTime: 1000ns
+               - InitTime: 0ns
+               - MaxOutputBlockBytes: 143.44 KB
+               - MemoryUsage: 0.00 
+               - MemoryUsagePeak: 144.00 KB
+               - MinOutputBlockBytes: 143.44 KB
+               - OpenTime: 0ns
+               - OutputBlockBytes: 143.44 KB
+               - ProjectionTime: 0ns
+               - RowsProduced: 8.16K (8160)
+               - WaitForDependency[LOCAL_EXCHANGE_OPERATOR_DEPENDENCY]Time: 2.19ms
+            CustomCounters:
+               - GetBlockFailedTime: 1
+        PipelineTask(index=8):
+           - TaskState: FINALIZED
+           - BlockedByDependency: 
+           - WakeUpEarly: 0
+           - CoreChangeTimes: 4
+           - ExecuteTime: 94.0us
+             - CloseTime: 0ns
+             - GetBlockTime: 1000ns
+             - OpenTime: 2.0us
+             - PrepareTime: 7.0us
+             - SinkTime: 71.0us
+           - GetBlockCounter: 3
+           - MemoryReserveFailedTimes: 0
+           - MemoryReserveTimes: 5
+           - NumScheduleTimes: 4
+           - NumYieldTimes: 0
+           - TaskCpuTime: 106.706us
+           - WaitWorkerTime: 46.0us
+          LOCAL_EXCHANGE_SINK_OPERATOR(LOCAL_HASH_SHUFFLE)(id=7):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - CloseTime: 0ns
+               - ExecTime: 72.0us
+               - InitTime: 1000ns
+               - InputRows: 8.16K (8160)
+               - MemoryUsage: 144.00 KB
+               - MemoryUsagePeak: 144.00 KB
+               - OpenTime: 1000ns
+               - PendingFinishDependency: 0ns
+               - WaitForDependency[LOCAL_EXCHANGE_SINK_DEPENDENCY]Time: 0ns
+            CustomCounters:
+               - PartitionExprsSize: 1
+               - ComputeHashValueTime: 12.0us
+               - DistributeDataTime: 58.0us
+          LOCAL_EXCHANGE_OPERATOR(PASSTHROUGH)(id=6):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - BlocksProduced: 1
+               - CloseTime: 0ns
+               - ExecTime: 1000ns
+               - InitTime: 0ns
+               - MaxOutputBlockBytes: 143.44 KB
+               - MemoryUsage: 0.00 
+               - MemoryUsagePeak: 144.00 KB
+               - MinOutputBlockBytes: 143.44 KB
+               - OpenTime: 0ns
+               - OutputBlockBytes: 143.44 KB
+               - ProjectionTime: 0ns
+               - RowsProduced: 8.16K (8160)
+               - WaitForDependency[LOCAL_EXCHANGE_OPERATOR_DEPENDENCY]Time: 2.4ms
+            CustomCounters:
+               - GetBlockFailedTime: 1
+        PipelineTask(index=10):
+           - TaskState: FINALIZED
+           - BlockedByDependency: 
+           - WakeUpEarly: 0
+           - CoreChangeTimes: 4
+           - ExecuteTime: 49.0us
+             - CloseTime: 1000ns
+             - GetBlockTime: 2.0us
+             - OpenTime: 0ns
+             - PrepareTime: 9.0us
+             - SinkTime: 42.0us
+           - GetBlockCounter: 3
+           - MemoryReserveFailedTimes: 0
+           - MemoryReserveTimes: 5
+           - NumScheduleTimes: 4
+           - NumYieldTimes: 0
+           - TaskCpuTime: 60.541us
+           - WaitWorkerTime: 36.0us
+          LOCAL_EXCHANGE_SINK_OPERATOR(LOCAL_HASH_SHUFFLE)(id=7):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - CloseTime: 1000ns
+               - ExecTime: 41.0us
+               - InitTime: 0ns
+               - InputRows: 8.16K (8160)
+               - MemoryUsage: 144.00 KB
+               - MemoryUsagePeak: 144.00 KB
+               - OpenTime: 0ns
+               - PendingFinishDependency: 0ns
+               - WaitForDependency[LOCAL_EXCHANGE_SINK_DEPENDENCY]Time: 0ns
+            CustomCounters:
+               - PartitionExprsSize: 1
+               - ComputeHashValueTime: 16.0us
+               - DistributeDataTime: 24.0us
+          LOCAL_EXCHANGE_OPERATOR(PASSTHROUGH)(id=6):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - BlocksProduced: 1
+               - CloseTime: 0ns
+               - ExecTime: 2.0us
+               - InitTime: 1000ns
+               - MaxOutputBlockBytes: 143.44 KB
+               - MemoryUsage: 0.00 
+               - MemoryUsagePeak: 144.00 KB
+               - MinOutputBlockBytes: 143.44 KB
+               - OpenTime: 0ns
+               - OutputBlockBytes: 143.44 KB
+               - ProjectionTime: 0ns
+               - RowsProduced: 8.16K (8160)
+               - WaitForDependency[LOCAL_EXCHANGE_OPERATOR_DEPENDENCY]Time: 2.35ms
+            CustomCounters:
+               - GetBlockFailedTime: 1
+        PipelineTask(index=12):
+           - TaskState: FINALIZED
+           - BlockedByDependency: 
+           - WakeUpEarly: 0
+           - CoreChangeTimes: 4
+           - ExecuteTime: 46.0us
+             - CloseTime: 0ns
+             - GetBlockTime: 1000ns
+             - OpenTime: 1000ns
+             - PrepareTime: 6.0us
+             - SinkTime: 36.0us
+           - GetBlockCounter: 3
+           - MemoryReserveFailedTimes: 0
+           - MemoryReserveTimes: 5
+           - NumScheduleTimes: 4
+           - NumYieldTimes: 0
+           - TaskCpuTime: 57.83us
+           - WaitWorkerTime: 97.0us
+          LOCAL_EXCHANGE_SINK_OPERATOR(LOCAL_HASH_SHUFFLE)(id=7):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - CloseTime: 0ns
+               - ExecTime: 36.0us
+               - InitTime: 0ns
+               - InputRows: 4.584K (4584)
+               - MemoryUsage: 288.00 KB
+               - MemoryUsagePeak: 288.00 KB
+               - OpenTime: 1000ns
+               - PendingFinishDependency: 0ns
+               - WaitForDependency[LOCAL_EXCHANGE_SINK_DEPENDENCY]Time: 0ns
+            CustomCounters:
+               - PartitionExprsSize: 1
+               - ComputeHashValueTime: 7.0us
+               - DistributeDataTime: 28.0us
+          LOCAL_EXCHANGE_OPERATOR(PASSTHROUGH)(id=6):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - BlocksProduced: 1
+               - CloseTime: 0ns
+               - ExecTime: 2.0us
+               - InitTime: 0ns
+               - MaxOutputBlockBytes: 80.58 KB
+               - MemoryUsage: 0.00 
+               - MemoryUsagePeak: 144.00 KB
+               - MinOutputBlockBytes: 80.58 KB
+               - OpenTime: 0ns
+               - OutputBlockBytes: 80.58 KB
+               - ProjectionTime: 0ns
+               - RowsProduced: 4.584K (4584)
+               - WaitForDependency[LOCAL_EXCHANGE_OPERATOR_DEPENDENCY]Time: 1.985ms
+            CustomCounters:
+               - GetBlockFailedTime: 1
+      Pipeline 2(host=TNetworkAddress(hostname:127.0.0.1, port:9050)):
+        PipelineTask(index=2):
+           - TaskState: FINALIZED
+           - BlockedByDependency: 
+           - WakeUpEarly: 0
+           - CoreChangeTimes: 3
+           - ExecuteTime: 784.0us
+             - CloseTime: 31.0us
+             - GetBlockTime: 75.0us
+             - OpenTime: 601.0us
+             - PrepareTime: 78.0us
+             - SinkTime: 59.0us
+           - GetBlockCounter: 10
+           - MemoryReserveFailedTimes: 0
+           - MemoryReserveTimes: 19
+           - NumScheduleTimes: 10
+           - NumYieldTimes: 0
+           - TaskCpuTime: 766.664us
+           - WaitWorkerTime: 160.0us
+          LOCAL_EXCHANGE_SINK_OPERATOR(PASSTHROUGH)(id=6):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - CloseTime: 6.0us
+               - ExecTime: 39.0us
+               - InitTime: 0ns
+               - InputRows: 50.0K (50000)
+               - MemoryUsage: 144.00 KB
+               - MemoryUsagePeak: 288.00 KB
+               - OpenTime: 1000ns
+               - PendingFinishDependency: 0ns
+               - WaitForDependency[LOCAL_EXCHANGE_SINK_DEPENDENCY]Time: 0ns
+            CustomCounters:
+               - PartitionExprsSize: 0
+               - ComputeHashValueTime: 0ns
+               - DistributeDataTime: 0ns
+          OLAP_SCAN_OPERATOR(nereids_id=38, id=0, table_name=scale_numbers(scale_numbers)):
+            CommonCounters:
+               - IsColocate: 0
+               - IsShuffled: 0
+               - FollowedByShuffledOperator: 0
+               - BlocksProduced: 8
+               - CloseTime: 24.0us
+               - ExecTime: 1.930ms
+               - InitTime: 65.0us
+               - MaxOutputBlockBytes: 143.44 KB
+               - MemoryUsage: 0.00 
+               - MemoryUsagePeak: 144.00 KB
+               - MinOutputBlockBytes: 72.00 KB
+               - OpenTime: 599.0us
+               - OutputBlockBytes: 878.91 KB
+               - ProjectionTime: 0ns
+               - RowsProduced: 50.0K (50000)
+               - WaitForDependency[OLAP_SCAN_OPERATOR_DEPENDENCY]Time: 1.175ms
+               - WaitForRuntimeFilter: 0ns
+            CustomCounters:
+               - TopNFilterSourceNodeIds: 
+               - RemainedPredicates: 
+               - KeyRanges: ScanKeys:ScanKey=[50000 : 9223372036854775807]
+               - TabletIds: [1791956598937, 1791956598939]
+               - PushDownPredicates: 
+               - BucketsPrunedByRuntimeFilter: 0
+               - KeyRangesNum: 0
+               - MaxScanConcurrency: 2
+               - MinScanConcurrency: 6
+               - NumScanners: 2
+               - PartitionsPrunedByRuntimeFilter: 0
+               - ProcessConjunctTime: 515.0us
+               - RowsRead: 50.0K (50000)
+               - RowsetTsoPruneTime: 0ns
+               - RowsetsPrunedByTso: 0
+               - RuntimeFilterInfo: 
+                 - AcquireRuntimeFilter: 0ns
+               - ScanBytes: 808.38 KB
+               - ScanRows: 50.0K (50000)
+               - ScannerWorkerWaitTime: 181.0us
+               - SegmentsPrunedByTso: 0
+               - TabletNum: 2
+               - TabletsPrunedByRuntimeFilter: 0
+               - TabletsPrunedByTso: 0
+               - TotalPartitionsForRFPruning: 0
+              Scanner:
+                 - ReadColumns: [id, k]
+                 - PerScannerRunningTime: [1.006ms, 1.138ms, ]
+                 - PerScannerRowsRead: [25.00K, 25.00K, ]
+                 - PerScannerWaitTime: [91.000us, 90.000us, ]
+                 - PerScannerProjectionTime: [0.000ns, 0.000ns, ]
+                 - PerScannerPrepareTime: [17.000us, 30.000us, ]
+                 - PerScannerOpenTime: [550.000us, 528.000us, ]
+                 - EOS: True
+                 - ConditionCacheFilteredRows: 0
+                 - ConditionCacheHit: 0
+                 - NewlyCreateFreeBlocksNum: 7
+                 - ReaderInitTime: 1.78ms
+                   - TabletReaderInitTimer: 1.78ms
+                     - BlockReaderBuildHeapInitTimer: 1.57ms
+                     - BlockReaderRsReadersInitTimer: 4.0us
+                     - BlockReaderVcollectIterInitTimer: 2.0us
+                     - TabletReaderCaptureRsReadersTimer: 3.0us
+                     - TabletReaderInitConditionsParamTimer: 1000ns
+                     - TabletReaderInitDeleteConditionParamTimer: 0ns
+                     - TabletReaderInitKeysParamTimer: 9.0us
+                     - TabletReaderInitOrderbyKeysParamTimer: 0ns
+                 - RowsDelFiltered: 0
+                 - RunningScanner: 0
+                 - RunningScannerPeak: 2
+                 - ScannerCpuTime: 1.914ms
+                 - ScannerFilterTime: 1000ns
+                 - ScannerGetBlockTime: 1.16ms
+                   - BlockFetchTime: 1.502ms
+                     - SegmentIteratorInitTimer: 38.0us
+                       - SegmentIteratorInitColumnIteratorsTimer: 23.0us
+                       - SegmentIteratorInitIndexIteratorsTimer: 2.0us
+                       - SegmentIteratorInitSegmentPrefetchersTimer: 0ns
+                   - RowsetReaderGetSegmentIteratorsTimer: 13.0us
+                     - DeleteBitmapGetAggTime: 0ns
+                     - RowsetReaderCreateIteratorsTimer: 9.0us
+                   - RowsetReaderInitIteratorsTimer: 536.0us
+                   - RowsetReaderLoadSegmentsTimer: 458.0us
+                   - SegmentCreateColumnReadersTimer: 23.0us
+                   - SegmentLoadIndexTimer: 30.0us
+                 - ScannerInitTime: 52.0us
+                 - StatisticsCollectTime: 0ns
+                SegmentIterator:
+                   - AdaptiveBatchPredictMaxRows: 8.16K (8160)
+                   - AdaptiveBatchPredictMinRows: 4.096K (4096)
+                   - AnnIndexCacheHitCnt: 0
+                   - AnnIndexFallbackBruteForceCnt: 0
+                   - AnnIndexLoadCosts: 0ns
+                   - AnnIndexRangeCacheHitCnt: 0
+                   - AnnIndexRangeFallbackBySmallCandidateCnt: 0
+                   - AnnIndexRangeFallbackSmallCandidateRows: 0
+                   - AnnIndexRangeSearchCnt: 0
+                   - AnnIndexRangeSearchCosts: 0ns
+                     - AnnIndexRangeEnginePrepareCosts: 0ns
+                     - AnnIndexRangeEngineSearchCosts: 0ns
+                     - AnnIndexRangeResultPostProcessCosts: 0ns
+                       - AnnIndexRangeEngineConvertCosts: 0ns
+                       - AnnIndexRangeResultConvertCosts: 0ns
+                   - AnnIndexRangeSearchFiltered: 0
+                   - AnnIndexTopNFallbackBySmallCandidateCnt: 0
+                   - AnnIndexTopNFallbackSmallCandidateRows: 0
+                   - AnnIndexTopNFiltered: 0
+                   - AnnIndexTopNSearchCnt: 0
+                   - AnnIndexTopNSearchCosts: 0ns
+                     - AnnIndexTopNEnginePrepareCosts: 0ns
+                     - AnnIndexTopNEngineSearchCosts: 0ns
+                     - AnnIndexTopNResultPostProcessCosts: 0ns
+                       - AnnIndexTopNEngineConvertCosts: 0ns
+                       - AnnIndexTopNResultConvertCosts: 0ns
+                   - AnnIvfOnDiskCacheHitCnt: 0
+                   - AnnIvfOnDiskCacheMissCnt: 0
+                   - AnnIvfOnDiskLoadCosts: 0ns
+                   - BlockInitSeekCount: 38
+                   - BlockInitSeekTime: 241.0us
+                   - BlockInitTime: 266.0us
+                   - BlockLoadTime: 1.224ms
+                   - BlocksLoad: 10
+                   - CachedPagesNum: 2
+                   - CollectIteratorMergeTime: 0ns
+                   - CompressedBytesRead: 7.99 KB
+                   - DecompressorTimer: 137.0us
+                   - ExprFilterEvalTime: 0ns
+                   - ExprZoneMapFilteredPages: 0
+                   - ExprZoneMapFilteredSegments: 0
+                   - ExprZoneMapUnusableEvals: 0
+                   - FileCache: 0ns
+                     - AsyncCacheWriteBufferAllocFailCount: 0
+                     - AsyncCacheWriteDropStaleEpochCount: 0
+                     - AsyncCacheWriteRejectedCount: 0
+                     - AsyncCacheWriteSubmittedCount: 0
+                     - BlockWaitSuccessCount: 0
+                     - BlockWaitTimeoutCount: 0
+                     - BytesScannedFromCache: 0.00 
+                     - BytesScannedFromPeer: 0.00 
+                     - BytesScannedFromRemote: 0.00 
+                     - BytesWriteIntoCache: 0.00 
+                     - CacheGetOrSetTimer: 0ns
+                     - CrossCGPeerBytesRead: 0.00 
+                     - CrossCGPeerIOTime: 0ns
+                     - CrossCGPeerIOTotal: 0
+                     - GetTimer: 0ns
+                     - InflightWriteBufferIndexHitCount: 0
+                     - InflightWriteBufferIndexMissCount: 0
+                     - InvertedIndexBytesScannedFromCache: 0.00 
+                     - InvertedIndexBytesScannedFromPeer: 0.00 
+                     - InvertedIndexBytesScannedFromRemote: 0.00 
+                     - InvertedIndexBytesWriteIntoCache: 0.00 
+                     - InvertedIndexIOTimer: 0ns
+                     - InvertedIndexLocalIOUseTimer: 0ns
+                     - InvertedIndexNumLocalIOTotal: 0
+                     - InvertedIndexNumPeerIOTotal: 0
+                     - InvertedIndexNumRemoteIOTotal: 0
+                     - InvertedIndexPeerIOUseTimer: 0ns
+                     - InvertedIndexRangeReadCount: 0
+                     - InvertedIndexReadBytes: 0.00 
+                     - InvertedIndexRemoteIOUseTimer: 0ns
+                     - InvertedIndexRemotePhysicalReadBytes: 0.00 
+                     - InvertedIndexRequestBytes: 0.00 
+                     - InvertedIndexSerialReadRounds: 0
+                     - InvertedIndexWriteCacheIOUseTimer: 0ns
+                     - LocalIOUseTimer: 0ns
+                     - LockWaitTimer: 0ns
+                     - NumLocalIOTotal: 0
+                     - NumPeerIOTotal: 0
+                     - NumRemoteIOTotal: 0
+                     - NumSkipCacheIOTotal: 0
+                     - PeerIOUseTimer: 0ns
+                     - PeerLazyFetch: 0
+                     - PeerLazyFetchTime: 0ns
+                     - PeerRaceWin: 0
+                     - ProbeDownloadedHitCount: 0
+                     - ProbeDownloadingHitCount: 0
+                     - ProbeMissCount: 0
+                     - ReadCacheFileDirectlyTimer: 0ns
+                     - RemoteIOUseTimer: 0ns
+                     - RemoteOnlyOnMissThresholdBytes: 0.00 
+                     - RemoteOnlyOnMissThresholdBytesPeak: 0.00 
+                     - RemoteOnlyOnMissTriggered: 0
+                     - RemoteOnlyOnMissTriggeredPeak: 0
+                     - S3RaceWin: 0
+                     - SameCGPeerBytesRead: 0.00 
+                     - SameCGPeerIOTime: 0ns
+                     - SameCGPeerIOTotal: 0
+                     - SegmentFooterIndexBytesScannedFromCache: 0.00 
+                     - SegmentFooterIndexBytesScannedFromPeer: 0.00 
+                     - SegmentFooterIndexBytesScannedFromRemote: 0.00 
+                     - SegmentFooterIndexBytesWriteIntoCache: 0.00 
+                     - SegmentFooterIndexLocalIOUseTimer: 0ns
+                     - SegmentFooterIndexNumLocalIOTotal: 0
+                     - SegmentFooterIndexNumPeerIOTotal: 0
+                     - SegmentFooterIndexNumRemoteIOTotal: 0
+                     - SegmentFooterIndexPeerIOUseTimer: 0ns
+                     - SegmentFooterIndexRemoteIOUseTimer: 0ns
+                     - SegmentFooterIndexWriteCacheIOUseTimer: 0ns
+                     - SetTimer: 0ns
+                     - WaitOtherDownloaderTimer: 0ns
+                     - WriteCacheIOUseTimer: 0ns
+                   - GenerateRowRangeByBloomFilterIndexTime: 0ns
+                   - GenerateRowRangeByColumnConditionsTime: 2.0us
+                   - GenerateRowRangeByDictTime: 0ns
+                   - GenerateRowRangeByKeysTime: 259.0us
+                   - GenerateRowRangeByZoneMapIndexTime: 0ns
+                   - GramIndexCandidateRows: 0
+                   - GramIndexGateGaveUp: 0
+                   - IOTimer: 49.0us
+                   - InZoneMapPointCheckCount: 0
+                   - InZoneMapRangeOnlyCount: 0
+                   - InvertedIndexAnalyzerTime: 0ns
+                   - InvertedIndexConjunctsShortCircuited: 0
+                   - InvertedIndexDowngradeCount: 0
+                   - InvertedIndexFilterTime: 0ns
+                   - InvertedIndexLookupTimer: 0ns
+                   - InvertedIndexQueryBitmapCopyTime: 0ns
+                   - InvertedIndexQueryCacheHit: 0
+                   - InvertedIndexQueryCacheInsert: 0
+                   - InvertedIndexQueryCacheLookup: 0
+                   - InvertedIndexQueryCacheMiss: 0
+                   - InvertedIndexQueryNullBitmapTime: 0ns
+                   - InvertedIndexQueryTime: 0ns
+                   - InvertedIndexSearcherCacheHit: 0
+                   - InvertedIndexSearcherCacheMiss: 0
+                   - InvertedIndexSearcherOpenTime: 0ns
+                   - InvertedIndexSearcherSearchExecTime: 0ns
+                   - InvertedIndexSearcherSearchInitTime: 0ns
+                   - InvertedIndexSearcherSearchTime: 0ns
+                   - LazyReadPrunedTime: 0ns
+                   - LazyReadSeekCount: 0
+                   - LazyReadSeekTime: 0ns
+                   - LazyReadTime: 0ns
+                   - NonPredicateColumnReadTime: 0ns
+                   - NumSegmentFiltered: 0
+                   - NumSegmentTotal: 2
+                   - OutputColumnTime: 3.0us
+                   - OutputIndexResultColumnTime: 0ns
+                   - PredicateColumnReadSeekCount: 16
+                   - PredicateColumnReadSeekTime: 213.0us
+                   - PredicateColumnReadTime: 1.191ms
+                   - RowsBloomFilterFiltered: 0
+                   - RowsConditionsFiltered: 0
+                   - RowsExprPredFiltered: 0
+                   - RowsExprPredInput: 0
+                   - RowsGramIndexFiltered: 0
+                   - RowsInvertedIndexFiltered: 0
+                   - RowsKeyRangeFiltered: 50.0K (50000)
+                   - RowsShortCircuitPredFiltered: 0
+                   - RowsShortCircuitPredInput: 0
+                   - RowsStatsFiltered: 0
+                   - RowsVectorPredFiltered: 0
+                   - RowsVectorPredInput: 0
+                   - RowsZoneMapRuntimePredicateFiltered: 0
+                   - SegmentDictFiltered: 0
+                   - ShortPredEvalTime: 0ns
+                   - TotalPagesNum: 22
+                   - UncompressedBytesRead: 808.38 KB
+                   - VariantDocValueColumnIterCount: 0
+                   - VariantFillPathFromSparseColumnTimer: 0ns
+                   - VariantScanSparseColumnBytes: 0.00 
+                   - VariantScanSparseColumnTimer: 0ns
+                   - VariantSubtreeDefaultIterCount: 0
+                   - VariantSubtreeHierarchicalIterCount: 0
+                   - VariantSubtreeLeafIterCount: 0
+                   - VariantSubtreeSparseIterCount: 0
+                   - VectorPredEvalTime: 0ns
+                IndexFilter:
+  LoadChannels:
+
+Appendix:
+
+PhysicalPlan:
+PhysicalResultSink[57] ( outputExprs=[k#1, n#2, total#3] )
+     +--PhysicalTopN[56]@3 ( stats=0.5, limit=5, offset=0, orderKeys=[total#3 desc, k#1 asc null first], phase=MERGE_SORT )
+        +--PhysicalDistribute[55]@5 ( stats=0.5 actualRows=5, distributionSpec=DistributionSpecGather )
+           +--PhysicalTopN[54]@5 ( stats=0.5 actualRows=5, limit=5, offset=0, orderKeys=[total#3 desc, k#1 asc null first], phase=LOCAL_SORT )
+              +--PhysicalHashAggregate[53]@2 ( stats=0.5 actualRows=1000, aggPhase=GLOBAL, aggMode=BUFFER_TO_RESULT, maybeUseStreaming=false, groupByExpr=[k#1], outputExpr=[k#1, count(partial_count(*)#4) AS `n`#2, sum(partial_sum(id)#5) AS `total`#3], partitionExpr=Optional.empty, topnFilter=false, topnPushDown=false )
+                 +--PhysicalDistribute[52]@6 ( stats=0.5 actualRows=1000, distributionSpec=DistributionSpecHash ( orderedShuffledColumns=[1], shuffleType=EXECUTION_BUCKETED, tableId=-1, selectedIndexId=-1, partitionIds=[], equivalenceExprIds=[[1]], exprIdToEquivalenceSet={1=0} ) )
+                    +--PhysicalHashAggregate[51]@6 ( stats=0.5 actualRows=1000, aggPhase=LOCAL, aggMode=INPUT_TO_BUFFER, maybeUseStreaming=true, groupByExpr=[k#1], outputExpr=[k#1, partial_count(*) AS `partial_count(*)`#4, partial_sum(id#0) AS `partial_sum(id)`#5], partitionExpr=Optional.empty, topnFilter=false, topnPushDown=false )
+                       +--PhysicalFilter[50]@1 ( stats=0.5, predicates=(id#0 >= 50000) )
+                          +--PhysicalOlapScan[38]@0 ( table=scale_numbers, stats=1 actualRows=50000, operativeSlots=[id#0, k#1], virtualColumns=[] )
+     PhysicalOlapScan[38]@0 ( table=scale_numbers, stats=1 actualRows=50000, operativeSlots=[id#0, k#1], virtualColumns=[] )
+       id#0 -> unknown(1.0)
+       k#1 -> unknown(1.0)
+     

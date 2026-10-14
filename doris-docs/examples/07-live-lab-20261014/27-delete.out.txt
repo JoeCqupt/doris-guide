@@ -1,0 +1,37 @@
+--------------
+DELETE FROM doris_book.unique_updates WHERE id=7
+--------------
+
+Query OK, 1 row affected (0.051 sec)
+{'label':'label_f9562a491d394d6b_9516eec9bb053a86', 'status':'VISIBLE', 'txnId':'17'}
+
+--------------
+SELECT COUNT(*) FROM doris_book.unique_updates
+--------------
+
++----------+
+| COUNT(*) |
++----------+
+|        0 |
++----------+
+1 row in set (0.011 sec)
+
+--------------
+INSERT INTO doris_book.unique_updates VALUES(7,'C',40,120)
+--------------
+
+Query OK, 1 row affected (0.046 sec)
+{'label':'label_7d63403647b74566_ae17b231c7e00be4', 'status':'VISIBLE', 'txnId':'18'}
+
+--------------
+SELECT * FROM doris_book.unique_updates
+--------------
+
++------+------+-------+------+
+| id   | name | score | seq  |
++------+------+-------+------+
+|    7 | C    |    40 |  120 |
++------+------+-------+------+
+1 row in set (0.007 sec)
+
+Bye

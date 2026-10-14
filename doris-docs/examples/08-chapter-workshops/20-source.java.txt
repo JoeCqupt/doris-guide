@@ -1,0 +1,11 @@
+    private void ask(UserIdentity subject, AuthorizedResource resource, AccessRequirement requirement,
+            AccessContext context) throws AccessDeniedException {
+        AuthorizationPlugin controller = controllerOf(resource);
+        AccessContext outer = enterCheck(context);
+        try {
+            checkInClassLoaderOf(controller, () -> controller.checkPrivilege(
+                    AccessTranslation.subjectOf(subject), resource, requirement, context));
+        } finally {
+            leaveCheck(outer);
+        }
+    }

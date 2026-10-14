@@ -1,0 +1,148 @@
+--------------
+SET enable_profile=true
+--------------
+
+Query OK, 0 rows affected (0.001 sec)
+
+--------------
+SET auto_profile_threshold_ms=0
+--------------
+
+Query OK, 0 rows affected (0.001 sec)
+
+--------------
+EXPLAIN SELECT city,revenue FROM (SELECT city,amount AS revenue FROM orders_intro_v1)t WHERE revenue>100
+--------------
+
++-----------------------------------------------------------------------------+
+| Explain String(Nereids Planner)                                             |
++-----------------------------------------------------------------------------+
+| PLAN FRAGMENT 0                                                             |
+|   OUTPUT EXPRS:                                                             |
+|     city[#6]                                                                |
+|     revenue[#7]                                                             |
+|   PARTITION: HASH_PARTITIONED: order_id[#1]                                 |
+|                                                                             |
+|   HAS_COLO_PLAN_NODE: false                                                 |
+|                                                                             |
+|   VRESULT SINK                                                              |
+|      MYSQL_PROTOCOL                                                         |
+|                                                                             |
+|   0:VOlapScanNode(27)                                                       |
+|      TABLE: doris_book.orders_intro_v1(orders_intro_v1), PREAGGREGATION: ON |
+|      PREDICATES: (amount[#4] > 100.00)                                      |
+|      partitions=1/1 (orders_intro_v1)                                       |
+|      tablets=2/2, tabletList=1791956598859,1791956598861                    |
+|      cardinality=1, avgRowSize=0.0, numNodes=1                              |
+|      pushAggOp=NONE                                                         |
+|      POOLING-SCAN                                                           |
+|      final projections: city[#3], amount[#4]                                |
+|      final project output tuple id: 1                                       |
+|                                                                             |
+|                                                                             |
+|                                                                             |
+| ========== STATISTICS ==========                                            |
+| planned with unknown column statistics                                      |
++-----------------------------------------------------------------------------+
+26 rows in set (0.010 sec)
+
+--------------
+SELECT city,revenue FROM (SELECT city,amount AS revenue FROM orders_intro_v1)t WHERE revenue>100 ORDER BY revenue
+--------------
+
++--------+---------+
+| city   | revenue |
++--------+---------+
+| 上海   |  120.00 |
+| 杭州   |  200.00 |
++--------+---------+
+2 rows in set (0.023 sec)
+
+--------------
+EXPLAIN SELECT order_id,revenue FROM (SELECT order_id,amount AS revenue FROM orders_intro_v1 ORDER BY order_id LIMIT 2)t WHERE revenue>100
+--------------
+
++-------------------------------------------------------------------------------------+
+| Explain String(Nereids Planner)                                                     |
++-------------------------------------------------------------------------------------+
+| PLAN FRAGMENT 0                                                                     |
+|   OUTPUT EXPRS:                                                                     |
+|     order_id[#13]                                                                   |
+|     revenue[#14]                                                                    |
+|   PARTITION: UNPARTITIONED                                                          |
+|                                                                                     |
+|   HAS_COLO_PLAN_NODE: false                                                         |
+|                                                                                     |
+|   VRESULT SINK                                                                      |
+|      MYSQL_PROTOCOL                                                                 |
+|                                                                                     |
+|   4:VSELECT(48)                                                                     |
+|   |  predicates: (revenue[#14] > 100.00)                                            |
+|   |  distribute expr lists:                                                         |
+|   |                                                                                 |
+|   3:VMaterializeNode                                                                |
+|   |  materialize tuple id:3                                                         |
+|   |  output tuple id:4                                                              |
+|   |  projectList:[order_id, revenue]                                                |
+|   |  column_descs_lists[[`amount` decimalv3(12,2) NOT NULL]]                        |
+|   |  locations: [[1]]                                                               |
+|   |  column_idxs_lists: [[4]]                                                       |
+|   |  row_ids: [__DORIS_GLOBAL_ROWID_COL__orders_intro_v1]                           |
+|   |  isTopMaterializeNode: true                                                     |
+|   |  final projections: order_id[#11], revenue[#12]                                 |
+|   |  final project output tuple id: 4                                               |
+|   |                                                                                 |
+|   2:VMERGING-EXCHANGE                                                               |
+|      offset: 0                                                                      |
+|      limit: 2                                                                       |
+|      distribute expr lists:                                                         |
+|                                                                                     |
+| PLAN FRAGMENT 1                                                                     |
+|                                                                                     |
+|   PARTITION: HASH_PARTITIONED: order_id[#1]                                         |
+|                                                                                     |
+|   HAS_COLO_PLAN_NODE: false                                                         |
+|                                                                                     |
+|   STREAM DATA SINK                                                                  |
+|     EXCHANGE ID: 02                                                                 |
+|     UNPARTITIONED                                                                   |
+| IS_MERGE: true                                                                      |
+|                                                                                     |
+|   1:VTOP-N(52)                                                                      |
+|   |  order by: order_id[#9] ASC                                                     |
+|   |  algorithm: heap sort                                                           |
+|   |  local merge sort                                                               |
+|   |  merge by exchange                                                              |
+|   |  offset: 0                                                                      |
+|   |  limit: 2                                                                       |
+|   |  distribute expr lists: order_id[#7]                                            |
+|   |                                                                                 |
+|   0:VOlapScanNode(38)                                                               |
+|      TABLE: doris_book.orders_intro_v1(orders_intro_v1), PREAGGREGATION: ON         |
+|      partitions=1/1 (orders_intro_v1)                                               |
+|      tablets=2/2, tabletList=1791956598859,1791956598861                            |
+|      cardinality=1, avgRowSize=0.0, numNodes=1                                      |
+|      pushAggOp=NONE                                                                 |
+|      POOLING-SCAN                                                                   |
+|      final projections: order_id[#1], __DORIS_GLOBAL_ROWID_COL__orders_intro_v1[#6] |
+|      final project output tuple id: 1                                               |
+|                                                                                     |
+|                                                                                     |
+|                                                                                     |
+| ========== STATISTICS ==========                                                    |
+| planned with unknown column statistics                                              |
++-------------------------------------------------------------------------------------+
+66 rows in set (0.017 sec)
+
+--------------
+SELECT COUNT(*) FROM (SELECT order_id,amount AS revenue FROM orders_intro_v1 ORDER BY order_id LIMIT 2)t WHERE revenue>100
+--------------
+
++----------+
+| COUNT(*) |
++----------+
+|        0 |
++----------+
+1 row in set (0.024 sec)
+
+Bye

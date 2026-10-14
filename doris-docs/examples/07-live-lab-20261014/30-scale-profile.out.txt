@@ -1,0 +1,231 @@
+--------------
+SET enable_profile=true
+--------------
+
+Query OK, 0 rows affected (0.001 sec)
+
+--------------
+SET auto_profile_threshold_ms=0
+--------------
+
+Query OK, 0 rows affected (0.001 sec)
+
+--------------
+EXPLAIN SELECT k,COUNT(*) n,SUM(id) total FROM doris_book.scale_numbers WHERE id>=50000 GROUP BY k ORDER BY total DESC,k LIMIT 5
+--------------
+
++----------------------------------------------------------------------------+
+| Explain String(Nereids Planner)                                            |
++----------------------------------------------------------------------------+
+| PLAN FRAGMENT 0                                                            |
+|   OUTPUT EXPRS:                                                            |
+|     k[#8]                                                                  |
+|     n[#9]                                                                  |
+|     total[#10]                                                             |
+|   PARTITION: UNPARTITIONED                                                 |
+|                                                                            |
+|   HAS_COLO_PLAN_NODE: false                                                |
+|                                                                            |
+|   VRESULT SINK                                                             |
+|      MYSQL_PROTOCOL                                                        |
+|                                                                            |
+|   5:VMERGING-EXCHANGE                                                      |
+|      offset: 0                                                             |
+|      limit: 5                                                              |
+|      distribute expr lists:                                                |
+|                                                                            |
+| PLAN FRAGMENT 1                                                            |
+|   OUTPUT EXPRS:                                                            |
+|     k[#2]                                                                  |
+|     partial_count(*)[#3]                                                   |
+|     partial_sum(id)[#4]                                                    |
+|   PARTITION: HASH_PARTITIONED: k[#2]                                       |
+|                                                                            |
+|   HAS_COLO_PLAN_NODE: true                                                 |
+|                                                                            |
+|   STREAM DATA SINK                                                         |
+|     EXCHANGE ID: 05                                                        |
+|     UNPARTITIONED                                                          |
+| IS_MERGE: true                                                             |
+|                                                                            |
+|   4:VTOP-N(55)                                                             |
+|   |  order by: total[#10] DESC, k[#8] ASC                                  |
+|   |  algorithm: heap sort                                                  |
+|   |  local merge sort                                                      |
+|   |  merge by exchange                                                     |
+|   |  offset: 0                                                             |
+|   |  limit: 5                                                              |
+|   |  distribute expr lists: k[#5]                                          |
+|   |                                                                        |
+|   3:VAGGREGATE (merge finalize)(54)                                        |
+|   |  output: count(partial_count(*)[#3])[#6], sum(partial_sum(id)[#4])[#7] |
+|   |  group by: k[#2]                                                       |
+|   |  sortByGroupKey:false                                                  |
+|   |  cardinality=0                                                         |
+|   |  distribute expr lists: k[#2]                                          |
+|   |                                                                        |
+|   2:VEXCHANGE                                                              |
+|      offset: 0                                                             |
+|      distribute expr lists:                                                |
+|                                                                            |
+| PLAN FRAGMENT 2                                                            |
+|                                                                            |
+|   PARTITION: HASH_PARTITIONED: id[#0]                                      |
+|                                                                            |
+|   HAS_COLO_PLAN_NODE: false                                                |
+|                                                                            |
+|   STREAM DATA SINK                                                         |
+|     EXCHANGE ID: 02                                                        |
+|     HASH_PARTITIONED: k[#2]                                                |
+|                                                                            |
+|   1:VAGGREGATE (update serialize)(52)                                      |
+|   |  STREAMING                                                             |
+|   |  output: partial_count(*)[#3], partial_sum(id[#0])[#4]                 |
+|   |  group by: k[#1]                                                       |
+|   |  sortByGroupKey:false                                                  |
+|   |  cardinality=0                                                         |
+|   |  distribute expr lists: id[#0]                                         |
+|   |                                                                        |
+|   0:VOlapScanNode(39)                                                      |
+|      TABLE: doris_book.scale_numbers(scale_numbers), PREAGGREGATION: ON    |
+|      PREDICATES: (id[#0] >= 50000)                                         |
+|      partitions=1/1 (scale_numbers)                                        |
+|      tablets=2/2, tabletList=1791956598937,1791956598939                   |
+|      cardinality=1, avgRowSize=0.0, numNodes=1                             |
+|      pushAggOp=NONE                                                        |
+|      POOLING-SCAN                                                          |
+|                                                                            |
+|                                                                            |
+|                                                                            |
+| ========== STATISTICS ==========                                           |
+| planned with unknown column statistics                                     |
++----------------------------------------------------------------------------+
+82 rows in set (0.008 sec)
+
+--------------
+SELECT k,COUNT(*) n,SUM(id) total FROM doris_book.scale_numbers WHERE id>=50000 GROUP BY k ORDER BY total DESC,k LIMIT 5
+--------------
+
++------+------+---------+
+| k    | n    | total   |
++------+------+---------+
+|  999 |   50 | 3774950 |
+|  998 |   50 | 3774900 |
+|  997 |   50 | 3774850 |
+|  996 |   50 | 3774800 |
+|  995 |   50 | 3774750 |
++------+------+---------+
+5 rows in set (0.019 sec)
+
+--------------
+EXPLAIN SELECT COUNT(*) FROM doris_book.scale_numbers a JOIN doris_book.unique_updates b ON a.k=b.id
+--------------
+
++---------------------------------------------------------------------------+
+| Explain String(Nereids Planner)                                           |
++---------------------------------------------------------------------------+
+| PLAN FRAGMENT 0                                                           |
+|   OUTPUT EXPRS:                                                           |
+|     COUNT(*)[#16]                                                         |
+|   PARTITION: UNPARTITIONED                                                |
+|                                                                           |
+|   HAS_COLO_PLAN_NODE: true                                                |
+|                                                                           |
+|   VRESULT SINK                                                            |
+|      MYSQL_PROTOCOL                                                       |
+|                                                                           |
+|   6:VAGGREGATE (merge finalize)(91)                                       |
+|   |  output: count(partial_count(*)[#15])[#16]                            |
+|   |  group by:                                                            |
+|   |  sortByGroupKey:false                                                 |
+|   |  cardinality=1                                                        |
+|   |  distribute expr lists:                                               |
+|   |                                                                       |
+|   5:VEXCHANGE                                                             |
+|      offset: 0                                                            |
+|      distribute expr lists:                                               |
+|                                                                           |
+| PLAN FRAGMENT 1                                                           |
+|                                                                           |
+|   PARTITION: HASH_PARTITIONED: id[#9]                                     |
+|                                                                           |
+|   HAS_COLO_PLAN_NODE: false                                               |
+|                                                                           |
+|   STREAM DATA SINK                                                        |
+|     EXCHANGE ID: 05                                                       |
+|     UNPARTITIONED                                                         |
+|                                                                           |
+|   4:VAGGREGATE (update serialize)(89)                                     |
+|   |  output: partial_count(*)[#15]                                        |
+|   |  group by:                                                            |
+|   |  sortByGroupKey:false                                                 |
+|   |  cardinality=1                                                        |
+|   |  distribute expr lists:                                               |
+|   |                                                                       |
+|   3:VHASH JOIN(87)                                                        |
+|   |  join op: INNER JOIN(BROADCAST)[]                                     |
+|   |  equal join conjunct: (k[#11] = id[#8])                               |
+|   |  cardinality=3                                                        |
+|   |  vec output tuple id: 5                                               |
+|   |  output tuple id: 5                                                   |
+|   |  vIntermediate tuple ids: 4                                           |
+|   |  hash output slot ids: 8                                              |
+|   |  final projections: 1                                                 |
+|   |  final project output tuple id: 5                                     |
+|   |  distribute expr lists:                                               |
+|   |  distribute expr lists:                                               |
+|   |                                                                       |
+|   |----1:VEXCHANGE                                                        |
+|   |       offset: 0                                                       |
+|   |       distribute expr lists: id[#8]                                   |
+|   |                                                                       |
+|   2:VOlapScanNode(63)                                                     |
+|      TABLE: doris_book.scale_numbers(scale_numbers), PREAGGREGATION: ON   |
+|      partitions=1/1 (scale_numbers)                                       |
+|      tablets=2/2, tabletList=1791956598937,1791956598939                  |
+|      cardinality=1, avgRowSize=0.0, numNodes=1                            |
+|      pushAggOp=NONE                                                       |
+|      POOLING-SCAN                                                         |
+|      final projections: k[#10]                                            |
+|      final project output tuple id: 3                                     |
+|                                                                           |
+| PLAN FRAGMENT 2                                                           |
+|                                                                           |
+|   PARTITION: HASH_PARTITIONED: id[#0]                                     |
+|                                                                           |
+|   HAS_COLO_PLAN_NODE: false                                               |
+|                                                                           |
+|   STREAM DATA SINK                                                        |
+|     EXCHANGE ID: 01                                                       |
+|     UNPARTITIONED                                                         |
+|                                                                           |
+|   0:VOlapScanNode(73)                                                     |
+|      TABLE: doris_book.unique_updates(unique_updates), PREAGGREGATION: ON |
+|      PREDICATES: (__DORIS_DELETE_SIGN__[#5] = 0)                          |
+|      partitions=1/1 (unique_updates)                                      |
+|      tablets=1/1, tabletList=1791956598868                                |
+|      cardinality=3, avgRowSize=8836.667, numNodes=1                       |
+|      pushAggOp=NONE                                                       |
+|      POOLING-SCAN                                                         |
+|      final projections: id[#0]                                            |
+|      final project output tuple id: 1                                     |
+|                                                                           |
+|                                                                           |
+|                                                                           |
+| ========== STATISTICS ==========                                          |
+| planned with unknown column statistics                                    |
++---------------------------------------------------------------------------+
+90 rows in set (0.020 sec)
+
+--------------
+SELECT COUNT(*) FROM doris_book.scale_numbers a JOIN doris_book.unique_updates b ON a.k=b.id
+--------------
+
++----------+
+| COUNT(*) |
++----------+
+|      100 |
++----------+
+1 row in set (0.018 sec)
+
+Bye

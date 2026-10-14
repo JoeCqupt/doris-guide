@@ -1,0 +1,18 @@
+{
+  "checked_at": "2026-10-14T20:27:01.344597+08:00",
+  "chapters_with_four_stages": 28,
+  "original_topics_preserved": 206,
+  "exact_source_excerpts_checked": 28,
+  "unchanged_runtime_evidence_files": 141,
+  "document_check": {
+    "documents": 58,
+    "local_links": 571,
+    "source_paths": 164,
+    "errors": []
+  },
+  "interpretation_errata": [
+    "SHOW LOAD Type=INSERT is distinct from SQL verb; label_f9562a491d394d6b_9516eec9bb053a86 originated from DELETE txnId=17. Raw records unchanged."
+  ],
+  "no_services_started_in_this_revision": true,
+  "errors": []
+}

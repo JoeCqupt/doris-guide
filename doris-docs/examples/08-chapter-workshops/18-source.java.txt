@@ -1,0 +1,15 @@
+    public synchronized boolean replayJournal(long toJournalId) {
+        long newToJournalId = toJournalId;
+        if (newToJournalId == -1) {
+            newToJournalId = getMaxJournalId();
+        }
+        if (newToJournalId <= replayedJournalId.get()) {
+            return false;
+        }
+
+        LOG.info("replayed journal id is {}, replay to journal id is {}", replayedJournalId, newToJournalId);
+        JournalCursor cursor = editLog.read(replayedJournalId.get() + 1, newToJournalId);
+        if (cursor == null) {
+            LOG.warn("failed to get cursor from {} to {}", replayedJournalId.get() + 1, newToJournalId);
+            return false;
+        }

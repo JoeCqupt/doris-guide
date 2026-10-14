@@ -1,0 +1,24 @@
+    private Plan planWithoutLock(
+            LogicalPlan plan, PhysicalProperties requireProperties, ExplainLevel explainLevel,
+            boolean showPlanProcess) {
+        // analyze this query, resolve column, table and function
+        analyze(showAnalyzeProcess(explainLevel, showPlanProcess));
+        if (explainLevel == ExplainLevel.ANALYZED_PLAN || explainLevel == ExplainLevel.ALL_PLAN) {
+            analyzedPlan = cascadesContext.getRewritePlan();
+            if (explainLevel == ExplainLevel.ANALYZED_PLAN) {
+                return analyzedPlan;
+            }
+        }
+
+        // rule-based optimize
+        rewrite(showRewriteProcess(explainLevel, showPlanProcess));
+        // try to pre mv rewrite
+        preMaterializedViewRewrite();
+        if (explainLevel == ExplainLevel.REWRITTEN_PLAN || explainLevel == ExplainLevel.ALL_PLAN) {
+            rewrittenPlan = cascadesContext.getRewritePlan();
+            if (explainLevel == ExplainLevel.REWRITTEN_PLAN) {
+                return rewrittenPlan;
+            }
+        }
+
+        optimize(showPlanProcess);

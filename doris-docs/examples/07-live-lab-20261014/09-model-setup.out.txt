@@ -1,0 +1,21 @@
+--------------
+CREATE TABLE doris_book.unique_updates(id BIGINT, name VARCHAR(30),score INT,seq BIGINT) UNIQUE KEY(id) DISTRIBUTED BY HASH(id) BUCKETS 1 PROPERTIES('replication_num'='1','enable_unique_key_merge_on_write'='true','function_column.sequence_col'='seq')
+--------------
+
+Query OK, 0 rows affected (0.011 sec)
+
+--------------
+INSERT INTO doris_book.unique_updates VALUES(7,'A',10,100)
+--------------
+
+Query OK, 1 row affected (0.038 sec)
+{'label':'label_2927906f568949f1_ae22f834bb7e40db', 'status':'VISIBLE', 'txnId':'4'}
+
+--------------
+INSERT INTO doris_book.unique_updates VALUES(7,'B',20,90)
+--------------
+
+Query OK, 1 row affected (0.036 sec)
+{'label':'label_821b0693bed44a95_b141e5d8cfe71f58', 'status':'VISIBLE', 'txnId':'5'}
+
+Bye

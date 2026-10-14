@@ -1,0 +1,19 @@
+    public void releaseAndNotify(QueueToken releaseToken) {
+        AdmissionControl admissionControl = Env.getCurrentEnv().getAdmissionControl();
+        queueLock.lock();
+        try {
+            if (releaseToken != null) {
+                runningQueryQueue.remove(releaseToken);
+                waitingQueryQueue.remove(releaseToken);
+                admissionControl.removeQueueToken(releaseToken);
+            }
+            while (runningQueryQueue.size() < maxConcurrency) {
+                QueueToken queueToken = waitingQueryQueue.peek();
+                if (queueToken == null) {
+                    break;
+                }
+                if (queueToken.getQuerySlotCount() > maxConcurrency - usedSlotCount()) {
+                    break;
+                }
+                if (admissionControl.checkResourceAvailable(queueToken)) {
+                    queueToken.complete();

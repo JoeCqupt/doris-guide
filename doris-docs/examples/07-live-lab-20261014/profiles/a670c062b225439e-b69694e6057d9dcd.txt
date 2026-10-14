@@ -1,0 +1,104 @@
+Summary:
+   - Profile ID: a670c062b225439e-b69694e6057d9dcd
+   - Task Type: QUERY
+   - Start Time: 2026-10-14 13:45:07
+   - End Time: 2026-10-14 13:45:07
+   - Total: 5ms
+   - Task State: EOF
+   - User: root
+   - Default Catalog: internal
+   - Default Db: 
+   - Sql Statement: SELECT DATABASE()
+   - Distributed Plan: N/A
+   - Profile Completion State: COMPLETE
+Execution Summary:
+   - Workload Group: normal
+     - Max Concurrency: 2.147483647B (2147483647)
+     - Max Queue Size: 0
+     - Scan Thread Num: -1
+     - Max Remote Scan Thread Num: -1
+     - Min Remote Scan Thread Num: -1
+     - Memory Low Watermark: 75
+     - Memory High Watermark: 85
+     - Tag: N/A
+     - Read Bytes Per Second: -1.0 B/sec
+     - Remote Read Bytes Per Second: -1.0 B/sec
+   - Parse SQL Time: 3ms
+   - Plan Time: 3ms
+     - Garbage Collect During Plan Time: -1ms
+     - Nereids Preload External Metadata Time: 0ms
+     - Wait Change Visible Time: N/A
+     - Nereids Lock Table Time: N/A
+     - Nereids Analysis Time: N/A
+     - Nereids Rewrite Time: N/A
+       - Nereids Fold Const By BE Time: 0ms
+     - Nereids Collect Table Partition Time: N/A
+   - Nereids Pre Rewrite By Mv Time: N/A
+     - Nereids Optimize Time: N/A
+     - Nereids Translate Time: N/A
+       - Init Scan Node Time: N/A
+       - Finalize Scan Node Time: N/A
+         - Get Splits Time: N/A
+           - External Table Meta Time: N/A
+             - External Table Get Table Meta Time: N/A
+             - External Table Get Partition Values Time: N/A
+         - Get Partitions Time: N/A
+         - Get Partition Files Time: N/A
+             - External Table Get File Scan Tasks Time: N/A
+         - Sink Set Partition Values Time: N/A
+       - Create Scan Range Time: N/A
+     - Nereids Distribute Time: N/A
+   - Get Meta Version Time: N/A
+     - Get Meta Version Rate Limit Wait Time: N/A
+     - Get Partition Version Time: N/A
+     - Get Partition Version Count (hasData): N/A
+     - Get Partition Version Count: N/A
+     - Get Table Version Time: N/A
+     - Get Table Version Count: N/A
+   - Schedule Time: N/A
+     - Fragment Assign Time: N/A
+     - Fragment Serialize Time: N/A
+     - Fragment RPC Phase1 Time: N/A
+     - Fragment RPC Phase2 Time: N/A
+     - Fragment Compressed Size: 0.00 
+     - Fragment RPC Count: 0
+   - Schedule Time Of BE: {}
+   - Wait and Fetch Result Time: N/A
+   - Fetch Result Time: 0ms
+   - Write Result Time: 0ms
+   - Doris Version: a53b182f810
+   - Is Nereids: Yes
+   - Is Cached: Yes
+   - Total Instances Num: 0
+   - Instances Num Per BE: 
+   - Parallel Fragment Exec Instance Num: 6
+   - Trace ID: 
+   - Transaction Commit Time: N/A
+   - System Message: N/A
+   - Executed By Frontend: true
+   - Query Backend Selection: N/A
+   - Load Backend Selection: N/A
+   - Splits Assignment Weight: N/A
+     - Queue Timeout: 0
+
+ChangedSessionVariables:
+[
+  {
+    "VarName": "enable_profile",
+    "CurrentValue": "true",
+    "DefaultValue": "false"
+  },
+  {
+    "VarName": "auto_profile_threshold_ms",
+    "CurrentValue": "0",
+    "DefaultValue": "-1"
+  }
+]
+
+Appendix:
+
+PhysicalPlan:
+PhysicalSqlCache[2] ( queryId=6f6b0facedd14669-9a45b9533671d2fe, backend=none, rowCount=1 )
+     +--PhysicalResultSink[13] ( outputExprs=[DATABASE()#1] )
+        +--PhysicalOneRowRelation[11]@0 ( expressions=['' AS `DATABASE()`#1] )
+     

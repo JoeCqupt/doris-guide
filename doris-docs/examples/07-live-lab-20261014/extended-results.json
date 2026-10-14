@@ -1,0 +1,44 @@
+[
+  {
+    "case": "26-partition-table",
+    "passed": true,
+    "exit_code": 0,
+    "expected": null
+  },
+  {
+    "case": "27-delete",
+    "passed": true,
+    "exit_code": 0,
+    "expected": null
+  },
+  {
+    "case": "28-schema-change",
+    "passed": true,
+    "exit_code": 0,
+    "expected": null
+  },
+  {
+    "case": "29-scale-table",
+    "passed": true,
+    "exit_code": 0,
+    "expected": null
+  },
+  {
+    "case": "30-scale-profile",
+    "passed": true,
+    "exit_code": 0,
+    "expected": null
+  },
+  {
+    "case": "31-scale-assert",
+    "passed": true,
+    "exit_code": 0,
+    "expected": "999\t50\t3774950\n998\t50\t3774900\n997\t50\t3774850\n996\t50\t3774800\n995\t50\t3774750\n100"
+  },
+  {
+    "case": "32-before-restart",
+    "passed": true,
+    "exit_code": 0,
+    "expected": null
+  }
+]

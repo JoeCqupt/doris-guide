@@ -1,0 +1,100 @@
+--------------
+SET enable_profile=true
+--------------
+
+Query OK, 0 rows affected (0.001 sec)
+
+--------------
+SET auto_profile_threshold_ms=0
+--------------
+
+Query OK, 0 rows affected (0.001 sec)
+
+--------------
+EXPLAIN SELECT order_id,rn FROM (SELECT order_id,ROW_NUMBER() OVER(ORDER BY amount DESC,order_id) rn FROM doris_book.orders_intro_v1)t WHERE rn<=2
+--------------
+
++-----------------------------------------------------------------------------+
+| Explain String(Nereids Planner)                                             |
++-----------------------------------------------------------------------------+
+| PLAN FRAGMENT 0                                                             |
+|   OUTPUT EXPRS:                                                             |
+|     order_id[#13]                                                           |
+|     rn[#14]                                                                 |
+|   PARTITION: UNPARTITIONED                                                  |
+|                                                                             |
+|   HAS_COLO_PLAN_NODE: false                                                 |
+|                                                                             |
+|   VRESULT SINK                                                              |
+|      MYSQL_PROTOCOL                                                         |
+|                                                                             |
+|   4:VANALYTIC(55)                                                           |
+|   |  functions: [row_number()]                                              |
+|   |  order by: amount[#11] DESC NULLS LAST, order_id[#10] ASC NULLS FIRST   |
+|   |  window: ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW               |
+|   |  predicates: (rn[#12] <= 2)                                             |
+|   |  final projections: order_id[#10], rn[#12]                              |
+|   |  final project output tuple id: 5                                       |
+|   |  distribute expr lists:                                                 |
+|   |                                                                         |
+|   3:VMERGING-EXCHANGE                                                       |
+|      offset: 0                                                              |
+|      distribute expr lists: order_id[#10]                                   |
+|                                                                             |
+| PLAN FRAGMENT 1                                                             |
+|                                                                             |
+|   PARTITION: HASH_PARTITIONED: order_id[#1]                                 |
+|                                                                             |
+|   HAS_COLO_PLAN_NODE: false                                                 |
+|                                                                             |
+|   STREAM DATA SINK                                                          |
+|     EXCHANGE ID: 03                                                         |
+|     UNPARTITIONED                                                           |
+| IS_MERGE: true                                                              |
+|                                                                             |
+|   2:VSORT(52)                                                               |
+|   |  order by: amount[#11] DESC, order_id[#10] ASC                          |
+|   |  algorithm: full sort                                                   |
+|   |  local merge sort                                                       |
+|   |  merge by exchange                                                      |
+|   |  offset: 0                                                              |
+|   |  distribute expr lists:                                                 |
+|   |                                                                         |
+|   1:VPartitionTopN(51)                                                      |
+|   |  functions: row_number                                                  |
+|   |  order by: amount[#9] DESC, order_id[#8] ASC                            |
+|   |  has global limit: false                                                |
+|   |  partition limit: 2                                                     |
+|   |  partition topn phase: TWO_PHASE_LOCAL_PTOPN                            |
+|   |  distribute expr lists: order_id[#6]                                    |
+|   |                                                                         |
+|   0:VOlapScanNode(42)                                                       |
+|      TABLE: doris_book.orders_intro_v1(orders_intro_v1), PREAGGREGATION: ON |
+|      partitions=1/1 (orders_intro_v1)                                       |
+|      tablets=2/2, tabletList=1791956598859,1791956598861                    |
+|      cardinality=1, avgRowSize=0.0, numNodes=1                              |
+|      pushAggOp=NONE                                                         |
+|      POOLING-SCAN                                                           |
+|      final projections: order_id[#1], amount[#4]                            |
+|      final project output tuple id: 1                                       |
+|                                                                             |
+|                                                                             |
+|                                                                             |
+| ========== STATISTICS ==========                                            |
+| planned with unknown column statistics                                      |
++-----------------------------------------------------------------------------+
+65 rows in set (0.029 sec)
+
+--------------
+SELECT order_id,rn FROM (SELECT order_id,ROW_NUMBER() OVER(ORDER BY amount DESC,order_id) rn FROM doris_book.orders_intro_v1)t WHERE rn<=2 ORDER BY rn
+--------------
+
++----------+------+
+| order_id | rn   |
++----------+------+
+|        6 |    1 |
+|        3 |    2 |
++----------+------+
+2 rows in set (0.031 sec)
+
+Bye

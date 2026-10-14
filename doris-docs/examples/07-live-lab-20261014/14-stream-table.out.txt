@@ -1,0 +1,7 @@
+--------------
+CREATE TABLE doris_book.stream_events(id INT,v INT) DUPLICATE KEY(id) DISTRIBUTED BY HASH(id) BUCKETS 1 PROPERTIES('replication_num'='1')
+--------------
+
+Query OK, 0 rows affected (0.008 sec)
+
+Bye

@@ -1,0 +1,21 @@
+            // init memo
+            cascadesContext.toMemo();
+            if (cboInlinedPlan != null) {
+                cascadesContext.getMemo().copyIn(cboInlinedPlan, cascadesContext.getMemo().getRoot(), false);
+            }
+            // stats derive
+            cascadesContext.getMemo().getRoot().getLogicalExpressions()
+                    .forEach(groupExpression -> cascadesContext.pushJob(
+                            new DeriveStatsJob(groupExpression, cascadesContext.getCurrentJobContext())));
+            cascadesContext.getJobScheduler().executeJobPool(cascadesContext);
+            if (cascadesContext.getStatementContext().isDpHyp() || isDpHyp(cascadesContext)) {
+                // RightNow, dp hyper can only order 64 join operators
+                dpHypOptimize();
+                cascadesContext.getStatementContext().setDpHyp(false);
+                cascadesContext.getStatementContext().setAfterDpHyper(true);
+            }
+            cascadesContext.pushJob(
+                    new OptimizeGroupJob(cascadesContext.getMemo().getRoot(), cascadesContext.getCurrentJobContext()));
+            cascadesContext.getJobScheduler().executeJobPool(cascadesContext);
+
+            return null;

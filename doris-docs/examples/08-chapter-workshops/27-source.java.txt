@@ -1,0 +1,18 @@
+    private ShowResultSet handleShowLoad(ConnectContext ctx, StmtExecutor executor) throws Exception {
+        // first validate the where
+        boolean valid = validate(ctx);
+        if (!valid) {
+            throw new AnalysisException("Where clause should looks like: LABEL = \"your_load_label\","
+                    + " or LABEL LIKE \"matcher\", " + " or STATE = \"PENDING|ETL|LOADING|FINISHED|CANCELLED\", "
+                    + " or compound predicate with operator AND");
+        }
+
+        // then process the order by
+        ImmutableList<String> titles = isStreamLoad ? STREAM_LOAD_TITLE_NAMES : LOAD_TITLE_NAMES;
+        orderByPairs = getOrderByPairs(orderKeys, titles);
+
+        Set<EtlJobType> jobTypes = Sets.newHashSet(EnumSet.allOf(EtlJobType.class));
+        jobTypes.remove(EtlJobType.COPY);
+
+        // get the load info
+        Util.prohibitExternalCatalog(ctx.getDefaultCatalog(), this.getClass().getSimpleName());

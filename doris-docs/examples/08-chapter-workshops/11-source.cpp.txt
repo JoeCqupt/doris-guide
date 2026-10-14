@@ -1,0 +1,13 @@
+Status Segment::_open(OlapReaderStatistics* stats, const io::IOContext* source_io_ctx) {
+    std::shared_ptr<SegmentFooterPB> footer_pb_shared;
+    RETURN_IF_ERROR(_get_segment_footer(footer_pb_shared, stats, source_io_ctx));
+
+    _pk_index_meta.reset(
+            footer_pb_shared->has_primary_key_index_meta()
+                    ? new PrimaryKeyIndexMetaPB(footer_pb_shared->primary_key_index_meta())
+                    : nullptr);
+    // delete_bitmap_calculator_test.cpp
+    // DCHECK(footer.has_short_key_index_page());
+    _sk_index_page = footer_pb_shared->short_key_index_page();
+    _num_rows = footer_pb_shared->num_rows();
+

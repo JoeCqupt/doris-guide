@@ -1,0 +1,70 @@
+{
+  "read_date": "2026-10-14",
+  "source_kind": "local working files",
+  "source_root": "/Users/jiangyuan/open/doris",
+  "files": [
+    {
+      "path": "fe/fe-core/src/main/java/org/apache/doris/transaction/GlobalTransactionMgr.java",
+      "sha256": "ad0131f992ad1163cf61ffd7b1a807c24522048c9c14e3e70a2f33e6616389d6"
+    },
+    {
+      "path": "fe/fe-core/src/main/java/org/apache/doris/transaction/DatabaseTransactionMgr.java",
+      "sha256": "5479a537eabd42cf9b2a9273e57aa4ab912012a0d1ba479d57672b18edc4a749"
+    },
+    {
+      "path": "fe/fe-core/src/main/java/org/apache/doris/transaction/TransactionState.java",
+      "sha256": "bd745dd9e450f0d1d81179f6a79f8f6f436cb947ec53d86a4bc037a4cde5f31d"
+    },
+    {
+      "path": "fe/fe-core/src/main/java/org/apache/doris/transaction/PublishVersionDaemon.java",
+      "sha256": "940da10fda3486385923211123a447abb1b85557ede4a9ccd8fa85b328eae8f1"
+    },
+    {
+      "path": "fe/fe-core/src/main/java/org/apache/doris/transaction/TableCommitInfo.java",
+      "sha256": "79cbfd8420b9656476ece5e30b7c114cd3966b5198f345f8f78b3fee1e0b1dcb"
+    },
+    {
+      "path": "fe/fe-core/src/main/java/org/apache/doris/transaction/PartitionCommitInfo.java",
+      "sha256": "535dfb396336a9b12c823ffc709ce4525358c9a24db80f4560b1d91305e88e21"
+    },
+    {
+      "path": "fe/fe-core/src/test/java/org/apache/doris/transaction/GlobalTransactionMgrTest.java",
+      "sha256": "1f2de80fe42ff621b096972623881f17c3789f4ddaa453587dab9047740a85e2"
+    },
+    {
+      "path": "fe/fe-core/src/test/java/org/apache/doris/transaction/DatabaseTransactionMgrTest.java",
+      "sha256": "c43cf7340b94e91432d83dda11b42e54ca2aedf92e796f74c5c4fb4d06aeaa8e"
+    }
+  ],
+  "excerpts": [
+    {
+      "file": "fe/fe-core/src/main/java/org/apache/doris/transaction/GlobalTransactionMgr.java",
+      "start_line": 287,
+      "text": "try {\n            commitTransactionWithoutLock(db.getId(), tableList, transactionId, tabletCommitInfos, txnCommitAttachment);\n        } finally {\n            MetaLockUtils.writeUnlockTables(tableList);\n        }\n    }\n\n    private void commitTransaction2PC(long dbId, long transactionId)\n            throws UserException {\n        if (Config.disable_load_job) {\n            throw new TransactionCommitFailedException(\"disable_load_job is set to true, all load jobs are prevented\");\n        }\n\n        DatabaseTransactionMgr dbTransactionMgr = getDatabaseTransactionMgr(dbId);\n        dbTransactionMgr.commitTransaction(null, transactionId, null, null, true);\n    }\n\n    public boolean commitAndPublishTransaction(DatabaseIf db, List<Table> tableList, long transactionId,\n            List<TabletCommitInfo> tabletCommitInfos, long timeoutMillis)\n            throws UserException {\n        return commitAndPublishTransaction(db, tableList, transactionId, tabletCommitInfos, timeoutMillis, null);\n    }\n\n    public boolean commitAndPublishTransaction(DatabaseIf db, List<Table> tableList, long transactionId,\n            List<TabletCommitInfo> tabletCommitInfos, long timeoutMillis,\n            TxnCommitAttachment txnCommitAttachment)\n            throws UserException {\n        DatabaseTransactionMgr dbTransactionMgr = getDatabaseTransactionMgr(db.getId());\n        StopWatch stopWatch = new StopWatch();\n        stopWatch.start();\n        TransactionState transactionState = dbTransactionMgr.getTransactionState(transactionId);\n        List<Table> lockTableList = buildLockTableList(tableList, transactionState);\n        if (!MetaLockUtils.tryWriteLockTablesOrMetaException(lockTableList, timeoutMillis, TimeUnit.MILLISECONDS)) {\n            throw new UserException(\"get tableList write lock timeout, tableList=(\"\n                    + StringUtils.join(lockTableList, \",\") + \")\");\n        }\n        try {\n            commitTransactionWithoutLock(db.getId(), tableList, transactionId, tabletCommitInfos, txnCommitAttachment);\n        } finally {\n            MetaLockUtils.writeUnlockTables(lockTableList);\n        }\n        stopWatch.stop();\n        long publishTimeoutMillis = timeoutMillis - stopWatch.getTime();\n        if (publishTimeoutMillis < 0) {\n            // here commit transaction successfully cost too much time\n            // to cause that publishTimeoutMillis is less than zero,\n            // so we just return false to indicate publish timeout\n            return false;\n        }\n        return dbTransactionMgr.waitForTransactionFinished(db, transactionId, publishTimeoutMillis);"
+    },
+    {
+      "file": "fe/fe-core/src/main/java/org/apache/doris/transaction/DatabaseTransactionMgr.java",
+      "start_line": 1760,
+      "text": "// set COMMITTED only after idToTableCommitInfos is fully populated, so that\n        // PublishVersionDaemon (which checks status without synchronized(transactionState))\n        // will never see COMMITTED with empty commit info.\n        transactionState.setTransactionStatus(TransactionStatus.COMMITTED);\n        // Update in-memory state only; caller handles edit log persistence\n        unprotectUpdateInMemoryState(transactionState, false);\n        transactionState.setInvolvedBackends(totalInvolvedBackends);"
+    },
+    {
+      "file": "fe/fe-core/src/main/java/org/apache/doris/transaction/DatabaseTransactionMgr.java",
+      "start_line": 1460,
+      "text": "if (partition.getVisibleVersion() != partitionCommitInfo.getVersion() - 1) {\n                    if (LOG.isDebugEnabled()) {\n                        LOG.debug(\"for table {} partition {}, transactionId {} partition commitInfo version {} is not\"\n                                                + \" equal with partition visible version {} plus one, need wait\",\n                                table.getId(), partition.getId(), transactionState.getTransactionId(),\n                                partitionCommitInfo.getVersion(), partition.getVisibleVersion());\n                    }\n                    String errMsg = String.format(\"wait for publishing partition %d version %d.\"\n                                    + \" self version: %d. table %d\", partitionId, partition.getVisibleVersion() + 1,\n                            partitionCommitInfo.getVersion(), tableId);\n                    transactionState.setErrorMsg(errMsg);\n                    return false;\n                }"
+    },
+    {
+      "file": "fe/fe-core/src/main/java/org/apache/doris/transaction/DatabaseTransactionMgr.java",
+      "start_line": 1545,
+      "text": "long now = System.currentTimeMillis();\n        long firstPublishVersionTime = transactionState.getFirstPublishVersionTime();\n        boolean allowPublishOneSucc = false;\n        if (Config.publish_wait_time_second > 0 && firstPublishVersionTime > 0\n                && now >= firstPublishVersionTime + Config.publish_wait_time_second * 1000L) {\n            allowPublishOneSucc = true;\n        }"
+    },
+    {
+      "file": "fe/fe-core/src/main/java/org/apache/doris/transaction/DatabaseTransactionMgr.java",
+      "start_line": 1072,
+      "text": "while (currentTimeMillis < timeoutTimeMillis\n                && transactionState.getTransactionStatus() == TransactionStatus.COMMITTED) {\n            try {\n                transactionState.waitTransactionVisible(timeoutMillis);\n            } catch (InterruptedException e) {\n                // CHECKSTYLE IGNORE THIS LINE\n            }\n            currentTimeMillis = System.currentTimeMillis();\n        }\n        return transactionState.getTransactionStatus() == TransactionStatus.VISIBLE;"
+    }
+  ],
+  "execution": {
+    "java_tests": false,
+    "cluster_fault_tests": false
+  }
+}

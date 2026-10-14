@@ -1,0 +1,12 @@
+            try {
+                transactionState.afterStateTransform(TransactionStatus.VISIBLE, txnOperated);
+            } catch (Throwable e) {
+                LOG.warn("afterStateTransform txn {} failed. exception: ", transactionState, e);
+            }
+            if (txnOperated) {
+                awaitTransactionState(logItem, transactionState);
+            }
+            updateCatalogAfterVisible(transactionState, db, partitionVisibleVersions, backendPartitions);
+        } finally {
+            MetaLockUtils.writeUnlockTables(tableList);
+        }

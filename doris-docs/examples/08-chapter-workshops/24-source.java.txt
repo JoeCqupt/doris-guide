@@ -1,0 +1,5 @@
+    @Override
+    public Runnable acceptPutStatement(CommandStatementUpdate command, CallContext context, FlightStream flightStream,
+            StreamListener<PutResult> ackStream) {
+        throw CallStatus.UNIMPLEMENTED.withDescription("acceptPutStatement unimplemented").toRuntimeException();
+    }

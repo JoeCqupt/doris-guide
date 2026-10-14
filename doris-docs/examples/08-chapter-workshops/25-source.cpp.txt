@@ -1,0 +1,19 @@
+
+enum class [[nodiscard]] TxnErrorCode : int {
+    TXN_OK = 0,
+    TXN_KEY_NOT_FOUND = 1,
+    TXN_CONFLICT = -1,
+    TXN_TOO_OLD = -2,
+    TXN_MAYBE_COMMITTED = -3,
+    TXN_RETRYABLE_NOT_COMMITTED = -4,
+    TXN_TIMEOUT = -5,
+    TXN_INVALID_ARGUMENT = -6,
+    TXN_KEY_TOO_LARGE = -7,
+    TXN_VALUE_TOO_LARGE = -8,
+    TXN_BYTES_TOO_LARGE = -9,
+    // other unidentified errors.
+    TXN_UNIDENTIFIED_ERROR = -10,
+    // the data is invalid.
+    TXN_INVALID_DATA = -11,
+    TXN_TOO_MANY_WATCHES = -12,
+};

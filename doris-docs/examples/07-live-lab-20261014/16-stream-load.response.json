@@ -1,0 +1,20 @@
+{
+    "TxnId": 9,
+    "Label": "book_lab_20261014_stream_01",
+    "Comment": "",
+    "TwoPhaseCommit": "false",
+    "Status": "Success",
+    "Message": "OK",
+    "NumberTotalRows": 3,
+    "NumberLoadedRows": 3,
+    "NumberFilteredRows": 0,
+    "NumberUnselectedRows": 0,
+    "LoadBytes": 15,
+    "LoadTimeMs": 43,
+    "BeginTxnTimeMs": 1,
+    "StreamLoadPutTimeMs": 10,
+    "ReadDataTimeMs": 0,
+    "WriteDataTimeMs": 9,
+    "ReceiveDataTimeMs": 13,
+    "CommitAndPublishTimeMs": 20
+}

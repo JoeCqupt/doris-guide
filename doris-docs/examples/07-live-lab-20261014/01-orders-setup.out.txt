@@ -1,0 +1,39 @@
+--------------
+CREATE DATABASE IF NOT EXISTS doris_book
+--------------
+
+Query OK, 0 rows affected (0.019 sec)
+
+--------------
+CREATE TABLE orders_intro_v1 (
+    order_date DATE NOT NULL,
+    order_id BIGINT NOT NULL,
+    user_id BIGINT NOT NULL,
+    city VARCHAR(32) NOT NULL,
+    amount DECIMAL(12, 2) NOT NULL,
+    status VARCHAR(16) NOT NULL
+)
+ENGINE=OLAP
+DUPLICATE KEY(order_date, order_id)
+DISTRIBUTED BY HASH(order_id) BUCKETS 2
+PROPERTIES ("replication_num" = "1")
+--------------
+
+Query OK, 0 rows affected (0.011 sec)
+
+--------------
+INSERT INTO orders_intro_v1 VALUES
+('2026-10-01', 1, 101, '北京', 100.00, 'PAID'),
+('2026-10-01', 2, 102, '北京',  80.00, 'PAID'),
+('2026-10-01', 3, 101, '上海', 120.00, 'PAID'),
+('2026-10-01', 4, 103, '上海',  60.00, 'PAID'),
+('2026-10-01', 5, 101, '北京',  20.00, 'PAID'),
+('2026-10-01', 6, 104, '杭州', 200.00, 'PAID'),
+('2026-10-01', 7, 105, '上海',  90.00, 'CANCELLED'),
+('2026-10-02', 8, 102, '杭州',  50.00, 'PAID')
+--------------
+
+Query OK, 8 rows affected (0.356 sec)
+{'label':'label_b69eae59453948cb_ac6cbb1f89c74c98', 'status':'VISIBLE', 'txnId':'3'}
+
+Bye

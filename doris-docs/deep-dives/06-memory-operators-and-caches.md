@@ -56,3 +56,7 @@ FE SQL 缓存入口 `fe/fe-core/src/main/java/org/apache/doris/qe/cache/SqlCache
 先固定 query ID、SQL、版本和会话配置，再比较实例之间的扫描行数、输出行数、耗时、等待、内存及 Spill/IO 信息。具体计数器名称随算子和版本变化，以实际 Profile 为准。
 
 高耗时同时伴随低 CPU 与长依赖等待，优先检查上游或背压；扫描大而输出少，检查过滤位置与裁剪；只有一个实例极慢，检查倾斜；Spill 字节高，检查 Build/排序规模与限额。上述是诊断假设，需要计划和计数器共同支持。当前没有真实 Profile，不能给这些假设填上虚构数值。采集入口见[观测清单](../examples/03-observation-kit/README.md)。
+
+## 2026-10-14 运行证据更新
+
+新增[本地 SQL/导入/恢复实验](../examples/07-live-lab-20261014/REPORT.md)与[真实 Profile 解读](../examples/07-live-lab-20261014/PROFILE_ANALYSIS.md)。它们补充初稿中的未运行项；没有执行多副本/Cloud/取消/Spill 故障实验，也不替代历史修复前后的测试。

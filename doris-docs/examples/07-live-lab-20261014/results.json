@@ -1,0 +1,130 @@
+[
+  {
+    "case": "00-environment",
+    "exit_code": 0,
+    "passed": true,
+    "expected_error": false,
+    "expected_output": null,
+    "time": "2026-10-14T05:45:07.535197+00:00"
+  },
+  {
+    "case": "01-orders-setup",
+    "exit_code": 0,
+    "passed": true,
+    "expected_error": false,
+    "expected_output": null,
+    "time": "2026-10-14T05:45:07.960332+00:00"
+  },
+  {
+    "case": "02-orders-queries",
+    "exit_code": 0,
+    "passed": true,
+    "expected_error": false,
+    "expected_output": null,
+    "time": "2026-10-14T05:45:08.302021+00:00"
+  },
+  {
+    "case": "03-orders-assertions",
+    "exit_code": 0,
+    "passed": true,
+    "expected_error": false,
+    "expected_output": "8\n上海\t2\t180.00\t2\n北京\t3\t200.00\t2\n杭州\t1\t200.00\t1\n6\t580.00\t4",
+    "time": "2026-10-14T05:45:08.371916+00:00"
+  },
+  {
+    "case": "04-filter-project",
+    "exit_code": 0,
+    "passed": true,
+    "expected_error": false,
+    "expected_output": null,
+    "time": "2026-10-14T05:45:08.466626+00:00"
+  },
+  {
+    "case": "05-filter-equivalence",
+    "exit_code": 0,
+    "passed": true,
+    "expected_error": false,
+    "expected_output": "上海\t120.00\n杭州\t200.00\n上海\t120.00\n杭州\t200.00\n0\n2",
+    "time": "2026-10-14T05:45:08.538922+00:00"
+  },
+  {
+    "case": "06-window",
+    "exit_code": 0,
+    "passed": true,
+    "expected_error": false,
+    "expected_output": null,
+    "time": "2026-10-14T05:45:08.617877+00:00"
+  },
+  {
+    "case": "07-aggregation-null",
+    "exit_code": 0,
+    "passed": false,
+    "expected_error": false,
+    "expected_output": "4\t3\t120\t40.0\t3\n40.0",
+    "time": "2026-10-14T05:45:08.683157+00:00"
+  },
+  {
+    "case": "08-join-semantics",
+    "exit_code": 0,
+    "passed": true,
+    "expected_error": false,
+    "expected_output": "2\n1\n3\nNULL\t1",
+    "time": "2026-10-14T05:45:08.786772+00:00"
+  },
+  {
+    "case": "09-model-setup",
+    "exit_code": 0,
+    "passed": true,
+    "expected_error": false,
+    "expected_output": null,
+    "time": "2026-10-14T05:45:08.885502+00:00"
+  },
+  {
+    "case": "10-sequence-assert",
+    "exit_code": 0,
+    "passed": true,
+    "expected_error": false,
+    "expected_output": "7\tA\t10\t100",
+    "time": "2026-10-14T05:45:08.911207+00:00"
+  },
+  {
+    "case": "11-partial-update",
+    "exit_code": 0,
+    "passed": true,
+    "expected_error": false,
+    "expected_output": null,
+    "time": "2026-10-14T05:45:08.972073+00:00"
+  },
+  {
+    "case": "12-partial-assert",
+    "exit_code": 0,
+    "passed": true,
+    "expected_error": false,
+    "expected_output": "7\tA\t30\t110",
+    "time": "2026-10-14T05:45:08.996370+00:00"
+  },
+  {
+    "case": "13-null-filter",
+    "exit_code": 0,
+    "passed": true,
+    "expected_error": false,
+    "expected_output": "0\n1",
+    "time": "2026-10-14T05:45:09.076676+00:00"
+  },
+  {
+    "case": "14-stream-table",
+    "exit_code": 0,
+    "passed": true,
+    "expected_error": false,
+    "expected_output": null,
+    "time": "2026-10-14T05:45:09.099394+00:00"
+  },
+  {
+    "case": "15-stats",
+    "exit_code": 0,
+    "passed": true,
+    "expected_error": false,
+    "expected_output": null,
+    "time": "2026-10-14T05:45:09.295115+00:00"
+  }
+]

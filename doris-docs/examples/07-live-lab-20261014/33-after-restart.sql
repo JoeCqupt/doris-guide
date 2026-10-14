@@ -1,0 +1,1 @@
+SELECT COUNT(*),SUM(amount) FROM doris_book.orders_intro_v1; SELECT * FROM doris_book.unique_updates ORDER BY id; SELECT COUNT(*),SUM(v) FROM doris_book.stream_events; SELECT COUNT(*),SUM(id) FROM doris_book.scale_numbers; SELECT d,COUNT(*),SUM(v) FROM doris_book.partition_events GROUP BY d ORDER BY d;

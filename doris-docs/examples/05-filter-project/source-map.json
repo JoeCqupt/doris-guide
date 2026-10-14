@@ -1,0 +1,117 @@
+{
+  "read_date": "2026-10-14",
+  "source_root": "/Users/jiangyuan/open/doris",
+  "source_kind": "local working files; no claim of a freshly verified Git HEAD",
+  "files": [
+    {
+      "path": "fe/fe-core/src/main/java/org/apache/doris/nereids/rules/rewrite/PushDownFilterThroughProject.java",
+      "sha256": "c4069cdb8f73c158551502a0f1fab6983a9ca286d075f9ecc0701c02b3751d8c"
+    },
+    {
+      "path": "fe/fe-core/src/main/java/org/apache/doris/nereids/trees/plans/logical/LogicalProject.java",
+      "sha256": "a2de797a4bacc5a495099c403bfd8cb319b874835f9e182accadb882da6d4958"
+    },
+    {
+      "path": "fe/fe-core/src/main/java/org/apache/doris/nereids/trees/plans/algebra/Project.java",
+      "sha256": "e022595c1ff78617e0494d29398380eb33e51f22be625abad3a0ffe5ff4e413a"
+    },
+    {
+      "path": "fe/fe-core/src/main/java/org/apache/doris/nereids/trees/expressions/Alias.java",
+      "sha256": "71cfbef0b5c33fb008c5c2720db18855f94efda6c4e881b574c3ca95330bd9f6"
+    },
+    {
+      "path": "fe/fe-core/src/main/java/org/apache/doris/nereids/trees/expressions/SlotReference.java",
+      "sha256": "40c51241fa1889dd92b7cf048c03b93a671ca1b671fb1871313a8f0a3dd8a209"
+    },
+    {
+      "path": "fe/fe-core/src/main/java/org/apache/doris/nereids/util/ExpressionUtils.java",
+      "sha256": "6dbcd1346c54fbdfc476e30eec817c0f40d5d0bc8adad094df39e5caa8cc46ac"
+    },
+    {
+      "path": "fe/fe-core/src/main/java/org/apache/doris/nereids/util/PlanUtils.java",
+      "sha256": "b5debad11a6c4e897ff81f87270329a899c8ab5a837573223ba674652f4f7ab9"
+    },
+    {
+      "path": "fe/fe-core/src/main/java/org/apache/doris/nereids/pattern/PatternMatcher.java",
+      "sha256": "46ca8ef88c207d64e6b3414d95f74ecb8d649f581da8d46f72c28e2585214983"
+    },
+    {
+      "path": "fe/fe-core/src/main/java/org/apache/doris/nereids/trees/expressions/functions/ExpressionTrait.java",
+      "sha256": "17247d7f923a1f0843596e383ea378cd4a3a0d09be8fe0819cb483cc9f43319f"
+    },
+    {
+      "path": "fe/fe-core/src/main/java/org/apache/doris/nereids/rules/RuleSet.java",
+      "sha256": "a993380b095e79bbaab4d4b2e1320e140a1a41a2bc1d08fac856cf10d613b188"
+    },
+    {
+      "path": "fe/fe-core/src/main/java/org/apache/doris/nereids/jobs/executor/Rewriter.java",
+      "sha256": "18d17b91eff61e6d8b7c6fde74a2c2f22b414309afa5f898c72f2f6060c6e86b"
+    },
+    {
+      "path": "fe/fe-core/src/test/java/org/apache/doris/nereids/rules/rewrite/PushDowFilterThroughProjectTest.java",
+      "sha256": "157d29dab91dac15548ca526b7bbd10be98ecd28cdc3992dcbf9584e7922df42"
+    },
+    {
+      "path": "fe/fe-core/src/test/java/org/apache/doris/nereids/util/PlanChecker.java",
+      "sha256": "20af265875b3ea642ba420fdb6758e155d427c9b62437d519d99291bb03370a4"
+    },
+    {
+      "path": "fe/fe-core/src/test/java/org/apache/doris/nereids/util/LogicalPlanBuilder.java",
+      "sha256": "7e00f0f08136c084a6b841607204f5b8699f79a075531849ebc90ab457b45e78"
+    }
+  ],
+  "excerpts": [
+    {
+      "file": "fe/fe-core/src/main/java/org/apache/doris/nereids/rules/rewrite/PushDownFilterThroughProject.java",
+      "start_line": 57,
+      "end_line": 60,
+      "text": "logicalFilter(logicalProject().whenNot(LogicalProject::containsNoneMovableFunction))\n                        .whenNot(filter -> ExpressionUtils.containsWindowExpression(filter.child().getProjects()))\n                        .then(PushDownFilterThroughProject::pushDownFilterThroughProject)\n                        .toRule(RuleType.PUSH_DOWN_FILTER_THROUGH_PROJECT),"
+    },
+    {
+      "file": "fe/fe-core/src/main/java/org/apache/doris/nereids/rules/rewrite/PushDownFilterThroughProject.java",
+      "start_line": 126,
+      "end_line": 132,
+      "text": "if (childOutputs.containsAll(conjunctSlots)\n                    && conjunctSlots.stream().map(childAlias::get).filter(Objects::nonNull)\n                            .noneMatch(Expression::containsVolatileOrNoneMovableExpression)) {\n                pushDownPredicates.add(conjunct);\n            } else {\n                remainPredicates.add(conjunct);\n            }"
+    },
+    {
+      "file": "fe/fe-core/src/main/java/org/apache/doris/nereids/util/ExpressionUtils.java",
+      "start_line": 530,
+      "end_line": 535,
+      "text": "public static Expression replace(Expression expr, Map<? extends Expression, ? extends Expression> replaceMap) {\n        return expr.rewriteDownShortCircuit(e -> {\n            Expression replacedExpr = replaceMap.get(e);\n            return replacedExpr == null ? e : replacedExpr;\n        });\n    }"
+    },
+    {
+      "file": "fe/fe-core/src/main/java/org/apache/doris/nereids/rules/rewrite/PushDownFilterThroughProject.java",
+      "start_line": 88,
+      "end_line": 93,
+      "text": "if (pushDownPredicates.isEmpty()) {\n            return null;\n        }\n        project = (LogicalProject<? extends Plan>) project.withChildren(\n                new LogicalFilter<>(pushDownPredicates, project.child()));\n        return PlanUtils.filterOrSelf(remainPredicates, project);"
+    },
+    {
+      "file": "fe/fe-core/src/main/java/org/apache/doris/nereids/rules/rewrite/PushDownFilterThroughProject.java",
+      "start_line": 110,
+      "end_line": 112,
+      "text": "project = project.withProjectsAndChild(project.getProjects(),\n                new LogicalFilter<>(pushDownPredicates, limit.withChildren(project.child())));\n        return PlanUtils.filterOrSelf(remainPredicates, project);"
+    },
+    {
+      "file": "fe/fe-core/src/main/java/org/apache/doris/nereids/util/ExpressionUtils.java",
+      "start_line": 435,
+      "end_line": 445,
+      "text": "public static Map<Slot, Expression> generateReplaceMap(List<? extends NamedExpression> namedExpressions) {\n        Map<Slot, Expression> replaceMap = Maps.newLinkedHashMapWithExpectedSize(namedExpressions.size());\n        for (NamedExpression namedExpression : namedExpressions) {\n            if (namedExpression instanceof Alias) {\n                // Avoid cast to alias, retrieving the first child expression.\n                Slot slot = namedExpression.toSlot();\n                replaceMap.putIfAbsent(slot, namedExpression.child(0));\n            }\n        }\n        return replaceMap;\n    }"
+    },
+    {
+      "file": "fe/fe-core/src/main/java/org/apache/doris/nereids/util/PlanUtils.java",
+      "start_line": 86,
+      "end_line": 95,
+      "text": "public static Optional<LogicalFilter<? extends Plan>> filter(Set<Expression> predicates, Plan plan) {\n        if (predicates.isEmpty()) {\n            return Optional.empty();\n        }\n        return Optional.of(new LogicalFilter<>(predicates, plan));\n    }\n\n    public static Plan filterOrSelf(Set<Expression> predicates, Plan plan) {\n        return filter(predicates, plan).map(Plan.class::cast).orElse(plan);\n    }"
+    },
+    {
+      "file": "fe/fe-core/src/test/java/org/apache/doris/nereids/util/PlanChecker.java",
+      "start_line": 633,
+      "end_line": 639,
+      "text": "public PlanChecker matches(PatternDescriptor<? extends Plan> patternDesc) {\n        Memo memo = cascadesContext.getMemo();\n        checkSlotFromChildren(memo);\n        assertMatchesWithDiagnostic(memo, patternDesc.pattern,\n                () -> MatchingUtils.topDownFindMatching(memo.getRoot(), patternDesc.pattern));\n        return this;\n    }"
+    }
+  ],
+  "execution": {
+    "sql": false,
+    "java_tests": false
+  }
+}

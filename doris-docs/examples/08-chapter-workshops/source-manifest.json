@@ -1,0 +1,254 @@
+[
+  {
+    "chapter": 1,
+    "path": "fe/fe-core/src/main/java/org/apache/doris/nereids/NereidsPlanner.java",
+    "start_line": 282,
+    "end_line": 305,
+    "source_sha256": "9d5dfae290309a8dfa9c008a49249d699bab750a635e4ec241c2bb2996d7ad9c",
+    "excerpt": "01-source.java.txt",
+    "excerpt_sha256": "55df71743a698b0ad56b0b756493a265315ec547108bc9cb83dd7b164bbff82a"
+  },
+  {
+    "chapter": 2,
+    "path": "be/src/service/internal_service.cpp",
+    "start_line": 364,
+    "end_line": 378,
+    "source_sha256": "7b72e8c9f4a8db6e56dd5cd76c4a5597d66aa124a44545d616790812d2064973",
+    "excerpt": "02-source.cpp.txt",
+    "excerpt_sha256": "990fc68fb0ec1da1ae7fbe0945e82d7450d2dc430cc10ed753afb167c48a1feb"
+  },
+  {
+    "chapter": 3,
+    "path": "fe/fe-core/src/main/java/org/apache/doris/nereids/trees/plans/commands/insert/OlapInsertExecutor.java",
+    "start_line": 236,
+    "end_line": 247,
+    "source_sha256": "efb3d61d92ae101c80329cc6235afcc8d6cbc9f43cc55dbe6eb8d412f3dce7b9",
+    "excerpt": "03-source.java.txt",
+    "excerpt_sha256": "1e2a4207b325024d3c9d82e506517613e089a0475318616d8ce99ac84ede7f41"
+  },
+  {
+    "chapter": 4,
+    "path": "fe/fe-core/src/main/java/org/apache/doris/nereids/trees/plans/commands/ShowCommand.java",
+    "start_line": 54,
+    "end_line": 63,
+    "source_sha256": "b24ed5a4cb5c646702bfdd14e2b72073b23490cb6717800c2f1893c7cf4a0dd6",
+    "excerpt": "04-source.java.txt",
+    "excerpt_sha256": "7cc565b32e5fe12d37a17ad170c46c507a1cd37c813f769c4dcca8f9e1bf9dbe"
+  },
+  {
+    "chapter": 5,
+    "path": "fe/fe-core/src/main/java/org/apache/doris/nereids/rules/rewrite/PushDownFilterThroughProject.java",
+    "start_line": 54,
+    "end_line": 70,
+    "source_sha256": "c4069cdb8f73c158551502a0f1fab6983a9ca286d075f9ecc0701c02b3751d8c",
+    "excerpt": "05-source.java.txt",
+    "excerpt_sha256": "a08351c9f5f1a852bffabd7235d90a7d8489af877433323172fabb196ed2e58f"
+  },
+  {
+    "chapter": 6,
+    "path": "fe/fe-core/src/main/java/org/apache/doris/nereids/jobs/executor/Optimizer.java",
+    "start_line": 82,
+    "end_line": 102,
+    "source_sha256": "0c1a5217287704d64f9380299fc3febe38dab107ef474c61d76718ff4bf5a219",
+    "excerpt": "06-source.java.txt",
+    "excerpt_sha256": "b99904948f11a31a80006bf531e10651c0a06e4920facd3a6136ff8e0b685926"
+  },
+  {
+    "chapter": 7,
+    "path": "fe/fe-core/src/main/java/org/apache/doris/nereids/glue/translator/PhysicalPlanTranslator.java",
+    "start_line": 355,
+    "end_line": 369,
+    "source_sha256": "3ae277f10f41eceee49873ca3ee60df9ae07bf9b6a161b96af014ffd0fea50a7",
+    "excerpt": "07-source.java.txt",
+    "excerpt_sha256": "06ec15cbd653f8a95b18a451bc27439100af505259c972e6611802df873a085e"
+  },
+  {
+    "chapter": 8,
+    "path": "be/src/exec/pipeline/pipeline_task.cpp",
+    "start_line": 455,
+    "end_line": 468,
+    "source_sha256": "b08b41c618f9b4b5ed874fae1da7347780bd5d251860ce3a8e8a148075b3bc7b",
+    "excerpt": "08-source.cpp.txt",
+    "excerpt_sha256": "292e342c78e5d8d29abf8837b48b14d7b2a03c2970775f5825b5d8f368202cdf"
+  },
+  {
+    "chapter": 9,
+    "path": "be/src/exprs/aggregate/aggregate_function_avg.h",
+    "start_line": 220,
+    "end_line": 230,
+    "source_sha256": "e210c8e2b1a85b8583088b002eaa78febdd40df64a40996b2df8cc27eae269a8",
+    "excerpt": "09-source.cpp.txt",
+    "excerpt_sha256": "32415dcb751a00497396d0122227230867367be7c0178e66712632e5a7491e48"
+  },
+  {
+    "chapter": 10,
+    "path": "be/src/exec/sink/vtablet_finder.cpp",
+    "start_line": 37,
+    "end_line": 54,
+    "source_sha256": "662768128d7bd94744c7e537b6cfd84e95d0f706e7c53f703d9abc3252d391e7",
+    "excerpt": "10-source.cpp.txt",
+    "excerpt_sha256": "10bebca31e03556ee3556d6f024337ae2df99029a1f3562da7da4421544eb7c3"
+  },
+  {
+    "chapter": 11,
+    "path": "be/src/storage/segment/segment.cpp",
+    "start_line": 378,
+    "end_line": 390,
+    "source_sha256": "18d48dafd43af8fb88cf86eaff3ecf17fd4d41188dd839d85d6de0a1158d3682",
+    "excerpt": "11-source.cpp.txt",
+    "excerpt_sha256": "25143424c44111f4b1fa470731f3c4264cb4b6a90c8f22d27814ae738d624d71"
+  },
+  {
+    "chapter": 12,
+    "path": "be/src/storage/segment/column_reader.cpp",
+    "start_line": 703,
+    "end_line": 712,
+    "source_sha256": "408ba729abf9fe406578cb28a16b935d7d33f27c08062a78accfc4792f3f88ea",
+    "excerpt": "12-source.cpp.txt",
+    "excerpt_sha256": "487c8ba8e4e04b933b1cf6f0359096858010da62318a286fd7bd6253fda35db0"
+  },
+  {
+    "chapter": 13,
+    "path": "fe/fe-core/src/main/java/org/apache/doris/alter/AlterJobV2.java",
+    "start_line": 274,
+    "end_line": 291,
+    "source_sha256": "165dff6211e093c5d00f746b0a76190051279c1e23c2b9d3eae3786a03341503",
+    "excerpt": "13-source.java.txt",
+    "excerpt_sha256": "98700ca4d012eae132eaa4fb825d7a377a40b536db3a18ece7aec09840103d4a"
+  },
+  {
+    "chapter": 14,
+    "path": "be/src/load/stream_load/stream_load_executor.cpp",
+    "start_line": 202,
+    "end_line": 224,
+    "source_sha256": "f575126d4ff432495733afe126bfdb00b107b1c7ba613062a046cff5fd028ecd",
+    "excerpt": "14-source.cpp.txt",
+    "excerpt_sha256": "82089479979306940488effe609ddebe8e2b34eceb4ebf03402dc582e72af1e2"
+  },
+  {
+    "chapter": 15,
+    "path": "be/src/load/delta_writer/delta_writer.cpp",
+    "start_line": 242,
+    "end_line": 246,
+    "source_sha256": "a677d71474d71b0a57daa3fd940acf24c859ef58646b31468942c3b203d71fbd",
+    "excerpt": "15-source.cpp.txt",
+    "excerpt_sha256": "4da355a481149627dd319b4b23a955bebbd4c6a3a8be116f7fd35bad4b2a5b56"
+  },
+  {
+    "chapter": 16,
+    "path": "fe/fe-core/src/main/java/org/apache/doris/transaction/DatabaseTransactionMgr.java",
+    "start_line": 1358,
+    "end_line": 1369,
+    "source_sha256": "5479a537eabd42cf9b2a9273e57aa4ab912012a0d1ba479d57672b18edc4a749",
+    "excerpt": "16-source.java.txt",
+    "excerpt_sha256": "e0e707c39b61821be29793fe3bf2f62fbe5df40c95840b2875551d015fa82b99"
+  },
+  {
+    "chapter": 17,
+    "path": "be/src/storage/version_graph.cpp",
+    "start_line": 416,
+    "end_line": 438,
+    "source_sha256": "a5fef763e360e65bb7e1cf3f40633d3647e6e0d2fd89a6488f6ca033a0401f59",
+    "excerpt": "17-source.cpp.txt",
+    "excerpt_sha256": "48766275da9ea9504baf63193763494379dd8e6f55e5f56eac14ae45a96be6ba"
+  },
+  {
+    "chapter": 18,
+    "path": "fe/fe-core/src/main/java/org/apache/doris/catalog/Env.java",
+    "start_line": 3411,
+    "end_line": 3425,
+    "source_sha256": "7fdd362422824d17b90def5e167fade6a271ff781f943a9cd1568b13880da789",
+    "excerpt": "18-source.java.txt",
+    "excerpt_sha256": "50a597da85cde53f4a1d3d9617344fb1b1b0d58041f0858ce9df6764a0215a0a"
+  },
+  {
+    "chapter": 19,
+    "path": "fe/fe-core/src/main/java/org/apache/doris/system/Backend.java",
+    "start_line": 871,
+    "end_line": 887,
+    "source_sha256": "83db778499294ad5044aa05936cfd9fe4a5235f122c29a74f53565b052bdcb16",
+    "excerpt": "19-source.java.txt",
+    "excerpt_sha256": "c441c707e7860081f4ff9d74602eac03c6418c8cb894fd49bfef7e07bf4e30b8"
+  },
+  {
+    "chapter": 20,
+    "path": "fe/fe-core/src/main/java/org/apache/doris/mysql/privilege/AccessControllerManager.java",
+    "start_line": 1014,
+    "end_line": 1024,
+    "source_sha256": "4ec9c84e39ab8b70ac0169b1dc61a170f063c7a94b772ee5839fba719825c923",
+    "excerpt": "20-source.java.txt",
+    "excerpt_sha256": "73d5f5f0ca113a05703a4be2642429c9c7f9ee75111f436eb0e4edb47079285e"
+  },
+  {
+    "chapter": 21,
+    "path": "fe/fe-core/src/main/java/org/apache/doris/resource/workloadgroup/QueryQueue.java",
+    "start_line": 157,
+    "end_line": 175,
+    "source_sha256": "32e6374fcb07bff74f8256c6a8c24d3e791bc549c51af55bd8e9e08d7c796f85",
+    "excerpt": "21-source.java.txt",
+    "excerpt_sha256": "f8ae0b7a48a10c5f15be31c07ebb766fcbc822d673d0a67c26e5db413971207b"
+  },
+  {
+    "chapter": 22,
+    "path": "fe/fe-core/src/main/java/org/apache/doris/datasource/plugin/PluginDrivenMetadata.java",
+    "start_line": 50,
+    "end_line": 70,
+    "source_sha256": "c774678b60d16d3a3177ab22e0df58f1c2c1b7dad900bca62f03fddad9012b71",
+    "excerpt": "22-source.java.txt",
+    "excerpt_sha256": "bf2151f3412b232f4a1864127afac0b3618611f8036c714d01630c8782cb6529"
+  },
+  {
+    "chapter": 23,
+    "path": "fe/fe-connector/fe-connector-iceberg/src/main/java/org/apache/doris/connector/iceberg/IcebergScanPlanProvider.java",
+    "start_line": 436,
+    "end_line": 454,
+    "source_sha256": "c1afeffd130c7e35cd756fb9c7cb637f23facc46da0ef5c08cc7027812ced68e",
+    "excerpt": "23-source.java.txt",
+    "excerpt_sha256": "0f6e3a44c15de4fabbc5f3ab02d3233c3bb06e739d97a1d173b401c9eb10f9fa"
+  },
+  {
+    "chapter": 24,
+    "path": "fe/fe-core/src/main/java/org/apache/doris/arrowflight/DorisFlightSqlProducer.java",
+    "start_line": 475,
+    "end_line": 479,
+    "source_sha256": "18c5b91de3b7b4d25328baeb8dfabab6cc78352feb5fe4081204a7a5c360a930",
+    "excerpt": "24-source.java.txt",
+    "excerpt_sha256": "7b77ac39c397e7430fdb81c9bd525e63c39fe1d9088eb3dc02bfa9911927a4d2"
+  },
+  {
+    "chapter": 25,
+    "path": "cloud/src/meta-store/txn_kv_error.h",
+    "start_line": 25,
+    "end_line": 43,
+    "source_sha256": "f3ce6125265ce6863fd65fb93c6247414cd25002b3858e750f5f37f90d2cf94e",
+    "excerpt": "25-source.cpp.txt",
+    "excerpt_sha256": "f9d7b95fd574a62a748f61603c0d7a7c77dd62a25e4ac5ae4a7d3568437e0097"
+  },
+  {
+    "chapter": 26,
+    "path": "be/src/cloud/cloud_tablet.cpp",
+    "start_line": 310,
+    "end_line": 348,
+    "source_sha256": "d48ff9b191d0c3b090d517f74336d04aaa89f53f7b76a9ccc3b5a602bb5bfa9b",
+    "excerpt": "26-source.cpp.txt",
+    "excerpt_sha256": "4252275eb034fb789bf1194be2ec2e96c5bea0b15ff1980d17fa637fc17ffbec"
+  },
+  {
+    "chapter": 27,
+    "path": "fe/fe-core/src/main/java/org/apache/doris/nereids/trees/plans/commands/ShowLoadCommand.java",
+    "start_line": 192,
+    "end_line": 209,
+    "source_sha256": "aedd86cc3bd9b2805198fe4911feb21d6846adc6654c913e7fa078f90558e246",
+    "excerpt": "27-source.java.txt",
+    "excerpt_sha256": "acad18ef351834d278ee9e7d9a0745e9d1c00ac120a4ae3ea613287916245381"
+  },
+  {
+    "chapter": 28,
+    "path": "fe/fe-core/src/test/java/org/apache/doris/nereids/trees/plans/commands/ShowLoadCommandTest.java",
+    "start_line": 132,
+    "end_line": 151,
+    "source_sha256": "70108ca7ba5ca3bc8d47139c5fef188af6b4dbe7010bf7e0dd7b3c44055a4c23",
+    "excerpt": "28-source.java.txt",
+    "excerpt_sha256": "c00c9e59d1023a49e06bfefa45ee41f9f0551c12809ef1dfc28b17747b3b4326"
+  }
+]

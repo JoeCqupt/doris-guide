@@ -1,0 +1,7 @@
+{
+  "documents": 56,
+  "local_links": 451,
+  "source_paths": 163,
+  "errors": [],
+  "runtime_evidence_check": "Extended SQL, Stream Load visibility/numeric checks and restart checks passed; original initial failures preserved and explained in REPORT.md."
+}

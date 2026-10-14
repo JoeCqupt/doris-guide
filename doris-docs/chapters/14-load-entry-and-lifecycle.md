@@ -2,9 +2,51 @@
 
 [全书导航](../README.md) · [前置：请求入口](04-request-session-and-command.md) · [相关章节：事务与可见性](16-transaction-commit-publish-visible.md)
 
-> 日期：2026-10-12。源码基线：`a53b182f810be2b3731c7dfdf6f40ff5a0ad63bd`。本章围绕存算一体普通导入；Group Commit、2PC、Cloud 和新旧任务框架只标明差异，未运行导入实验。官方 4.x 文档用于接口概念参考，不等同于本地 HEAD 的发布版本。
+> 教学结构修订：2026-10-14。每章先沿一个问题阅读代码，再做实验、观察结果，最后解释对象和分支。历史正文基线为 `a53b182f810be2b3731c7dfdf6f40ff5a0ad63bd`；本次摘录取自当前本地文件，完整文件 SHA-256 与行号保存在[源码摘录清单](../examples/08-chapter-workshops/source-manifest.json)。运行证据来自报告版本 `doris-0.0.0-a53b182f810` 的二进制，不能仅凭版本前缀认定当前工作目录与二进制逐文件相同。
 
-## 14.1 先问：数据在哪里，谁来推动它
+**本章问题：客户端重复发送一个导入请求，会不会重复追加数据？**
+
+本章验证方式：已归档运行证据 + 源码走查；扩展分支见本章边界。建议先用 20—40 分钟完成主案例，第四部分的扩展阅读可分次完成；这不是新增的每日必交任务。
+
+## 一、源码讲解：先找到决定行为的对象和分支
+
+把 HTTP 请求、Label 和事务 ID 分开：请求可能重发，Label 用来标识同一次导入，事务才有服务端状态。沿 StreamLoadAction 到 StreamLoadExecutor.begin_txn/commit_txn，确认“收到了数据”和“确定导入成功”分别在哪一层。
+
+### 先读这段真实代码
+
+文件：`be/src/load/stream_load/stream_load_executor.cpp`，当前文件第 202—224 行。下面是连续原文摘录，局部片段省略了方法的其他部分；不要把片段当完整实现。
+
+```cpp
+Status StreamLoadExecutor::begin_txn(StreamLoadContext* ctx) {
+    DorisMetrics::instance()->stream_load_txn_begin_request_total->increment(1);
+
+    TLoadTxnBeginRequest request;
+    set_request_auth(&request, ctx->auth);
+    request.__set_db(ctx->db);
+    request.__set_tbl(ctx->table);
+    request.__set_label(ctx->label);
+    // set timestamp
+    request.__set_timestamp(GetCurrentTimeMicros());
+    if (ctx->timeout_second != -1) {
+        request.__set_timeout(ctx->timeout_second);
+    }
+    request.__set_request_id(ctx->id.to_thrift());
+    request.__set_backend_id(_exec_env->cluster_info()->backend_id);
+    if (ctx->group_commit_mode.empty()) {
+        request.__set_use_table_group_commit_mode(true);
+    }
+
+    TLoadTxnBeginResult result;
+    Status status;
+    int64_t duration_ns = 0;
+    auto master_addr_provider = [this]() { return _exec_env->cluster_info()->master_fe_addr; };
+```
+
+### 这几行应该怎样读
+
+`ctx->label` 被写入 begin 请求，数据库、表、认证和超时也一起传递；`request_id` 与 `label` 是不同字段。先把请求身份保留下来，后续失败才能针对原请求查状态；该片段还未走到数据解析或提交。
+
+### 先问：数据在哪里，谁来推动它
 
 “导入”描述了最终目标，却没有说明数据怎么进来。业务程序手里已有一批订单，可以上传；数据已在对象存储，可以让系统读取；Kafka 持续产生数据，需要一个长期运行的消费作业；数据本来就能通过 SQL 读取，也可以用 INSERT SELECT 写入目标表。
 
@@ -19,7 +61,7 @@ Broker Load 是异步批量导入，提交作业与完成导入是不同时间�
 
 对于 Stream Load，通常通过本次 HTTP 交互取得导入结果；这不意味着实现内部没有异步执行或等待，也不意味着每个超时都发生在同一阶段。
 
-## 14.2 三种对象：请求、作业和事务
+### 三种对象：请求、作业和事务
 
 业务中一个“同步接口”常常对应后台多个动作。在 Doris 中更要区分以下层次：
 
@@ -31,7 +73,31 @@ Broker Load 是异步批量导入，提交作业与完成导入是不同时间�
 
 例如 `FINISHED` 常见于作业状态，`VISIBLE` 是事务状态；即便二者有关联，也不能拿一个状态字符串替代另一个对象的全部条件。当前 `LoadJob` 代码还包含 COMMITTED、RETRY 等路径，不能把网页上的简化状态图当成唯一枚举表。
 
-## 14.3 Stream Load：沿数据流与控制调用一起读
+## 二、动手实验：先预测，再核对
+
+默认使用已保存的实验材料或只读源码，不需要启动服务。运行环境已停止；若选择重新执行 SQL，先按[实验复现说明](../examples/07-live-lab-20261014/REPRODUCE.md)确认服务、版本与数据状态。初始化、导入和更新脚本不可在现有表上盲目重放。
+
+1. 读 stream-input.csv 与 16-stream-load.response.json，记录 Label、TxnId、Status、NumberLoadedRows。
+2. 对照 18-label-retry.response.json 与 17/19 的查询结果，解释重复 Label 是否又追加三行。
+3. 读初次缺 Expect 请求头的失败响应，再对照 REPRODUCE.md 的 curl；以正确协议请求区分环境/用法问题和内核缺陷。
+
+本章实验材料：[stream-input.csv](../examples/07-live-lab-20261014/stream-input.csv) · [16-stream-load.response.json](../examples/07-live-lab-20261014/16-stream-load.response.json) · [16-stream-load-initial-no-expect.response.json](../examples/07-live-lab-20261014/16-stream-load-initial-no-expect.response.json) · [18-label-retry.response.json](../examples/07-live-lab-20261014/18-label-retry.response.json) · [17-stream-visible.out.txt](../examples/07-live-lab-20261014/17-stream-visible.out.txt) · [19-label-no-duplicate.out.txt](../examples/07-live-lab-20261014/19-label-no-duplicate.out.txt) · [REPRODUCE.md](../examples/07-live-lab-20261014/REPRODUCE.md)。
+
+## 三、观察结果：先陈述事实，再划清证据范围
+
+首次成功导入加载 3 行，表为 3 行、SUM(v)=60；相同 Label 重试返回 LabelAlreadyExists，仍为 3/60。更早一次请求因缺少 100-continue 被拒绝，修正请求头后成功。
+
+**本章边界：** 本例没有模拟断网后的不确定响应；不证明所有连接器都实现端到端 exactly-once。
+
+## 四、回到源码解释：把现象还原成执行过程
+
+重试判断必须围绕原 Label 和原事务状态；换一个新 Label 会变成新导入，不能保证 Duplicate Key 不重复。HTTP 接收、事务协调、表模型是三个独立边界。
+
+### 用自己的话走完这条链
+
+合上结果后，按“输入 → 关键对象/状态 → 分支条件 → 可观察结果”的顺序回答本章问题：**客户端重复发送一个导入请求，会不会重复追加数据？** 再指出一项尚不能从现有实验得出的结论。能把每个箭头落到本章的方法或证据，比记住术语更接近读懂源码。
+
+### Stream Load：沿数据流与控制调用一起读
 
 普通路径的概念过程是：HTTP 请求选择接收节点，BE 建立导入上下文并推动执行，数据进入目标 Tablet 的写入链路，事务控制与 FE 协作，最后形成响应。当前 FE `LoadAction` 中能看到 `_stream_load` 路由、目标节点选择和重定向处理；也有不同策略分支，因此图只表示一个常见路径。
 
@@ -59,7 +125,7 @@ sequenceDiagram
 
 对应 `be/src/load/stream_load/stream_load_executor.cpp` 提供 `execute_plan_fragment()`、`begin_txn()`、`commit_txn()`、`rollback_txn()` 等入口。由这些入口再往下，才进入具体 RPC、数据通道和存储对象；本章停在导入生命周期，第 15 章展开物理写入。
 
-## 14.4 一个 FE 调度器如何推进异步作业
+### 一个 FE 调度器如何推进异步作业
 
 选 `load/loadv2/LoadJobScheduler.java` 的 `process()` 精读，可以看到很接近业务中后台队列的组织方式：检查待调度队列，判断部分任务资源条件，取出作业，调用 `loadJob.execute()`。
 
@@ -76,7 +142,7 @@ sequenceDiagram
 
 如果用户报告“导入一直没有开始”，你已经有了更准确的调查顺序：确认作业是否创建、是否进入对应队列、资源是否允许出队、是否执行后进入其他状态。只有最后才轮到目标 Tablet 是否生成文件。
 
-## 14.5 `SHOW LOAD` 展示的记录从哪里来
+### `SHOW LOAD` 展示的记录从哪里来
 
 `ShowLoadCommand.handleShowLoad()` 是一个观察入口，不是写入入口。当前代码先校验条件，再根据模式从 `LoadManager` 或 Cloud 实现获取记录，还会调用 `JobManager` 获取导入信息。若 `isStreamLoad` 为真，则使用 `StreamLoadRecordMgr` 的记录作为最终展示集合。
 
@@ -84,7 +150,7 @@ sequenceDiagram
 
 Stream Load 的历史展示有相应记录配置与保留条件，应核对实际版本；官方文档也把历史记录与普通响应区分。[Stream Load 文档](https://doris.apache.org/docs/4.x/data-operate/import/import-way/stream-load-manual/)
 
-## 14.6 Label、过滤行与重试
+### Label、过滤行与重试
 
 Label 用于标识导入批次，并参与重复请求处理。它的作用有数据库范围、状态与保留周期等条件；不能从“我用了 Label”直接推出整条上游业务永不丢失、永不重复。
 
@@ -94,7 +160,7 @@ Label 用于标识导入批次，并参与重复请求处理。它的作用有�
 
 这些是观察原则。本章没有执行上传，也没有对具体连接器承诺端到端投递语义。
 
-## 14.7 源码与验证入口
+### 源码与验证入口
 
 路径均相对仓库根目录：
 
@@ -109,11 +175,10 @@ Label 用于标识导入批次，并参与重复请求处理。它的作用有�
 
 后续实验可以选择同一小批数据，只采用一种入口，保存完整响应、Label/Txn ID 和查询结果。必须先说明表初始状态与重试次数，不把多次上传混成一次实验。SHOW 展示行为可参考现有 `ShowLoadCommandTest`；HTTP 上传与落盘需要另选回归或集成验证，本次未执行任何测试。
 
+### 延伸源码专题
+
+- [专题 4　副本写入、导入确认与恢复](../deep-dives/04-load-replicas-and-recovery.md)
 
 ---
 
-[上一章：第 13 章](13-updates-compaction-and-schema-evolution.md) · [全书导航](../README.md) · [下一章：第 15 章](15-physical-write-path.md)
-
-## 源码深读补充（2026-10-13）
-
-- [专题 4　副本写入、导入确认与恢复](../deep-dives/04-load-replicas-and-recovery.md)
+[全书导航](../README.md) · [前置：请求入口](04-request-session-and-command.md) · [相关章节：事务与可见性](16-transaction-commit-publish-visible.md)

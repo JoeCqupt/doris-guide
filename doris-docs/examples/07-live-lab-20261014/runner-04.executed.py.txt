@@ -1,0 +1,19 @@
+from pathlib import Path
+import subprocess,csv,io,json,datetime
+r=Path('/Users/jiangyuan/doris-guide/doris-docs/examples/07-live-lab-20261014')
+cmd=['/opt/homebrew/bin/mysql','--connect-timeout=5','--default-character-set=utf8mb4','-h127.0.0.1','-P9030','-uroot','--batch','--raw']
+sql='SELECT COUNT(*),SUM(amount) FROM doris_book.orders_intro_v1; SELECT * FROM doris_book.unique_updates ORDER BY id; SELECT COUNT(*),SUM(v) FROM doris_book.stream_events; SELECT COUNT(*),SUM(id) FROM doris_book.scale_numbers; SELECT d,COUNT(*),SUM(v) FROM doris_book.partition_events GROUP BY d ORDER BY d;'
+(r/'33-after-restart.sql').write_text(sql+'\n');p=subprocess.run(cmd+['--skip-column-names'],input=sql,text=True,capture_output=True,timeout=60)
+(r/'33-after-restart.out.txt').write_text(p.stdout);(r/'33-after-restart.stderr.txt').write_text(p.stderr)
+expected='8\t720.00\n7\tC\t40\t120\tbook\n6\t120\n100000\t4999950000\n2026-10-01\t1\t10\n2026-10-02\t1\t20'
+checks=[{'case':'restart-data-and-schema','passed':p.returncode==0 and p.stdout.strip()==expected,'expected':expected,'actual':p.stdout.strip()}]
+sql='SHOW LOAD FROM doris_book ORDER BY CreateTime DESC LIMIT 10;'
+p=subprocess.run(cmd,input=sql,text=True,capture_output=True,timeout=30);(r/'load-after-restart.tsv').write_text(p.stdout)
+before=list(csv.DictReader(io.StringIO((r/'load-before-restart.tsv').read_text()),delimiter='\t'));after={row['Label']:row for row in csv.DictReader(io.StringIO(p.stdout),delimiter='\t')}
+for row in before:
+ a=after.get(row['Label']);j=json.loads(row['JobDetails']);k=json.loads(a['JobDetails']) if a else {}
+ same=all(j.get(f)==k.get(f) for f in ['ScannedRows','LoadBytes','FileNumber','FileSize'])
+ checks.append({'case':'restart-show-load-statistics','label':row['Label'],'before':j,'after':k,'passed':same and j['ScannedRows']>0})
+p=subprocess.run(cmd,input='SHOW FRONTENDS; SHOW BACKENDS;',text=True,capture_output=True,timeout=30);(r/'34-restarted-environment.out.txt').write_text(p.stdout)
+(r/'restart-results.json').write_text(json.dumps({'verified_at':datetime.datetime.now().astimezone().isoformat(),'checks':checks},ensure_ascii=False,indent=2))
+print(json.dumps(checks,ensure_ascii=False,indent=2))

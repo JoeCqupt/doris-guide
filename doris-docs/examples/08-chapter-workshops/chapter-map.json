@@ -1,0 +1,616 @@
+[
+  {
+    "chapter": 1,
+    "file": "01-from-crud-to-olap.md",
+    "question": "为什么只返回三个城市，却需要处理多笔订单？",
+    "mode": "已归档运行证据 + 源码走查；扩展分支见本章边界",
+    "evidence": [
+      "03-orders-assertions.sql",
+      "03-orders-assertions.out.txt",
+      "02-orders-queries.out.txt"
+    ],
+    "former_sections_before_lab": [
+      1,
+      6
+    ],
+    "former_sections_after_lab": [
+      2,
+      3,
+      4,
+      5,
+      7
+    ]
+  },
+  {
+    "chapter": 2,
+    "file": "02-system-and-source-map.md",
+    "question": "一次 SQL 跨过 FE/BE 边界时，真正传递的是什么？",
+    "mode": "已归档运行证据 + 源码走查；扩展分支见本章边界",
+    "evidence": [
+      "00-environment.out.txt",
+      "30-scale-profile.out.txt",
+      "PROFILE_ANALYSIS.md"
+    ],
+    "former_sections_before_lab": [
+      1,
+      3
+    ],
+    "former_sections_after_lab": [
+      2,
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  {
+    "chapter": 3,
+    "file": "03-table-read-write-cycle.md",
+    "question": "INSERT 成功以后，下一次 SELECT 为什么能读到它？",
+    "mode": "已归档运行证据 + 源码走查；扩展分支见本章边界",
+    "evidence": [
+      "01-orders-setup.sql",
+      "03-orders-assertions.out.txt",
+      "33-after-restart.out.txt"
+    ],
+    "former_sections_before_lab": [
+      1,
+      2,
+      3
+    ],
+    "former_sections_after_lab": [
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "chapter": 4,
+    "file": "04-request-session-and-command.md",
+    "question": "SHOW LOAD 和 SELECT 都返回表格，为什么执行路径不同？",
+    "mode": "已归档运行证据 + 源码走查；扩展分支见本章边界",
+    "evidence": [
+      "32-before-restart.sql",
+      "32-before-restart.out.txt"
+    ],
+    "former_sections_before_lab": [
+      1,
+      2,
+      3
+    ],
+    "former_sections_after_lab": [
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  {
+    "chapter": 5,
+    "file": "05-parser-binding-and-rewrite.md",
+    "question": "过滤为什么能穿过别名投影，却不能随意穿过 LIMIT？",
+    "mode": "已归档运行证据 + 源码走查；扩展分支见本章边界",
+    "evidence": [
+      "04-filter-project.out.txt",
+      "05-filter-equivalence.sql",
+      "05-filter-equivalence.out.txt"
+    ],
+    "former_sections_before_lab": [
+      1,
+      2,
+      3
+    ],
+    "former_sections_after_lab": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  {
+    "chapter": 6,
+    "file": "06-memo-statistics-and-cost.md",
+    "question": "优化器知道“估计多少行”，与 BE 实际读了多少行，有什么区别？",
+    "mode": "已归档运行证据 + 源码走查；扩展分支见本章边界",
+    "evidence": [
+      "15-stats.sql",
+      "15-stats.out.txt",
+      "PROFILE_ANALYSIS.md"
+    ],
+    "former_sections_before_lab": [
+      1,
+      2
+    ],
+    "former_sections_after_lab": [
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  {
+    "chapter": 7,
+    "file": "07-fragments-scheduling-and-exchange.md",
+    "question": "为什么一台 BE 上也能出现 Exchange 和多个执行实例？",
+    "mode": "已归档运行证据 + 源码走查；扩展分支见本章边界",
+    "evidence": [
+      "30-scale-profile.out.txt",
+      "PROFILE_ANALYSIS.md"
+    ],
+    "former_sections_before_lab": [
+      1,
+      2,
+      3
+    ],
+    "former_sections_after_lab": [
+      4,
+      5,
+      6
+    ]
+  },
+  {
+    "chapter": 8,
+    "file": "08-pipeline-and-vectorized-execution.md",
+    "question": "流水线在等待数据时，为什么不应该一直占用线程？",
+    "mode": "已归档运行证据 + 源码走查；扩展分支见本章边界",
+    "evidence": [
+      "PROFILE_ANALYSIS.md"
+    ],
+    "former_sections_before_lab": [
+      1,
+      2
+    ],
+    "former_sections_after_lab": [
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  {
+    "chapter": 9,
+    "file": "09-aggregation-join-and-runtime-optimization.md",
+    "question": "AVG 和 Join 为什么不能只看最后一个数字？",
+    "mode": "已归档运行证据 + 源码走查；扩展分支见本章边界",
+    "evidence": [
+      "07-aggregation-null.sql",
+      "07-aggregation-null.out.txt",
+      "25-average-numeric-assert.out.txt",
+      "08-join-semantics.sql",
+      "08-join-semantics.out.txt",
+      "PROFILE_ANALYSIS.md"
+    ],
+    "former_sections_before_lab": [
+      1,
+      2
+    ],
+    "former_sections_after_lab": [
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  {
+    "chapter": 10,
+    "file": "10-data-model-and-distribution.md",
+    "question": "相同 Key 的更新和写入哪个分区，是同一个决定吗？",
+    "mode": "已归档运行证据 + 源码走查；扩展分支见本章边界",
+    "evidence": [
+      "09-model-setup.sql",
+      "10-sequence-assert.out.txt",
+      "26-partition-table.sql",
+      "26-partition-table.out.txt"
+    ],
+    "former_sections_before_lab": [
+      1,
+      2
+    ],
+    "former_sections_after_lab": [
+      3,
+      4,
+      5,
+      6
+    ]
+  },
+  {
+    "chapter": 11,
+    "file": "11-tablet-rowset-and-segment.md",
+    "question": "查询能返回行，磁盘上的 Segment 是怎样被解释的？",
+    "mode": "已归档运行证据 + 源码走查；扩展分支见本章边界",
+    "evidence": [
+      "31-scale-assert.out.txt",
+      "PROFILE_ANALYSIS.md"
+    ],
+    "former_sections_before_lab": [
+      1,
+      2
+    ],
+    "former_sections_after_lab": [
+      3,
+      4,
+      5,
+      6
+    ]
+  },
+  {
+    "chapter": 12,
+    "file": "12-index-pruning-and-complex-types.md",
+    "question": "过滤掉一行与通过索引跳过一页，怎样区分？",
+    "mode": "已归档运行证据 + 源码走查；扩展分支见本章边界",
+    "evidence": [
+      "13-null-filter.sql",
+      "13-null-filter.out.txt"
+    ],
+    "former_sections_before_lab": [
+      1,
+      2
+    ],
+    "former_sections_after_lab": [
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  {
+    "chapter": 13,
+    "file": "13-updates-compaction-and-schema-evolution.md",
+    "question": "部分更新为什么能保留旧列，ALTER 为什么不总是重写全表？",
+    "mode": "已归档运行证据 + 源码走查；扩展分支见本章边界",
+    "evidence": [
+      "10-sequence-assert.out.txt",
+      "11-partial-update.sql",
+      "12-partial-assert.out.txt",
+      "27-delete.out.txt",
+      "28-schema-change.out.txt",
+      "33-after-restart.out.txt"
+    ],
+    "former_sections_before_lab": [
+      1,
+      2,
+      3
+    ],
+    "former_sections_after_lab": [
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "chapter": 14,
+    "file": "14-load-entry-and-lifecycle.md",
+    "question": "客户端重复发送一个导入请求，会不会重复追加数据？",
+    "mode": "已归档运行证据 + 源码走查；扩展分支见本章边界",
+    "evidence": [
+      "stream-input.csv",
+      "16-stream-load.response.json",
+      "16-stream-load-initial-no-expect.response.json",
+      "18-label-retry.response.json",
+      "17-stream-visible.out.txt",
+      "19-label-no-duplicate.out.txt",
+      "REPRODUCE.md"
+    ],
+    "former_sections_before_lab": [
+      1,
+      2
+    ],
+    "former_sections_after_lab": [
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  {
+    "chapter": 15,
+    "file": "15-physical-write-path.md",
+    "question": "数据写到 Rowset 后，为什么还需要 Publish？",
+    "mode": "已归档运行证据 + 源码走查；扩展分支见本章边界",
+    "evidence": [
+      "26-partition-table.out.txt",
+      "20-two-phase-precommit.response.json",
+      "21-before-2pc-commit.out.txt",
+      "24-after-2pc-commit.out.txt"
+    ],
+    "former_sections_before_lab": [
+      1,
+      2,
+      3
+    ],
+    "former_sections_after_lab": [
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  {
+    "chapter": 16,
+    "file": "16-transaction-commit-publish-visible.md",
+    "question": "PRECOMMITTED、COMMITTED、VISIBLE 分别允许我们得出什么结论？",
+    "mode": "已归档运行证据 + 源码走查；扩展分支见本章边界",
+    "evidence": [
+      "20-two-phase-precommit.response.json",
+      "21-before-2pc-commit.out.txt",
+      "22-transaction-precommitted.out.txt",
+      "23-two-phase-commit.response.json",
+      "24-after-2pc-commit.out.txt",
+      "26-partition-table.out.txt"
+    ],
+    "former_sections_before_lab": [
+      1,
+      2,
+      3
+    ],
+    "former_sections_after_lab": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  {
+    "chapter": 17,
+    "file": "17-mvcc-snapshots-and-rowset-lifetime.md",
+    "question": "Compaction 产生覆盖版本的新 Rowset，查询怎样避免重复读？",
+    "mode": "源码推演 + 相关运行证据；并发快照未实测",
+    "evidence": [
+      "26-partition-table.out.txt",
+      "33-after-restart.out.txt"
+    ],
+    "former_sections_before_lab": [
+      1,
+      2,
+      3
+    ],
+    "former_sections_after_lab": [
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "chapter": 18,
+    "file": "18-metadata-journal-and-fe-ha.md",
+    "question": "FE 重启后，为什么还认识原来的表和导入统计？",
+    "mode": "已归档运行证据 + 源码走查；扩展分支见本章边界",
+    "evidence": [
+      "load-before-restart.tsv",
+      "load-after-restart.tsv",
+      "restart-results.json",
+      "33-after-restart.out.txt"
+    ],
+    "former_sections_before_lab": [
+      1,
+      2
+    ],
+    "former_sections_after_lab": [
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  {
+    "chapter": 19,
+    "file": "19-node-management-and-maintenance.md",
+    "question": "BE 显示 Alive=true，是否足以说明每个 Tablet 都可读？",
+    "mode": "已归档运行证据 + 源码走查；扩展分支见本章边界",
+    "evidence": [
+      "00-environment.out.txt",
+      "34-restarted-environment.out.txt",
+      "restart-results.json"
+    ],
+    "former_sections_before_lab": [
+      1,
+      2
+    ],
+    "former_sections_after_lab": [
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  {
+    "chapter": 20,
+    "file": "20-authentication-authorization-and-entrypoints.md",
+    "question": "登录身份是怎样变成一次表访问的权限判断的？",
+    "mode": "源码走查与状态推演；无该主题的集群实测",
+    "evidence": [],
+    "former_sections_before_lab": [
+      1,
+      2,
+      3
+    ],
+    "former_sections_after_lab": [
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  {
+    "chapter": 21,
+    "file": "21-resource-governance-observability-and-ui.md",
+    "question": "查询慢的 17ms，究竟应该从哪里开始解释？",
+    "mode": "已归档运行证据 + 源码走查；扩展分支见本章边界",
+    "evidence": [
+      "PROFILE_ANALYSIS.md",
+      "profiles-index.raw.json"
+    ],
+    "former_sections_before_lab": [
+      1,
+      2,
+      3
+    ],
+    "former_sections_after_lab": [
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  {
+    "chapter": 22,
+    "file": "22-catalog-and-connector.md",
+    "question": "同一条 SQL 两次访问同一个 Catalog，会创建两份元数据对象吗？",
+    "mode": "源码走查与状态推演；无该主题的集群实测",
+    "evidence": [],
+    "former_sections_before_lab": [
+      1,
+      2
+    ],
+    "former_sections_after_lab": [
+      3,
+      4,
+      5,
+      6
+    ]
+  },
+  {
+    "chapter": 23,
+    "file": "23-external-table-query.md",
+    "question": "Iceberg 文件都找到了，为什么还不等于正确读到表？",
+    "mode": "源码走查与状态推演；无该主题的集群实测",
+    "evidence": [],
+    "former_sections_before_lab": [
+      1,
+      2
+    ],
+    "former_sections_after_lab": [
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  {
+    "chapter": 24,
+    "file": "24-integration-and-extension.md",
+    "question": "Doris 侧 2PC 成功，为什么不能直接宣布 Flink exactly-once？",
+    "mode": "已归档运行证据 + 源码走查；扩展分支见本章边界",
+    "evidence": [
+      "18-label-retry.response.json",
+      "20-two-phase-precommit.response.json",
+      "24-after-2pc-commit.out.txt"
+    ],
+    "former_sections_before_lab": [
+      1,
+      2
+    ],
+    "former_sections_after_lab": [
+      3,
+      4,
+      5,
+      6
+    ]
+  },
+  {
+    "chapter": 25,
+    "file": "25-object-storage-and-meta-service.md",
+    "question": "对象文件上传成功，为什么还不能判断事务是否提交？",
+    "mode": "源码走查与状态推演；无该主题的集群实测",
+    "evidence": [],
+    "former_sections_before_lab": [
+      1,
+      2,
+      3
+    ],
+    "former_sections_after_lab": [
+      4,
+      5,
+      6
+    ]
+  },
+  {
+    "chapter": 26,
+    "file": "26-cloud-read-write-and-maintenance.md",
+    "question": "两个线程都发现元数据落后，为什么只有一个需要拉取？",
+    "mode": "源码走查与状态推演；无该主题的集群实测",
+    "evidence": [],
+    "former_sections_before_lab": [
+      1,
+      2
+    ],
+    "former_sections_after_lab": [
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  {
+    "chapter": 27,
+    "file": "27-from-symptom-to-module.md",
+    "question": "SHOW LOAD 少了一项统计，怎样判断该查展示还是持久化？",
+    "mode": "已归档运行证据 + 源码走查；扩展分支见本章边界",
+    "evidence": [
+      "load-before-restart.tsv",
+      "load-after-restart.tsv",
+      "restart-results.json"
+    ],
+    "former_sections_before_lab": [
+      1,
+      2,
+      3
+    ],
+    "former_sections_after_lab": [
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "chapter": 28,
+    "file": "28-testing-fixes-and-sustained-contribution.md",
+    "question": "怎样把“我看懂了”变成维护者能核验的贡献？",
+    "mode": "已归档运行证据 + 源码走查；扩展分支见本章边界",
+    "evidence": [
+      "results.json",
+      "25-average-numeric-assert.out.txt",
+      "restart-results.json"
+    ],
+    "former_sections_before_lab": [
+      1,
+      2
+    ],
+    "former_sections_after_lab": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ]
+  }
+]

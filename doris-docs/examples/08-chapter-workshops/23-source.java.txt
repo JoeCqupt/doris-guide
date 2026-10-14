@@ -1,0 +1,19 @@
+    public List<ConnectorScanRange> planScan(ConnectorSession session, ConnectorScanRequest request) {
+        IcebergTableHandle icebergHandle = (IcebergTableHandle) request.getTableHandle();
+        try {
+            // The reuse key deliberately omits projected columns because they do not change Iceberg split
+            // planning. Reader compatibility still depends on whether metadata columns are requested, so
+            // validate every call before a cached range list can be returned.
+            validateMetadataColumnReader(session, request.getColumns());
+            if (session == null || !session.isExternalScanTaskReuseEnabled()) {
+                return planScanInternal(session, icebergHandle, request.getColumns(),
+                        request.getFilter(), request.isCountPushdown());
+            }
+            if (icebergHandle.isSystemTable()) {
+                // System tables read connector metadata through their own readers; never reuse them.
+                return planScanInternal(session, icebergHandle, request.getColumns(),
+                        request.getFilter(), request.isCountPushdown());
+            }
+            // Statement-scoped reuse: within one statement the identical scan (same table, same
+            // snapshot/ref/schema pin, same filter, same COUNT pushdown) plans once and every
+            // duplicated relation shares the result. The scope is NONE for offline planning and tests,

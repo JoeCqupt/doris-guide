@@ -1,0 +1,206 @@
+--------------
+SET enable_profile=true
+--------------
+
+Query OK, 0 rows affected (0.008 sec)
+
+--------------
+SET auto_profile_threshold_ms=0
+--------------
+
+Query OK, 0 rows affected (0.005 sec)
+
+--------------
+SHOW CREATE TABLE orders_intro_v1
+--------------
+
++-----------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Table           | Create Table                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
++-----------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| orders_intro_v1 | CREATE TABLE `orders_intro_v1` (
+  `order_date` date NOT NULL,
+  `order_id` bigint NOT NULL,
+  `user_id` bigint NOT NULL,
+  `city` varchar(32) NOT NULL,
+  `amount` decimal(12,2) NOT NULL,
+  `status` varchar(16) NOT NULL
+) ENGINE=OLAP
+DUPLICATE KEY(`order_date`, `order_id`)
+DISTRIBUTED BY HASH(`order_id`) BUCKETS 2
+PROPERTIES (
+"replication_allocation" = "tag.location.default: 1",
+"min_load_replica_num" = "-1",
+"is_being_synced" = "false",
+"storage_medium" = "hdd",
+"storage_format" = "V2",
+"inverted_index_storage_format" = "V3",
+"light_schema_change" = "true",
+"disable_auto_compaction" = "false",
+"group_commit_interval_ms" = "10000",
+"group_commit_data_bytes" = "134217728"
+); |
++-----------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+1 row in set (0.002 sec)
+
+--------------
+SELECT * FROM orders_intro_v1 ORDER BY order_date, order_id
+--------------
+
++------------+----------+---------+--------+--------+-----------+
+| order_date | order_id | user_id | city   | amount | status    |
++------------+----------+---------+--------+--------+-----------+
+| 2026-10-01 |        1 |     101 | 北京   | 100.00 | PAID      |
+| 2026-10-01 |        2 |     102 | 北京   |  80.00 | PAID      |
+| 2026-10-01 |        3 |     101 | 上海   | 120.00 | PAID      |
+| 2026-10-01 |        4 |     103 | 上海   |  60.00 | PAID      |
+| 2026-10-01 |        5 |     101 | 北京   |  20.00 | PAID      |
+| 2026-10-01 |        6 |     104 | 杭州   | 200.00 | PAID      |
+| 2026-10-01 |        7 |     105 | 上海   |  90.00 | CANCELLED |
+| 2026-10-02 |        8 |     102 | 杭州   |  50.00 | PAID      |
++------------+----------+---------+--------+--------+-----------+
+8 rows in set (0.080 sec)
+
+--------------
+SELECT COUNT(*) AS total_rows FROM orders_intro_v1
+--------------
+
++------------+
+| total_rows |
++------------+
+|          8 |
++------------+
+1 row in set (0.101 sec)
+
+--------------
+SELECT city, COUNT(*) AS order_count, SUM(amount) AS revenue,
+       COUNT(DISTINCT user_id) AS buyers
+FROM orders_intro_v1
+WHERE order_date = '2026-10-01' AND status = 'PAID'
+GROUP BY city
+ORDER BY city
+--------------
+
++--------+-------------+---------+--------+
+| city   | order_count | revenue | buyers |
++--------+-------------+---------+--------+
+| 上海   |           2 |  180.00 |      2 |
+| 北京   |           3 |  200.00 |      2 |
+| 杭州   |           1 |  200.00 |      1 |
++--------+-------------+---------+--------+
+3 rows in set (0.065 sec)
+
+--------------
+SELECT COUNT(*) AS paid_orders, SUM(amount) AS revenue,
+       COUNT(DISTINCT user_id) AS buyers
+FROM orders_intro_v1
+WHERE order_date = '2026-10-01' AND status = 'PAID'
+--------------
+
++-------------+---------+--------+
+| paid_orders | revenue | buyers |
++-------------+---------+--------+
+|           6 |  580.00 |      4 |
++-------------+---------+--------+
+1 row in set (0.040 sec)
+
+--------------
+EXPLAIN
+SELECT city, COUNT(*) AS order_count, SUM(amount) AS revenue,
+       COUNT(DISTINCT user_id) AS buyers
+FROM orders_intro_v1
+WHERE order_date = '2026-10-01' AND status = 'PAID'
+GROUP BY city
+ORDER BY city
+--------------
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Explain String(Nereids Planner)                                                                                                                           |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| PLAN FRAGMENT 0                                                                                                                                           |
+|   OUTPUT EXPRS:                                                                                                                                           |
+|     city[#17]                                                                                                                                             |
+|     order_count[#18]                                                                                                                                      |
+|     revenue[#19]                                                                                                                                          |
+|     buyers[#20]                                                                                                                                           |
+|   PARTITION: UNPARTITIONED                                                                                                                                |
+|                                                                                                                                                           |
+|   HAS_COLO_PLAN_NODE: false                                                                                                                               |
+|                                                                                                                                                           |
+|   VRESULT SINK                                                                                                                                            |
+|      MYSQL_PROTOCOL                                                                                                                                       |
+|                                                                                                                                                           |
+|   5:VMERGING-EXCHANGE                                                                                                                                     |
+|      offset: 0                                                                                                                                            |
+|      distribute expr lists: city[#17]                                                                                                                     |
+|                                                                                                                                                           |
+| PLAN FRAGMENT 1                                                                                                                                           |
+|   OUTPUT EXPRS:                                                                                                                                           |
+|     city[#9]                                                                                                                                              |
+|     partial_sum(amount)[#10]                                                                                                                              |
+|     partial_count(*)[#11]                                                                                                                                 |
+|     partial_multi_distinct_count(user_id)[#12]                                                                                                            |
+|   PARTITION: HASH_PARTITIONED: city[#9]                                                                                                                   |
+|                                                                                                                                                           |
+|   HAS_COLO_PLAN_NODE: true                                                                                                                                |
+|                                                                                                                                                           |
+|   STREAM DATA SINK                                                                                                                                        |
+|     EXCHANGE ID: 05                                                                                                                                       |
+|     UNPARTITIONED                                                                                                                                         |
+| IS_MERGE: true                                                                                                                                            |
+|                                                                                                                                                           |
+|   4:VSORT(60)                                                                                                                                             |
+|   |  order by: city[#17] ASC                                                                                                                              |
+|   |  algorithm: full sort                                                                                                                                 |
+|   |  local merge sort                                                                                                                                     |
+|   |  merge by exchange                                                                                                                                    |
+|   |  offset: 0                                                                                                                                            |
+|   |  distribute expr lists:                                                                                                                               |
+|   |                                                                                                                                                       |
+|   3:VAGGREGATE (merge finalize)(59)                                                                                                                       |
+|   |  output: count(partial_count(*)[#11])[#14], sum(partial_sum(amount)[#10])[#15], multi_distinct_count(partial_multi_distinct_count(user_id)[#12])[#16] |
+|   |  group by: city[#9]                                                                                                                                   |
+|   |  sortByGroupKey:false                                                                                                                                 |
+|   |  cardinality=0                                                                                                                                        |
+|   |  distribute expr lists: city[#9]                                                                                                                      |
+|   |                                                                                                                                                       |
+|   2:VEXCHANGE                                                                                                                                             |
+|      offset: 0                                                                                                                                            |
+|      distribute expr lists:                                                                                                                               |
+|                                                                                                                                                           |
+| PLAN FRAGMENT 2                                                                                                                                           |
+|                                                                                                                                                           |
+|   PARTITION: HASH_PARTITIONED: order_id[#1]                                                                                                               |
+|                                                                                                                                                           |
+|   HAS_COLO_PLAN_NODE: false                                                                                                                               |
+|                                                                                                                                                           |
+|   STREAM DATA SINK                                                                                                                                        |
+|     EXCHANGE ID: 02                                                                                                                                       |
+|     HASH_PARTITIONED: city[#9]                                                                                                                            |
+|                                                                                                                                                           |
+|   1:VAGGREGATE (update serialize)(57)                                                                                                                     |
+|   |  STREAMING                                                                                                                                            |
+|   |  output: partial_sum(amount[#8])[#10], partial_count(*)[#11], partial_multi_distinct_count(user_id[#7])[#12]                                          |
+|   |  group by: city[#6]                                                                                                                                   |
+|   |  sortByGroupKey:false                                                                                                                                 |
+|   |  cardinality=0                                                                                                                                        |
+|   |  distribute expr lists:                                                                                                                               |
+|   |                                                                                                                                                       |
+|   0:VOlapScanNode(41)                                                                                                                                     |
+|      TABLE: doris_book.orders_intro_v1(orders_intro_v1), PREAGGREGATION: ON                                                                               |
+|      PREDICATES: ((order_date[#0] = '2026-10-01') AND (status[#5] = 'PAID'))                                                                              |
+|      partitions=1/1 (orders_intro_v1)                                                                                                                     |
+|      tablets=2/2, tabletList=1791956598859,1791956598861                                                                                                  |
+|      cardinality=1, avgRowSize=0.0, numNodes=1                                                                                                            |
+|      pushAggOp=NONE                                                                                                                                       |
+|      POOLING-SCAN                                                                                                                                         |
+|      final projections: city[#3], user_id[#2], amount[#4]                                                                                                 |
+|      final project output tuple id: 1                                                                                                                     |
+|                                                                                                                                                           |
+|                                                                                                                                                           |
+|                                                                                                                                                           |
+| ========== STATISTICS ==========                                                                                                                          |
+| planned with unknown column statistics                                                                                                                    |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+84 rows in set (0.017 sec)
+
+Bye

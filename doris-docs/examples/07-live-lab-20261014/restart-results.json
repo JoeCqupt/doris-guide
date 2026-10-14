@@ -1,0 +1,69 @@
+{
+  "verified_at": "2026-10-14T18:27:15.359043+08:00",
+  "checks": [
+    {
+      "case": "restart-data-and-schema",
+      "passed": true,
+      "expected": "8\t720.00\n7\tC\t40\t120\tbook\n6\t120\n100000\t4999950000\n2026-10-01\t1\t10\n2026-10-02\t1\t20",
+      "actual": "8\t720.00\n7\tC\t40\t120\tbook\n6\t120\n100000\t4999950000\n2026-10-01\t1\t10\n2026-10-02\t1\t20"
+    },
+    {
+      "case": "restart-show-load-statistics",
+      "label": "label_692058aa63f2439f_be83ff856aebdc1c",
+      "before": {
+        "ScannedRows": 100000,
+        "LoadBytes": 1700000,
+        "FileNumber": 0,
+        "FileSize": 0,
+        "FilteredRows": 0,
+        "TaskNumber": 1,
+        "Unfinished backends": [],
+        "All backends": [
+          1791956598758
+        ]
+      },
+      "after": {
+        "ScannedRows": 100000,
+        "LoadBytes": 1700000,
+        "FileNumber": 0,
+        "FileSize": 0,
+        "FilteredRows": 0,
+        "TaskNumber": 1,
+        "Unfinished backends": [],
+        "All backends": [
+          1791956598758
+        ]
+      },
+      "passed": true
+    },
+    {
+      "case": "restart-show-load-statistics",
+      "label": "label_f9562a491d394d6b_9516eec9bb053a86",
+      "before": {
+        "ScannedRows": 1,
+        "LoadBytes": 19,
+        "FileNumber": 0,
+        "FileSize": 0,
+        "FilteredRows": 0,
+        "TaskNumber": 1,
+        "Unfinished backends": [],
+        "All backends": [
+          1791956598758
+        ]
+      },
+      "after": {
+        "ScannedRows": 1,
+        "LoadBytes": 19,
+        "FileNumber": 0,
+        "FileSize": 0,
+        "FilteredRows": 0,
+        "TaskNumber": 1,
+        "Unfinished backends": [],
+        "All backends": [
+          1791956598758
+        ]
+      },
+      "passed": true
+    }
+  ]
+}

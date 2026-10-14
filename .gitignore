@@ -6,3 +6,6 @@
 
 # Temporary CMake build products; retain probe sources and learning logs
 **/build/
+
+# Local manuscript backups
+/.book-backups/

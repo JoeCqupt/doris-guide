@@ -2,15 +2,52 @@
 
 [全书导航](../README.md) · [前置：请求入口](04-request-session-and-command.md) · [前置：导入生命周期](14-load-entry-and-lifecycle.md)
 
-> 日期：2026-10-12。源码基线：`a53b182f810be2b3731c7dfdf6f40ff5a0ad63bd`。本章用已有命令与测试演示定位方法，不提交修复、不认领 issue，也不把待验证条件称作 Doris 缺陷。没有运行 SQL 或测试。
+> 教学结构修订：2026-10-14。每章先沿一个问题阅读代码，再做实验、观察结果，最后解释对象和分支。历史正文基线为 `a53b182f810be2b3731c7dfdf6f40ff5a0ad63bd`；本次摘录取自当前本地文件，完整文件 SHA-256 与行号保存在[源码摘录清单](../examples/08-chapter-workshops/source-manifest.json)。运行证据来自报告版本 `doris-0.0.0-a53b182f810` 的二进制，不能仅凭版本前缀认定当前工作目录与二进制逐文件相同。
 
-## 27.1 从一个可观察行为开始
+**本章问题：SHOW LOAD 少了一项统计，怎样判断该查展示还是持久化？**
+
+本章验证方式：已归档运行证据 + 源码走查；扩展分支见本章边界。建议先用 20—40 分钟完成主案例，第四部分的扩展阅读可分次完成；这不是新增的每日必交任务。
+
+## 一、源码讲解：先找到决定行为的对象和分支
+
+从 ShowLoadCommand.handleShowLoad 的四步读：校验输入、取得记录、排序转换、分页。再把第 18 章的重启证据作为定位分界：运行中就错与仅重启后错，需要追不同对象生命周期。
+
+### 先读这段真实代码
+
+文件：`fe/fe-core/src/main/java/org/apache/doris/nereids/trees/plans/commands/ShowLoadCommand.java`，当前文件第 192—209 行。下面是连续原文摘录，局部片段省略了方法的其他部分；不要把片段当完整实现。
+
+```java
+    private ShowResultSet handleShowLoad(ConnectContext ctx, StmtExecutor executor) throws Exception {
+        // first validate the where
+        boolean valid = validate(ctx);
+        if (!valid) {
+            throw new AnalysisException("Where clause should looks like: LABEL = \"your_load_label\","
+                    + " or LABEL LIKE \"matcher\", " + " or STATE = \"PENDING|ETL|LOADING|FINISHED|CANCELLED\", "
+                    + " or compound predicate with operator AND");
+        }
+
+        // then process the order by
+        ImmutableList<String> titles = isStreamLoad ? STREAM_LOAD_TITLE_NAMES : LOAD_TITLE_NAMES;
+        orderByPairs = getOrderByPairs(orderKeys, titles);
+
+        Set<EtlJobType> jobTypes = Sets.newHashSet(EnumSet.allOf(EtlJobType.class));
+        jobTypes.remove(EtlJobType.COPY);
+
+        // get the load info
+        Util.prohibitExternalCatalog(ctx.getDefaultCatalog(), this.getClass().getSimpleName());
+```
+
+### 这几行应该怎样读
+
+`validate` 失败先转成带提示的 AnalysisException；排序列名映射在获取记录之前准备；后面才查询管理器并整理结果。应把“某输入不被接受”和“记录被错误分页”作为两类行为分别验证。
+
+### 从一个可观察行为开始
 
 “我想读懂导入模块”范围太大，很容易一路追到存储层而忘记目标。把它缩成：“SHOW LOAD 的 WHERE 条件在哪里校验，结果如何排序和分页？”你就有了输入、输出和边界。
 
 这个题目适合 Java 业务开发者：它涉及请求参数、表达式、数据获取和结果整理，同时接触 Doris 的语句入口、导入状态和测试方式。它是学习案例，不代表已经找到有价值的待修复问题。
 
-先写一张行为卡：
+下面保留一张新的条件查询行为卡模板（示例 Label 不是本轮实测 Label）：
 
 ```text
 操作：SHOW LOAD FROM doris_book WHERE LABEL = 'book_batch_01'
@@ -22,7 +59,7 @@
 
 没有对应作业时，空结果可能完全正确。若要调查校验行为，甚至不必先制造大量数据；但从直接调用 Java 校验方法得到的结果，也不能替代真正 SQL 路径的验证。
 
-## 27.2 把问题落到四段代码
+### 把问题落到四段代码
 
 根据第 4 章的入口，可把主线压缩成：
 
@@ -39,7 +76,7 @@ ShowCommand.run()
 
 每段都应该有一个明确问题。校验失败看第 1 段，记录来源看第 2 段，返回行数不对再看第 3—4 段。不要因为症状出现在 SHOW LOAD，就立即改 LoadManager 的事务状态。
 
-## 27.3 读校验方法：输入形状和输出状态
+### 读校验方法：输入形状和输出状态
 
 当前 `validate()` 先处理数据库名；缺省时从 `ConnectContext` 取当前数据库，仍为空则报告分析错误。有 WHERE 时，按表达式类型进入复合或单个条件分析。
 
@@ -51,7 +88,33 @@ ShowCommand.run()
 
 复合条件中，当前实现要求 AND，并检查两边列名再分析子条件。对更复杂表达式，正确做法是同时核对解析结果和方法前提。看到强制类型转换或缺少某个分支，只能产生待验证假设；需证明该输入通过前面的 SQL 路径确实能到达这里，并核对预期行为，才能形成问题结论。
 
-## 27.4 读结果组织：共用工具在哪里
+## 二、动手实验：先预测，再核对
+
+默认使用已保存的实验材料或只读源码，不需要启动服务。运行环境已停止；若选择重新执行 SQL，先按[实验复现说明](../examples/07-live-lab-20261014/REPRODUCE.md)确认服务、版本与数据状态。初始化、导入和更新脚本不可在现有表上盲目重放。
+
+1. 比较两份 load-*-restart.tsv 中相同 Label 的统计，先写用户可见事实。本次数据未丢，不把历史缺陷自动认定为当前问题。
+2. 打开 handleShowLoad，找 validate、getOrderByPairs 与 applyLimit；再读 ShowLoadCommandTest 的 validate/order/limit 断言，标注每项覆盖层级。
+3. 假设仅重启后字段归零，画“统计生产 → 记录保存 → 序列化/replay → SHOW 展示”路线；为每一层列一个可以排除它的证据。
+
+本章实验材料：[load-before-restart.tsv](../examples/07-live-lab-20261014/load-before-restart.tsv) · [load-after-restart.tsv](../examples/07-live-lab-20261014/load-after-restart.tsv) · [restart-results.json](../examples/07-live-lab-20261014/restart-results.json)。
+
+## 三、观察结果：先陈述事实，再划清证据范围
+
+当前构建的两条 Type=INSERT 记录统计重启前后相同：100000/1700000 与 1/19（ScannedRows/LoadBytes）。没有发现并确认新的 SHOW LOAD 缺陷。
+
+这里的 INSERT 是 SHOW LOAD 的 Type 字段：第二条 `label_f9562a491d394d6b_9516eec9bb053a86` 对应实验 27 中的 DELETE（txnId=17），不能把展示分类直接当成原始 SQL 动词。证据是 [DELETE 原始输出](../examples/07-live-lab-20261014/27-delete.out.txt) 与两份 SHOW LOAD 记录中的 Label/TransactionId 对照。
+
+**本章边界：** 本章是证据驱动定位练习，不认领 issue、不对外提交，也不声称历史修复已在旧版本复现。
+
+## 四、回到源码解释：把现象还原成执行过程
+
+若过滤/分页导致记录缺失，查公共命令工具；若同 Label 仍在而统计只在重启后变化，优先检查持久化与恢复链。错误层定位会导致把补丁加到展示层，掩盖真正状态丢失。
+
+### 用自己的话走完这条链
+
+合上结果后，按“输入 → 关键对象/状态 → 分支条件 → 可观察结果”的顺序回答本章问题：**SHOW LOAD 少了一项统计，怎样判断该查展示还是持久化？** 再指出一项尚不能从现有实验得出的结论。能把每个箭头落到本章的方法或证据，比记住术语更接近读懂源码。
+
+### 读结果组织：共用工具在哪里
 
 `handleShowLoad()` 在取得记录后排序，未指定排序时使用当前实现的默认比较方式；随后把元素转换成字符串，并调用 `applyLimit()`。
 
@@ -59,7 +122,7 @@ ShowCommand.run()
 
 这个例子展示了一种常见贡献判断：症状出现在 A 命令，但契约可能属于父类或公共工具。提出修改前，应先检索调用方和同类测试，明确改动范围。
 
-## 27.5 现有测试到底验证了什么
+### 现有测试到底验证了什么
 
 `ShowLoadCommandTest.java` 当前包含以下测试：
 
@@ -73,7 +136,7 @@ ShowCommand.run()
 
 准备新增案例前，先查是否已在父类工具或回归测试中覆盖。没有出现在这个文件里，并不证明整个项目没有测试，也不证明值得新增一个 PR。
 
-## 27.6 把假设变成证据的步骤
+### 把假设变成证据的步骤
 
 假设用户报告“某种 WHERE 条件的错误信息不符合预期”。可以按以下顺序推进：
 
@@ -92,7 +155,7 @@ bash run-fe-ut.sh --run org.apache.doris.nereids.trees.plans.commands.ShowLoadCo
 
 运行前按当前仓库要求检查环境；记录退出码和报告中的实际测试结果。命令返回成功不能自动证明运行了预期数量的测试，也不等于所有样式检查都通过。需要端到端 SQL 验证时，应使用仓库回归脚本及规范，不手写期望输出伪装成生成结果。
 
-## 27.7 给未来贡献准备一页说明
+### 给未来贡献准备一页说明
 
 真正提交问题或修改前，可以把发现写成下面这样的笔记。未完成的项保留“未验证”，不要用推测填满它。
 
@@ -109,7 +172,7 @@ bash run-fe-ut.sh --run org.apache.doris.nereids.trees.plans.commands.ShowLoadCo
 
 你已经积累的 Java 开发能力在这里非常有用：缩小边界、解释状态、写有意义的测试、对齐用户行为。接下来应把这种工作持续应用到一个模块，逐步形成可信的判断和维护记录，而非为了提交次数制造改动。
 
-## 27.8 源码索引与完成边界
+### 源码索引与完成边界
 
 以下路径均相对源码根目录：
 
@@ -120,13 +183,12 @@ bash run-fe-ut.sh --run org.apache.doris.nereids.trees.plans.commands.ShowLoadCo
 | `fe/fe-core/src/test/java/org/apache/doris/nereids/trees/plans/commands/ShowLoadCommandTest.java` | 读取现有输入与断言，识别覆盖边界 |
 | `run-fe-ut.sh` | 验证可选测试命令的参数格式 |
 
-本章产出是一条可复用的定位方法和一个经过源码核对的阅读案例。没有修改 Doris 代码、没有运行测试，也没有发现并确认新的产品缺陷。它与前面几章共同构成“用户行为 → FE 入口 → 模块状态 → 测试证据”的第一条贡献阅读路线。
+本章产出是一条可复用的定位方法和一个经过源码核对的阅读案例。没有修改 Doris 代码、没有运行仓库单测，也没有发现并确认新的产品缺陷；SQL/重启证据见本章观察部分。它与前面几章共同构成“用户行为 → FE 入口 → 模块状态 → 测试证据”的第一条贡献阅读路线。
 
+### 延伸源码专题
+
+- [专题 9　真实 FE 修复复盘：SHOW LOAD 统计为什么在重启后消失](../deep-dives/09-historical-fe-fix.md)
 
 ---
 
-[上一章：第 26 章](26-cloud-read-write-and-maintenance.md) · [全书导航](../README.md) · [下一章：第 28 章](28-testing-fixes-and-sustained-contribution.md)
-
-## 源码深读补充（2026-10-13）
-
-- [专题 9　真实 FE 修复复盘：SHOW LOAD 统计为什么在重启后消失](../deep-dives/09-historical-fe-fix.md)
+[全书导航](../README.md) · [前置：请求入口](04-request-session-and-command.md) · [前置：导入生命周期](14-load-entry-and-lifecycle.md)

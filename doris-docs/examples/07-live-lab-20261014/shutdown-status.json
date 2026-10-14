@@ -1,0 +1,8 @@
+{
+  "verified_at": "2026-10-14T18:33:01.652489+08:00",
+  "stop_mode": "FE and BE stop scripts --grace; completed with exit code 0",
+  "matching_processes": [],
+  "listening_on_cluster_ports": [],
+  "services_stopped": true,
+  "test_data_preserved": true
+}

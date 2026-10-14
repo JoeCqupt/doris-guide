@@ -1,0 +1,1 @@
+SELECT k,COUNT(*),SUM(id) FROM doris_book.scale_numbers WHERE id>=50000 GROUP BY k ORDER BY SUM(id) DESC,k LIMIT 5; SELECT COUNT(*) FROM doris_book.scale_numbers a JOIN doris_book.unique_updates b ON a.k=b.id;

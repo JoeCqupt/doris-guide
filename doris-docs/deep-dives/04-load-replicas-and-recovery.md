@@ -94,3 +94,7 @@ sync/async 确认语义应连同所选入口、配置及 WAL 条件解释。诊�
 | `be/src/load/group_commit/wal/wal_manager.cpp` | `_replay_background` |
 
 包重传测试应证明旧序号不重复追加；关闭测试应覆盖同 sender 重复 EOS 与最后一个 sender；副本测试应让不同 Tablet 拥有不同成功集合；恢复测试应比较数据和进度而非只看 Job RUNNING。本专题的事件为源码推演，未制造副本故障或重启现有数据。
+
+## 2026-10-14 运行证据更新
+
+新增[本地 SQL/导入/恢复实验](../examples/07-live-lab-20261014/REPORT.md)与[真实 Profile 解读](../examples/07-live-lab-20261014/PROFILE_ANALYSIS.md)。它们补充初稿中的未运行项；没有执行多副本/Cloud/取消/Spill 故障实验，也不替代历史修复前后的测试。

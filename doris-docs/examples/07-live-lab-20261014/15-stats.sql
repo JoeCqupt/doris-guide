@@ -1,0 +1,1 @@
+ANALYZE TABLE doris_book.orders_intro_v1 WITH SYNC; SHOW TABLE STATS doris_book.orders_intro_v1; EXPLAIN SELECT city,COUNT(*),SUM(amount) FROM doris_book.orders_intro_v1 WHERE amount>100 GROUP BY city;

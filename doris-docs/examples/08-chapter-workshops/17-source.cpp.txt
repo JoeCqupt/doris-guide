@@ -1,0 +1,23 @@
+Status VersionGraph::capture_consistent_versions(const Version& spec_version,
+                                                 std::vector<Version>* version_path) const {
+    if (spec_version.first > spec_version.second) {
+        return Status::Error<INVALID_ARGUMENT, false>(
+                "invalid specified version. spec_version={}-{}", spec_version.first,
+                spec_version.second);
+    }
+
+    int64_t cur_idx = -1;
+    for (size_t i = 0; i < _version_graph.size(); i++) {
+        if (_version_graph[i].value == spec_version.first) {
+            cur_idx = i;
+            break;
+        }
+    }
+
+    if (cur_idx < 0) {
+        return Status::InternalError<false>(
+                "failed to find path in version_graph. spec_version: {}-{}", spec_version.first,
+                spec_version.second);
+    }
+
+    int64_t end_value = spec_version.second + 1;

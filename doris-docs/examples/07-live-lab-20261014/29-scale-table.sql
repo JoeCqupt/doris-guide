@@ -1,0 +1,1 @@
+CREATE TABLE doris_book.scale_numbers(id BIGINT,k BIGINT) DUPLICATE KEY(id) DISTRIBUTED BY HASH(id) BUCKETS 2 PROPERTIES('replication_num'='1'); INSERT INTO doris_book.scale_numbers SELECT number,number%1000 FROM numbers('number'='100000');

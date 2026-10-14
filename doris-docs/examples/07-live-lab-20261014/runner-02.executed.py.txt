@@ -1,0 +1,47 @@
+from pathlib import Path
+import subprocess,json,urllib.request,base64,time
+r=Path('/Users/jiangyuan/doris-guide/doris-docs/examples/07-live-lab-20261014')
+(r/'stream-input.csv').write_text('1,10\n2,20\n3,30\n')
+mysql=['/opt/homebrew/bin/mysql','--connect-timeout=5','-h127.0.0.1','-P9030','-uroot','--batch','--raw','--skip-column-names']
+results=[]
+def q(name,sql,expected):
+ (r/(name+'.sql')).write_text(sql+'\n');p=subprocess.run(mysql,input=sql,capture_output=True,text=True,timeout=30)
+ (r/(name+'.out.txt')).write_text(p.stdout);(r/(name+'.stderr.txt')).write_text(p.stderr)
+ ok=p.returncode==0 and p.stdout.strip()==expected;results.append({'case':name,'passed':ok,'expected':expected,'actual':p.stdout.strip()});print(name,ok,flush=True)
+ return ok
+def upload(name,headers,url,data=True):
+ cmd=['curl','-sS','--max-time','60','--location-trusted','-u','root:','-X','PUT',url]
+ for h in headers:cmd+=['-H',h]
+ if data:cmd+=['-H','Expect:100-continue','-T',str(r/'stream-input.csv')]
+ else:cmd+=['--data','']
+ p=subprocess.run(cmd,capture_output=True,text=True,timeout=70);(r/(name+'.response.json')).write_text(p.stdout);(r/(name+'.stderr.txt')).write_text(p.stderr)
+ j=json.loads(p.stdout);print(name,j.get('Status',j.get('status')),flush=True);return j
+url='http://127.0.0.1:8030/api/doris_book/stream_events/_stream_load'
+headers=['label:book_lab_20261014_stream_01','column_separator:,','columns:id,v','format:csv']
+a=upload('16-stream-load',headers,url);assert a['Status']=='Success',a
+q('17-stream-visible','SELECT COUNT(*),SUM(v) FROM doris_book.stream_events;','3\t60')
+b=upload('18-label-retry',headers,url);assert b['Status']=='Label Already Exists',b
+q('19-label-no-duplicate','SELECT COUNT(*),SUM(v) FROM doris_book.stream_events;','3\t60')
+c=upload('20-two-phase-precommit',['label:book_lab_20261014_2pc_01','column_separator:,','columns:id,v','format:csv','two_phase_commit:true'],url);assert c['Status']=='Success',c
+q('21-before-2pc-commit','SELECT COUNT(*),SUM(v) FROM doris_book.stream_events;','3\t60')
+q('22-transaction-precommitted',f'SHOW TRANSACTION FROM doris_book WHERE ID={c["TxnId"]};',None) if False else None
+sql=f'SHOW TRANSACTION FROM doris_book WHERE ID={c["TxnId"]};'
+p=subprocess.run(mysql,input=sql,capture_output=True,text=True,timeout=30);(r/'22-transaction-precommitted.sql').write_text(sql);(r/'22-transaction-precommitted.out.txt').write_text(p.stdout);assert 'PRECOMMITTED' in p.stdout
+commit=upload('23-two-phase-commit',[f'txn_id:{c["TxnId"]}','txn_operation:commit'],'http://127.0.0.1:8030/api/doris_book/_stream_load_2pc',False)
+assert commit['status']=='Success' if 'status' in commit else commit['Status']=='Success'
+q('24-after-2pc-commit','SELECT COUNT(*),SUM(v) FROM doris_book.stream_events;','6\t120')
+q('25-average-numeric-assert',"SELECT AVG(v)=40,COUNT(*)=4,COUNT(v)=3,COUNT(DISTINCT v)=3 FROM (SELECT 10 v UNION ALL SELECT 20 UNION ALL SELECT 90 UNION ALL SELECT CAST(NULL AS INT))t; SELECT SUM(s)/SUM(n)=40 FROM (SELECT 30 s,2 n UNION ALL SELECT 90,1)t;",'1\t1\t1\t1\n1')
+(r/'stream-and-numeric-results.json').write_text(json.dumps(results,ensure_ascii=False,indent=2)+'\n')
+# Download raw query profiles for the actually profiled sessions.
+headers={'Authorization':'Basic '+base64.b64encode(b'root:').decode()}
+def get(url):
+ with urllib.request.urlopen(urllib.request.Request(url,headers=headers),timeout=20) as f:return f.read()
+raw=get('http://127.0.0.1:8030/rest/v1/query_profile');(r/'profiles-index.raw.json').write_bytes(raw)
+profiles=r/'profiles';profiles.mkdir(exist_ok=True)
+for row in json.loads(raw)['data']['rows']:
+ ident=row['Profile ID']
+ if row['Task Type']!='QUERY':continue
+ data=get('http://127.0.0.1:8030/rest/v1/query_profile/text/'+ident)
+ (profiles/(ident+'.json')).write_bytes(data)
+ value=json.loads(data)['data'];(profiles/(ident+'.txt')).write_text(value if isinstance(value,str) else json.dumps(value,ensure_ascii=False,indent=2))
+print('Profiles downloaded',len(list(profiles.glob('*.txt'))),flush=True)

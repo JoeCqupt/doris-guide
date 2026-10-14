@@ -1,0 +1,17 @@
+    public boolean handleHbResponse(BackendHbResponse hbResponse, boolean isReplay) {
+        boolean isChanged = false;
+        if (hbResponse.getStatus() == HbStatus.OK) {
+            if (!this.version.equals(hbResponse.getVersion())) {
+                isChanged = true;
+                this.version = hbResponse.getVersion();
+            }
+
+            if (this.bePort != hbResponse.getBePort() && !FeConstants.runningUnitTest) {
+                isChanged = true;
+                this.bePort = hbResponse.getBePort();
+            }
+
+            if (this.httpPort != hbResponse.getHttpPort() && !FeConstants.runningUnitTest) {
+                isChanged = true;
+                this.httpPort = hbResponse.getHttpPort();
+            }

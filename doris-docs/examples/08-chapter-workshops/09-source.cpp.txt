@@ -1,0 +1,11 @@
+    NO_SANITIZE_UNDEFINED void merge(AggregateDataPtr __restrict place, ConstAggregateDataPtr rhs,
+                                     Arena&) const override {
+        if constexpr (T == TYPE_DECIMALV2) {
+            this->data(place).sum += this->data(rhs).sum;
+        } else if constexpr (is_decimal(T)) {
+            this->data(place).sum += this->data(rhs).sum.value;
+        } else {
+            this->data(place).sum += this->data(rhs).sum;
+        }
+        this->data(place).count += this->data(rhs).count;
+    }

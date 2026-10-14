@@ -101,3 +101,7 @@ BE `_exec_plan_fragment_impl()` 检查请求版本，调用 `deserialize_thrift_
 历史 EXPLAIN 支持节点、分组键与 Exchange 的分析，没有 Profile、抓包或对象地址证据。本专题新增的方法映射来自当前源码，二者标注为不同层证据。要收集当前运行材料，使用[只读采集说明](../examples/03-observation-kit/README.md)，不要复制示意图当真实调用栈。
 
 具体源码：`fe/fe-core/src/main/java/org/apache/doris/qe/Coordinator.java`、`fe/fe-core/src/main/java/org/apache/doris/qe/ResultReceiver.java`、`be/src/service/internal_service.cpp`、`be/src/runtime/fragment_mgr.cpp`、`be/src/runtime/query_context.cpp`、`be/src/exec/pipeline/pipeline_fragment_context.cpp`。测试从 `be/test/exec/pipeline/pipeline_task_test.cpp` 以及协议两端对应测试选取；本次没有运行这些测试。
+
+## 2026-10-14 运行证据更新
+
+新增[本地 SQL/导入/恢复实验](../examples/07-live-lab-20261014/REPORT.md)与[真实 Profile 解读](../examples/07-live-lab-20261014/PROFILE_ANALYSIS.md)。它们补充初稿中的未运行项；没有执行多副本/Cloud/取消/Spill 故障实验，也不替代历史修复前后的测试。

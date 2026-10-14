@@ -59,3 +59,11 @@
 | Profile 采集清单 | 本轮新增 | 尚无 Profile 输出 |
 
 [原始证据与来源](../examples/02-recorded-query/README.md) · [下一次观测](../examples/03-observation-kit/README.md)。历史表的 470/3 人与教学中文城市表的 580/4 人属于不同数据集。
+
+## 2026-10-14 独立运行实验增补
+
+已在 doris-run 的 FE/BE 构建上执行 SQL、HTTP 导入、Profile 采集及优雅重启验证。[实验报告](../examples/07-live-lab-20261014/REPORT.md)明确通过项、原始失败与修正及未覆盖项。[Profile 解读](../examples/07-live-lab-20261014/PROFILE_ANALYSIS.md)提供真实计数。初稿中“尚无 Profile/SQL 未执行”的记录保留为历史状态；最新状态以本节为准。没有执行 Java/C++ 单测、仓库回归或 Cloud/多副本故障测试。
+
+## 逐章教学实验入口
+
+28 章已把实验放进解释链，见[阅读指南](../TEACHING_GUIDE.md)与[逐章映射](../examples/08-chapter-workshops/chapter-map.json)。本轮为文档重写，没有重新运行服务；引用已有实测与新增源码走查时分别标注证据范围。

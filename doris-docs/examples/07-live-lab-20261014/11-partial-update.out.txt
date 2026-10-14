@@ -1,0 +1,31 @@
+--------------
+SET enable_unique_key_partial_update=true
+--------------
+
+Query OK, 0 rows affected (0.001 sec)
+
+--------------
+SET enable_insert_strict=true
+--------------
+
+Query OK, 0 rows affected (0.000 sec)
+
+--------------
+INSERT INTO doris_book.unique_updates(id,score,seq) VALUES(7,30,110)
+--------------
+
+Query OK, 1 row affected (0.032 sec)
+{'label':'label_5588766fc4c54ba8_8fc3e40decf21062', 'status':'VISIBLE', 'txnId':'6'}
+
+--------------
+SELECT * FROM doris_book.unique_updates ORDER BY id
+--------------
+
++------+------+-------+------+
+| id   | name | score | seq  |
++------+------+-------+------+
+|    7 | A    |    30 |  110 |
++------+------+-------+------+
+1 row in set (0.011 sec)
+
+Bye

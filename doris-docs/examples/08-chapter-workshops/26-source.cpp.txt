@@ -1,0 +1,39 @@
+        auto lock_start = std::chrono::steady_clock::now();
+        std::shared_lock rlock(_meta_lock);
+        if (stats) {
+            stats->meta_lock_wait_ns += std::chrono::duration_cast<std::chrono::nanoseconds>(
+                                                std::chrono::steady_clock::now() - lock_start)
+                                                .count();
+        }
+        if (_max_version >= options.query_version) {
+            return Status::OK();
+        }
+    }
+
+    // serially execute sync to reduce unnecessary network overhead
+    auto sync_lock_start = std::chrono::steady_clock::now();
+    std::unique_lock lock(_sync_meta_lock);
+    if (stats) {
+        stats->sync_meta_lock_wait_ns += std::chrono::duration_cast<std::chrono::nanoseconds>(
+                                                 std::chrono::steady_clock::now() - sync_lock_start)
+                                                 .count();
+    }
+    if (options.query_version > 0) {
+        auto lock_start = std::chrono::steady_clock::now();
+        std::shared_lock rlock(_meta_lock);
+        if (stats) {
+            stats->meta_lock_wait_ns += std::chrono::duration_cast<std::chrono::nanoseconds>(
+                                                std::chrono::steady_clock::now() - lock_start)
+                                                .count();
+        }
+        if (_max_version >= options.query_version) {
+            return Status::OK();
+        }
+    }
+
+    auto st = _engine.meta_mgr().sync_tablet_rowsets_unlocked(this, lock, options, stats);
+    if (st.is<ErrorCode::NOT_FOUND>()) {
+        clear_cache();
+    }
+
+    return st;

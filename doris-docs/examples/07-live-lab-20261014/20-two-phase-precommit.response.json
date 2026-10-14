@@ -1,0 +1,20 @@
+{
+    "TxnId": 10,
+    "Label": "book_lab_20261014_2pc_01",
+    "Comment": "",
+    "TwoPhaseCommit": "true",
+    "Status": "Success",
+    "Message": "OK",
+    "NumberTotalRows": 3,
+    "NumberLoadedRows": 3,
+    "NumberFilteredRows": 0,
+    "NumberUnselectedRows": 0,
+    "LoadBytes": 15,
+    "LoadTimeMs": 19,
+    "BeginTxnTimeMs": 0,
+    "StreamLoadPutTimeMs": 2,
+    "ReadDataTimeMs": 0,
+    "WriteDataTimeMs": 9,
+    "ReceiveDataTimeMs": 3,
+    "CommitAndPublishTimeMs": 0
+}

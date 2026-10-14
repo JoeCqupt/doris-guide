@@ -1,0 +1,5 @@
+Status DeltaWriter::commit_txn() {
+    std::lock_guard<std::mutex> l(_lock);
+    SCOPED_TIMER(_commit_txn_timer);
+    return _rowset_builder->commit_txn();
+}

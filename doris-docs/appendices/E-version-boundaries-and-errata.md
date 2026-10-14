@@ -55,3 +55,7 @@
 第 3、17 章原先将 `OlapScanNode.updateScanRangeVersions()` 作为普通内表扫描版本入口，范围不准确。已改为普通路径 `addScanRangeLocations()` 读取分区 visibleVersion；批量更新方法属于 Cloud 路径。见[专题 1](../deep-dives/01-query-rpc-and-cancellation.md)。
 
 九篇专题沿当前本地快照补写。IVM、Connector 结构、版本化 Cloud 元数据等只能据此判断当前源码，不能直接映射到某一发布版本。历史查询与历史修复分别有独立版本来源，均不标记为当前 HEAD 实测。
+
+## 2026-10-14 独立运行实验增补
+
+已在 doris-run 的 FE/BE 构建上执行 SQL、HTTP 导入、Profile 采集及优雅重启验证。[实验报告](../examples/07-live-lab-20261014/REPORT.md)明确通过项、原始失败与修正及未覆盖项。[Profile 解读](../examples/07-live-lab-20261014/PROFILE_ANALYSIS.md)提供真实计数。初稿中“尚无 Profile/SQL 未执行”的记录保留为历史状态；最新状态以本节为准。没有执行 Java/C++ 单测、仓库回归或 Cloud/多副本故障测试。

@@ -1,0 +1,5 @@
+JAVA_HOME=/Users/jiangyuan/dev/jdk-17.0.17.jdk/Contents/Home
+priority_networks=127.0.0.1/32
+storage_root_path=/Users/jiangyuan/doris-run/be/storage
+mem_limit=4G
+JAVA_XMX=4096m

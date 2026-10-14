@@ -1,0 +1,1 @@
+CREATE TABLE doris_book.unique_updates(id BIGINT, name VARCHAR(30),score INT,seq BIGINT) UNIQUE KEY(id) DISTRIBUTED BY HASH(id) BUCKETS 1 PROPERTIES('replication_num'='1','enable_unique_key_merge_on_write'='true','function_column.sequence_col'='seq'); INSERT INTO doris_book.unique_updates VALUES(7,'A',10,100); INSERT INTO doris_book.unique_updates VALUES(7,'B',20,90);
